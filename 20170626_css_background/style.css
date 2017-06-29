@@ -1,0 +1,25 @@
+/*css initialize*/
+html,body{
+    margin:0;
+    padding:0;
+}
+.clear-top::before,.clear-top:before{
+    content:"";
+    display: block;
+    overflow:hidden;
+}/*解决margin-top的bug*/
+
+.father{
+    width:400px;
+    height:400px;
+    background:#f00;
+}
+/*background-position是图片尺寸-容器尺寸的差值*/
+
+.son{
+    width:100px;
+    height:100px;
+    background-color: #0f0;
+    margin-top:60px;
+    margin-left:60px;
+}
