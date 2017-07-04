@@ -34,7 +34,7 @@ SVN 集中式版本控制系统
 
 ## 1.2. VScode terminal
 
-    Ctrl + `
+    Ctrl + ` 
 
 ## 1.3. git init
 

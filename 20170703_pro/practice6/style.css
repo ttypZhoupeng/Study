@@ -1,0 +1,43 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+.container div{
+    height: 38px;
+    width: 38px;
+    border:1px solid #000;
+    background: #0f0;
+    position: absolute;
+}
+.container:hover div{
+    position: unset;
+    float:left;
+}
+
+/*.container div{
+    height: 38px;
+    width: 38px;
+    border:1px solid #000;
+    background: #0f0;
+    position: absolute;
+    left:0;
+    transition: all 0.5s;
+}
+.container:hover>.box2{
+    left:40px;
+}
+.container:hover>.box3{
+    left:80px;
+}
+.container:hover>.box4{
+    left:120px;
+}
+.container:hover>.box5{
+    left:160px;
+}
+.container:hover>.box6{
+    left:200px;
+}
+.container:hover>.box7{
+    left:240px;
+}*/

@@ -1,0 +1,63 @@
+html,body{
+    margin:0;
+    padding:0;
+}
+.center-font{
+    text-align:center;
+}
+.center-container{
+    position: relative;
+}
+.center-box{
+    position:absolute;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left:0;
+    margin: auto;
+
+}
+
+/*style 1*/
+.content{
+    width: 290px;
+    height: 190px;
+    line-height: 190px;
+    background:greenyellow;
+    position: absolute;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin:auto;
+    text-align: center;
+    overflow:hidden;
+}
+.gif{
+    width: 29px;
+    height: 28px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.content:hover>.gif{
+    background-image: url("images/pic.png")
+}
+
+/*style 2*/
+.gif2{
+    width: 29px;
+    height: 29px;
+    position: absolute;
+    top: -29px;
+    right: -29px;
+    background-image: url("images/pic.png");
+    transition:all 2s;
+    background-position:29px 29px;
+    background-repeat: no-repeat;
+}
+.content:hover>.gif2{
+    top:0;
+    right:0;
+    background-position:0 0;
+}

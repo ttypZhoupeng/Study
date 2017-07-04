@@ -1,0 +1,54 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+.clear-float::after,.clear-float:after{
+    content:"";
+    display: block;
+    clear:both;
+}
+
+.tab_container{
+    width: 400px;
+    height: 250px;
+    position: relative;
+}
+
+/*box*/
+.tab_container>div{
+    float:left;
+}
+.tab_container>div:hover .content{
+    z-index: 100;
+}
+
+/*tab*/
+.tab{
+    width: 100px;
+    height: 50px;
+}
+.box1 .tab,.box1 .content{
+    background: #f00;
+}
+.box2 .tab,.box2 .content{
+    background: #0f0;
+}
+.box3 .tab,.box3 .content{
+    background: #ff0;
+}
+.box4 .tab,.box4 .content{
+    background: #0ff;
+}
+
+/*content*/
+.content{
+    position: absolute;
+    left:0;
+    top:50px;
+    width: 400px;
+    height: 200px;
+    z-index: 0;
+}
+.box1 .content{
+    z-index:1;
+}

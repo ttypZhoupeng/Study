@@ -21,6 +21,7 @@
     url('./images/background.jpg')
 
     url(./images/background.jpg) 不推荐
+    
 
 ## background-position
 
@@ -31,7 +32,7 @@
     50%     50%     相对 **容器尺寸 - 图片尺寸** 的差值
 
                     当background-attachment:fixed 的时候
-                    相对窗口尺寸计算
+                    相对窗口尺寸计算 \*\*\*
 
     left    top
     center  center  默认值

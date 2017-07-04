@@ -1,0 +1,38 @@
+.tab_container{
+    position:relative;
+}
+.tab_container>*{
+    width: 200px;
+    height: 450px;
+    position: absolute;
+}
+
+.tab{
+    width: 100px;
+    height: 50px;
+}
+.tab1{
+    background: #f00;
+}
+.tab2{
+    left:100px;
+    background: #0f0;
+}
+
+.tab:hover+*,.content:hover{
+    z-index: 100;
+}
+
+.content{
+    width:200px;
+    height:400px;
+    top:50px;
+}
+.content1{
+    z-index: 2;
+    background: #f00;
+}
+.content2{
+    z-index: 1;
+    background: #0f0;
+}

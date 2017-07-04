@@ -1,0 +1,26 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+/*style*/
+.grandfather{
+    width: 600px;
+    height: 600px;
+    background-color: #00f;
+    /*position: relative;*/
+}
+.father{
+    width: 400px;
+    height: 400px;
+    background-color: #f00;
+}
+.son{
+    width: 100px;
+    height: 100px;
+    background-color: #ff0;
+}
+.son1{
+    background-color: #f0f;
+    /*position: absolute;*/
+}

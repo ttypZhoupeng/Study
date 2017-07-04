@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <input id="Test" name="hobbies" type="radio" checked>游泳
+        <input name="hobbies" type="radio">骑车
+        <input name="hobbies" type="radio">篮球
+        <input name="hobbies" type="radio">电竞
+        <input type="reset">
+    </form>
+
+    <script>
+        var form = document.querySelector('#form');
+        var test = document.querySelector('#Test');
+        form.onsubmit =function(e){
+            e.preventDefault();
+            console.log(test.name,test.checked)
+        }
+
+        // test.onclick=function(){
+        //     if(this.checked){
+        //         document.querySelector('#form label').style.border = "2px solid #000";
+        //     }else{
+        //         document.querySelector('#form label').style.border = "none";
+        //     }
+        // }
+    </script>
+</body>
+</html>

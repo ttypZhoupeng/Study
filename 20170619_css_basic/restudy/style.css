@@ -1,0 +1,40 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+.grand-father{
+    width: 606px;
+    height: 606px;
+    background: #999;
+}
+.father{
+    width: 200px;
+    height: 200px;
+    border:1px solid #f00;
+}
+.son{
+    width: 30px;
+    height: 30px;
+    margin: 0 0 55px;
+    background: #090;
+}
+
+.mother>div.info{
+    color:#f00;
+}
+
+.uncle *{
+    padding: 10px;
+    border:1px solid #000;
+}
+.uncle .son.jack{
+    background-color: #f00;
+}
+
+.grand-father .son1+*+*{
+    background: #ff0;
+}
+
+.mother>*:hover{
+    background: #f00;
+}

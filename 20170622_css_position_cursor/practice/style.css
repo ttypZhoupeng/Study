@@ -1,0 +1,45 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+.center-container{
+    position: relative;
+}
+.center-box{
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    margin: auto;
+}
+
+/*style*/
+.container{
+    width: 540px;
+    height: 420px;
+    background-color: #656565;
+}
+.box{
+    width: 345px;
+    height: 225px;
+    background-color: #32b16c;
+    text-align: center;
+    font:36px/225px "微软雅黑" , Arial;
+    color:#fff;
+    overflow: hidden;
+}
+.angle{
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: url("./angle_2.jpg") no-repeat;
+    background-position:center center;
+    transition:all 0.55s;
+}
+.box:hover>.angle{
+    width: 20px;
+    height: 20px;
+}

@@ -4,11 +4,12 @@ html,body{
     padding: 0;
 }
 
-.mtopbug::before{
-    content:" ";
+.clear-top::before,.clear-top:before{
+    content:"";
     display: block;
     overflow: hidden;
 }
+
 
 /* style */
 .father{
@@ -26,6 +27,6 @@ html,body{
     margin:20px;
     
 }
-.father .son:nth-child(2n){
+/*.father .son:nth-child(2n){
     border:3px solid #f00;
-}
+}*/

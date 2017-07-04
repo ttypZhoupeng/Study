@@ -11,6 +11,13 @@
 ## 1.1. form
 表单容器
 
+属性:
+    action
+    method
+
+        GET 发送数据量小,明文
+        POST 发送数据量大,加密
+
 表单控件，必须写在form容器里面，这样，在submit的时候，才会提交form里面的所有数据
 
 ### 1.1.1. input
@@ -32,8 +39,8 @@
 
     type    text(default)  文本输入框
             password       密码输入框
-            number         数字输入框
-            email          邮箱输入框
+            number         数字输入框    max min step
+            email          邮箱输入框    不能全信
             date           日期输入框
 
             color          取色器

@@ -1,0 +1,86 @@
+/*init*/
+html,body{
+    margin: 0;
+    padding: 0;
+}
+.mtop::before,.mtop:before{
+    content:"";
+    display: block;
+    overflow: hidden;
+}
+/*前者ie9以上，后者ie8*/
+
+/*style*/
+.box{
+    width:0;
+    height:0;
+    border-bottom: 100px solid transparent;
+    border-left: 100px solid red;
+
+}
+.box1{
+    width:0;
+    height:0;
+    border-width: 100px;
+    border-style: solid;
+    border-color: red white white white;
+}
+.box4{
+     width:0;
+    height:0;
+    border-top: 100px solid red;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    margin-top:20px;
+}
+.content{
+    width:500px;
+    height:500PX;
+    background: blue;
+}
+.main{
+    width: 200px;
+    height: 200px;
+    background: red;
+    margin: 100px;
+}
+.content::before{
+    content: "";
+    display: block;
+    overflow:hidden;
+}
+
+/*task1*/
+.content2{
+    width:100%;
+}
+.main_box{
+    margin: 0 auto;
+    width:145px;
+    margin-top:200px;
+}
+.img{
+    width:145px;
+    height: 80px;
+    background-image: url("images/tx.png");
+    background-position: 512px 0;
+}
+.img:hover{
+    background-image: url("images/tx2.png");
+}
+
+/*pic position*/
+body{
+    background:#e8e8e8;
+}
+.content3{
+    width: 500px;
+    height: 500px;
+    background:red;
+    border:15px solid #fff;
+    color: #fff;
+    padding:20px;
+}
+.english{
+    font-size: 40px;
+}

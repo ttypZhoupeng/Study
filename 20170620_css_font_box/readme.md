@@ -6,7 +6,7 @@
         - [1.1.2. font](#112-font)
 - [2. box 盒模型](#2-box-盒模型)
 - [3. :before 和 :after伪类](#3-before-和-after伪类)
-    - [3.1. margin-top bug](#31-margin-top-bug)
+    - [3.1. margin-top bug 外边距坍塌](#31-margin-top-bug-外边距坍塌)
 - [4. 作业](#4-作业)
 
 <!-- /TOC -->
@@ -59,7 +59,11 @@ p{
     text-align: center;
 
     vertical-align: bottom;
-    /*行内元素之间的垂直对齐方式*/
+    /*行内元素之间的垂直对齐方式
+    top
+    middle
+    bottom
+    */
 
     line-height: 32px;
     /*行高*/
@@ -99,7 +103,7 @@ p{
 content(width,height) + padding + border + margin
 
 padding: 上 右 下 左;
-如果在缩写中，确实某个值，用对称方位的值代替
+如果在缩写中，缺失某个值，用对称方位的值代替
 
 border: 1px solid #f00;
 该种缩写，不支持上右下左的缩写方式
@@ -120,7 +124,7 @@ margin:30px;
 写法类似padding
 
 # 3. :before 和 :after伪类
-## 3.1. margin-top bug
+## 3.1. margin-top bug 外边距坍塌
 
 * (1) 父容器增加::before选择器，content:" ";display:block;overflow:hidden;
 
@@ -130,7 +134,7 @@ margin:30px;
 
     出现了无意义的div
 
-* 给父容器增加 overflow:hidden
+* (3) 给父容器增加 overflow:hidden
 
     局限性，在需要overflow做其他用途的时候，不能使用这个方法
 
@@ -142,8 +146,8 @@ margin:30px;
 
     每次修改padding，都要重新修改height
 
-如果不需要兼容IE9以下浏览器，推荐方案1 ::before方法
-反之，用空div
+::before ::after IE9+
+:before :after IE8
 
 另外浮动元素（float）不会产生margin-top向上传递的问题，见下节课
 

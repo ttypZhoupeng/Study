@@ -36,15 +36,15 @@ body{
     width: 400px;
     height: 400px;
     background: #f00;
-    background-repeat: no-repeat;
-    background-position: 10% 50%;
+    /*background-repeat: no-repeat;*/
+    /*background-position: 10% 50%;*/
 }
 .son{
     width: 100px;
     height: 100px;
     background-color: #0f0;
-    background-image: url(./test1.png);
     background-position: 50% 50%;    
+    background-image: url("./test1.png");
     margin-top:60px;
     margin-left:60px;
 }

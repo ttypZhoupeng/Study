@@ -1,0 +1,15 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+.cell{
+    width: 20px;
+    height: 20px;
+    background: #8aa;
+    border-right:1px solid #fff;
+    border-bottom:1px solid #fff;
+    float:left;
+}
+.cell:hover+*+*{
+    background: #f38;
+}

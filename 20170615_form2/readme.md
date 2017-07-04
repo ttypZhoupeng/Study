@@ -82,4 +82,9 @@ select
 
 转义字符
 
+    &nbsp;
+    &lt;
+    %gt;
+    %copy;
+
 button标签

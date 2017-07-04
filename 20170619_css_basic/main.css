@@ -1,0 +1,59 @@
+*{
+    border:2px solid #0ff;
+}
+
+li{
+    border:2px solid #000;
+}
+
+.son{
+    border:2px solid #5f6;    
+}
+.boy{
+    border:2px solid #f00;
+    border-right-style:dashed;
+}
+
+/*#First{
+    border:2px solid #00f;
+}*/
+
+/*
+id     class    li     *
+1000    100     10      1
+
+当优先级一样的时候，后面覆盖前面
+*/
+
+
+.father>.girl{
+    width:20px;
+}
+#First+.boy{
+    width:50px;
+}
+.girl,.boy{
+    background-color: #0f0;
+}
+
+#First:hover{
+    background-color: #00f;
+}
+#First:active{
+    background-color: #f00;
+}
+
+/*
+link
+visited
+hover
+active
+
+link
+
+hover
+
+
+
+
+*/

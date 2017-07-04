@@ -1,0 +1,41 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+div{
+    height:30px;
+    width: 30px;
+    position: relative;
+    left:0;
+    transition:all 0.5s;
+}
+body>*:hover *{
+    left:100%;
+}
+body>*{
+    background: #cb00ff;
+}
+body>*>*{
+    /*transition-delay: 0.5s;*/
+    background: #1b00ff;
+}
+body>*>*>*{
+    /*transition-delay: 1s;*/
+    background: #00ffdb;
+}
+body>*>*>*>*{
+    /*transition-delay: 1.5s;*/
+    background: #6fff00;
+}
+body>*>*>*>*>*{
+    /*transition-delay: 2s;*/
+    background: #f0ff00;
+}
+body>*>*>*>*>*>*{
+    /*transition-delay: 2.5s;*/
+    background: #f36f00;
+}
+body>*>*>*>*>*>*>*{
+    /*transition-delay: 3s;*/
+    background: #f00;
+}
