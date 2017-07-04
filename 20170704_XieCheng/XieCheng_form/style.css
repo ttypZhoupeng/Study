@@ -100,6 +100,20 @@ body{
 .form_box{
     width: 451px;
     height: 220px;
-    background:red;
     margin: 16px 20px 0 
+}
+form span{
+    margin-right:15px;
+    text-align: right;
+}
+.form_origin{
+    height:30px;
+    line-height: 30px;
+}
+.form_origin input{
+    width: 365px;
+    height: 30px;
+}
+.form_data{
+    margin-top:12px;
 }
