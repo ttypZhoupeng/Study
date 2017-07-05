@@ -1,0 +1,26 @@
+html,body{
+    margin:0;
+    padding:0;
+}
+
+.left_box{
+    width: 200px;
+    height: 200px;
+    background: red;
+    position:absolute;
+    top:0;
+    left:0;
+}
+.center_box{
+    height:200px;
+    margin:0 300px 0 200px;
+    background:blue;
+}
+.right_box{
+    width: 300px;
+    height:200px;
+    background:yellow;
+    position: absolute;
+    top:0;
+    right:0;
+}
