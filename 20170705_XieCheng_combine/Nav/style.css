@@ -1,0 +1,49 @@
+html,body{
+    padding:0;
+    margin: 0;
+}
+.clear_top::before,.clear_top:before{
+    content:"";
+    display: block;
+    overflow: hidden;
+}
+.clear_float::after,.clear_float:after{
+    content:"";
+    display: block;
+    clear:both;
+}
+
+/*navigator*/
+
+.left_angle,.right_angle{
+    width:100px;
+    height:200px;
+    position: absolute;
+    top: 0;
+    background:red;
+}
+.left_angle{
+    left:0;
+}
+.right_angle{
+    right:0;
+}
+.nav_content{
+    position: absolute;
+    left:100px;
+    right:100px;
+    top:0;
+    bottom:0;
+    background:blue;
+}
+
+/*.left_angle,.right_angle{
+    position: absolute;
+    top: 0;
+}
+.left_angle{
+    background-image:url("./images/left_angle.png");
+}
+.right_angle{
+    background-image:url("./images/right_angle.png")
+}*/
