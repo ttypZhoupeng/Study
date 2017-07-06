@@ -5,21 +5,26 @@ html,body,ul{
 ul{
     list-style: none;
 }
-.mtop::before{
+.mtop::before,.mtop:before{
     content: "";
     display: block;
     overflow: hidden;
 }
-
-/*head*/
-#head{
-    height: 200px;
-    background: #ccc;
+.clear_float::after,.clear_float:after{
+    content:"";
+    display: block;
+    clear: both;
 }
+
+/*head start*/
 #head .container{
-    width: 100%;
+    /*width: 980px;
+    min-width:980px;
+    max-width:1180px;*/
+    width:100%;
     height: 40px;
     background-color: #2577e3;
+    margin:0 auto;
 }
 #head .nav{
     width:1180px;
@@ -40,12 +45,13 @@ ul{
     float:left;
     padding:0 8px;
     color: white;
+    font-size: 15px;
 }
 #head .item1{
     background: #0a56bb;
 }
 #head .content{
-    width :1180px;
+    width :1162px;
     height: 38px;
     background:white;
     position: absolute;
@@ -55,7 +61,7 @@ ul{
     padding-left:16px;
     border: 1px solid #2577e3;
     border-top:none;
-    
+    z-index: 10px
 }
 #head .nav>li:hover .content{
     display: block;
@@ -63,6 +69,7 @@ ul{
 #head .nav_son>li{
     float:left;
     padding:0 8px;
+    
 }
 #head .item_son a{
     text-decoration: none;
@@ -99,22 +106,287 @@ ul{
     transition: transform 0.2s ease 0s;
 }
 #head .diliver,.diliver2{
-    padding: 0 !important;
-    font-size:1px;
-    font-weight: 100;
+    float:left;
+    display: inline-block;
+    width: 1px;
+    height:15px;
+    margin-top:12.5px;
 }
 #head .diliver{
-    color:#ccc;
+    background:#ccc;
 }
 #head .diliver2{
-    color:#1d67dd !important;
+   background:#1d67dd;
 }
 
+#head .head_top{
+    width: 1180px;
+    min-width: 980px;
+    max-width: 1180px;
+    height:65px;
+    line-height: 65px;
+    margin:0 auto;
+    position:relative;
+}
+#head .ctrip_logo a{
+    display: block;
+    width: 126px;
+    height: 43px;
+    position: absolute;
+    top:0;
+    bottom:0;
+    margin:auto 0;
+}
+#head .search{
+    position: absolute;
+    height:30px;
+    top: 18px;
+    left: 170px;
+    z-index: 100;
+    width: 28%;
+    font-family: "Microsoft Yahei", Tahoma;
+}
+#head .search input{
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 28px;
+    padding: 0 45px 0 5px;
+    line-height: 28px \9;
+    font-size: 12px;
+    font-family: "Microsoft Yahei", Tahoma;
+    border: 1px solid #8ebefc;
+    box-shadow: 2px 2px 1px 0 rgba(164, 203, 255, 0.25) inset;
+    outline: 0 none;
+}
+#head .search button{
+    position: absolute;
+    top: 1px;
+    right: -51px;
+    width: 42px;
+    height: 28px;
+    cursor: pointer;
+    border: 0 none;
+    background-color: #a4cbff;
+    background-position: -52px -603px;
+    border-radius: 0;
+    background-image: url("images/header_footer.png");
+    background-repeat: no-repeat;
+}
+#head .nav_bar{
+    width:421px;
+    height:38px;
+    color: #4c4c4c;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-family: Arial, tahoma, verdana, "Microsoft YaHei", Simsun, sans-serif;
+    color: #4c4c4c;
+    font-size: 12px;
+}
+#head ul{
+    list-style: none;
+}
+#head .language,#head .service li,#head .service_tel span{
+    float: left;
+    height: 15px;
+    line-height: 15px;
+    padding: 0 10px;
+    margin: 23px 0 0 0;
+    border-right: 1px solid #b2b2b2;
+}
+#head .service_tel span{
+    border-right:none;
+}
+#head .language .icon_global{
+    margin-top: -2px;
+    height: 16px;
+    background-position: -64px 0;
+    display: inline-block;
+    width: 19px;
+    height: 17px;
+    margin-right: 5px;
+    vertical-align: middle;
+    background-image: url("images/header_footer.png");
+    background-repeat: no-repeat;
+}
+#head .language .arrow,#head .service_tel .arrow{
+    display: inline-block;
+    width: 9px;
+    height: 5px;
+    vertical-align: middle;
+    margin-left: 5px;
+    overflow: hidden;
+    background-position: -63px -260px;
+    background-image: url("images/header_footer.png");
+    background-repeat: no-repeat;
+}
+#head .service a:link{
+    color:black;
+    text-decoration: none;
+}
+#head .service a:hover{
+    text-decoration: underline;
+}
+#head .service_telnum{
+    color:#06c;
+    font-style:nomal;
+}
+#head .wireless li{
+    float:left;
+    margin-right:7px;
+    display: block;
+    width:20px;
+    height:auto;
+}
+#head .wireless li i{
+    height:17px;
+    display: inline-block;
+    width:20px;
+    background: url("images/header_footer.png") no-repeat;
+}
+#head .wireless li .icon_app{
+    background-position: 0 -56px;
+}
+#head .wireless li .icon_wechat{
+    background-position: -20px -55px;
+    margin-top: 0;
+}
 
-/*banner*/
+#head .head_bottom{
+    width:1180px;
+    height:22px;
+    min-width:980px;
+    max-width:1180px;
+    margin:9px auto;
+    z-index: -10;
+}
+.head_bottom .line_title{
+    height:22px;
+    line-height: 22px;
+    float: left;
+    margin-right: 20px;
+    padding: 0 5px;
+    background: #74a8ed;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 2px;
+    margin: 0;
+    position:relative;
+    z-index: -5;
+}
+.head_bottom .icon_arrow{
+    position:absolute;
+    right: -8px;
+    top: 6px;
+    border:4px solid #74a8ed;
+    border-color: white white white #74a8ed;
+    overflow: hidden;
+}
+.head_bottom .line_list{
+    display: inline-block;
+    margin-left:20px;
+}
+.head_bottom .line_list li{
+    float:left;
+    margin-right:18px;
+}
+.head_bottom .line_list li a{
+    color:#666;
+    text-decoration: none;
+    font-size:12px;
+}
+.head_bottom .line_list li a:hover{
+    color:#3983e5;
+}
+.head_bottom .line_list li i{
+    display: inline-block;
+    background-image: url("images/icon_index_type.png");
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+    margin-top: -1px;
+}
+.head_bottom .line_list .icon_hotel{
+    background-position: -26px 0;
+}
+.head_bottom .line_list .icon_car{
+    background-position: -130px 0;
+}.head_bottom .line_list .icon_train{
+    background-position: -52px 0;
+}
+.head_bottom .line_list .icon_outboundtravel{
+    background-position: -26px -52px;
+}
+.head_bottom .line_list .icon_HHtravel{
+    background-position: -104px -26px;
+}
+.head_bottom .line_list .icon_ticket{
+    background-position: -26px -26px;
+}
+.head_bottom .line_list .icon_visa{
+    background-position: 0px -52px;
+}
+.head_bottom .line_list .icon_insunrance{
+    background-position: -78px -26px;
+}
+.head_bottom .line_list .icon_wifi{
+    background-position: -130px -26px;
+}
+.head_bottom .line_list .icon_foreign{
+    background-position: -24px -79px;
+}
+
+#head .container .login_box{
+    width:110px;
+    height: 100%;
+    line-height: 20px;
+    background:#ff9913;
+    position: absolute;
+    right:0;
+    top:0;
+    padding-left:10px;
+    font-size: 14px;
+}
+#head .container .login_box .my_ctrip{
+    position: relative;
+}
+#head .container .login_box .user{
+    width: 15px;
+    height: 16px;
+    display: inline-block;
+    background: url(images/header_footer.png) no-repeat;
+    background-position: -67px -180px;
+}
+#head .container .login_box .arrow{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top:5px solid white;
+    border-left:5px solid transparent;
+    border-right: 5px solid transparent;
+    top:8px;
+    margin-left:3px;
+}
+
+/*head end*/
+
+
+/*banner srart*/
 #banner{
     height: 340px;
-    background: skyblue;
+    background-image: url("images/banner_bg.jpg");
+    position: relative;
+}
+#banner .banner_content{
+    width:1180px;
+    height:100%;
+    margin:0 auto;
     position: relative;
 }
 #banner .banner_form{
@@ -122,18 +394,19 @@ ul{
     height: 294px;
     position: absolute;
     top: 20px;
-    left: 13.125%;
+    left: 0;
 }
 #banner .l_nav{
     width: 90px;
     height: 100%;
     float:left;
-    background: yellow;
+}
+#banner .l_nav_tab{
+    line-height: 42px;
 }
 #banner .r_form{
     width: 491px;
     height: 100%;
-    float: left;
     position: absolute;
     left:90px;
     top:0;
@@ -156,7 +429,7 @@ ul{
     height: 42px;
     background:#2577e3;
     width: 90px;
-    line-height: 42px;
+    
     color: white;
 }
 #banner .nav_tab:hover .r_form{
@@ -184,16 +457,13 @@ ul{
     width:451px;
     height:42px;
     margin:0 20px;
-    font-weight: bold;
-    color: #666;
-    font-size:14px;
     border-bottom: 2px solid #c4c4c4;
+    position: relative;
 }
 #banner .top_nav_tab{
     float: left;
     margin-right: 20px;
     height: 100%;
-    position: relative;
 }
 #banner .form_nav_item{
     display: inline-block;
@@ -203,6 +473,7 @@ ul{
     color: #666;
     font-size:14px;
     position:relative;
+    line-height: 42px;
 }
 #banner .form_nav_item:hover,#banner .f_fni{
     color:#06c;
@@ -221,11 +492,96 @@ ul{
     border-top:5px solid #0066cc;
     border-left:5px solid transparent;
     border-right:5px solid transparent;
+    z-index: 100;
 }
 #banner .top_nav_tab .form_main{
     position:absolute;
-    width
+    width: 451px;
+    top: 44px;
+    padding-top:16px;
+    left:0;
+    height: 215px;
 }
+#banner .tnt2 .form_main{
+    display: none;
+    background:skyblue;
+}
+#banner .tnt3 .form_main{
+    display: none;
+    background:yellow;
+
+}
+#banner .top_nav_tab:hover .form_main{
+    display: block;
+}
+#banner .form_main .form_item_title{
+    display: inline-block;
+    margin-right:10px;
+    color:black;
+    font-size: 14px;
+    font-family: "Microsoft YaHei", SimSun, Tahoma, Verdana
+}
+#banner .form_main .form_item{
+    height:35px;
+    line-height: 35px;
+}
+#banner .f_input{
+    width: 376px;
+    padding-left: 3px;
+    border-color: #bbb #ddd #ddd #bbb;
+    border-style: solid;
+    border-width: 1px;
+    height: 28px;
+    font: 14px/28px "Microsoft YaHei", SimSun, Tahoma, Verdana, Arial, sans-serif;
+    outline: none;
+    color: #333;
+    box-shadow: 1px 1px 1px #ddd inset;
+    display: inline-block;
+}
+#banner .input2{
+    width: 139px;
+    padding-left: 3px;
+    margin-top:12px;
+    border-color: #bbb #ddd #ddd #bbb;
+    border-style: solid;
+    border-width: 1px;
+    height: 28px;
+    font: 14px/28px "Microsoft YaHei", SimSun, Tahoma, Verdana, Arial, sans-serif;
+    outline: none;
+    color: #333;
+}
+#banner .form_date{
+    float:left;
+    margin-right:20px;
+}
+#banner .form_rank{
+    margin-top: 15px;
+}
+#banner .form_key{
+    margin-top:7px;
+}
+#banner .form_button{
+    position: absolute;
+    bottom:0;
+    right:0;
+    width: 145px;
+    height: 33px;
+    color: #fff;
+    font-size: 16px;
+    font-family: "Microsoft YaHei", SimSun, Tahoma, Verdana, Arial, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 0.4em;
+    text-indent: 0.4em;
+    box-shadow: 0 1px 0 rgba(95, 50, 0, 0.7);
+    border-radius: 3px;
+    overflow: visible;
+    text-shadow: 1px 1px 0 #cf7000;
+    background-color: #ffb000;
+    border: solid 1px #e77c00;
+}
+
 
 /*#banner .top_nav{
     width:451px;
