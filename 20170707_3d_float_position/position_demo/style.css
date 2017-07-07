@@ -1,0 +1,31 @@
+html,body{
+    padding: 0;
+    margin:0;
+}
+
+div{
+    height:200px;
+}
+.left_box{
+    position:absolute;
+    background:yellow;
+    top:0;
+    right:500px;
+    left:-400px;
+}
+.center_box{
+    width:400px;
+    position: relative;
+    background:blue;
+    top:0;
+    right:0;
+    left:0;
+    margin:0 auto;
+}
+.right_box{
+    position:absolute;
+    background:red;
+    top:0;
+    left:400px;
+    right:-400px;
+}

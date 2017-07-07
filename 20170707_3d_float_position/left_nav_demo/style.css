@@ -1,0 +1,33 @@
+html,body{
+    padding:0;
+    margin:0;
+    height:100%;
+}
+
+.left_box{
+    position: relative;
+    height:100%;
+    width:200px;
+}
+.left_nav{
+    position: absolute;
+    top:0;
+    height:400px;
+    left: -100px;
+    bottom:0;
+    margin:auto 0;
+    transition:all 0.5s;
+}
+.nav_item{
+    height:100px;
+    line-height: 100px;
+    width:100px;
+    background:skyblue;
+    
+}
+.left_box:hover .left_nav{
+    left:0;
+}
+.nav_item:hover{
+    background:blue;
+}
