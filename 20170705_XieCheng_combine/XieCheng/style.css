@@ -38,6 +38,9 @@ ul{
     color: white;
     display: block;
 }
+#head .container .item{
+    position: relative;
+}
 #head .item:hover{
     background: #0a56bb;
 }
@@ -56,14 +59,14 @@ ul{
     background:white;
     position: absolute;
     top: 40px;
-    left: 0;
+    left: -47px;
     display: none;
     padding-left:16px;
     border: 1px solid #2577e3;
     border-top:none;
     z-index: 10px
 }
-#head .nav>li:hover .content{
+#head .nav>li:hover .content,#head .container .nav>li:hover .bottom_angle{
     display: block;
 }
 #head .nav_son>li{
@@ -87,7 +90,7 @@ ul{
     background-color: #1d67dd;
     clear: none;
 }
-#head .trigle{
+#head .container .item .angle{
     display: inline-block;
     width: 0;
     height: 0;
@@ -104,6 +107,19 @@ ul{
     _filter: chroma(color=#ff3fff);
     -webkit-transition: transform 0.2s ease 0s;
     transition: transform 0.2s ease 0s;
+}
+#head .container .item .bottom_angle{
+    position: absolute;
+    display: none;
+    width: 0;
+    top: 33px;
+    height: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-bottom: 7px solid #fff;
+    border-left: 7.5px solid transparent;
+    border-right: 7.5px solid transparent;
 }
 #head .diliver,.diliver2{
     float:left;
@@ -174,6 +190,10 @@ ul{
     border-radius: 0;
     background-image: url("images/header_footer.png");
     background-repeat: no-repeat;
+}
+#head .search button:hover{
+    background-position: -52px -653px;
+    background-color:#299cff;
 }
 #head .nav_bar{
     width:421px;
@@ -380,8 +400,8 @@ ul{
 /*banner srart*/
 #banner{
     height: 340px;
-    background-image: url("images/banner_bg.jpg");
     position: relative;
+    background:skyblue;
 }
 #banner .banner_content{
     width:1180px;
@@ -389,12 +409,46 @@ ul{
     margin:0 auto;
     position: relative;
 }
+.banner_bg{
+    float:left;
+
+}
+.banner_bg .dot{
+    width:8px;
+    height:8px;
+    border:2px solid #fff;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,.2);
+    z-index: 10;
+    position: relative;
+    margin-right: 10px;
+    top: 300px;
+    left:1000px;
+}
+.banner_bg img{
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 5px;
+}
+.banner_bg .dot:hover{
+    background: #fff;
+}
+.banner_bg2 img,.banner_bg3 img{
+    display: none
+}
+.banner_bg:hover img{
+    display: block;
+}
+
+
 #banner .banner_form{
     width: 581px;
     height: 294px;
     position: absolute;
     top: 20px;
     left: 0;
+    z-index: 10;
 }
 #banner .l_nav{
     width: 90px;
@@ -584,64 +638,44 @@ ul{
 #banner .form_button:hover{
     background:#f79700;
 }
+/*banner end*/
 
 
-/*#banner .top_nav{
-    width:451px;
-    height: 16px;
-    margin: 0px 20px;
-    padding-top:20px;
-    padding-bottom:5px;
-    font-weight: bold;
-    color: #666;
-    font-size:14px;
-    border-bottom: 2px solid #c4c4c4;
+/*main start*/
+#main{
+    width:100%;
+    background: #f6f6f6;
 }
-#banner .top_nav_tab{
+#main .mod{
+    width:1180px;
+    height:428px;
+    margin:28px auto 0;
+    background:skyblue;
+}
+#main .tmh_top{
+    width:100%;
+    height:36px;
+    border-bottom:2px solid #3983e5;
+}
+#main .tmh .top_nav{
+    height:36px;
+    line-height: 36px;
+    background:yellow;
+    margin-right:30px;
     float:left;
-    margin-right:20px;
     position: relative;
 }
-#banner .form_main{
-    width: 100%;
-    height:252px;
-}
-#banner .top_nav_tab:hover,.first_tnt{
-    color:#06c;
-    border-bottom:2px solid #0066cc;
-    padding-bottom: 2px;
-}
-#banner .first_tnTab .angle,.top_nav_tab:hover .angle{
-    width:0;
-    height: 0;
-    position:absolute;
-    top:22px;
-    margin-left:23px;
-    border-top:5px solid #0066cc;
-    border-left:5px solid transparent;
-    border-right:5px solid transparent;
-}
-#banner .top_nav_tab:hover .l_angle{
-    margin-left:43px;
-}
 
-#banner .form_box{
-    width: 451px;
-    height: 220px;
-    margin: 16px 20px 0 
+#main .tmh .top_nav .nav_content{
+    height:390px;
+    width:1180px;
+    position: absolute;
+    top:38px;
+    left:0;
+    background: red;
+    display: none;
 }
-#banner form span{
-    margin-right:15px;
-    text-align: right;
+#main .tmh .tn1 .nav_content{
+    display: block;
 }
-#banner .form_origin{
-    height:30px;
-    line-height: 30px;
-}
-#banner .form_origin input{
-    width: 365px;
-    height: 30px;
-}
-#banner .form_data{
-    margin-top:12px;
-}*/
+#main .tmh 

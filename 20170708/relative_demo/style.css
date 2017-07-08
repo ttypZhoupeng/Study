@@ -1,0 +1,21 @@
+html,body{
+    padding:0;
+    margin:0;
+}
+
+div{
+    width:800;
+    height:200px;
+    margin:0 auto;
+}
+.top{
+    background-color: red;
+}
+.content{
+    background-color:blue;
+    position: relative;
+    top:100px;
+}
+.bottom{
+    background-color:yellow;
+}
