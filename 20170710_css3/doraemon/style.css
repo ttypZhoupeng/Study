@@ -131,7 +131,7 @@ body{
     transform: rotate(-15deg);
 }
 .collar{
-    width:330px;
+    width:250px;
     height: 35px;
     background:#d02c00;
     border:2px solid #000;
@@ -192,4 +192,22 @@ body{
     left: 0;
     margin:0 auto;
     border:2px solid #000;
+}
+.left_half_round,.right_half_round{
+    width:40px;
+    height:35px;
+    background:#d02c00;
+    border:2px solid #000;
+    position: absolute;
+    top:-2px;
+}
+.left_half_round{
+    border-right:none;
+    border-radius: 50% 0 0 50%;
+    left:-40px;
+}
+.right_half_round{
+    border-left:none;
+    border-radius: 0 50% 50% 0;
+    right:-40px;
 }
