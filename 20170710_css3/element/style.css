@@ -1,0 +1,112 @@
+html,body{
+    padding: 0;
+    margin:0;
+}
+.clear_float::after,.clear_float:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+/*class css3*/
+.father{
+    width: 400px;
+    height: 400px;
+    background:yellow;
+}
+.son{
+    width: 50px;
+    height: 50px;
+    background:skyblue;
+}
+
+.father [class~="son"]{
+    border:2px solid palevioletred;
+}
+
+[title="logo"]{
+    background:red;
+}
+
+.mon{
+    margin-top:20px;
+}
+.mon [src="images/c_logo.png"]{
+    border: 2px solid blue;
+}
+
+.mon [src$="angle.png"]{
+    border:2px solid green;
+}
+.mon [src*="logo"]{
+    border-top:2px dashed pink;
+}
+.mon [src^="ima"]{
+    border-left:5px double #e8e8e8;
+}
+
+/*nth_child*/
+.container{
+    width:800px;
+    background:blue;
+}
+.container .box{
+    float:left;
+}
+.box{
+    width: 400px;
+    height: 200px;
+    background:skyblue;
+}
+.box img {
+    width:200px;
+    height:160px;
+    background:red;
+    margin:20px 0;
+}
+.text{
+    display: inline-block;
+    vertical-align: top;
+}
+.container .box:nth-child(4n+2)>*,.container .box:nth-child(4n+3)>*{
+    float:right;
+}
+
+.container2{
+    width:300px;
+}
+.container2>div{
+    float:left;
+}
+.fillet{
+    width:150px;
+    height:150px;
+    background:blue;
+    transition: all 0.5s;
+}
+
+.box2:hover{
+     border-radius: 0 100% 0 0;
+}
+.box1:hover{
+    border-radius: 100% 0 0 0;
+}
+.box4:hover{
+    border-radius: 0 0 100% 0;
+}
+.box3:hover{
+    border-radius: 0 0 0 100%;
+}
+
+.main_bg{
+    width:500px;
+    height:300px;
+    margin:20px;
+    border:20px solid rgba(0,0,0,0);
+    padding:20px;
+    background:url("images/wzry.jpg"),url("images/yellow.jpg");
+    
+    /*background-size:contain;*/
+    background-origin:padding-box;
+    background-blend-mode: darken;
+}

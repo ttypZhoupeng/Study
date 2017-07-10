@@ -1,0 +1,195 @@
+html,body{
+    padding:0;
+    margin:0;
+}
+body{
+    width:100%;
+}
+/*container*/
+
+.container{
+    position: relative;
+    width:454px;
+    height:436px;
+    margin:100px auto;
+    /*overflow: hidden;*/
+}
+.head{
+    width: 450px;
+    height: 450px;
+    background:#00add0;
+    border-radius:50%;
+    position: relative;
+    border:2px solid #000;
+}
+.face{
+    width: 380px;
+    height: 295px;
+    background:#fff;
+    border-radius:50%;
+    position: absolute;
+    right:0;
+    bottom:25px;
+    left:0;
+    margin:0 auto;
+    border:2px solid #000;
+}
+.eyes{
+    width: 215px;
+    height: 125px;
+    position:absolute;
+    top:-60px;
+    left:0;
+    right:0;
+    margin:0 auto;
+}
+.eyes>div{
+    width:48%;
+    height:100%;
+    background:#fff;
+    float: left;
+    border-radius: 40%;
+    border:2px solid #000;
+    position: relative;
+}
+.eyes .eyeball{
+    width:25px;
+    height:25px;
+    background:#000;
+    border-radius: 50%;
+    position:absolute;
+    top:0;
+    bottom:0;
+    margin:auto 0;
+}
+.left_eye .eyeball{
+    right:10px;
+}
+.right_eye .eyeball{
+    left:10px;
+}
+.nose{
+    width: 50px;
+    height: 50px;
+    background:red;
+    right:0;
+    bottom:-40px;
+    left:0;
+    margin:0 auto;
+    display: block;
+    position:absolute;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+.nose_line{
+    width:0px;
+    height:130px;
+    border:2px solid #000;
+    position:absolute;
+    top:105px;
+    right:0;
+    left:0;
+    margin:0 auto;
+}
+.mouth{
+    width: 250px;
+    height:180px;
+    border-bottom:4px solid #000;
+    position: absolute;
+    top:59px;
+    right:0;
+    left:0;
+    margin:0 auto;
+    border-radius: 50%;
+}
+.moustache{
+    width: 90px;
+    height: 90px;
+    background:#fff;
+    position:absolute;
+    top:0;
+    bottom:0;
+    margin:auto 0;
+}
+.left_moustache{
+    left:25px;
+}
+.right_moustache{
+    right:25px;
+    
+}
+.moustache_item{
+    width:86px;
+    height:0;
+    border:1.5px solid #000;
+    margin:20px 0;
+}
+.item1{
+    transform: rotate(15deg);
+}
+.item2{
+    transform: rotate(-15deg);
+}
+.collar{
+    width:330px;
+    height: 35px;
+    background:#d02c00;
+    border:2px solid #000;
+    position: absolute;
+    right:0;
+    bottom:-31px;
+    left:0;
+    margin:0 auto 20px;
+    z-index: 10;
+}
+.collar_bg{
+    width:330px;
+    height:100px;
+    background:#fff;
+    position: absolute;
+    top:37px;
+}
+.bell{
+    width:60px;
+    height: 60px;
+    background:#dcda2d;
+    border:2px solid #000;
+    border-radius: 50%;
+    position:absolute;
+    top:13px;
+    right:0;
+    left:0;
+    margin:0 auto;
+    overflow: hidden;
+}
+.bell_line{
+    width:60px;
+    height:3px;
+    border:3px solid #000;
+    position: absolute;
+    top:10px;
+    right:0;
+    left:0;
+    margin: 0 auto;
+}
+.bell_hole{
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+    background:#000;
+    position:absolute;
+    right:0;
+    left:0;
+    bottom:15px;
+    margin:0 auto;
+}
+.bell_hole_line{
+    width:0;
+    height:15px;
+    position: absolute;
+    right:0;
+    bottom: 0;
+    left: 0;
+    margin:0 auto;
+    border:2px solid #000;
+}
