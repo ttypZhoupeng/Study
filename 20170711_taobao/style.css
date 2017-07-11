@@ -1,0 +1,387 @@
+html,body{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#f2f1ef;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding:0;
+}
+
+.clear_top::before,.clear_top:before{
+    content:"";
+    display: block;
+    overflow: hidden;
+}
+.clear_float::after,.clear_float:after{
+    content:"";
+    display: block;
+    clear:both;
+}
+
+/*top start*/
+#top{
+    width: 100%;
+    height: 40px;
+    background:#f5f5f5;
+}
+#top .top_content{
+    width:1190px;
+    height:40px;
+    line-height: 40px;
+    margin:0 auto;
+
+}
+#top .top_login{
+    height: 100%;
+    float:left;
+}
+#top .top_nav{
+    height:100%;
+    float:right;
+}
+#top a{
+    text-decoration: none;
+    font-size: 12px;
+    color: #6C6C6C;
+}
+#top a:hover{
+    color:red;
+}
+#top .top_login span{
+    color:#f22e00;
+    margin-right:5px;
+}
+#top .top_login a:nth-child(2){
+    margin-right:20px;
+}
+#top .top_nav li{
+    float:left;
+    margin-left:10px;
+}
+#top .top_nav i{
+    margin: 0 5px;
+    width:7px;
+    height:7px;
+    display: inline-block;
+    background:url("images/arrow_icon.png") no-repeat;
+}
+#top .top_nav li span{
+    height:12px;
+    line-height: 12px;
+    border-right:1.5px solid #e8e8e8;   
+    display: inline-block;
+    margin-left:15px;
+}
+#top .top_nav .shopping{
+    width:11px;
+    height:12px;
+    display: inline-block;
+    background-image: url("images/shopping_icon.png")
+}
+#top .top_nav .web{
+    width:7px;
+    height:8px;
+    display:inline-block;
+    background:url("images/web_icon.png") no-repeat;
+}
+#top .top_nav .collect{
+    width:11px;
+    height:11px;
+    display: inline-block;
+    background: url("images/collect_icon.png");
+}
+/*top end*/
+
+/*head start*/
+#head{
+    width: 100%;
+    height:165px;
+    background:white;
+    position: relative;
+    top:0;
+    left:0;
+}
+#head .head_content{
+    width:1190px;
+    height:135px;
+    margin: 0 auto;
+    padding-top:30px;
+}
+#head .taobao_logo{
+    width:200px;
+    float:left;
+}
+#head .taobao_logo img{
+    margin:0 auto;
+    display: block;
+}
+#head .mobile_taobao{
+    height:100%;
+    float:right;
+}
+#head .mobile_taobao .x{
+    width: 9px;
+    height: 9px;
+    position: relative;
+    display: inline-block;
+    border: 1px solid #eee;
+    left: 5px;
+    top: 3px;
+    border-right: none;
+    padding: 5px;
+}
+#head .mobile_taobao .x img{
+    margin:0;
+    position: absolute;
+}
+#head .two_bar_codes_box{
+    width:100px;
+    height: 110px;
+    border:1px solid #eee;
+    display: inline-block;
+    text-align: center;
+}
+#head .two_bar_codes_box span{
+    color:red;
+    font-size:12px;
+}
+#head .two_bar_codes_box img{
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin:0 auto;
+}
+#head .search{
+    width:660px;
+    height:90px;
+    position:absolute;
+    top:30px;
+    right:0;
+    left:0;
+    margin:0 auto;
+}
+#head .search_nav{
+    width:50px;
+    height:25px;
+    line-height: 25px;
+    text-align: center;
+    float:left;
+    cursor: pointer;
+    font-size: 14px;
+    
+}
+#head .search_nav span{
+    display: block;
+}
+#head .s_nav1{
+    color:white;
+    font-weight: 700;
+    background:#ff5400;
+}
+#head .s_nav2 span:hover,#head .s_nav3 span:hover{
+    background:#f9E6E6;
+    color:#c60000;
+}
+#head .s_nav2,#head .s_nav3{
+    color:#f40;
+}
+#head .search_content{
+    width:598px;
+    height:65px;
+    position: absolute;
+    top:25px;
+    left:0;
+}
+#head .search_main{
+    width:594px;
+    height:34px;
+    background:#ff5400;
+    padding:4px 0 4px 4px;
+    position: absolute;
+    left:0;
+}
+#head .search_main input{
+    padding: 6px 0;
+    text-indent: 10px;
+    height: 22px;
+    line-height: 22px;
+    width: 472px;
+    border: none;
+    outline: 0;
+    background: #FFF;
+    float: left;
+}
+#head .search_main button{
+    width:122px;
+    height: 42px;
+    background:#ff5400;
+    float:left;
+    border:none;
+    margin-top:-4px;
+    margin-right:-4px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFF;
+    font-family: "微软雅黑";
+    cursor: pointer;
+}
+#head .search_main .search_icon{
+   width: 14px;
+    height: 15px;
+    display: inline-block;
+    background: url("images/search_icon.png") no-repeat;
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+    top: 0;
+    margin: auto 0;
+}
+#head .search_main .camera{
+    width: 17px;
+    height: 14px;
+    display: inline-block;
+    background: url("images/camera_icon.png");
+    position: absolute;
+    right: 130px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+#head .search_main span{
+    width:30px;
+    margin-left:10px;
+    position: absolute;
+    top:0;
+    line-height: 22px;
+    right:-50px;
+    font-size:14px;
+    color:#000;
+    font-weight: normal;
+}
+#head .bottom_search_nav{
+    position: absolute;
+    left:0;
+}
+#head .bottom_search_nav ul{
+    width: 558px;
+    height: 23px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+}
+#head .bottom_search_nav li{
+    float:left;
+    margin-right:5px;
+}
+#head .bottom_search_nav li .hot{
+    color:#ff5400;
+}
+#head .s_nav2 .hot2{
+    color:#c60000;
+}
+#head .bottom_search_nav a{
+    font-size:12px;
+    color:#000;
+    text-decoration: none;
+    font-weight: normal;
+}
+#head .bottom_search_nav a:hover{
+    color:#ff5400;
+}
+#head .bottom_search_nav span{
+    display: inline-block;
+    float:right;
+}
+#head .s_nav2 .search_content{
+    display: none;
+    background:white;
+}
+#head .s_nav2 .search_main,#head .s_nav2 button{
+    background:#c40000;
+}
+#head .search_nav:hover .search_content{
+    display: block;
+}
+#head .head_bottom_nav{
+    width: 1190px;
+    height: 35px;
+    margin:0 auto;
+    position: absolute;
+    bottom:0;
+}
+.head_bottom_nav .market{
+    width: 190px;
+    height:35px;
+    line-height:35px;
+    background:#ff6304;
+    float:left;
+    margin-right:10px;
+}
+.head_bottom_nav .market span{
+    font-size:15px;
+    color:white;
+    font-weight: 700;
+    margin-left:10px;
+}
+.head_bottom_nav .market em{
+    width: 15px;
+    height: 13px;
+    float:right;
+    margin-top:10px;
+    margin-right:10px;
+    background:url("images/market_icon.png") no-repeat;
+}
+.head_bottom_nav .red_nav,.head_bottom_nav .black_nav{
+    height:30px;
+    line-height:30px;
+    float: left;
+    margin-right:10px;
+}
+.head_bottom_nav ul{
+    height: 23px;
+}
+.head_bottom_nav li:hover{
+    background:#f40;
+    border-radius: 15px;
+    background-image: linear-gradient(-45deg,#ff5000,#ff6f06);
+}
+.head_bottom_nav li:hover a{
+    color:white;
+}
+.head_bottom_nav .red_nav a{
+    color:#f40;
+}
+.head_bottom_nav li{
+    height:30px;
+    float:left;
+    padding:0 8px;
+    display: block;
+}
+.head_bottom_nav a{
+    text-decoration: none;
+    font-size:15px;
+    font-weight: 700;
+    color:#3C3C3C;
+}
+.head_bottom_nav .black_nav .line{
+    width:0;
+    height:16px;
+    display: inline-block;
+    float:left;
+    border:0.5px solid #eee;
+    margin:5px;
+}
+
+/*main strat*/
+#main{
+    width:1190px;
+    height:638px;
+    background:skyblue;
+    margin:0 auto;
+}
+
