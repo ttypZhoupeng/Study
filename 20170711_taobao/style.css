@@ -1,4 +1,4 @@
-html,body{
+html,body,ul,h1,h2,h3{
     margin:0;
     padding:0;
 }
@@ -8,10 +8,7 @@ body{
 }
 ul{
     list-style: none;
-    margin: 0;
-    padding:0;
 }
-
 .clear_top::before,.clear_top:before{
     content:"";
     display: block;
@@ -381,7 +378,311 @@ ul{
 #main{
     width:1190px;
     height:638px;
-    background:skyblue;
     margin:0 auto;
+}
+#main .banner{
+    width:900px;
+    height:638px;
+    float:left;
+}
+#main .right_login{
+    width: 290px;
+    height: 638px;
+    background:red;
+    float:right;
+}
+#main .banner_top{
+    width: 900px;
+    height: 555px;
+}
+#main .banner_top div{
+    float:left;
+}
+#main .banner_top .left_nav{
+    width: 190px;
+    height: 555px;
+    background:#ff6204;
+    position:relative;
+    top:0;
+    left:0;
+}
+#main .banner_top .focus{
+    width: 520px;
+    height: 511px;
+    background:skyblue;
+    margin: 10px;
+}
+#main .banner_top .right_ad{
+    width: 160px;
+    height: 511px;
+    background:blue;
+    margin-top:10px;
+}
+#main .banner_top .left_nav li{
+    height: 30px;
+    line-height: 30px;
+    padding:1px 10px;
+    font-size: 13px;
+    color:white;
+    font-weight: 700;
+}
+#main .banner_top .left_nav li:hover{
+    background:#f94a14;
+}
+
+/*扩展导航调试*/
+/*#main .banner .left_nav .clothes .extend_nav{
+    display: block;
+}*/
+/*扩展导航调试 结束*/
+
+/*左导航 扩展导航部分*/
+#main .banner_top .left_nav li .extend_nav:nth-child(2n){
+    background:skyblue;
+}
+#main .banner_top .left_nav li:hover .extend_nav{
+    display: block;
+}
+#main .banner .left_nav li .extend_nav{
+    width: 707px;
+    height: 551px;
+    background:#fff;
+    position: absolute;
+    left:188px;
+    top:0;
+    border:2px solid #f94a14;
+    display: none;
+}
+
+#main .banner .left_nav .extend_nav .left_en{
+    width: 455px;
+    height: 551px;
+    background:white;
+    float:left;
+}
+/*左导航 扩展导航 右边部分开始*/
+#main .banner .left_nav .extend_nav .right_en{
+    width: 252px;
+    height: 551px;
+    background:#f4f4f4; 
+}
+#main .banner .left_nav .extend_nav .right_en h3{
+    width:95px;
+    margin:25px auto 0;
+    line-height:0;
+    height:20px;
+    display: block;
+    color:#000;
+}
+#main .banner .left_nav .extend_nav .right_en h3 span{
+    display: inline-block;
+    margin-top:7px;
+}
+#main .banner .left_nav .extend_nav .right_en .like{
+    width: 20px;
+    height: 17px;
+    background:url("images/like_icon.png");
+    margin-right:5px;
+    display: inline-block;
+    float:left;
+}
+#main .banner .left_nav .extend_nav .right_en .desc{
+    width:100%;
+    text-align: center;
+    margin-top: 4px;
+    line-height: 18px;
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    font-weight: 500;
+    margin: 0 auto;
+}
+#main .banner .left_nav .extend_nav .right_en .your_like{
+    width:232px;
+    height:112px;
+    margin:20px 10px;
+}
+#main .banner .left_nav .extend_nav .right_en .your_like b{
+    width:112px;
+    height:112px;
+    background:url("images/test.jpg");
+    position:relative;
+    top:0;
+    left:0;
+    
+}
+#main .banner .left_nav .extend_nav .right_en .your_like span{
+    width: 104px;
+    height: 25px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 4px;
+    overflow: hidden;
+    text-align: center;
+    background-color: rgba(255,255,255,.8);
+    position: absolute;
+    bottom:0;
+    left:0;
+    color:#000;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+#main .banner .left_nav .extend_nav .right_en .your_like b:hover span{
+    background:white;
+    color:red;
+}
+#main .banner .left_nav .extend_nav .right_en .your_like .left_pic{
+    float:left;
+}
+#main .banner .left_nav .extend_nav .right_en .your_like .right_pic{
+    float:right;
+}
+/*左导航 扩展导航 右边部分结束*/
+
+
+#main .banner .left_nav .left_en .detail{
+    width: 430px;
+    height: 140px;
+    margin:30px 10px 0;
+}
+#main .banner .left_nav .left_en .detail_title{
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid #e0e0e0;
+}
+#main .banner .left_nav .left_en .detail_title_left{
+    float: left;
+}
+#main .banner .left_nav .left_en .detail_title_left b{
+    width: 30px;
+    height: 30px;
+    float:left;
+    margin-right:10px;
+}
+#main .banner .left_nav .left_en .detail_title_left .woman{
+    background:url("images/woman.jpg");
+    background-size:cover; 
+}
+#main .banner .left_nav .left_en .detail_title_left .man{
+    background:url("images/man.jpg");
+    background-size:cover; 
+}
+#main .banner .left_nav .left_en .detail_title_left .bra{
+    background:url("images/bra.jpg");
+    background-size:cover; 
+}
+#main .banner .left_nav .left_en .detail_title_left span:hover,#main .banner .left_nav .left_en .more span:hover{
+    color:#ff4400;
+    
+}
+#main .banner .left_nav .left_en .more{
+    float:right;
+}
+#main .banner .left_nav .left_en .more a{
+    font-size: 12px;
+    color:#3C3C3C;
+    font-style:normal;
+    text-decoration: none;
+    font-weight: 500;
+}
+#main .banner .left_nav .left_en .detail_title_left a{
+    font-size: 16px;
+    color:#3C3C3C;
+    font-style:normal;
+    text-decoration: none;
+}
+#main .banner .left_nav .left_en .detail_content{
+    padding:10px 10px 0 0;
+}
+#main .banner .left_nav .left_en .detail_content a{
+    display: inline-block;
+    margin-right: 12px;
+    white-space: nowrap;
+    font-size:12px;
+    color:#000;
+    font-weight: 500;
+    line-height: 25px;
+    float: left;
+}
+#main .banner .left_nav .left_en .detail_content .hot{
+    color:red;
+}
+
+/*左导航 扩展导航结束*/
+
+
+#main .banner_top .left_nav li a{
+    margin:0 3px;
+    font-size: 13px;
+    color:white;
+    font-weight: 700;
+    text-decoration: none;
+}
+#main .banner_top .left_nav li a:hover{
+    text-decoration: underline;
+}
+#main .banner_top .left_nav li i{
+    width: 6px;
+    height: 9px;
+    display: block;
+    float:right;
+    margin-top:11px;
+    margin-right:10px;
+    background:url("images/arrow_right.png");
+}
+#main .banner_top .left_nav li em{
+    width: 15px;
+    height: 15px;
+    float:left;
+    margin-right:2px;
+    margin-top: 8px;
+}
+#main .banner_top .left_nav .clothes em{
+    background:url("images/clothes_icon.png") no-repeat;   
+}
+#main .banner_top .left_nav .shoes em{
+    background:url("images/shoes_icon.png") no-repeat;
+}
+#main .banner_top .left_nav .toy em{
+    background:url("images/toy_icon.png") no-repeat;
+}
+#main .banner_top .left_nav .phone em{
+    background:url("images/phone_icon.png") no-repeat;
+}
+#main .banner_top .left_nav .dressing em{
+    background:url("images/dressing_icon.png") no-repeat;
+}
+#main .banner_top .left_nav .watch em{
+    background:url("images/watch_icon.png") no-repeat;
+}
+#main .banner_top .left_nav .sport em{
+    background:url("images/sport_icon.png") no-repeat;
+}
+#main .banner_top .left_nav .game em{
+    background:url("images/game_icon.png") no-repeat;
+}
+#main .banner_top .left_nav .food em{
+    background:url("images/food_icon.png") no-repeat;
+}
+#main .banner_top .left_nav .flower em{
+    background:url("images/flower_icon.png") no-repeat;
+}
+#main .banner_top .left_nav .house em{
+    background:url("images/house_icon.png") no-repeat;
+}
+#main .banner_top .left_nav .furniture em{
+    background:url("images/furniture_icon.png") no-repeat;
+}
+#main .banner_top .left_nav .car em{
+    background:url("images/car_icon.png") no-repeat;
+}
+#main .banner_top .left_nav .office em{
+    background:url("images/office_icon.png") no-repeat;
+}
+#main .banner_top .left_nav .dishware em{
+    background:url("images/dishware_icon.png") no-repeat;
+}
+#main .banner_top .left_nav .study em{
+    background:url("images/study_icon.png") no-repeat;
 }
 
