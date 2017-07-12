@@ -607,7 +607,6 @@ ul{
 #main .banner .left_nav .left_en .detail_content .hot{
     color:red;
 }
-
 /*左导航 扩展导航结束*/
 
 
@@ -686,3 +685,7 @@ ul{
     background:url("images/study_icon.png") no-repeat;
 }
 
+/*banner focus start*/
+
+/*top_focus start*/
+#main .banner_top .top_focus
