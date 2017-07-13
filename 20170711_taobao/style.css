@@ -966,5 +966,19 @@ ul{
     margin:2px auto;
 }
 #main .right_login .notice_nav{
+    float:left;
+    position:relative;
+    margin:10px 7px 0;
+}
+#main .right_login .notice_nav span{
+    font-size:14px;
+    padding:2px 8px;
+}
+#main .right_login .notice_nav span:hover{
+    font-weight: 700;
+    line-height: 22px;
+    border-bottom:2px solid #f40;
+}
+#main .right_login .notice_nav .content{
     
 }
