@@ -1,4 +1,4 @@
-html,body,ul,h1,h2,h3{
+html,body,ul,h1,h2,h3,h4,h5{
     margin:0;
     padding:0;
 }
@@ -377,57 +377,145 @@ ul{
 /*main strat*/
 #main{
     width:1190px;
-    height:638px;
     margin:0 auto;
 }
 #main .banner{
     width:900px;
-    height:638px;
     float:left;
 }
-#main .right_login{
-    width: 290px;
-    height: 638px;
-    background:red;
-    float:right;
-}
+
 #main .banner_top{
     width: 900px;
-    height: 555px;
+    height: 520px;
 }
 #main .banner_top div{
     float:left;
 }
+
+
+/*banner focus start*/
+
+
+
+#main .banner_top .focus{
+    width: 520px;
+    height: 510px;
+    margin: 10px;
+}
+/*顶部焦点图 start*/
+#main .banner_top .top_focus{
+    width: 520px;
+    height: 280px;
+}
+/*顶部焦点图 end*/
+
+/*b底部焦点图 start*/
+#main .banner_top .bottom_focus {
+    width: 520px;
+    height: 230px;
+    
+}
+#main .banner_top .bottom_focus_title{
+    width: 520px;
+    height:26px;
+    border-bottom:2px solid #c12c26;
+}
+#main .banner_top .bottom_focus_title h2{
+    display: inline-block;
+    height: 26px;
+    font-weight: 700;
+    font-size: 16px;
+    color:#3c3c3c;
+    position: relative;
+    top:7px;
+    vertical-align: bottom;
+    z-index:-10;
+}
+#main .banner_top .bottom_focus_title h2 em{
+    width: 49px;
+    height: 17px;
+    display: inline-block;
+    background:url("images/tianmao.gif");
+    margin-bottom:-3px;
+}
+#main .banner_top .bottom_focus_title .tianmao_ad{
+    font-size: 12px;
+    color: #666;
+    margin-left: 6px;
+}
+#main .banner_top .bottom_focus_title strong{
+    float:right;
+    margin-top:9px;
+    font-size: 12px;
+    font-weight: 400;
+}
+#main .banner_top .bottom_focus_title strong span{
+    color:red;
+}
+#main .banner_top .bottom_focus_content{
+    width:520px;
+    height:200px;
+}
+#main .banner_top .bottom_focus_content img{
+    width: 172px;
+    height: 99px;
+    float:left;
+    border-right:1px solid #f2f1ef;
+    border-bottom:1px solid #f2f1ef;
+}
+/*底部焦点图 end*/
+
+/*banner focus end*/
+
+/*banner right_ad start*/
+#main .banner_top .right_ad{
+    width: 160px;
+    height: 511px;
+    margin-top:10px;
+}
+#main .banner_top .right_ad .top_ad{
+    width: 160px;
+    height: 280px;
+}
+#main .banner_top .right_ad .today_hot{
+    width: 160px;
+    height:18px;
+    font-size: 12px;
+    color: #666;
+    margin-top:10px;
+}
+#main .banner_top .right_ad .bottom_ad{
+    width: 160px;
+    height: 200px;
+}
+/*banner right_ad end*/
+
+/*left_nav start*/
 #main .banner_top .left_nav{
     width: 190px;
-    height: 555px;
+    height: 520px;
     background:#ff6204;
     position:relative;
     top:0;
     left:0;
 }
-#main .banner_top .focus{
-    width: 520px;
-    height: 511px;
-    background:skyblue;
-    margin: 10px;
-}
-#main .banner_top .right_ad{
-    width: 160px;
-    height: 511px;
-    background:blue;
-    margin-top:10px;
-}
 #main .banner_top .left_nav li{
     height: 30px;
     line-height: 30px;
-    padding:1px 10px;
+    padding:0px 10px;
     font-size: 13px;
     color:white;
     font-weight: 700;
 }
 #main .banner_top .left_nav li:hover{
     background:#f94a14;
+}
+#main .banner_top .left_nav .bottom_ad{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width:190px;
+    height: 40px;
 }
 
 /*扩展导航调试*/
@@ -445,7 +533,7 @@ ul{
 }
 #main .banner .left_nav li .extend_nav{
     width: 707px;
-    height: 551px;
+    height: 516px;
     background:#fff;
     position: absolute;
     left:188px;
@@ -456,14 +544,14 @@ ul{
 
 #main .banner .left_nav .extend_nav .left_en{
     width: 455px;
-    height: 551px;
+    height: 516px;
     background:white;
     float:left;
 }
 /*左导航 扩展导航 右边部分开始*/
 #main .banner .left_nav .extend_nav .right_en{
     width: 252px;
-    height: 551px;
+    height: 516px;
     background:#f4f4f4; 
 }
 #main .banner .left_nav .extend_nav .right_en h3{
@@ -500,7 +588,7 @@ ul{
 #main .banner .left_nav .extend_nav .right_en .your_like{
     width:232px;
     height:112px;
-    margin:20px 10px;
+    margin:17px 10px;
 }
 #main .banner .left_nav .extend_nav .right_en .your_like b{
     width:112px;
@@ -543,7 +631,7 @@ ul{
 #main .banner .left_nav .left_en .detail{
     width: 430px;
     height: 140px;
-    margin:30px 10px 0;
+    margin:20px 10px 0;
 }
 #main .banner .left_nav .left_en .detail_title{
     width: 100%;
@@ -685,7 +773,198 @@ ul{
     background:url("images/study_icon.png") no-repeat;
 }
 
-/*banner focus start*/
 
-/*top_focus start*/
-#main .banner_top .top_focus
+/*recommend start*/
+#main .recommend{
+    width: 890px;
+    height: 80px;
+    background:#fff;
+    margin-top:10px;
+}
+#main .recommend_item{
+    width: 160px;
+    height: 80px;
+    float: left;
+    margin-left:15px;
+    position: relative;
+}
+#main .recommend .ri1{
+    color:#a46f57;
+}
+#main .recommend .ri1:hover img{
+    border-color:#a46f57;
+}
+#main .recommend .ri2{
+    color:#67c38a;
+}
+#main .recommend .ri2:hover img{
+    border-color:#67c38a;
+}
+#main .recommend .ri3{
+    color:#5aa5f5;
+}
+#main .recommend .ri3:hover img{
+    border-color:#5aa5f5;
+}
+#main .recommend .ri4{
+    color:#876bc1;
+}
+#main .recommend .ri4:hover img{
+    border-color:#876bc1;
+}
+#main .recommend .ri5{
+    color:#f54650;
+}
+#main .recommend .ri5:hover img{
+    border-color:#f54650;
+}
+#main .recommend .recommend_pic{
+    width: 60px;
+    height: 60px;
+    border:1px solid #efeeec;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom:0;
+    margin:auto 0;
+}
+#main .recommend .recommend_desc{
+    width: 75px;
+    height:80px;
+    margin-left:70px;
+}
+#main .recommend .recommend_desc h1{
+    
+    height:20px;
+    font-size:16px;
+    margin-top:6px;
+}
+#main .recommend .recommend_desc span{
+    font-size:12px;
+    height: 16px;
+    line-height: 16px;
+}
+#main .recommend .recommend_desc .popularity{
+    width: 86px;
+}
+#main .recommend .recommend_desc em{
+    width: 13px;
+    height: 14px;
+    background:url("images/popularity.png");
+    display: inline-block;
+}
+#main .recommend .recommend_desc h5{
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 400;
+    color:#999;
+}
+/*recommend end*/
+
+/*bottom_often start*/
+#main .bottom_often{
+    width: 890px;
+    height: 30px;
+    position: relative;
+}
+#main .often_ramble{
+    width:220px;
+    height:20px;
+    margin:10px auto 0;
+    background:url("images/often_ramble.jpg")
+}
+#main .bottom_often .more{
+    border-radius: 10px;
+    background: #fff;
+    line-height: 20px;
+    height: 20px;
+    padding: 0 9px 0 14px;
+    position: absolute;
+    right: 12px;
+    bottom: 6px;
+    font-weight: 400;
+    font-size: 12px;
+}
+#main .bottom_often .more:hover{
+    background:#f40;
+    color:white;
+}
+/*bottom_often end*/
+
+/*right_login start*/
+#main .right_login{
+    width: 290px;
+    height: 640px;
+    float:right;
+    margin-top: 10px;
+}
+#main .right_login .top_login{
+    width: 290px;
+    height: 168px;
+    background:url("images/top_login_bg.jpg");
+    background-color:#fff;
+}
+#main .right_login .top_login a{
+    text-decoration: none;
+}
+#main .right_login .top_login .avatar_box{
+    width: 190px;
+    height: 100px;
+    margin:15px auto 0;
+    text-align: center;
+    font-size:12px;
+}
+#main .right_login .top_login .avatar_box .hello{
+    line-height: 24px;
+}
+#main .right_login .top_login .avatar_box .avatar{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: url("images/avatar.jpg");
+    margin:0 auto;
+    background-size:cover;
+}
+#main .right_login .top_login .avatar_box .vip em{
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background:url("images/vip_icon.png");
+    background-size:cover;
+    vertical-align: middle;
+}
+#main .right_login .top_login .avatar_box .vip span{
+    color:#f40;
+    cursor: pointer;
+}
+#main .right_login .top_login .login_button{
+    width:270px;
+    height:25px;
+    margin:10px auto;
+}
+#main .right_login .top_login .login_button_item{
+    width: 80px;
+    height: 25px;
+    line-height: 25px;
+    background:#ff5601;
+    font-size:16px;
+    font-weight: 700;
+    text-align: center;
+    margin:0 5px;
+    float:left;
+    
+}
+#main .right_login .top_login .login_button_item a{
+    color:#fff;
+}
+
+#main .right_login .notice{
+    width: 290px;
+    height: 110px;
+    background:#fff;
+    margin:2px auto;
+}
+#main .right_login .notice_nav{
+    
+}
