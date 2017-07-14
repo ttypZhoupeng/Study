@@ -392,7 +392,6 @@ ul{
     float:left;
 }
 
-
 /*banner focus start*/
 
 
@@ -959,26 +958,181 @@ ul{
     color:#fff;
 }
 
+/*公告开始  */
 #main .right_login .notice{
     width: 290px;
     height: 110px;
     background:#fff;
-    margin:2px auto;
+    margin:2px auto 1px;
+    position:relative;
 }
 #main .right_login .notice_nav{
     float:left;
-    position:relative;
+    
     margin:10px 7px 0;
 }
-#main .right_login .notice_nav span{
+#main .right_login .notice_nav .nav_item{
     font-size:14px;
     padding:2px 8px;
 }
-#main .right_login .notice_nav span:hover{
+#main .right_login .notice_nav .nav_item:hover{
     font-weight: 700;
     line-height: 22px;
     border-bottom:2px solid #f40;
 }
 #main .right_login .notice_nav .content{
+    width:270px;
+    height:60px;
+    position: absolute;
+    top:35px;
+    left: 0;
+    padding:15px 10px 0;
+    background:#fff;
+}
+#main .right_login .notice_nav .content a{
+    float:left;
+    font-size: 12px;
+    text-decoration: none;
+    color:#000;
+    display: block;
+    height:25px;
+    line-height:25px;
+}
+#main .right_login .notice_nav .content span,#main .right_login .notice_nav .content a:hover{
+    color:#f40;
+}
+#main .right_login .n_nav1 .content a:nth-child(2){
+    margin-right:15px;
+}
+#main .right_login .notice_nav:not(:first-child) .content{
+    display: none;
+}
+ #main .right_login .notice_nav:not(:first-child) .content a:nth-child(2n-1){
+    margin-right:15px;
+} 
+#main .right_login .notice_nav:hover  .content{
+    display: block;
+}
+/*公告结束  */
+
+/*图标导航开始  */
+#main .right_login .icon_nav{
+    width: 290px;
+    height: 216px;
+}
+#main .right_login .icon_nav .icon_item{
+    width: 50px;
+    height: 50px;
+    background:#fff;
+    float:left;
+    border:1px solid #f2f1ef;
+    padding:10px;
+    text-align: center;
+}
+#main .right_login .icon_nav .icon_item em{
+    display: block;
+    width:25px;
+    height: 25px;
+    margin:0 auto;
     
 }
+#main .right_login .icon_nav .icon_item .huafei{
+    background:url("images/huafei.jpg");
+    background-size: cover;
+}
+#main .right_login .icon_nav .icon_item .youxi{
+    background:url("images/youxi.jpg");
+    background-size: cover;
+}
+#main .right_login .icon_nav .icon_item .lvxing{
+    background:url("images/lvxing.jpg");
+    background-size: cover;
+}
+#main .right_login .icon_nav .icon_item .baoxian{
+    background:url("images/baoxian.jpg");
+    background-size: cover;
+}
+#main .right_login .icon_nav .icon_item .caipiao{
+    background:url("images/caipiao.jpg");
+    background-size: cover;
+}
+#main .right_login .icon_nav .icon_item .dianying{
+    background:url("images/dianying.jpg");
+    background-size: cover;
+}
+#main .right_login .icon_nav .icon_item .waimai{
+    background:url("images/waimai.jpg");
+    background-size: cover;
+}
+#main .right_login .icon_nav .icon_item .licai{
+    background:url("images/licai.jpg");
+    background-size: cover;
+}
+#main .right_login .icon_nav .icon_item .zhaofuwu{
+    background:url("images/zhaofuwu.jpg");
+    background-size: cover;
+}
+#main .right_login .icon_nav .icon_item .yinyue{
+    background:url("images/yinyue.jpg");
+    background-size: cover;
+}
+#main .right_login .icon_nav .icon_item .shuidianmei{
+    background:url("images/shuidianmei.jpg");
+    background-size: cover;
+}
+#main .right_login .icon_nav .icon_item .huoche{
+    background:url("images/huoche.png");
+    background-size: cover;
+}
+#main .right_login .icon_nav .icon_item span{
+    font-size: 14px;
+    line-height: 33px;
+}
+/*图标导航结束  */
+
+/*ali_app 开始  */
+#main .right_login .ali_app{
+    width: 270px;
+    height: 120px;
+    background:white;
+    margin-top:1px;
+    padding:10px;
+    font-size:14px;
+}
+#main .right_login .ali_title{
+    width:270px;
+}
+#main .right_login .ali_app span{
+    float:right;
+}
+#main .right_login .ali_app_list{
+    width:270px;
+}
+#main .right_login .ali_app_list img{
+    width:32px;
+    height:32px;
+    float:left;
+    margin:11px;
+}
+/*right_login end*/
+
+/*左边内容大块 开始  */
+
+#main .left_content{
+    width: 890px;
+    background:skyblue;
+    margin:10px 10px 0 0 ;
+}
+/*my_often start  */
+#main .left_content .my_often{
+    
+}
+#main .left_content .my_often .my_often_item{
+    width:362px;
+    height: 440px;
+    background:
+}
+/*my_often end  */
+/*左边内容大块 结束  */
+/*main 结束  */
+
