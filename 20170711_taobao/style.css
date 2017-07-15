@@ -381,6 +381,7 @@ ul{
 }
 #main .banner{
     width:900px;
+    height:650px;
     float:left;
 }
 
@@ -1120,17 +1121,333 @@ ul{
 
 #main .left_content{
     width: 890px;
-    background:skyblue;
-    margin:10px 10px 0 0 ;
+    margin:0 10px 0 0 ;
 }
 /*my_often start  */
 #main .left_content .my_often{
-    
+    float: left;
 }
 #main .left_content .my_often .my_often_item{
-    width:362px;
-    height: 440px;
-    background:
+    float:left;
+    width:440px;
+    height: 365px;
+    margin-top:10px;
+}
+#main .left_content .my_often .my_often_item:nth-child(2n+1){
+    margin-right:10px;
+}
+#main .my_often_item .left_bar{
+    float:left;
+    width: 100px;
+    height: 100%;
+}
+#main .my_often_item .right_content{
+    float:left;
+    width: 338px;
+    height: 361px;
+    background:#f1f1f1;
+}
+#main .moi1 .right_content{
+    border:2px solid #0088c9;
+    border-left:none;
+}
+#main .moi2 .right_content{
+    border:2px solid #fde03d;
+    border-left:none;
+}
+#main .moi3 .right_content{
+    border:2px solid #fe6fa6;
+    border-left:none;
+}
+#main .moi4 .right_content{
+    border:2px solid #e44346;
+    border-left:none;
+}
+#main .my_often_item .top_pic{
+    width: 100px;
+    height: 100px;
+}
+#main .moi1 .top_pic{
+    background:url("images/moi1.png");
+    background-size: cover;
+}
+#main .moi2 .top_pic{
+    background:url("images/moi2.png");
+    background-size: cover;
+}
+#main .moi3 .top_pic{
+    background:url("images/moi3.jpg");
+    background-size: cover;
+}
+#main .moi4 .top_pic{
+    background:url("images/moi4.jpg");
+    background-size: cover;
+}
+#main .my_often_item .bottom_hot{
+    width: 84px;
+    height: 245px;
+    padding:10px 8px;
+}
+#main .moi1 .bottom_hot{
+    background:#406cc0;
+}
+#main .moi2 .bottom_hot{
+    background:#e9a326;
+}
+#main .moi3 .bottom_hot{
+    background:#fe6fa6;
+}
+#main .moi4 .bottom_hot{
+    background:#E44346;
+}
+#main .my_often_item .bottom_hot h4{
+    font-size: 14px;
+    color:white;
+}
+#main .my_often_item .hot_content{
+    width: 100%;
+    height: 220px;
+    margin-top:5px;
+}
+#main .my_often_item .hot_content a{
+    overflow: hidden;
+    float: left;
+    background-color: rgba(255,255,255,.2);
+    display: inline-block;
+    height: 19px;
+    line-height: 19px;
+    padding: 0 7px;
+    margin-bottom: 3px;
+    margin-right: 3px;
+    color: #fff;
+    font-size:10px;
+    text-decoration: none;
+}
+#main .my_often_item .hot_content img{
+    margin-left:2px;
+}
+#main .my_often_item .hot_content a:hover{
+    background:white;
+    color:red;
+}
+
+
+#main .my_often_item .top_show{
+    width: 338px;
+    height: 200px;
+    margin-bottom:1px;
+}
+#main .my_often_item .bottom_show{
+    width: 338px;
+    height: 160px;
+}
+#main .my_often_item .bottom_show .left_item{
+    float:left;
+    padding:10px;
+    margin-right:1px;
+    background:white;
+}
+#main .my_often_item .bottom_show .left_item em{
+    display: block;
+    width: 181px;
+    height: 140px;
+}
+#main .my_often_item .bottom_show .right_item1{
+    position: relative;
+    float:left;
+    width:116px;
+    height:59px;
+    padding:10px;
+    font-size: 14px;
+    background:white;
+}
+#main .my_often_item .bottom_show .right_item1 em{
+    display: block;
+    width:96px;
+    height:39px;
+    padding:10px;
+
+}
+#main .moi3 .bottom_show .right_item em,#main .moi4 .bottom_show .right_item em{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    padding:0;
+}
+#main .my_often_item .top_show .left_item,#main .my_often_item .top_show .center_item{
+    float: left;
+    width: 100px;
+    height: 100%;
+    margin: 0 1px 1px 0;
+    background: white;
+}
+#main .my_often_item .top_show .left_item1{
+    width:100px;
+    height: 50%;
+}
+#main .my_often_item .top_show .left_item1 em{
+    display: block;
+    width:80px;
+    height: 80px;
+    margin:10px;
+    background:blue;
+}
+#main .my_often_item .top_show .left_item1:first-child{
+    border:1px solid #f1f1f1;
+}
+#main .my_often_item .top_show .right_item{
+    float:left;
+    width:136px;
+    height: 100%;
+    background:white;
+}
+#main .my_often_item .top_show .right_item1{
+    position: relative;
+    width: 116px;
+    height: 61px;
+    padding:20px 10px;
+    font-size:14px;
+}
+#main .my_often_item .top_show .right_item h4{
+    color:#3c3c3c;
+}
+#main .my_often_item .top_show .right_item1 span{
+    font-weight: 200;
+}
+#main .my_often_item .top_show .right_item1 em{
+    position:absolute;
+    right:5px;
+    bottom:10px;
+    display: block;
+    width: 60px;
+    height: 60px;
+    background:blue;
+}
+#main .moi1 .top_show .ri1 em{
+    background:url("images/moi1_top3.jpg");
+    background-size:cover;
+}
+#main .moi1 .top_show .ri2 em{
+    background:url("images/moi1_top4.jpg");
+    background-size:cover;
+}
+#main .moi2 .top_show .ri1 em{
+    background:url("images/moi2_top3.png");
+    background-size:cover;
+}
+#main .moi2 .top_show .ri2 em{
+    background:url("images/moi2_top4.png");
+    background-size:cover;
+}
+#main .my_often_item .top_show .right_item1:first-child,#main .my_often_item .bottom_show .right_item1:first-child{
+    border-bottom:1px solid #f1f1f1;
+}
+
+
+#main .moi1 .top_show .left_item{
+    background:url("images/moi1_top1.png");
+    background-size: cover;
+}
+#main .moi1 .top_show .center_item{
+    background:url("images/moi1_top2.jpg");
+    background-size: cover;
+}
+#main .moi2 .top_show .left_item{
+    background:url("images/moi2_top1.png");
+    background-size: cover;
+}
+#main .moi2 .top_show .center_item{
+    background:url("images/moi2_top2.jpg");
+    background-size: cover;
+}
+#main .moi3 .top_show .center_item{
+    background:url("images/moi3_top2.jpg");
+    background-size: cover;
+}
+#main .moi3  .top_show .right_item{
+    background:url("images/moi3_top3.jpg");
+    background-size: cover;
+}
+#main .moi4 .top_show .center_item{
+    background:url("images/moi4_top2.jpg");
+    background-size: cover;
+}
+#main .moi4 .top_show .right_item{
+    background:url("images/moi4_top3.jpg");
+    background-size: cover;
+}
+
+#main .moi1 .bottom_show .left_item em{
+    background:url("images/moi1_bottom1.png") no-repeat;
+    background-size: cover;
+}
+
+#main .moi1 .bottom_show .ri1 em{
+    background:url("images/moi1_bottom2.jpg") no-repeat;
+    background-size: cover;
+}
+#main .moi1 .bottom_show .ri2 em{
+    background:url("images/moi1_bottom3.jpg") no-repeat;
+    background-size: cover;
+}
+
+#main .moi2 .bottom_show .left_item em{
+    background:url("images/moi2_bottom1.jpg") no-repeat;
+    background-size: cover;
+}
+
+#main .moi2 .bottom_show .ri1 em{
+    background:url("images/moi2_bottom2.jpg") no-repeat;
+    background-size: cover;
+}
+#main .moi2 .bottom_show .ri2 em{
+    background:url("images/moi2_bottom3.png") no-repeat;
+    background-size: cover;
+}
+
+#main .moi3 .bottom_show .left_item em{
+    background:url("images/moi3_bottom1.png") no-repeat;
+    background-size: cover;
+}
+
+#main .moi4 .bottom_show .left_item em{
+    background:url("images/moi4_bottom1.png") no-repeat;
+    background-size: cover;
+}
+
+#main .moi3 .top_show  .li1 em{
+    background:url("images/moi3_top_left1.jpg") no-repeat;
+    background-size: cover;
+}
+#main .moi3 .top_show  .li2 em{
+    background:url("images/moi3_top_left2.jpg") no-repeat;
+    background-size: cover;
+}
+#main .moi4 .top_show  .li1 em{
+    background:url("images/moi4_top_left1.jpg") no-repeat;
+    background-size: cover;
+}
+#main .moi4 .top_show  .li2 em{
+    background:url("images/moi4_top_left2.jpg") no-repeat;
+    background-size: cover;
+}
+#main .moi3 .bottom_show .ri1 em{
+    background:url("images/moi3_right1.jpg") no-repeat;
+    background-size: cover;
+}
+#main .moi3 .bottom_show .ri2 em{
+    background:url("images/moi3_right2.jpg") no-repeat;
+    background-size: cover;
+}
+#main .moi4 .bottom_show .ri1 em{
+    background:url("images/moi4_right1.jpg") no-repeat;
+    background-size: cover;
+}
+#main .moi4 .bottom_show .ri2 em{
+    background:url("images/moi4_right2.jpg") no-repeat;
+    background-size: cover;
 }
 /*my_often end  */
 /*左边内容大块 结束  */
