@@ -182,18 +182,19 @@ h2{
     line-height:20px;
     margin-top:20px;
 }
-#container .content_item2 .button{
+#container .content_item2 .button,#container .customer .button{
     width:65px;
     height:20px;
     line-height:20px;
+    padding-left:5px;
     color:white;
     background:#64b9fa;
-    padding-left:5px;
+    border-radius: 5px;
     font-size:12px;
     float:right;
     margin-top:30px;
 }
-#container .content_item2 .button span{
+#container .content_item2 .button span,#container .customer .button span{
     margin-left:5px;
 }
 #container .new{
@@ -272,7 +273,6 @@ h2{
 #container .customer{
     width:757px;
     margin:50px auto 0;
-    background:skyblue;
 }
 #container .customer_content{
     width:100%;
@@ -283,4 +283,41 @@ h2{
 }
 #container .customer .customer_item:nth-child(5n){
     margin-right:0;
+}
+#container .customer .button{
+    margin-right:45px;
+}
+#container .customer .friendly_link{
+    margin-top:10px;
+}
+#container .customer .friendly_link>*{
+    float:left;
+}
+#container .customer .friendly_link img{
+    margin-top:3px;
+}
+#container .customer .friendly_link span{
+    margin-right:20px;
+    color:red;
+}
+#container .customer .friendly_link a{
+    text-decoration: none;
+    color:black;
+}
+#container .customer .friendly_link a:hover{
+    text-decoration: underline;
+}
+#container .customer .friendly_link ul>*{
+    float:left;
+}
+#container .customer .friendly_link li{
+    margin:0 10px;
+    font-size:12px;
+}
+#container .customer .friendly_link i{
+    display: block;
+    height:12px;
+    margin-top:3px;
+    border-right:1px solid;
+    
 }
