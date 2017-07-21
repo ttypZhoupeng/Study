@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            // 5位数水仙花数  10000-99999
+            for(var i = 10000;i<=99999;i++){
+
+                //拆分
+                var gewei = i % 10;
+                var shiwei = parseInt(i/10) % 10;
+                var baiwei = parseInt(i/100) % 10;
+                var qianwei = parseInt(i/1000) % 10;
+                var wanwei = parseInt(i/10000);
+
+                var a = Math.pow(gewei,5);
+                var b = Math.pow(shiwei,5);
+                var c = Math.pow(baiwei,5);
+                var d = Math.pow(qianwei,5);
+                var e = Math.pow(wanwei,5);
+
+                if( a + b + c + d + e == i){
+                    console.log(i);
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

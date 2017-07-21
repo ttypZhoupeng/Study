@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            var age = parseInt(prompt("请输入您的年龄！"));
+
+            if(age>=18 && age<=70){
+                alert("欢迎您~您符合学驾照条件！");
+
+                // 扩展嵌套if练习
+                var qian = parseInt(prompt("请输入您的学车费用！"));
+                if(qian>5000){
+                    alert("推荐您去驾校a");
+                }else{
+                    alert("推荐您去驾校b");
+                }
+
+            }else{
+                alert("您不符合学驾照条件！");
+            }
+
+            alert("欢迎您的到来~");
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

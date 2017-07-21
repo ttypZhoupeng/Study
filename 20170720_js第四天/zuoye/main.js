@@ -1,21 +1,21 @@
 // 题目一
-function jiecheng(n){
-    var s = 1;
-    for(var i=1;i<=n;i++){
-        s *= i;
-    }
-    return s;
-}
+// function jiecheng(n){
+//     var s = 1;
+//     for(var i=1;i<=n;i++){
+//         s *= i;
+//     }
+//     return s;
+// }
 
-function jiechengAdd(m){
-    var sum = 0;
-    for(var i = 1;i<=m;i++){
-        sum += jiecheng(i);
-    }
-    return sum;
-}
+// function jiechengAdd(m){
+//     var sum = 0;
+//     for(var i = 1;i<=m;i++){
+//         sum += jiecheng(i);
+//     }
+//     return sum;
+// }
 
-console.log(jiechengAdd(10));
+// console.log(jiechengAdd(10));
 
 
 // 题目二
@@ -42,7 +42,7 @@ console.log(jiechengAdd(10));
 //     var l = (n+'').length;
 //     for(var i = 1;i<=l;i++){
 //         var gewei = n%10;
-//         n = (n-gewei)/10;
+//         n = (n-gewei)/10;    //parseInt(a/10);
 //         a = a*10+gewei;
 //     }
 //     return a;
@@ -53,19 +53,19 @@ console.log(jiechengAdd(10));
 
 
 // 题目四
-// function yueshu(a){
-//     var sum = 0;
-//     for(var i=0;i<a;i++){
-//         if(a%i==0){
-//           sum += i;  
-//         }
-//     }
-//     return sum;
-// }
+function yueshu(a){
+    var sum = 0;
+    for(var i=0;i<a;i++){
+        if(a%i==0){
+          sum += i;  
+        }
+    }
+    return sum;
+}
 
-// for(var i = 1;i<=3000;i++){
-//     var b = yueshu(i);
-//     if(yueshu(b)==i){
-//         console.log(i);
-//     }
-// }
+for(var i = 1;i<=3000;i++){
+    var b = yueshu(i);
+    if(yueshu(b)==i && i!=b){
+        console.log(i,b);
+    }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            function outer(x){
+                function inner(y){
+                    console.log(x+y);
+                }
+                return inner;
+            }
+
+            var inn = outer(3);
+
+            inn(5);  //8
+            inn(7);  //10
+            inn(11);  //14
+            inn(12);  //15
+
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
