@@ -1,14 +1,19 @@
-html,body,ul,h1,h2,h3,h4,h5{
+html,body,ul,h1,h2,h3,h4,h5,p{
     padding:0;
     margin:0;
 }
-
+body{
+    font-family: "Microsoft YaHei";
+}
 ul,li{
     list-style: none;
 }
 a{
     text-decoration: none;
     color:black;
+}
+a:hover{
+    text-decoration: underline;
 }
 .clear_top::before,.clear_top:before{
     content:"";
@@ -26,17 +31,205 @@ a{
     width:900px;
     height:320px;
     margin:0 auto;
-    background:#f6f9fb;
+    background:#f7fbfe;
 }
 #head .top{
     width:100%;
     height:95px;
-    background:skyblue;
 }
-#head img{
+#head .top img{
+    display: inline-block;
     float:left;
-    margin-top:25px;
+    margin-top:40px;
+    vertical-align: middle;
+}
+#head h3{
+    display: inline-block;
+    margin-top:50px;
+    font-size: 20px;
+    color:#666;
+    font-weight:400;
 }
 #head .nav{
+    position:relative;
+    float:right;
+
+}
+#head .home{
+    font-size:12px;
+    position: absolute;
+    top:10px;
+    right:20px;
+}
+#head .home span{
+    display: inline-block;
+    width:0;
+    height:10px;
+    margin:0 5px 0 8px; 
+    border-right:1px solid black;
+}
+#head .nav_content{
+    height:30px;
+    line-height: 27px;
+    padding:0 30px;
+    margin:50px 10px 0 0;
+    border:1px solid #b7cfdd;
+    border-radius: 15px;
+}
+#head .nav_content .first_nav_item{
+    position:relative;
+    float:left;
+    padding:0 5px;
+    margin: 0 5px;
     
+}
+#head .nav_content .first_nav_item:hover{
+    border-bottom:3px solid #70a5d7;
+}
+#head .second_nav{
+    position:absolute;
+    background:#b7cfdd;
+    top:31px;
+    left:0;
+    display:none;
+}
+#head .second_nav li{
+    padding:0 5px;
+}
+#head .second_nav li:hover{
+    background:skyblue;
+    color:white;
+}
+#head .first_nav_item:hover .second_nav{
+    display: block;
+}
+#head .banner{
+    width:870px;
+    height: 195px;
+    padding:15px;
+}
+/*head end  */
+
+/* container start */
+#container{
+    width:870px;
+    padding:0 15px;
+    margin:0 auto;
+}
+.left_bar{
+    float:left;
+    width: 170px;
+    padding:20px 30px 0 20px;
+    border:1px solid #e7eeeb;
+    border-radius: 10px;
+    box-shadow: -10px 0 20px #e7eeeb inset;
+}
+.left_bar span{
+    display: block;
+    margin-bottom:5px;
+    color:#27a7d0;
+    font-size: 12px;
+}
+.left_bar ul{
+    margin-bottom:20px;
+}
+.left_bar li{
+    position: relative;
+    height:25px;
+    line-height: 25px;
+    padding:0 10px;
+    margin-top:5px;
+    font-size:14px;
+    color:#224c6a;
+    border-bottom:1px solid #dae8ec;
+}
+.left_bar i{
+    position: absolute;
+    right:10px;
+    top:8px;
+    display: none;
+    width:0;
+    height:0;
+    border-left:5px solid white;
+    border-top: 5px solid transparent;
+    border-bottom:5px solid transparent;
+}
+.left_bar li:hover{
+    font-weight: 600;
+    color:white;
+    background:#0b5c95;
+    border-radius:  20px;
+}
+.left_bar li:hover i{
+    display: block;
+}
+.left_bar P{
+    font-size: 14px;
+}
+.left_bar .title{
+    position: relative;
+    height:80px;
+}
+.left_bar .title h3{
+    margin-top:20px;
+}
+.left_bar em{
+    position:absolute;
+    right:0;
+    top:0;
+    display: inline-block;
+    width:93px;
+    height:73px;
+    background:url("../images/contact.jpg");
+}
+
+.right_content{
+    float:right;
+    width:616px;
+    height:752px;
+    padding:15px;
+    background:skyblue;
+    border:1px solid #e7eeeb;
+    border-radius: 10px;
+    box-shadow: 8px 0 20px #e7eeeb inset
+}
+.right_content  img{
+    display: inline-block;
+    float:left;
+    margin-right:15px;
+    
+}
+.right_content h4{
+    float:left;
+    margin:10px 10px 0 0;
+}
+.right_content span{
+    display: inline-block;
+    font-size:12px;
+    color: #27a7d0;
+    margin-top:15px;
+}
+.right_content form{
+    float:right;
+}
+.product .title{
+    width:100%;
+    float:left;
+}
+.about_content{
+    margin-top:40px;
+}
+.about_content p{
+    font-size:14px;
+}
+.right_content  .right_item{
+    margin-top:30px;
+}
+.right_content .product_item{
+    margin-top:30px;
+    float:left;
+}
+.right_content .product_item img{
+    float:none;
+    margin-right:12px;
 }
