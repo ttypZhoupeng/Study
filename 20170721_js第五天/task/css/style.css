@@ -121,7 +121,7 @@ a:hover{
     width: 170px;
     padding:20px 30px 0 20px;
     border:1px solid #e7eeeb;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: -10px 0 20px #e7eeeb inset;
 }
 .left_bar span{
@@ -188,9 +188,8 @@ a:hover{
     width:616px;
     height:752px;
     padding:15px;
-    background:skyblue;
     border:1px solid #e7eeeb;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 8px 0 20px #e7eeeb inset
 }
 .right_content  img{
@@ -231,5 +230,23 @@ a:hover{
 }
 .right_content .product_item img{
     float:none;
-    margin-right:12px;
+    margin-right:10px;
+    border: 1px solid #27a7d0;
+}
+.right_content .product .m_top{
+    margin-top:30px;
+}
+/*container end*/
+
+/*footer start*/
+#footer{
+    width:900px;
+    height: 100px;
+    padding-top:20px;
+    margin:10px auto;
+    text-align: center;
+    font-size:14px;
+}
+#footer p{
+    height:25px;
 }
