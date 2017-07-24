@@ -8,8 +8,12 @@ var btn7 = document.getElementsByClassName("btn7")[0];
 var btn8 = document.getElementsByClassName("btn8")[0];
 var btn9 = document.getElementsByClassName("btn9")[0];
 var btn10 = document.getElementsByClassName("btn10")[0];
-console.log(btn7);
+var btn11 = document.getElementsByClassName("btn11")[0];
+// console.log(btn7);
 var box = document.getElementById("test_box");
+var shoubing = document.getElementById("telecontroller");
+var form = document.getElementById("open");
+var get = document.getElementsByClassName("open_button")[0];
 btn1.onclick = function(){
     box.style.background = "#9F79EE";
 }
@@ -44,4 +48,11 @@ btn9.onclick = function(){
 }
 btn10.onclick = function(){
     box.style.transform = "scale(0.5,0.5)";
+}
+btn11.onclick = function(){
+    shoubing.style.display = "none";
+}
+get.onclick = function(){
+    shoubing.style.display = "block";
+    form.style.display = "none";
 }

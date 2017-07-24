@@ -23,6 +23,7 @@ html,body{
 }
 #telecontroller{
     position: relative;
+    display: none;
     width:850px;
     height:300px;
     margin:20px auto;
@@ -73,7 +74,6 @@ html,body{
 .btn5{
     top:130px;
     left:310px;
-    background:
 }
 .btn6{
     top:130px;
@@ -99,4 +99,30 @@ html,body{
     top:110px;
     right:180px;
     background:greenyellow;
+}
+.btn11{
+    top:200px;
+    left:370px;
+}
+#open{
+    width:200px;
+    margin:0 auto;
+}
+#open input{
+    float:left;
+    width:80px;
+    height:30px;
+    margin-right:10px;
+}
+.open_button{
+    float:left;
+    width:100px;
+    height:30px;
+    line-height:30px;
+    text-align: center;
+    font-size:16px;
+    font-weight:700px;
+    color:white;
+    background:red;
+    border-radius: 15px;
 }
