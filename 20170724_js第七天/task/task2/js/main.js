@@ -51,6 +51,7 @@ btn10.onclick = function(){
 }
 btn11.onclick = function(){
     shoubing.style.display = "none";
+    form.style.display = "block";
 }
 get.onclick = function(){
     shoubing.style.display = "block";

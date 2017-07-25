@@ -3,14 +3,17 @@ console.log(oBox);
 var oBox2 = oBox.getElementsByClassName("box");
 console.log(oBox2);
 var oBox3 = document.getElementById("second_row");
+var oBox4 = oBox3.getElementsByClassName("box");
 
-for( var i = 0;i<oBox2.length;i++){
-    oBox2[i].onclick = function(){
-        this.style.display = "none";
-        var oBox4 = oBox3.getElementsByClassName("box");
-        oBox4[i].style.display="block";
-    };
+for (var i = 0; i < oBox2.length; i++) {
+    (function(m) {
+        oBox2[m].onclick = function() {
+            this.style.display = "none";
+            oBox4[m].style.display = "block";
+        };
+    })(i);
 }
+
 // function fun(){
 //     oBox2[i].style.display = "none";
 // }
