@@ -29,7 +29,6 @@ html,body{
     height:50px;
     line-height: 50px;
     text-align: center;
-    color:skyblue;
     border:1px solid skyblue;
 }
 .ni2{
@@ -40,17 +39,17 @@ html,body{
     position:absolute;
     top:50px;
     left:0;
-    /* display: none; */
+    display: none; 
     padding:20px 10px;
     width:282px;
     height:160px;
-    border:1px solid #666;
+    border:1px solid skyblue;
     border-top:0;
 }
 .current{
     border-bottom:0;
     color:red;
 }
- .current2{
+.current2{
     display: block;
-}  
+}
