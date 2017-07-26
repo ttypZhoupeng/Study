@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图</title>
+    <style type="text/css">
+            *{
+                margin:0;
+                padding:0;
+            }
+            .carousel{
+                width: 672px;
+                height: 350px;
+                margin:50px auto;
+                position: relative;
+                overflow: hidden;
+            }
+            .carousel ul{
+                list-style: none;
+            }
+            .carousel ul li{
+                display: none;
+            }
+            .carousel ul li.current{
+                display: block;
+            }
+
+            .carousel span{
+                position:absolute;
+                width: 55px;
+                height:55px;
+                top:130px;
+                cursor: pointer;
+            }
+            .carousel .leftBtn{
+                left:10px;
+                background-image: url(img/slide-btnL.png);
+            }
+            .carousel .rightBtn{
+                right:10px;
+                background-image: url(img/slide-btnR.png);
+            }
+            .carousel .circles{
+                position:absolute;
+                bottom:0px;
+                width: 200px;
+                height: 17px;
+                left:50%;
+                margin-left:-50px;
+
+            }
+            .circles ol{
+                list-style: none;
+            }
+            .circles ol li{
+                float:left;
+                width: 17px;
+                height: 17px;
+                margin-right: 13px;
+                background-color: gold;
+                border-radius: 50%;
+                cursor:pointer;
+            }
+            .circles ol li.current{
+                background-color: purple;
+            }
+        </style>
+</head>
+<body>
+    <div class="carousel">
+            <ul id="aUl">
+                <li class="current">
+                    <a href="#">
+                        <img src="img/aaa.jpg" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/bbb.jpg" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/ccc.jpg" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/ddd.jpg" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/eee.jpg" alt="" />
+                    </a>
+                </li>
+            </ul>
+
+        <div class="btns">
+            <span class="leftBtn" id="leftBtn"></span>
+            <span class="rightBtn" id="rightBtn"></span>
+        </div>
+
+        <div class="circles" id="circles">
+            <ol>
+                <li class="current"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+
+    </div>
+
+
+    <script>
+        var leftBtn = document.getElementById("leftBtn");
+        var rightBtn = document.getElementById("rightBtn");
+        var aUl = document.getElementById("aUl");
+        var aLis = aUl.getElementsByTagName("li");
+        var circlesLis = document.getElementById("circles").getElementsByTagName("li");
+
+        var img_idx = 0;
+
+        leftBtn.onclick = function(){
+            img_idx--;
+            if(img_idx < 0){
+                img_idx =4;
+            }
+
+            changePic();
+        }
+
+        rightBtn.onclick = function(){
+            img_idx--;
+            if(img_idx < 0){
+                img_idx =4;
+            }
+
+            changePic();
+        }
+
+        // for(var i = 0;i<circlesLis.length;i++){
+        //     (function(a){
+        //         circlesLis[a].onmouseover = function(){
+        //             img_idx = a;
+
+        //             changePic();
+        //         }
+        //     })(i);
+        // }
+
+        for(var i = 0;i<circlesLis.length;i++){
+            circlesLis[i].index = i;
+
+            circlesLis[i].onmouseover = function(){
+                img_idx = this.index;
+
+                changePic();
+            }
+        }
+
+        function changePic(){
+
+            for(var i=0;i<aLis.length;i++){
+                aLis[i].className="";
+            }
+
+            aLis[img_idx].className="current";
+
+            for(var i = 0;i<circlesLis.length;i++){
+                circlesLis[i].className="";
+            }
+
+            circlesLis[img_idx].className="current";
+        }
+    </script>
+</body>
+</html>

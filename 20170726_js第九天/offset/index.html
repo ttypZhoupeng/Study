@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>offset</title>
+    <style type="text/css">
+        *{
+            padding:0;
+            margin:0;
+        }
+        .box1{
+            position: relative;
+            margin:0 auto;
+            width: 500px;
+            height: 300px;
+            padding:50px;
+            border:10px solid red;
+        }
+        .box2{
+            width: 380px;
+            height: 180px;
+            padding:50px;
+            background-color: yellowgreen;
+            /*position:relative;*/
+        }
+        .box3{
+            width: 260px;
+            height: 60px;
+            padding:50px;
+            border:10px solid yellow;
+        }
+        p{
+            width: 40px;
+            height: 40px;
+            background-color: gold;
+            border:10px solid purple;
+            /*position:relative;*/
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box1">
+        <div class="box2">
+            <div class="box3">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var oP = document.getElementsByTagName("p")[0];
+        console.log(oP.offsetParent.className);
+        console.log(oP.offsetLeft);
+        console.log(oP.offsetHeight);
+        console.log(oP.offsetWidth);
+        console.log(oP.clientHeight);
+        console.log(oP.clientWidth);
+    </script>
+</body>
+</html>
