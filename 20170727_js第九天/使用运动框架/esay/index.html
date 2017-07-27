@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使用运动框架</title>
+    <style>
+        #oDiv{
+            position:absolute;
+            top:100px;
+            left:100px;
+            width:200px;
+            height:200px;
+            background:skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="oDiv"></div>
+
+    <script src="js/animate.js"></script>
+    <script>
+        var oDiv = document.getElementById("oDiv");
+        oDiv.onclick = function(){
+            animate(oDiv,{"top":500,"left":500},1000);
+        } 
+    </script>
+</body>
+</html>

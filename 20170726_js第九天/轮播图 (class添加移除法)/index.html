@@ -125,6 +125,14 @@
 
         var img_idx = 0;
 
+        setInterval(function(){
+            img_idx++;
+            if(img_idx>4){
+                img_idx=0;
+            }
+            changePic();
+        },1000);
+
         leftBtn.onclick = function(){
             img_idx--;
             if(img_idx < 0){

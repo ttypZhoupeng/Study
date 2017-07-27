@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>json</title>
+</head>
+<body>
+    <script>
+        // var arr = ["杭州","西安","长沙"];
+        // var arr = ["张三","22","男"];
+          
+
+        // var obj = {
+        //     "name":"张三",
+        //     "age":22,
+        //     "sex":"男"
+        // }
+
+        // var obj = {
+        //     k:v,
+        //     k:v,
+        //     k:v
+        // }
+
+        // console.log(obj.name);
+
+        // var a = "age";
+
+        // console.log(obj["age"]);
+        // console.log(obj.age);
+        // console.log(obj[a]);
+
+        // console.log(obj.hobby);
+
+        // var obj = {
+        //     "name":"海峰",
+        //     "age":22,
+        //     "sex":"男",
+        //     "hobby":"游戏",
+        //     "nvyou":{
+        //         "name":"Angelababy",
+        //         "age":21,
+        //         "height":168
+        //     }
+        // };
+
+        // console.log(obj.nvyou.height);
+        // console.log(obj["nvyou"]["age"]);
+
+        var obj = {
+            "name":"海峰",
+            "age":18,
+            "hobby":"吃"
+        }
+
+        obj.age++;
+        obj.sex="男";
+
+        console.log(obj.age);
+        console.log(obj.sex);
+
+        delete obj.hobby;
+        console.log(obj);
+
+        for(var k in obj){
+            console.log(k + "的值是"+obj[k]);
+        }
+    </script>
+</body>
+</html>

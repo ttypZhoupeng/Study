@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>div飘入</title>
+    <style>
+        .box1,.box2,.box3{
+            position:absolute;
+            top:0;
+            width:0;
+            height:0;
+            opacity: 0;
+           
+        }
+        .box1{
+            right:0;
+            background:skyblue;
+        }
+        .box2{
+            left:0;
+            background:orange;
+        }
+        .box3{
+            right:0;
+            background:yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+ 
+    <script src="../js/animate.js"></script>
+    <script>
+        window.onload = function(){
+            var oBox1 = document.getElementsByClassName("box1")[0];
+            animate(oBox1,{"top":100,"right":400,"width":800,"height":100,"opacity":1},1000);
+            var oBox2 = document.getElementsByClassName("box2")[0];
+            animate(oBox2,{"top":300,"left":400,"width":800,"height":100,"opacity":1},3000);
+            var oBox3 = document.getElementsByClassName("box3")[0];
+            animate(oBox3,{"top":500,"left":400,"width":800,"height":100,"opacity":1},5000);
+        }
+    </script>
+</body>
+</html>
