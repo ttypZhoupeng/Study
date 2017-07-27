@@ -57,7 +57,6 @@ i,em,b{
     top:20px;
     left:180px;
     height:285px;
-
 }
 .pic_box{
     margin-right:20px;
@@ -99,14 +98,24 @@ i,em,b{
     background:url("../img/people3.png") no-repeat;
     background-size:cover;
 }
-.con0{
+.current2{
+    display: none;
+}
+.current3{
     display: block;
 }
-.con1{
+#con0{
+    display: block;
+}
+#con1{
     display: none;
     background:skyblue;
 }
-.con2{
+#con2{
     display: none;
     background:orange;
+}
+#con3{
+    display: none;
+    background:red;
 }
