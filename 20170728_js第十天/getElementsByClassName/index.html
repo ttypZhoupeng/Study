@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>getElementsByClassName</title>
+    <style>
+        .a{
+            width: 200px;
+            height: 200px;
+            background:skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="a b">
+        zhoupeng
+    </div>
+
+    <script>
+        // var a = document.getElementsByClassName("a")[0];
+        // console.log(a);
+        // var oDiv = document.getElementById("box");
+        // console.log(oDiv);
+        // oDiv.onmouseover = oDiv.onmouseout = function(){
+        //     this.style.background="red";
+        // }
+
+
+        // function show(){
+        //     var a = 0;
+        //     for(var i =0;i<arguments.length;i++){
+        //         a+=arguments[i];
+        //     }
+        //     alert(a);
+        // }
+        // show(3,5,7,45,65);
+
+        // var arr = "abcdef";
+        // alert(arr.charAt(3));
+        // alert(arr[2]);
+
+        function aaa(){
+            var a= 1;
+            return function(){
+                a++;
+                alert(a);
+            }
+        }
+        var b=aaa();
+        b();
+        b();
+    </script>
+</body>
+</html>

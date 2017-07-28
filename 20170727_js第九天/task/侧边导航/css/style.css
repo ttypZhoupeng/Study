@@ -76,8 +76,7 @@ i,em,b{
     width:185px;
     height:185px;
     margin-bottom:20px;
-    background:url("../img/people1.png") no-repeat;
-    background-size:cover;
+    
 }
 .pic_box i{
     position: relative;
@@ -86,8 +85,7 @@ i,em,b{
     width:80px;
     height:80px;
     margin-right:20px;
-    background:url("../img/people2.png") no-repeat;
-    background-size:cover;
+    
 }
 .pic_box b{
     position: relative;
@@ -95,9 +93,35 @@ i,em,b{
     display: block;
     width:80px;
     height:80px;
+    
+}
+
+#con0 .pic_box em{
+    background:url("../img/people1.png") no-repeat;
+    background-size:cover;
+}
+#con0 .pic_box i{
+    background:url("../img/people2.png") no-repeat;
+    background-size:cover;
+}
+#con0 .pic_box b{
     background:url("../img/people3.png") no-repeat;
     background-size:cover;
 }
+
+#con1 .pic_box em{
+    background:url("../img/people4.png") no-repeat;
+    background-size:cover;
+}
+#con1 .pic_box i{
+    background:url("../img/people5.png") no-repeat;
+    background-size:cover;
+}
+#con1 .pic_box b{
+    background:url("../img/people6.png") no-repeat;
+    background-size:cover;
+}
+
 .current2{
     display: none;
 }
