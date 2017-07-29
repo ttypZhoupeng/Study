@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            //样本
+            var arr = [ 519,950,646,895,90,171,611];
+
+            //遍历，计算偶数的个数
+            //计算平均数，平均数就是总和/个数
+            var count = 0;
+            var sum = 0;
+
+            for( var i = 0; i<arr.length;i++){
+                // 得到总和
+                sum += arr[i];
+
+                //得到偶数个数
+                if( arr[i] % 2 ==0){
+                    count++;
+                }
+            }
+
+            alert("偶数个数是" + count);
+            alert("平均数是" + ( sum / arr.length));
+
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

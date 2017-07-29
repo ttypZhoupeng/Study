@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            //用户输入两个数组
+            var a = parseInt( prompt("请输入第一个数字！"));
+            var b = parseInt( prompt("请输入第二个数字！"));
+
+
+            // 第二步，判断奇偶性
+            // if(都是偶数 || 都是奇数)
+            // if( a % 2 == 0 && b % 2 == 0 || a % 2 != 0 && b % 2 != 0){
+            //     alert("这两个数的奇偶性相同~");
+            // }else{
+            //     alert("这两个数的奇偶性不相同~");
+            // }
+
+            // 方法2
+            // if( a % 2 == b % 2){
+            //     alert("这两个数的奇偶性相同~");
+            // }else{
+            //     alert("这两个数的奇偶性不相同~");
+            // }
+            //
+
+            // 方法3 求和两个数相加
+            if( (a+b) % 2 == 0){
+                alert("这两个数的奇偶性相同~");
+            }else{
+                alert("这两个数的奇偶性不相同~");
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

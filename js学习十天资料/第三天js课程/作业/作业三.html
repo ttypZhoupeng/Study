@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            //用户输入年份
+            var year = parseInt( prompt("请输入年份"));
+
+            // 判断
+            // if( year % 100 == 0){
+            //     //是100的整倍数
+            //     if( year % 400 == 0){
+            //         alert("是闰年");
+            //     }else{
+            //         alert("不是闰年");
+            //     }
+
+            // }else{
+
+            //     if( year % 4 == 0){
+            //         alert("是闰年");
+            //     }else{
+            //         alert("不是闰年");
+            //     }
+            // }
+
+            //方法2
+            //if(不是100 的倍数 且能被4整除 || 是100的倍数 能被400整除)
+            if( year % 4 == 0 && year % 100 !=0 || year % 100 ==0 && year % 400 == 0){
+                alert("是闰年");
+            }else{
+                    alert("不是闰年");
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

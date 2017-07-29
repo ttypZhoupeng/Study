@@ -1,0 +1,128 @@
+html,body{
+    padding:0;
+    margin:0;
+}
+.clear_top::before,.clear_top::before{
+    content: "";
+    display: block;
+    overflow: hidden;
+}
+.clear_float::after,.clear_float:after{
+    content:"";
+    display: block;
+    clear:both;
+}
+
+
+#test_box{
+    width:400px;
+    height:400px;
+    margin:20px auto;
+    background:skyblue;
+    transition: all 1s;
+}
+#telecontroller{
+    position: relative;
+    display: none;
+    width:850px;
+    height:300px;
+    margin:20px auto;
+    background:#666;
+    border-radius: 50px;
+}
+.button1{
+    position:absolute;
+    width:80px;
+    height: 80px;
+    font-size:16px;
+    font-weight: 700;
+    line-height: 80px;
+    text-align: center;
+    background:white;
+    /* border:2px solid #e8e8e8; */
+    border-radius: 50%;
+}
+.button2{
+    position: absolute;
+    width:100px;
+    height:30px;
+    font-size:16px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align:center;
+    color:white;
+    background:white;
+    background:blue;
+    border-radius: 50px;
+}
+.btn1{
+    top:30px;
+    left:100px;
+}
+.btn2{
+    top:110px;
+    left:20px;
+}
+.btn3{
+    bottom:30px;
+    left:100px;
+}
+.btn4{
+    top:110px;
+    left:180px;
+}
+.btn5{
+    top:130px;
+    left:310px;
+}
+.btn6{
+    top:130px;
+    left:450px;
+
+}
+.btn7{
+    top:30px;
+    right:100px;
+    background:yellow;
+}
+.btn8{
+    top:110px;
+    right:20px;
+    background:red;
+}
+.btn9{
+    bottom:30px;
+    right:100px;
+    background:blue;
+}
+.btn10{
+    top:110px;
+    right:180px;
+    background:greenyellow;
+}
+.btn11{
+    top:200px;
+    left:370px;
+}
+#open{
+    width:200px;
+    margin:0 auto;
+}
+#open input{
+    float:left;
+    width:80px;
+    height:30px;
+    margin-right:10px;
+}
+.open_button{
+    float:left;
+    width:100px;
+    height:30px;
+    line-height:30px;
+    text-align: center;
+    font-size:16px;
+    font-weight:700px;
+    color:white;
+    background:red;
+    border-radius: 15px;
+}

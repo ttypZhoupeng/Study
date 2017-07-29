@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            // 用户输入工作了几年，然后输入月薪
+            var year = parseInt( prompt("请输入工作了几年，不足1年写0年，工作2年以上写2年~"));
+            var salary = parseFloat( prompt("请输入月薪~"));
+
+            var xishu;
+
+            //判断
+            if( year == 0){
+
+                if( salary > 8000){
+                    xishu = 1.2;
+                }else{
+                    xishu = 1;
+                }
+
+            }else if( year == 1){
+
+                if( salary > 10000){
+                    xishu = 1.7;
+                }else{
+                    xishu = 1.5;
+                }
+
+            }else{
+                if( salary > 12000){
+                    xishu = 3.2;
+                }else{
+                    xishu = 3;
+                }
+            }
+
+            alert( xishu * salary );
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
