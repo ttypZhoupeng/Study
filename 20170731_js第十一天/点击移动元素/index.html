@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box1,.box2{
+            width: 300px;
+            height: 400px;
+            border:1px solid #000;
+            float:left;
+        }
+        .tools{
+            float:left;
+        }
+        ul{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1" id="box1">
+        <ul>
+            <li><input type="checkbox">牛肉</li>
+            <li><input type="checkbox">饼干</li>
+            <li><input type="checkbox">生菜</li>
+            <li><input type="checkbox">蛋糕</li>
+            <li><input type="checkbox">蜂蜜</li>
+            <li><input type="checkbox">猪肉</li>
+            <li><input type="checkbox">方便面</li>
+            <li><input type="checkbox">糖果</li>
+
+        </ul>
+    </div>
+    <div class="tools">
+        <p><input type="button" id="btn1" value=">>>>>"></p>
+        <p><input type="button" id="btn2" value="<<<<<"></p>
+    </div>
+        
+    <div class="box2" id="box2">
+        <ul>
+
+        </ul>
+    </div>
+
+    <script>
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        var box1 = document.getElementById("box1");
+        var box2 = document.getElementById("box2");
+        var box1Input = document.getElementsByTagName("input");
+        var box2Input = document.getElementsByTagName("input");
+        var box1Ul = box1.getElementsByTagName("ul")[0];
+        var box2Ul = box2.getElementsByTagName("ul")[0];
+
+        btn1.onclick=function(){
+            var checkedArr = [];
+            for(var i=0;i<box1Input.length;i++){
+                if(box1Input[i].checked){
+                    checkedArr.push(box1Input[i].parentNode);
+                }
+            }
+
+            for(var i=0;i<checkedArr.length;i++){
+                
+                box2Ul.appendChild(checkedArr[i]);
+            }
+        }
+
+        btn2.onclick=function(){
+            var checkedArr = [];
+            for(var i=0;i<box2Input.length;i++){
+                if(box1Input[i].checked){
+                    checkedArr.push(box2Input[i].parentNode);
+                }
+            }
+
+            for(var i=0;i<checkedArr.length;i++){
+                box1Ul.appendChild(checkedArr[i]);
+            }
+        }
+    </script>
+</body>
+</html>

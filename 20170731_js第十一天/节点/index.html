@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基础内容详解</title>
+    <style>
+        li{
+            width: 20px;
+            height: 30px;
+            background-color: orange;
+            margin:10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="oDiv">
+        <span>“你好”</span>
+    </div> -->
+    <ul id = "oUl">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <script>
+        var oUl = document.getElementById("oUl");
+        // var lis = oUl.childNodes;
+
+        //  console(lis.length);
+
+        //  document.onclick = function(){
+        //     for(var i=0;i<lis.length;i++){
+        //         if(lis[i].nodeType ===1){
+        //             lis[i].style.width="150px";
+        //         }
+        //     }
+        //  }
+
+         var lis = oUl.children;
+         document.onclick = function(){
+             for(var i=0;i<lis.length;i++){
+                 lis[i].style.width = "150px";
+             }
+         }
+
+         
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>复选框勾选父级变色</title>
+    <style>
+        .choose{
+            background:skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <ul>
+            <li><input type="checkbox">吃饭</li>
+            <li><input type="checkbox">睡觉</li>
+            <li><input type="checkbox">打豆豆</li>
+        </ul>
+    </div>
+
+    <script>
+        var inputs = document.getElementsByTagName("input");
+        for(var i=0;i<inputs.length;i++){
+            inputs[i].onclick=function(){
+                this.parentNode.className = this.checked? "choose" :"";
+            }
+        }
+    </script>
+</body>
+</html>

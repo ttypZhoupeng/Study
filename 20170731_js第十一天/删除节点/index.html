@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>删除节点</title>
+</head>
+<body>
+    <ul>
+        <li>吃饭<a href="#">删除</a> </li>
+        <li>睡觉<a href="#">删除</a></li>
+        <li>打豆豆<a href="#">删除</a></li>
+    </ul>
+
+    <script>
+        var oUl = document.getElementsByTagName("ul")[0];
+        var oAs = document.getElementsByTagName("a");
+
+        for(var i = 0;i<oAs.length;i++){
+            oAs[i].onclick = function(){
+                oUl.removeChild(this.parentNode);
+            }
+        }
+    </script>
+</body>
+</html>

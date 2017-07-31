@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>date</title>
+    <style>
+        img{
+            width:100px;
+            height:100px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <img src="img/0.png" alt="">
+    <img src="img/0.png" alt="">
+    :
+    <img src="img/0.png" alt="">
+    <img src="img/0.png" alt="">
+    :
+    <img src="img/0.png" alt="">
+    <img src="img/0.png" alt="">
+
+    <button>点击替换</button>
+
+    <script>
+        var aImg = document.getElementsByTagName("img");
+        var btn = document.getElementsByTagName("button")[0];
+
+        function toDouble(num){
+            if(num<10){
+                return "0"+num;
+            }else{
+                return "" + num;
+            }
+        }
+        // 将得到的数字变成字符串，下面函数才能取得它 的长度
+
+        function fun(){
+            var oDate = new Date();
+            var str = toDouble(oDate.getHours())+toDouble(oDate.getMinutes())+toDouble(oDate.getSeconds());
+
+            for(var i = 0;i<str.length;i++){
+                aImg[i].src="img/"+str[i]+".png";
+            }
+        }
+        setInterval(fun,1000);
+    </script>
+</body>
+</html>

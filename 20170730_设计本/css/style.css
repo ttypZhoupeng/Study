@@ -58,7 +58,14 @@ a:hover{
     width: 15px;
     height: 15px;
     margin-top:5px;
-    background:yellow;
+}
+.head_top_content .left_nav .weixin{
+    background:url("../img/back.png");
+    background-position: -210px -103px;
+}
+.head_top_content .left_nav .phone{
+    background:url("../img/back.png");
+    background-position: -226px -103px;
 }
 .head_top_content .left_nav a{
     display: inline-block;
@@ -137,18 +144,17 @@ a:hover{
     float:left;
     height:40px;
 }
-.head_logo img{ 
-    display: block;
-    width:110px;
-    height:40px;
+.head_logo h1{ 
     margin-right:10px;
     float:left;
-    background:yellow;
+   font-size:40px;
+   font-weight: 700;
+   color:#dd4f50;
 }
 .head_logo p{
     width:120px;
     line-height: 14px;
-    margin-bottom:6px;
+    margin:5px 0 6px 0;
     float:left;
     color:#dd4f50;
     font-size: 16px
@@ -172,13 +178,23 @@ a:hover{
     margin: 3px 0 3px 3px;
     padding-left:10px;
     background:white;
+    border-right:1px solid #e8e8e8;
 }
-.head_search_content img{
+.head_search_content .search_pic{
     float:left;
     width:25px;
     height:35px;
     margin-top:3px;
     background:white;
+
+}
+.head_search_content em{
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    margin-top: 3px;
+    background: url(../img/sprite.png);
+    background-position: -306px 0px;
 }
 .head_search_content .nav b{
     top:15px;
@@ -248,9 +264,16 @@ a:hover{
     background:#dd4f50;
 }
 .banner_nav_ul ul li{
+    position:relative;
     float:none;
+    font-weight: normal;
+    font-size: 12px;
     background:#dd4f50;
     display: none;
+    z-index: 100;
+}
+.banner_nav_ul ul li:last-child a{
+    padding:0 20px;
 }
 
 /*二级菜单隐藏*/
@@ -288,6 +311,13 @@ a:hover{
     padding-top:15px;
     border-bottom:1px solid #e6e6e6;
 }
+.banner_content .left_nav_item:last-child{
+    height:124px;
+    border-bottom:1px solid white;
+    background:white;
+    position: relative;
+    z-index: 100;
+}
 .banner_content .left_nav_item h4{
     margin-bottom:10px;
 }
@@ -304,10 +334,49 @@ a:hover{
     
 /*banner 轮播图导航 end*/
 
+
+/*banner 底部列表栏 start  */
 .banner_bottom{
     height: 161px;
-    background:#e94c3d;
 }
+.banner_bottom ul{
+    width:1180px;
+    height:161px;
+    margin:0 auto;
+}
+.banner_bottom li{
+    float:left;
+    width:193.75px;
+    height:51px;
+    padding:55px 50px;
+    border-top:1px solid #e6e6e6;
+    border-left:1px solid #e6e6e6;
+    border-bottom:1px solid #e6e6e6;
+}
+.banner_bottom li:last-child{
+    border-right:1px solid #e6e6e6;
+}
+.banner_bottom li em{
+    display: inline-block;
+    float:left;
+    width: 42px;
+    height: 40px;
+    margin-right: 10px;
+    background:skyblue;
+}
+.banner_bottom li h3{
+    margin-bottom:6px;
+    cursor: pointer;
+}
+.banner_bottom li h3:hover{
+    color:#e94c3d;
+}
+.banner_bottom li p{
+    font-size: 12px;
+    color:#999;
+}
+/*banner 底部列表栏 end  */
+
 /*banner end */
 
 

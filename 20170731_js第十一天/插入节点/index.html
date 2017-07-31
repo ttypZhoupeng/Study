@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>插入节点</title>
+</head>
+<body>
+    <input type="text" id="txt" />
+    <input type="button" value="点我" id="btn" />
+    <ul>
+        <li>我是第1个</li>
+        <li>我是第2个</li>
+        <li>我是第3个</li>
+        <li>我是第4个</li>
+    </ul>
+
+    <script>
+        var oUl = document.getElementsByTagName("ul")[0];
+        var lis = oUl.getElementsByTagName("li");
+        var txt = document.getElementById("txt");
+        var btn = document.getElementById("btn");
+
+        btn.onclick = function(){
+            console.log(lis);
+
+            var oLi = document.createElement("li");
+            oLi.innerHTML = txt.value;
+
+            oUl.insertBefore(oLi,lis[2]);
+        }
+    </script>
+</body>
+</html>

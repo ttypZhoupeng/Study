@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>节点关系</title>
+    <style type="text/css">
+        p{
+            width: 30px;
+            height: 30px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p id="xiaoming">xiaoming</p>
+        <p></p>
+        <p></p>
+    </div>
+
+    <script>
+        var oDiv = document.getElementById("box");
+        var xiaoming = document.getElementById("xiaoming");
+
+        // function prevSibling(obj){
+        //     var prev = obj;
+        //     while(prev = prev.previousSibling){
+        //         if(prev.nodeType == 1){
+        //             return prev;
+        //         }
+        //     }
+        //     return null;
+        // }
+        // prevSibling(xiaoming).style.backgroundColor = "red";
+
+
+        function prevAll(obj){
+            var prev = obj;
+            var arr = [];
+
+            while(prev = prev.previousSibling){
+                if(prev.nodeType == 1){
+                    arr.push(prev);
+                }
+            }
+            return arr;
+        }
+        var array = prevAll(xiaoming);
+        for(var i=0;i<array.length;i++){
+            array[i].style.backgroundColor = "red";
+        }
+
+    </script>
+</body>
+</html>

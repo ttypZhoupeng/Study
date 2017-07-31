@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>随机数点菜器</title>
+    <script>
+        window.onload = function(){
+            var oBtn = document.getElementsByTagName("input")[0];
+            
+            function getRandom(n){
+                var a = Math.floor(Math.random()*n);
+
+                return a;
+            }
+            oBtn.onclick = function(){
+                var food = ["蚂蚁上树","大盘鸡","馒头","尖椒肉丝","麻婆鸡丝","鱼香肉丝","爆炒腰花","炒肝","糖醋排骨","地三鲜"];
+                var str = getRandom(food.length);
+                document.write(food[str]);
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="点菜器">
+</body>
+</html>
