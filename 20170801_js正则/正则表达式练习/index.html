@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式练习</title>
+</head>
+<body>
+    <script>
+        // var str = "今年涨工资了！现在工资20000元。房贷还有-5.3万，今年又大了1岁，现在29岁";
+
+        // var re = /-?\d+\.?\d?/g;
+        // console.log(str.match(re));//输出为什么带单位
+
+
+        // var str = "ABCDEFG";
+        // var re = /[A-Z]/g;
+
+        // console.log(str.match(re));
+        // console.log(re.exec(str));
+        // console.log(re.exec(str));
+        // console.log(re.exec(str));
+
+        // var str = "aaacccbbbbbfffffyddddddeeegg"
+        // var re = /(\w)\1+/g;
+        // console.log(str.match(re));
+
+        // var str = "abc";
+        // var re = /A/i;
+
+        // console.log(re.test(str));
+
+        // var str ="aaacccbbbbbfffffyddddddeeegg";
+        // var re = /(\w)\1+/g;
+
+        // var array = str.match(re);
+        // console.log(array);
+
+        // var maxLength = 0;
+        // var maxStr ="";
+        // for(var i=0;i<array.length;i++){
+        //     if(array[i].length>maxLength){
+        //         maxLength=array[i].length;
+        //         maxStr=array[i];
+        //     }
+
+        // }
+        // console.log(maxStr);
+
+        var str = "abadsf2222adsgaoaoasdfa";
+
+        var re = /(\w)\1+/;
+
+        console.log(str.match(re));
+        console.log(str.search(re));
+    </script>
+</body>
+</html>

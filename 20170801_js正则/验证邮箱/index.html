@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var re = /^\w+@\w+\.[a-z]{2,3}$/;
+        var str = prompt("请输入一个邮箱");
+        if(re.test(str)){
+            alert("正则是对的~完美~");
+        }else{
+            alert("有瑕疵~");
+        }
+    </script>
+</body>
+</html>

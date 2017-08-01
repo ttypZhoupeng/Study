@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+        var str = "abcde";
+
+        // 通过indexOf检索str中匹配内容的下标，没有返回-1
+        console.log( str.indexOf("cd"));  //2
+
+        // search可以使用正则
+        // 通过search检索str中匹配内容的下标，没有返回-1
+        console.log( str.search("cd"));  //2
+        console.log( str.search(/cd/));  //2
+
+        // indexOf可以填写普通的字符或者数字，相对于search更省资源，一般是查看某个元素是否存在
+        // search只能填写正则表达式，一般可以查找一些具有特征的字符串（）比如查找以a开头的字符串，则indexOf无能为力
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

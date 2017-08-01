@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var re = /^1[34578]\d{9}$/;
+
+        var str = prompt("请输入手机号");
+
+        if(re.test(str)){
+            alert("输入的是一个手机号~成功");
+        }else{
+            alert("输入的不是一个手机号~");
+        }
+
+
+    </script>
+</body>
+</html>
