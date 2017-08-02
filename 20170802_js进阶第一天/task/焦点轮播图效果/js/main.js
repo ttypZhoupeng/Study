@@ -75,7 +75,9 @@ var oHistory = document.getElementById("his_ul");
             //调用业务函数
             chengPic();
             
-            oHistory.appendChild("<li>"+img_idx+"</li>");
+            var Li = document.createElement("Li");
+            Li.innerHTML = img_idx;
+            oHistory.appendChild(Li);
         }
 
        //业务函数

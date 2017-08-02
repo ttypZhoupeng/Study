@@ -7,7 +7,6 @@
     height: 350px;
     margin:50px auto;
     position: relative;
-    overflow: hidden;
 }
 .carousel ul{
     list-style: none;
@@ -27,30 +26,29 @@
     cursor: pointer;
 }
 .carousel .leftBtn{
-    left:10px;
+    left:-80px;
     background-image: url(../img/slide-btnL.png);
 }
 .carousel .rightBtn{
-    right:10px;
+    right:-80px;
     background-image: url(../img/slide-btnR.png);
 }
 .carousel .circles{
     position:absolute;
-    bottom:0px;
+    right:-150px;
+    bottom:123px;
     width: 200px;
-    height: 17px;
-    left:50%;
-    margin-left:-50px;
+    z-index: 100;
 
 }
 .circles ol{
     list-style: none;
 }
 .circles ol li{
-    float:left;
+    /*float:left;*/
     width: 17px;
     height: 17px;
-    margin-right: 13px;
+    margin-bottom: 10px;
     background-color: gold;
     border-radius: 50%;
     cursor:pointer;
