@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>焦点轮播图效果</title>
+    <link rel="stylesheet" type="" href="css/style.css">
+</head>
+<body>
+    <div class="carousel">
+            <ul id="aUl">
+                <li class="current">
+                    <a href="#">
+                        <img src="img/aaa.jpg" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/bbb.jpg" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/ccc.jpg" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/ddd.jpg" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/eee.jpg" alt="" />
+                    </a>
+                </li>
+            </ul>
+
+        <div class="btns">
+            <span class="leftBtn" id="leftBtn"></span>
+            <span class="rightBtn" id="rightBtn"></span>
+        </div>
+        <div class="circles" id="circles">
+            <ol>
+                <li class="current"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+
+    </div>
+
+    <p>
+        <input type="text" id="numTxt" value="1" />
+        <input type="button" value="go" id="goBtn" />
+    </p>
+
+    <div class="history">
+        <ul id="his_ul">
+            
+        </ul>
+    </div>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

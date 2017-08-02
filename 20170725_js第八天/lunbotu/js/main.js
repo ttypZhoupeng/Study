@@ -4,6 +4,10 @@ var pic = document.getElementById("pic");
 var numTxt = document.getElementById("numTxt");
 var goBtn = document.getElementById("goBtn");
 
+
+
+
+
 var index = 1;  //图片编号 1-5
 
 leftBtn.onclick = function(){

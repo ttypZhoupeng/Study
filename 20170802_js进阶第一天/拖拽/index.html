@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+        .oDiv1{
+            top:200px;
+            left:200px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="oDiv"></div>
+    <div class="oDiv1"></div>
+
+    <script>
+        var oDiv = document.getElementById("oDiv");
+        oDiv.onmousedown = function(){
+            var disX = event.clientX - this.offsetLeft;
+            var disY = event.clientY - this.offsetTop;
+
+            document.onmousemove = function(){
+                oDiv.style.left = event.clientX - disX +"px";
+                oDiv.style.top = event.clientY -disY + "px";
+            }
+            document.onmouseup = function(){
+                document.onmousemove = document.onmouseup = null;
+            }
+        }
+    </script>
+</body>
+</html>
