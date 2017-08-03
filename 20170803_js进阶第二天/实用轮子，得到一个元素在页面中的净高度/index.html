@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实用轮子</title>
+    <style type="text/css">
+        #box1{
+            width: 500px;
+            height: 500px;
+            background-color: yellowgreen;
+            padding-top: 300px;
+            position:relative;
+            border:10px solid red;
+        }
+        #box2{
+            width: 300px;
+            background-color: skyblue;
+            padding-top: 100px;
+            margin-top: 100px;
+            position:relative;
+            border:10px solid red;
+        }
+        #box3{
+            width: 60px;
+            height: 60px;
+            background-color: gold;
+            position:relative;
+            top:20px;
+            border:10px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <div id="box2">
+            <p>我是文字，文字也会挤走盒子</p>
+            <div id="box3"></div>
+        </div>
+    </div>
+
+    <script>
+        var box1 = document.getElementById("box1");
+        var box2 = document.getElementById("box2");
+        var box3 = document.getElementById("box3");
+
+        function getAllTop(obj){
+            var allTop = obj.offsetTop;
+
+            var currentObj = obj;
+
+            while(currentObj = currentObj.offsetParent){
+                allTop += currentObj.offsetTop;
+            }
+            return allTop;
+        }
+
+        function getAllLeft(obj){
+            var allLeft = obj.offsetLeft;
+
+            var currentObj = obj;
+            while(currentObj = currentObj.offsetParent){
+                allLeft += currentObj.offsetLeft;
+            }
+            return allLeft;
+        }
+
+        alert(getAllTop(box1));
+        alert(getAllTop(box2));
+        alert(getAllTop(box3));
+
+        // alert(getAllLeft(box1));
+        // alert(getAllLeft(box2));
+        // alert(getAllLeft(box3));
+        
+
+    </script>
+</body>
+</html>

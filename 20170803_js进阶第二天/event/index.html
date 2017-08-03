@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+
+    <script>
+        var oH1 = document.getElementsByTagName("h1")[0];
+
+        document.onmousemove = function(evnet){
+            oH1.innerHTML = "当前鼠标坐标为"+event.clientX+","+event.clientY;
+
+            
+        }
+    </script>
+</body>
+</html>

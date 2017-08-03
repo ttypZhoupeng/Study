@@ -10,12 +10,12 @@ html,body{
     padding:10px;
     margin:100px auto;
     background:skyblue;
-     /* text-align: right;  */
+      text-align: right;  
 }
 .container span{
     /* display: box; */
-    float:left;
-     width:120px;   
+      float:left;  
+       width:120px;     
     margin-top:20px;
     /* text-align: justify; */
     /* justify-content: space-between; */

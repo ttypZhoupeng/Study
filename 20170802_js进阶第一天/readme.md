@@ -104,6 +104,13 @@
     event.preventDefault();
     阻止默认事件
 
+
+# 3.细节知识
+
+>span
+
+    加上float属性，自动从inline变成block；
+
     
 
 
