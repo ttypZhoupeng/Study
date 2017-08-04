@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件委托</title>
+</head>
+<body>
+    <ul id="oUl">
+        <li>11111</li>
+        <li>22222</li>
+        <li>33333</li>
+        <li>44444</li>
+    </ul>
+
+    <script>
+        var oUl = document.getElementById("oUl");
+        oUl.onclick = function(ev){
+            ev = ev || window.event;
+
+            var target = ev.target || ev.srcElement;
+
+            if(target.nodeName.toLowerCase() == "li"){
+                alert(target.innerHTML);
+            }
+        }
+    </script>
+</body>
+</html>

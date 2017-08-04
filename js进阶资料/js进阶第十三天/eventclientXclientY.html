@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                width: 300px;
+                height: 300px;
+                background-color: skyblue;
+            }
+        </style>
+    </head>
+    <body>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <div></div>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+
+
+        <script type="text/javascript">
+            var oDiv = document.getElementsByTagName("div")[0];
+
+
+            // 鼠标移动的时候
+            oDiv.onmousemove=function(event){
+                // event.clientX 可视窗口到鼠标的位置
+                // console.log(event.clientX , event.clientY);
+
+                // 屏幕到鼠标的位置
+                console.log(event.screenX , event.screenY);
+
+            }
+
+        </script>
+    </body>
+</html>

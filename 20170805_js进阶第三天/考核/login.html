@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login</title>
+    <style>
+        #login{
+            width:270px;
+            height:200px;
+            background:skyblue;
+            margin:400px auto;
+        }
+        .clear_top::before,.claer_top:before{
+            content:"";
+            display: block;
+            overflow: hidden;
+        }
+        form{
+            margin:40px 0 0 10px;
+        }
+        span{
+            float:left;
+        }
+        .btn{
+            width:100px;
+            margin: 50px 0 0 70px;
+        }
+    </style>
+</head>
+<body>
+    <div id="login" class="clear_top">
+        <form action="index.html"> 
+            <span>账号：</span><input type="text">
+            <span>密码：</span><input type="password">
+            <span>重复密码：</span><input type="password">
+            <input type="submit" class="btn" value="提交">
+        </form>
+    </div>
+    
+    <script>
+        var oName = document.getElementsByTagName("input")[0];
+        var oPwd = document.getElementsByTagName("input")[1];
+        var oPwd2 = document.getElementsByTagName("input")[2];
+        var btn = document.getElementsByClassName("btn")[0];
+
+        console.log(oName.value);
+        console.log(oPwd);
+        console.log(oPwd2);
+        console.log(btn);
+        btn.onclick = function(){
+            if(oName.value == ""){
+                alert("请输入账号");
+                return false;
+            };
+            if(oPwd.value == ""){
+                alert("请输入密码");
+                return false;
+            };
+            if(oPwd2.value == ""){
+                alert("请输入重复密码");
+                return false;
+            }
+            if(oPwd.value != oPwd2.value){
+                alert("重复密码 与 密码不一样");
+                return false;
+            };
+            if(oName.value == "admin" && oPwd.value == oPwd2.value =="123"){
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
