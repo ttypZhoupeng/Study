@@ -1,4 +1,4 @@
-html,body,ul,li,h1,h2,h3,h4,h5,p{
+html,body,ul,li,h1,h2,h3,h4,h5,p,img{
     padding:0;
     margin:0;
 }
@@ -238,7 +238,7 @@ a{
     color:#C11125;
     margin-left:20px;
 }
-.news_top .list_item i{
+.news_top .list_item i,.news_bottom i{
     display: inline-block;
     width:2px;
     height:3px;
@@ -291,7 +291,7 @@ a{
 .news_top .expert p{
     font-size:12px;
 }
-.news_top .desc{
+.news_top .expert .desc{
     margin-top:10px;
 }
 
@@ -305,17 +305,218 @@ a{
     height: 90px;
     margin-top:10px;
 }
+.news_top .hot_active .desc{
+    padding: 10px 20px;
+    border: 1px solid #E4E4E4;
+    border-top: none;
+    height: 72px;
+    overflow: hidden;
+}
+.news_top .hot_active .desc .content2{
+    font-size: 14px;
+    color:#999;
+    margin-top:10px;
+}
+/*页面新闻部分上部结束*/
 
 
 
+/*页面新闻部分下部开始*/
 .news_bottom{
     width:965px;
-    height:654px;
+
     margin:0 auto;
-    background:blue;
+}
+.news_bottom a:hover{
+    text-decoration: underline;
+}
+.news_bottom .left_list{
+    float:left;
+    width:360px;
+}
+.news_bottom .list_item{
+    width:340px;
+    padding:20px 10px;
+    border-top:2px solid #343434;
+}
+.news_bottom .list_item .title{
+    margin-bottom:20px;
+}
+.news_bottom .list_item .title span{
+    font-size: 20px;
+    float:left;
+}
+.news_bottom .list_item .title ul{
+    float:right;
+}
+.news_bottom .list_item .title ul li{
+    float:left;
+    margin-right:5px;
+    font-size: 14px;
+}
+.news_bottom .list_item .title ul li a{
+    color:#666;
+}
+.news_bottom .notice_list li{
+    height: 28px;
+    line-height: 28px;
+    
+    position: relative;
+   
+    padding-left: 10px;
+}
+.news_bottom .notice_list li a{
+    color:#2f2f2f;
+     font-size: 14px;
+}
+.news_bottom .notice_list li a:hover{
+    color:#C11125;
 }
 
-/* 页面新闻活动部分开始  */
+
+.news_bottom .right_content{
+    width:580px;
+    float:right;
+}
+.news_bottom  .content_top{
+    width:580px;
+    height:456px;
+}
+.news_bottom .content_item{
+    width: 285px;
+    height: 226px;
+    border-top:2px solid #e2e2e2;
+}
+.news_bottom .content_item a:hover{
+    text-decoration: underline;
+}
+.news_bottom .l_item{
+    float:left;
+}
+.news_bottom .r_item{
+    float:right;
+}
+.news_bottom .content_item .title{
+    margin-top:20px;
+}
+.news_bottom .content_item .title h4{
+    float:left;
+    font-size:15px;
+    color:#333;
+    padding-left:5px;
+}
+.news_bottom .content_item .item_main{
+    margin-top:10px;
+    font-size: 12px;
+}
+
+
+.recommend_events ul{
+    float:right;
+}
+.recommend_events li{
+    float:left;
+    margin-right:10px;
+}
+.recommend_events li a{
+    font-size:12px;
+    color:blue;
+}
+
+.event_data .active a{
+    color:#999;
+}
+.event_data .ball_icon{
+    margin-top:20px;
+}
+.event_data .ball_icon li{
+    float:left;
+    margin:0 15px;
+    text-align: center;
+    margin-bottom:10px;
+}
+.event_data .ball_icon li em{
+    display: block;
+    width:55px;
+    height:55px;
+    margin-bottom:10px;
+    
+}
+.event_data .ball_icon li a{
+    color:#333;
+}
+.event_data .intergral{
+    background:#f7f7f7;
+}
+.event_data .intergral a{
+    margin-right:5px;
+    color:#333;
+}
+.football{
+    background: url("../img/news.png") no-repeat;
+    background-position: 0 -47px;
+}
+.basketball{
+    background: url("../img/news.png") no-repeat;
+    background-position: 0 -105px;
+}
+.live{
+    background: url("../img/news.png") no-repeat;
+    background-position: 0 -165px;
+}
+
+
+.news_bottom .content_item .title ul{
+    float:right;
+}
+.news_bottom .content_item .title ul li{
+    float:left;
+    padding:5px 5px;
+    margin:0 5px;
+    border-bottom:2px solid #e2e2e2;
+}
+.news_bottom .content_item .title ul li a{
+    font-size: 14px;
+    color:#999;
+}
+.quick_bet .bet span{
+    font-size: 12px;
+}
+.quick_bet .bet a{
+    display: block;
+    width:265px;
+    height:35px;
+    line-height: 35px;
+    text-align: center;
+    color:white;
+    font-size: 16px;
+    background:#ff9228;
+    margin-top:20px;
+}
+
+.news_bottom .content_bottom{
+    width:580px;
+    border-top:2px solid #343434;
+}
+.news_bottom .content_bottom{
+    height:48px;
+    line-height:48px;
+    font-size: 20px;
+    font-family: 'microsoft yahei';
+    color: #333;
+    padding-left: 5px;
+}
+.news_bottom .content_bottom img{
+    width:285px;
+    height:145px;
+    float:left;
+}
+.news_bottom .content_bottom .f_jpg{
+    margin-right: 10px;
+}
+
+
+/* 页面新闻活动部分结束  */
 
 /*页面主体部分结束  */
 
