@@ -13,13 +13,24 @@
         <div class="nav_content same_width">
             <img src="img/logo.png" alt="">
             <ul class="left_nav clear_float">
-                <li><a href="#">首页</a></li>
-                <li><a href="#">购彩大厅</a></li>
-                <li><a href="#">合买</a></li>
-                <li><a href="#">开奖</a></li>
-                <li><a href="#">走势图</a></li>
-                <li><a href="#">赛事数据</a></li>
-                <li><a href="#">彩票资讯</a></li>
+                <li class="f_li"><a href="#">首页</a></li>
+                <li class="f_li"><a href="#">购彩大厅</a></li>
+                <li class="f_li"><a href="#">合买</a></li>
+                <li class="f_li"><a href="#">开奖</a></li>
+                <li class="f_li"><a href="#">走势图</a></li>
+                <li class="f_nav f_li">
+                    <a href="#">赛事数据</a>
+                    <i id="arrow"></i>
+                    <div class="s_nav">
+                        <ul>
+                            <li><a href="#">足球比分</a></li>
+                            <li><a href="#">篮球比分</a></li>
+                            <li><a href="#">足球数据</a></li>
+                            <li><a href="#">篮球数据</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="f_li"><a href="#">彩票资讯</a></li>
             </ul>
             <ul class="login_nav clear_float">
                 <li><a href="#">我的彩票</a></li>
@@ -127,25 +138,63 @@
                     </div>
                     <div class="right_content">
                         <div class="banner">
-                            <img src="img/banner1.jpg" alt="">
+                            <!--<img src="img/banner1.jpg" alt="">-->
+                            <ul id="aUl">
+                                <li class="current">
+                                    <a href="#">
+                                        <img src="img/banner1.jpg" alt="" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/banner2.jpg" style="display:none;" alt="" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/banner3.jpg" style="display:none;" alt="" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/banner4.jpg" style="display:none;" alt="" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/banner5.jpg"  style="display:none;" alt="" />
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div class="circles" id="circles">
+                                <ol>
+                                    <li class="current"></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ol>
+                            </div>
+
                         </div>
                         <div class="active clear_float">
                             <div class="expert">
                                 <h4>专家专栏</h4>
                                 <div class="expert_item line">
-                                    <em></em>
+                                    <em class="pic1"></em>
                                     <div class="desc">
                                         <h5>欧冠推荐：马竞技乘胜追击</h5>
                                         <p>竞彩专家|0</p>
-                                        <p>今仗面对小组赛中实力最弱对手，马竞不会放过涨分大好机会<a href="#">详情</a></p>
+                                        <p>今仗面对小组赛中实力最弱对手，马竞不会放过涨分大好机会<a href="#" class="detailes">详情</a></p>
                                     </div>
                                 </div>
                                 <div class="expert_item">
-                                    <em></em>
+                                    <em class="pic2"></em>
                                     <div class="desc">
                                         <h5>欧冠推荐：马竞技乘胜追击</h5>
                                         <p>竞彩专家|0</p>
-                                        <p>今仗面对小组赛中实力最弱对手，马竞不会放过涨分大好机会<a href="#">详情</a></p>
+                                        <p>今仗面对小组赛中实力最弱对手，马竞不会放过涨分大好机会<a href="#"  class="detailes">详情</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -224,9 +273,12 @@
                                 <div class="title clear_float">
                                     <h4>推荐赛事</h4>
                                     <ul>
-                                        <li><a href="#">竞彩足球</a></li>
-                                        <li><a href="#">竞彩篮球</a></li>
-                                        <li><a href="#">胜负彩</a></li>
+                                        <li>
+                                            <a href="#">竞彩足球</a>
+                                            <i></i>
+                                        </li>
+                                        <li><a href="#">竞彩篮球</a><i></i></li>
+                                        <li><a href="#">胜负彩</a><i></i></li>
                                     </ul>
                                 </div>
                                 <div class="item_main">今日暂无比赛</div>
@@ -267,9 +319,9 @@
                                 <div class="title  clear_float">
                                     <h4>快捷投注</h4>
                                     <ul>
-                                        <li><a href="#">大乐透</a></li>
-                                        <li><a href="#">双色球</a></li>
-                                        <li><a href="#">福彩3d</a></li>
+                                        <li><a href="#">大乐透</a><i></i></li>
+                                        <li><a href="#">双色球</a><i></i></li>
+                                        <li><a href="#">福彩3d</a><i></i></li>
                                     </ul>
                                 </div>
                                 <div class="item_main">
@@ -297,16 +349,16 @@
                                 <div class="title  clear_float">
                                     <h4>图标工具</h4>
                                     <ul>
-                                        <li><a href="#">大乐透</a></li>
-                                        <li><a href="#">双色球</a></li>
-                                        <li><a href="#">福彩3d</a></li>
+                                        <li><a href="#">大乐透</a><i></i></li>
+                                        <li><a href="#">双色球</a><i></i></li>
+                                        <li><a href="#">福彩3d</a><i></i></li>
                                     </ul>
                                 </div>
                                 <div class="item_main">
-                                    <p>大乐透上期开奖：03 06 15 22 35 + 09 11  详情</p>
-                                    <p>奖池：39亿6365万</p>
+                                    <p>大乐透上期开奖：<span>03 06 15 22 35 + 09 11</span><a href="#" class="detailes">详情</a></p>
+                                    <p>奖池：<span>39亿6365万</span></p>
                                     <h5>走势图</h5>
-                                    <div>
+                                    <div class="last_list">
                                         <a href="#">综合走势</a>
                                         <a href="#">综合走势</a>
                                         <a href="#">综合走势</a>
@@ -314,7 +366,7 @@
                                         <a href="#">综合走势</a>
                                     </div>
                                     <h5>投注工具</h5>
-                                    <div>
+                                    <div class="last_list">
                                         <a href="#">综合走势</a>
                                         <a href="#">综合走势</a>
                                         <a href="#">综合走势</a>
@@ -389,5 +441,8 @@
         <p class="gray">搜狗彩票提醒您：购彩有风险，请谨慎投注。未满18周岁的未成年人禁止购彩！</p>
     </div>
     <!-- footer end -->
+
+
+    <script src="js/main.js"> </script>
 </body>
 </html>
