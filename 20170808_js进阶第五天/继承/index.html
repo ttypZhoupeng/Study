@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function People(){
+            this.age = 19;
+
+        }
+        // People.prototype.age = 30;
+        
+        var xiaohong = new People();
+
+        // xiaohong.age = 17;
+
+        function Student(){
+            // this.age = 10;
+        }
+
+        Student.prototype = xiaohong;
+
+        var xiaoming = new Student();
+
+        console.log(xiaoming.age);
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>点击盒子改变颜色（信号量）</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background:skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <script>
+        var box  = document.getElementById("box");
+
+        var state = "blue";
+
+        box.onclick = function(){
+            if(state=="blue"){
+                state = "red";
+            }else{
+                state = "blue";
+            }
+            this.style.background = state;
+        }
+
+        var state = 0;
+
+        box.onclick = function(){
+            if(state == 0){
+                state = 1;
+                this.style.background = "red";
+            }else{
+                state = 0;
+                this.style.background = "blue";
+            }
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var xiaoming = {
+			name : "小明",
+			age : 18,
+			sex : "男",
+			sayHello : function(){
+				alert("你好，我是" + this.name);
+				alert("今年" + this.age + "岁了");
+				alert("我是可爱的小" + this.sex + "生");
+			},
+			zhangda : function(){
+				this.age++;
+			}
+        }
+        console.log(xiaoming.age);
+        xiaoming.zhangda();
+        console.log(xiaoming.age);
+    </script>
+</body>
+</html> 
