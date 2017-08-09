@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var obj = {
+        //     a : 1,
+        //     b : 2,
+        //     c : 3
+        // }
+
+        // obj.__proto__ = {
+        //     d : 4
+        // }
+
+        // console.log("a" in obj);
+        // console.log("b" in obj);
+        // console.log("c" in obj);
+        // console.log("d" in obj);
+        // console.log("e" in obj);
+
+        // console.log(obj.hasOwnProperty("a"));
+        // console.log(obj.hasOwnProperty("b"));
+        // console.log(obj.hasOwnProperty("c"));
+        // console.log(obj.hasOwnProperty("d"));
+
+        function Dog(){
+
+        }
+
+        function Cat(){
+
+        }
+
+        Cat.prototype = new Dog();
+
+        var hellokitty = new Cat();
+        
+        console.log("")
+    
+    </script>
+    
+</body>
+</html>
