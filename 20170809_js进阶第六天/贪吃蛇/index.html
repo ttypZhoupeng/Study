@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>贪吃蛇</title>
+    <style> 
+        table{
+            margin:100px auto;
+            border-collapse: collapse;
+        }
+        table,tr,td{
+            background: skyblue;
+            
+        }
+        td{
+            width: 18px;
+            height: 18px;
+            border:1px solid blue;
+            
+        }
+        .red{
+            background:red;
+        }
+    </style>
+</head>
+<body>
+    <table id="oTable"></table>
+
+    <script>
+        var oTable = document.getElementById("oTable");
+        var tds = [];
+
+        for(var i=0;i<20;i++){
+            var tr = document.createElement("tr");
+            var thisrowtd = [];
+
+            for(var j=0;j<20;j++){
+                var td = document.createElement("td");
+                tr.appendChild(td);
+                thisrowtd.push(td);
+
+            }
+
+            oTable.appendChild(tr);
+            tds.push(thisrowtd);
+        }
+
+        function Snake(aspect){
+            this.body = [
+                {x:3,y:4},
+                {x:4,y:4},
+                {x:5,y:4},
+                {x:6,y:4}
+            ];
+            this.aspect = aspect;
+            this.timer = null;
+            this.render();
+            this.bindEvent();
+        }
+
+        Snake.prototype.render = function(){
+            for(var i=0;i<20;i++){
+                for(var j=0;j<20;j++){
+                    tds[i][j].className=""
+                }
+            }
+
+            for(var i=0;i<this.body.length;i++){
+                tds[this.body[i].x][this.body[i].y].className = "red";
+            }
+        }
+
+        Snake.prototype.update = function(){
+            this.body.pop();
+            
+
+            switch(this.aspect){
+                
+                case "top":
+                    this.body.unshift({x:this.body[0].x,y:this.body[0].y-1});
+                    break;
+                case "right":
+                    this.body.unshift({x:this.body[0].x+1,y:this.body[0].y});
+                    break;
+                case "bottom":
+                    this.body.unshift({x:this.body[0].x,y:this.body[0].y+1});
+                    break;
+                case "left":
+                    this.body.unshift({x:this.body[0].x-1,y:this.body[0].y});
+                    break;
+            }
+        }
+
+        Snake.prototype.bindEvent = function(){
+            console.log(222);
+            self = this;
+
+            document.onkeydown = function(event){
+                console.log(111);
+                event = event || window.event;
+                switch(event.keyCode){
+                    case 37:
+                        if(self.aspect!="top"){
+                            self.aspect ="top";
+                        }
+                        break;
+                    case 40:
+                        if(self.aspect!="right"){
+                            self.aspect = "right";
+                        }
+                        break;
+                    case 39:
+                        if(self.aspect!="bottom"){
+                            self.aspect = "bottom";
+                        }
+                        break;
+                    case 38:
+                        if(self.aspect!="left"){
+                            self.aspect = "left";
+                        }
+                        break;
+                }
+                clearInterval(self.timer);
+                self.timer = setInterval(function(){
+                    snake.update();
+                    snake.render();
+                },300);
+            }
+        }
+
+        var snake = new Snake("top");
+
+        
+
+        
+    </script>
+</body>
+</html>

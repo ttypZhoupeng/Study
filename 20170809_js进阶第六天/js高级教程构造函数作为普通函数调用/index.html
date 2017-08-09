@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name,age,job){
+            this.name = name;
+            this.age = age;
+            this.job = job;
+            this.sayHello=function(){
+                alert(this.name);
+            }
+            // return this.name;
+        }
+
+        // console.log(Person("zhoupeng",22,"student"));//undefined 属性和方法都被添加给window对象了
+        // window.sayHello();
+
+        var person1 = new Person();
+
+        console.log(Person.prototype.isPrototypeOf(person1));
+        // console.log(person1.prototype.isPrototypeOf(Person));//报错 找不到isPrototypeOf方法
+        console.log(Object.getPrototypeOf(person1) ==Person.prototype );
+
+    </script>
+</body>
+</html>
