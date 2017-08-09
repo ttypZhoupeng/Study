@@ -15,10 +15,20 @@
             top:0;
             left:0;
         }
+        .ball{
+            width:100px;
+            height: 100px;
+            background:red;
+            border-radius:50%;
+            position: absolute;
+            top:0;
+            left:0;
+        }
     </style>
 </head>
 <body>
     <script>
+        // 板
         function Board(top,left){
             this.top = top;
             this.left = left;
@@ -46,12 +56,62 @@
             }
         }
 
-        var height = document.documentElement.clientHeight || 
-        var width = document.documentElemtn.clientWidth ||
+
+        // documentElement 兼容性需要再回顾一下
+        var height = document.documentElement.clientHeight || document.body.clientHeight;
+        var width = document.documentElemtn.clientWidth || document.body.clientWidth;
 
         var board = new Board(height-20-100,(width-200)/2);
 
-        
+        // 球
+        function Ball(top,left,deltaX,deltaY){
+            this.top = top;
+            this.left = left;
+            this.deltaX = deltaX;
+            this.deltaY = deltaY;
+            this.speed = 30;
+            this.dom = null;
+            this.timer = null;
+            this.d = 30;
+        }
+        Ball.prototype.init = function(){
+            this.dom = document.createElement("div");
+            this.dom.className = "ball";
+            document.body.appendChild(this.dom);
+        }
+        Ball.prototype.move = function(){
+            
+            var self = this;
+
+            setInterval(function(){
+                self.left += deltaX;
+                self.top +=deltaY;
+
+                if(self.left==0 || self.left==(width-100)){
+                    deltaX = -deltaX;
+                }
+                if(self.top==0){
+                    deltaY = -deltaY;
+                }
+
+                if(this.top+this.d === board.top){
+                    if(this.left+this.d/2 >= board.offsetLeft
+                    &&this.left +this.d/2 <= board.offsetleft+biard.width){
+                        deltaY = -deltaY;
+                        score ++;
+                    }else{
+                        clearInterval(timer);
+                        alert("Game Over");
+                        return;
+                    }
+                }
+            },this.speed)
+        }
+
+        Ball.prototype.rander = function(){
+            this.dom.style.left = this.left +"px";
+            this.dom.style.top = this.top +"px";
+        }
     </script>
 </body>
 </html>
