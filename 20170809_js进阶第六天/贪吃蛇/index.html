@@ -23,6 +23,9 @@
         .red{
             background:red;
         }
+        .blue{
+            background:blue;
+        }
     </style>
 </head>
 <body>
@@ -31,6 +34,7 @@
     <script>
         var oTable = document.getElementById("oTable");
         var tds = [];
+        var timer = null;
 
         for(var i=0;i<20;i++){
             var tr = document.createElement("tr");
@@ -47,15 +51,15 @@
             tds.push(thisrowtd);
         }
 
-        function Snake(aspect){
+        function Snake(){
             this.body = [
                 {x:3,y:4},
                 {x:4,y:4},
                 {x:5,y:4},
                 {x:6,y:4}
             ];
-            this.aspect = aspect;
-            this.timer = null;
+            this.aspect = "right";
+            
             this.render();
             this.bindEvent();
         }
@@ -63,7 +67,7 @@
         Snake.prototype.render = function(){
             for(var i=0;i<20;i++){
                 for(var j=0;j<20;j++){
-                    tds[i][j].className=""
+                    tds[i][j].className="";
                 }
             }
 
@@ -79,60 +83,121 @@
             switch(this.aspect){
                 
                 case "top":
-                    this.body.unshift({x:this.body[0].x,y:this.body[0].y-1});
-                    break;
-                case "right":
-                    this.body.unshift({x:this.body[0].x+1,y:this.body[0].y});
-                    break;
-                case "bottom":
-                    this.body.unshift({x:this.body[0].x,y:this.body[0].y+1});
-                    break;
-                case "left":
                     this.body.unshift({x:this.body[0].x-1,y:this.body[0].y});
                     break;
+                case "right":
+                    this.body.unshift({x:this.body[0].x,y:this.body[0].y+1});
+                    break;
+                case "bottom":
+                    this.body.unshift({x:this.body[0].x+1,y:this.body[0].y});
+                    break;
+                case "left":
+                    this.body.unshift({x:this.body[0].x,y:this.body[0].y-1});
+                    break;
             }
+            //检查自己有没有迟到食物
+
+                if(this.body[0].x == food.x&&this.body[0].y==food.y){
+                    food.change();
+                    this.growup();
+                }
+                
+                //判断范围
+                if(this.body[0].x<0||this.body[0].x>19
+                ||this.body[0].y<0||this.body[0].y>19){
+                    clearInterval(timer);
+                    alert("GAME OVER");
+                    return;
+                }
+
+            this.render();
         }
 
         Snake.prototype.bindEvent = function(){
-            console.log(222);
             self = this;
 
             document.onkeydown = function(event){
-                console.log(111);
+               
                 event = event || window.event;
                 switch(event.keyCode){
-                    case 37:
-                        if(self.aspect!="top"){
-                            self.aspect ="top";
+                    case 37://往左left
+                        if(self.aspect=="right"){
+                            return;
                         }
+                        self.aspect = "left";
                         break;
                     case 40:
-                        if(self.aspect!="right"){
-                            self.aspect = "right";
+                        if(self.aspect=="top"){
+                            return;
                         }
+                        self.aspect = "bottom";
                         break;
                     case 39:
-                        if(self.aspect!="bottom"){
-                            self.aspect = "bottom";
+                        if(self.aspect=="left"){
+                            return;
                         }
+                        self.aspect = "right"
                         break;
                     case 38:
-                        if(self.aspect!="left"){
-                            self.aspect = "left";
+                        if(self.aspect=="bottom"){
+                            return;
                         }
+                        self.aspect = "top";
                         break;
                 }
-                clearInterval(self.timer);
-                self.timer = setInterval(function(){
-                    snake.update();
-                    snake.render();
-                },300);
+                
             }
         }
 
-        var snake = new Snake("top");
 
-        
+        Snake.prototype.growup=function(){
+				switch(this.aspect){
+					case "right":
+//					在头部添加一项
+						this.body.unshift({ x : this.body[0].x , y : this.body[0].y+1})
+						break;
+					case "top":
+//					在头部添加一项
+						this.body.unshift({ x : this.body[0].x -1, y : this.body[0].y})
+						break;
+					case "bottom":
+//					在头部添加一项
+						this.body.unshift({ x : this.body[0].x +1, y : this.body[0].y})
+						break;
+					case "left":
+//					在头部添加一项
+						this.body.unshift({ x : this.body[0].x , y : this.body[0].y-1})
+						break;
+				}
+			}
+
+            function Food(x,y){
+                this.change();
+            }
+
+            Food.prototype.render = function(){
+                tds[this.x][this.y].className = "blue";
+            }
+
+            Food.prototype.change = function(){
+                this.x = parseInt(Math.random()*20);
+                this.y = parseInt(Math.random()*20);
+                
+                for(var i=0;i<snake.body.length;i++){
+                    if(this.x == snake.body[i].x&&this.y==snake.body[i].y){
+                        this.change();
+                        return;
+                    }
+                }
+            }
+
+        var snake = new Snake();
+        var food = new Food();
+
+        timer =  setInterval(function(){
+                    snake.update();
+                    food.render();
+                },300);
 
         
     </script>
