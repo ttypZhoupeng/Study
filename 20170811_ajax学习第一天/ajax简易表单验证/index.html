@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    用户名：<input type="text" id="user"><br>
+    密码：<input type="password" id="pwd"><br>
+    <input type="button" value="注册" id="btn1">
+    <input type="button" name="" value="登录" id="btn2">
+
+    <script>
+        var user = document.getElementById("user");
+        var pwd = document.getElementById("pwd");
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+
+        btn2.onclick = function(){
+
+            var user = user.value;
+            var pwd = pwd.value;
+
+
+            var xhr = XMLHttpRequest();
+
+            xhr.onreadystatechange  = function(){
+                if(xhr.readyState == 4){
+                    if(xhr.responseText=="y"){
+                        alert("登录成功");
+                    }else{
+                        alert("对不起，该用户名已被占用")
+                    }
+                }
+            }
+
+            xhr.open("get","php/check.php?user="+user+"php/check.php?pwd="+pwd,true);
+
+            xhr.send(null);
+
+        }
+
+        
+    </script>
+</body>
+</html>
