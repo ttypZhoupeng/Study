@@ -1,0 +1,109 @@
+html,body,p,input{
+    padding:0;
+    margin:0;
+}
+p{
+    padding:0;
+    margin:0;
+}
+a{
+    text-decoration: none;
+    color:#000;
+}
+.clear_top::before,.clear_top:before{
+    content:"";
+    display: block;
+    overflow: hidden;
+}
+.clear_float::after,.clear_float:after{
+    content:"";
+    display: block;
+    clear:both;
+}
+
+
+/*login start  */
+
+.login{
+    width:300px;
+    margin:75px auto 0;
+}
+.login img{
+    display: block;
+    width:113px;
+    margin: 0 auto;
+}
+.login form{
+    margin:50px auto 0;
+    
+}
+.login em{
+    display: inline-block;
+    width:16px;
+    height:20px;
+    vertical-align: middle;
+    margin-right:5px; 
+}
+.phone_icon{
+    background:url("../img/phone.png");
+    background-size:cover;
+}
+.code_icon{
+    float:left;
+    background:url("../img/code.png");
+    background-size:cover;
+}
+.login p{
+    padding:5px;
+    margin: 20px 0;
+    border-bottom: 1px solid #000;
+}
+.login p input{
+    border:none;
+    font-size:18px;
+    display: inline-block;
+    outline:none;
+}
+.login .code{
+    display: inline-block;
+    width:185px;
+}
+.login .code input{
+    width: 130px;
+    margin-left:5px;
+}
+#codeBtn{
+    display: inline-block;
+    float:right;
+    margin-top:15px;
+    background:#fff;
+    padding:10px;
+    border:1px solid #000;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+#loginBtn{
+    width: 300px;
+    height:50px;
+    margin-top:30px;
+    background:#25292E;
+    text-align:center;
+    color:white;
+    font-size:20px;
+    border:none;
+    border-radius: 5px;
+    outline:none;
+    cursor: pointer;
+}
+.login .more{
+    width:300px;
+    text-align: center;
+    margin-top:30px;
+}
+.login .more a{
+    font-size:14px;
+}
+.login .more a:hover{
+    text-decoration: underline;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>良仓登录</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login">
+        <img src="img/login.png" alt="">
+        <form action="http://www.iliangcang.com/">
+            <!--action="http://www.iliangcang.com/"  -->
+            <p class="phone">
+                <em class="phone_icon"></em>
+                <input type="text" name="" placeholder="请输入手机号" id="phoneNum">
+            </p>
+            
+            <p class="code"> 
+                <em class="code_icon"></em>
+                <input type="text" name="" placeholder="请输入验证码" id="checkCode">
+            </p>
+            
+
+            <input type="button"  value="获取验证码" id="codeBtn"><br>
+
+            <input type="checkbox" value="自动登录" id="checkBox">自动登录 <br>
+
+            <input type="submit" value="登录" id="loginBtn"><br>
+
+            <div class="more">
+                <a href="#">更多登录方式></a>
+            </div>
+        </form>
+    </div>
+
+     <script src="js/ajax.js"></script> 
+    <script src="js/main.js"></script>
+</body>
+</html>
