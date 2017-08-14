@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table{
+            width:400px;
+            margin:0 auto;
+            border-collapse: collapse;
+        }
+        th,td{
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        
+    </table>
+
+
+    <script src="underscore.js"></script>
+    <script>
+        var table = document.getElementsByTagName("table")[0];
+
+        // $.ajax({
+        //     "url":"student.json",
+        //     "dataType":"json",
+        //     "success":function(response){
+        //         console.log(response);
+
+        //         var html = "";
+        //         for(i=0;i<response.result.length;i++){
+        //             html += "<tr><td><%=xuehao%></td><td><%=xingming%></td><td><%=nianling%></td><td><%=xingbie%></td></tr>";
+        //             var compile = _.tamplate(html);
+
+        //         }
+        //     }   
+        // })
+
+            var html = "";
+            
+            var result = [
+                {
+                    "xuehao" 	: 20160001,
+                    "xingming" 	: "小明",
+                    "nianling" 	: 22,
+                    "xingbie" 	: "男"
+                },
+                {
+                    "xuehao" 	: 20160002,
+                    "xingming" 	: "小红",
+                    "nianling" 	: 12,
+                    "xingbie" 	: "女"
+                },
+                {
+                    "xuehao" 	: 20160003,
+                    "xingming" 	: "小蓝",
+                    "nianling" 	: 14,
+                    "xingbie" 	: "男"
+                },
+                {
+                    "xuehao" 	: 20160004,
+                    "xingming" 	: "小刚",
+                    "nianling" 	: 19,
+                    "xingbie" 	: "男"
+                },
+                {
+                    "xuehao" 	: 20160005,
+                    "xingming" 	: "小粉",
+                    "nianling" 	: 11,
+                    "xingbie" 	: "女"
+                }
+            ];
+
+            for(var i=0;i<result.length;i++){
+                html += "<tr><th>学号</th><th>姓名</th><th>年龄</th><th>性别</th></tr><tr><td><%=xuehao%></td><td><%=xingming%></td><td><%=nianling%></td><td><%=xingbie%></td></tr>";
+                var compile = _.template(html);
+
+            }
+            compile(result);
+        
+            table.innerHTML = html;
+    </script>
+</body>
+</html>

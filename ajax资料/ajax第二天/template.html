@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "昨天的天气是%tianqi%,因为天气原因心情是%xinqing%";
+			
+        var divt = {
+            "tianqi": "雨天",
+            "xinqing": "忧郁"
+        }
+
+        function compile(templateString,dictionary){
+            return templateString.replace(/\%([a-z]+)\%/g,function(match,$1,index,string){
+                return dictionary[$1];
+            });
+
+        }
+
+        var str = compile(str,divt);
+
+        console.log(str);
+    </script>
+</body>
+</html>

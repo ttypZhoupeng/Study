@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1 id="oH">====</h1>
+		<input type="button" id="btn" value="点我异步读取文件" />
+		
+		<script type="text/javascript">
+			var oH = document.getElementById("oH");
+			var btn = document.getElementById("btn");
+			
+			
+			
+			btn.onclick = function(){
+				
+				var xhr = new XMLHttpRequest();
+				
+				xhr.onreadystatechange = function(){
+					
+					if(xhr.readyState == 4){
+						if( xhr.status >= 200 && xhr.status < 300 || xhr.status == 304){
+							oH.innerHTML = xhr.responseText;
+						}else{
+							oH.innerHTML = "服务器错误，请稍后重试！";
+						}
+					}
+				}
+				
+				
+				xhr.open("get","php/nnn.php",true);
+				
+				xhr.send(null);
+			}
+		</script>
+	</body>
+</html>

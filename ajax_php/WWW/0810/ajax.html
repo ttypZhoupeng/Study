@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <meta charset="UTF-8"> -->
+     <meta http-equiv="Content-Type" content="text/html"; charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">================</h1>
+    <input type="button" name="" value="按我" id="btn">
+
+    <script>
+        var oH = document.getElementById("title");
+        var btn = document.getElementById("btn")
+
+        btn.onclick = function(){
+            //Ajax固定的模板
+            //第一步，创建一个xhr对象，使用new关键词来调用一个内置的构造函数
+            var xhr = new XMLHttpRequest();
+
+            //第二部，指定接收回来的内容，怎么处理，
+            //监听xhr对象xhr对象的onreadystatechange事件
+            //我们只关心就绪状态4的时候的事情
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4){
+                    //接受完文件要做的事情
+                    //让h1的内容改变
+                    oH.innerHTML = xhr.responseText;
+                }
+            }
+            //第三部，创建一个请求，第一个参数是请求的类型
+            // 第二个参数是请求的路径，第三个参数叫是否使用异步
+            xhr.open("get","php/a.txt",true);
+            xhr.send(null);
+            //第四部，发送请求，圆括号里面的是请求头内容，get请求
+        }
+    </script>
+</body>
+</html>

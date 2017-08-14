@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .tip{
+            display: none;
+        }
+        .current{
+            color:red;
+            background:greenyellow;
+        }
+        .wrong{
+            color:red;
+            background:yellow;
+        }
+    </style>
+</head>
+<body>
+    用户名：<input type="text" id="user"><br>
+    <p class="tip" id="tip"></p>
+    密码：<input type="password" id="pwd"><br>
+    <p class="tip" id="tip"></p>
+    <input type="button" value="注册" id="btn1">
+    <input type="button" name="" value="登录" id="btn2">
+
+    <script>
+        var user = document.getElementById("user");
+        var pwd = document.getElementById("pwd");
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+
+        btn2.onblur = function(){
+
+            var user = user.value;
+
+
+            var xhr = XMLHttpRequest();
+
+            xhr.onreadystatechange  = function(){
+                if(xhr.readyState == 4){
+                    if(xhr.responseText=="y"){
+                        tip.style.display ="block";
+                        tip.className = "current";
+                        tip.innerHTML = "恭喜，用户名正确";
+                    }else{
+                        tip.style.display ="block";
+                        tip.className = "wrong";
+                        tip.innerHTML = "用户名已被注册";
+                    }
+                }
+            }
+
+            xhr.open("get","php/un.php?un="+user);
+
+            xhr.send(null);
+
+        }
+
+        
+    </script>
+</body>
+</html>

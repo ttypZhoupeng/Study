@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .oDiv{
+            width: 300px;
+            height: 200px;
+            background: #006699;
+        }
+        p{
+            color:orange;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var $ = {
+            ajax : function(options){
+                
+                var url = options.url;
+                if(url === undefined){
+                    throw new Error("ajax一定要传URL");
+                    return;
+                }
+                var type = options.type || "GET";
+
+                var xhr = null;
+                if(window.XMLHttpRequest){
+                    xhr = new XMLHttpRequest();
+                }else{
+                    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == 4){
+                        if(xhr.status >= 200 && xhr.status<300 || xhr.status == 304){
+                            if((typeof options.success) === "function"){
+                                options.success(xhr.responseText);
+                            }
+                        }
+                    }
+                }
+
+
+                xhr.open(type,url);
+
+                xhr.send();
+
+            }
+        }
+
+        $.ajax({
+            "url":"http://h6.duchengjiu.top/shop/api_cat.php",
+            "type":"GET",
+            "success":function(response){
+                console.log(response);
+            }
+        })
+
+        $.ajax({
+            "url":"http://h6.duchengjiu.top/shop/api_goods.php",
+            "type":"GET",
+            "success":function(response){
+                console.log(response);
+            }
+        })
+    </script>
+</body>
+</html>
