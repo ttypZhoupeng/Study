@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            padding:0;
+            margin:0;
+        }
+        p{
+            width:0;
+            height: 60px;
+            margin-top: 10px;
+            margin-right: 10px;
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+
+
+    <script src="../jquery-1.12.3.min.js"></script>
+    <script>
+        $("p").each(function(i){
+            $(this).animate({width:50*(i+1)},1000);
+
+        })
+        console.log($("p").length);
+        console.log($("p").size());
+    </script>
+</body>
+</html>

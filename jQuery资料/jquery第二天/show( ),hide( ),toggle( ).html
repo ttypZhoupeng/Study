@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        div{
+            width: 200px;
+            height: 200px;
+            background: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="show">
+    <input type="button" value="hide">
+    <input type="button" value="toggle">
+    <input type="button" value="show(2000)">
+    <input type="button" value="hide(2000)">
+    <input type="button" value="toggle(1000)">
+
+    <div>
+        
+    </div>
+
+    <script src="../jquery-1.12.3.min.js"></script>
+    <script>
+        $("input:eq(0)").click(function(){
+            $("div").show();
+        })
+
+        $("input:eq(1)").click(function(){
+            $("div").hide();
+        })
+
+        $("input:eq(2)").click(function(){
+            $("div").toggle();
+        })
+
+        $("input:eq(3)").click(function(){
+            $("div").show(2000);
+        })
+
+        $("input:eq(4)").click(function(){
+            $("div").hide(2000);
+        })
+
+        $("input:eq(5)").click(function(){
+            $("div").toggle(1000,function(){
+                console.log("土狗执行完毕");
+            })
+        })
+    </script>
+</body>
+</html>
