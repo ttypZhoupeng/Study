@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.shutter{
+			width: 800px;
+			height: 300px;
+			border: 1px solid #000;
+			margin: 100px auto;
+			position: relative;
+			overflow: hidden;
+		}
+		.shutter ul{
+			list-style: none;
+		}
+		.shutter ul li{
+		 	position: absolute;
+		 	top: 0;
+		}
+		.shutter ul li .mask{
+		 	width: 560px;
+		 	height: 300px;
+		 	background: black;
+		 	opacity: 0.6;
+		 	filter:alpha(opacity = 60);
+		 	position: absolute;
+		 	top:0;
+		 	left:0;
+		}
+		.shutter ul li.no0{left: 0;}
+		.shutter ul li.no1{left: 160px;}
+		.shutter ul li.no2{left: 320px;}
+		.shutter ul li.no3{left: 480px;}
+		.shutter ul li.no4{left: 640px;}
+	</style>
+</head>
+<body>
+    <div class="shutter">
+		<ul>
+			<li class="no0">
+				<a href="">
+					<img src="images/0.jpg" alt="" />
+				</a>
+				<div class="mask"></div>
+			</li>
+			<li class="no1">
+				<a href="">
+					<img src="images/1.jpg" alt="" />
+				</a>
+				<div class="mask"></div>
+				
+			</li>
+			<li class="no2">
+				<a href="">
+					<img src="images/2.jpg" alt="" />
+				</a>
+				<div class="mask"></div>
+				
+			</li>
+			<li class="no3">
+				<a href="">
+					<img src="images/3.jpg" alt="" />
+				</a>
+				<div class="mask"></div>
+				
+			</li>
+			<li class="no4">
+				<a href="">
+					<img src="images/4.jpg" alt="" />
+				</a>
+				<div class="mask"></div>
+				
+			</li>
+		</ul>
+    </div>
+    
+
+    <script src="../jquery-1.12.3.min.js"></script>
+    <script>
+        var $lis = $(".shutter li");
+
+        $lis.mouseenter(function(){
+            $lis.stop(true);
+
+            var index = $(this).index();
+
+            $lis.each(function(i){
+                if(i<=index){
+                    $(this).animate({"left":60*i},1000);
+                }else{
+                    $(this).animate({"left":560+60*(i-1)},1000);
+                }
+            })
+
+            $(this).children(".mask").stop(true).fadeOut();
+        })
+
+        $lis.mouseleave(function(){
+            $(this).children(".mask").fadeIn();
+
+            $lis.each(function(i){
+                $(this).animate({"left":160*i},500);
+            })
+        })
+    </script>
+</body>
+</html>

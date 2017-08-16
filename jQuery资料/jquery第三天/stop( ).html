@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            position:relative;
+            width:100px;
+            height:100px;
+            margin:20px 0 0 0;
+            background:red;
+            
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="stop()">
+    <input type="button" value="stop(true)">
+    <input type="button" value="stop(true,true)">
+    <input type="button" value="stop(false,true)">
+    <input type="button" value="finish()">
+
+    <div>
+        
+    </div>
+
+
+    <script src="../jquery-1.12.3.min.js"></script>
+    <script>
+        $("div").animate({"left":800},1000);
+        $("div").animate({"top":500},1000);
+        $("div").animate({"left":100},1000);
+
+        $("input:eq(0)").click(function(){
+            $("div").stop();
+        })
+        $("input:eq(1)").click(function(){
+            $("div").stop(true);
+        })
+        $("input:eq(2)").click(function(){
+            $("div").stop(true,true);
+        })
+        $("input:eq(3)").click(function(){
+            $("div").stop(false,true);
+        })
+        $("input:eq(4)").click(function(){
+            $("div").finish();
+        })
+    </script>
+</body>
+</html>

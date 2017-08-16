@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+		.box1{
+			width: 300px;
+			height: 400px;
+			border: 1px solid #000;
+			float: left;
+		}
+		.box2{
+			width: 300px;
+			height: 400px;
+			border: 1px solid #000;
+			float: left;
+		}
+		.tools{
+			float: left;
+		}
+		ul{
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+    <div class="box1">
+		<ul>
+			<li><input type="checkbox" /> 牛肉</li>
+			<li><input type="checkbox" /> 猪肉</li>
+			<li><input type="checkbox" /> 土豆</li>
+			<li><input type="checkbox" /> 馒头</li>
+			<li><input type="checkbox" /> 鸡肉</li>
+			<li><input type="checkbox" /> 考拉</li>
+			<li><input type="checkbox" /> 乌龟</li>
+			<li><input type="checkbox" /> 树懒</li>
+		</ul>
+	</div>
+
+	<div class="tools">
+		<p><input id="btn1" type="button" value=">>>>>>>>" /></p>
+		<p><input id="btn2" type="button" value="<<<<<<<<" /></p>
+	</div>
+
+	<div class="box2">
+		<ul>
+			 
+		</ul>
+    </div>
+    
+
+    <script src="../jquery-1.12.3.min.js"></script>
+    <script>
+        $("#btn1").click(function(){
+            $(".box1 input:checked").parent().remove().appendTo(".box2 ul");
+            $("input").attr("checked",false);
+        })
+        $("#btn2").click(function(){
+            $(".box2 input:checked").parent().remove().appendTo(".box1 ul");
+            $("input").attr("checked",false);
+        })
+    </script>
+</body>
+</html>
