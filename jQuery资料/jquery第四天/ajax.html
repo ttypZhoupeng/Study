@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <nav></nav>
+    <div id="box">
+        <ul></ul>
+    </div>
+    <!-- <input type="button" id="btn" value="点我"> -->
+
+    
+
+    <script src="../jquery-1.12.3.min.js"></script>
+    <script>
+        // $("input").click(function(){
+        //     $.get("http://h6.duchengjiu.top/shop/api_cat.php",function(data){
+        //         var obj = data;
+
+        //         for(var i=0;i<obj.data.length;i++){
+        //             $("#box").append("<ul><li><a href='http://www.baidu.com'>"+obj.data[i].cat_name+"</a></li></ul>")
+        //         }
+        //     })
+        // })
+
+        $.get("http://h6.duchengjiu.top/shop/api_cat.php",function(data){
+
+            var obj = data;
+            
+            for(var i=0;i<obj.data.length;i++){
+                $("nav").append("<a title='"+obj.data[i].cat_id+"'>"+obj.data[i].cat_name+"</a>")
+            }
+        })
+
+        $.ajax("http://h6.duchengjiu.top/shop/api_goods.php",{
+            "type": "get",
+            "data": {
+                "name" : "xiaoming",
+                "age" : 18
+            },
+            "success": function(data){
+                var obj = data;
+            
+                for(var i = 0 ;i<obj.data.length;i++){
+                    
+                    $("#box ul").append('<li><img src="' +obj.data[i].goods_thumb+ '" /><h4>'
+                        +obj.data[i].goods_name+ '</h4><span>'
+                        +obj.data[i].price+ '</span></li>')
+                }
+            },
+            "error" : function(){
+                alert("请求失败");
+            }
+        });
+
+    </script>
+</body>
+</html>

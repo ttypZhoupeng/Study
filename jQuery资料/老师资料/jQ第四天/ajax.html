@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+				border:1px solid red;
+				overflow: hidden;
+				/*width: 1200px;*/
+			}
+			li{
+				float: left;
+				width: 400px;
+				height: 600px;
+				text-align: center;
+				color: orange;
+				margin-right: 10px;
+			}
+			li>img{
+				width: 400px;
+			}
+			li>img:hover{
+				opacity: 0.5;
+			}
+			nav{
+				overflow: hidden;
+			}
+			nav>a{
+				float: left;
+				width: 200px;
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+				color: gold;
+				background: orange;
+				font-size: 24px;
+				text-decoration: none;
+			}
+			nav>a:hover{
+				color: white;
+				background: red;
+			}
+			b{
+				margin-left: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<nav></nav>
+		<p>
+			<input type="text" id="str" />
+			<input type="button" id="btn" value="点我" />
+		</p>
+		<div id="box">
+			<ul>
+				 
+				
+			</ul>
+		</div>
+		
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			
+				
+				$.get("http://h6.duchengjiu.top/shop/api_cat.php",function(data){
+			
+					var obj = data;
+					
+					for( var i = 0 ;i<obj.data.length;i++){
+						
+						$("nav").append("<a class='oA' title='" +obj.data[i].cat_id+ "'>" +obj.data[i].cat_name+ "</a>")
+					}
+					
+				})
+				
+				
+				$.ajax("http://h6.duchengjiu.top/shop/api_goods.php",{
+					//
+					"type": "get",
+					"data": {
+//						"goods_id": str
+					},
+					"success": function(data){
+						var obj = data;
+//					console.log(obj)
+						for(var i = 0 ;i<obj.data.length;i++){
+							
+							$("#box ul").append('<li><img src="' +obj.data[i].goods_thumb+ '" /><h4>'
+								+obj.data[i].goods_name+ '</h4><span>'
+								+obj.data[i].price+ '</span><b>' + obj.data[i].goods_id +  '</b></li>')
+						}
+					},
+					"error" : function(){
+						alert("请求失败");
+					}
+				});
+
+		
+			
+			
+		</script>
+	</body>
+</html>

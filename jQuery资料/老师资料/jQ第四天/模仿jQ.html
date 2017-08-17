@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<p>哈哈1</p>
+		<p>哈哈2</p>
+		<p>哈哈3</p>
+		
+		<div id="box">div</div>
+		
+		<span>1</span>
+		<span>2</span>
+		
+		<script src="js/kuquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			kq("p").css("color","blue");
+			
+			kq("#box").attr("title","我是一个title").css("color","red");
+		
+			kq("span").eq(1).html("今天天气不错~").css("background","skyblue");
+		</script>
+	</body>
+</html>

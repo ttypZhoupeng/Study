@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jquery-1.12.3.min.js"></script>
+    <script>
+        $(function(){
+            $.fn.abc = function(){
+                console.log("abcdefg");
+            }
+
+
+            $.fn.extend({
+                aaa:function(){
+                    console.log("aaaaaa");
+                },
+                ccc:function(){
+                    console.log("cccc");
+                }
+            })
+
+            $("div").abc();
+        $("div").aaa();
+        $("div").ccc();
+
+
+        $.hello = function(str){
+            console.log(str+"hello");
+        }
+
+        $.hello("nihao");
+        })
+
+        
+
+
+        
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

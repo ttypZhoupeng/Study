@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>哈哈1</p>
+		<p>哈哈2</p>
+		<p>哈哈3</p>
+		
+		<div id="box">div</div>
+		
+		<span class="ospan">1</span>
+		<span>2</span>
+
+
+     <script src="../jquery-1.12.3.min.js"></script> 
+     <script src="kuquery.js"></script> 
+    <script>
+        $("p").length;
+        $("p").size();
+        console.log(kq(".ospan"));
+        kq("#box").html("啦啦啦啦");
+        kq(".ospan").css("color","red");
+        kq("p").eq(2).css("background","skyblue");
+        kq("p").css("color","blue");
+        kq("#box").remove();
+        kq("span").empty();
+    </script>
+</body>
+</html>
