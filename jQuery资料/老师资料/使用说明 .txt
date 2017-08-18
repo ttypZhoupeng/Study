@@ -1,0 +1,1 @@
+postman windows是postman这款强大网页调试工具的windows客户端，提供功能强大的 Web API & HTTP 请求调试。它能够发送任何类型的HTTP 请求 (GET, HEAD, POST, PUT..)，附带任何数量的参数+ headers。

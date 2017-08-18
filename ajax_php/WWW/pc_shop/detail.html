@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <section class="same_width clear_float">
+        <input type="text" id="str">
+        <input type="button" value="搜索" id="btn">
+        <ul id="goodsUl">
+            
+        </ul>
+    </section>
+
+
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script>
+        $("#btn").click(function(){
+            var strNew = $("#str").val();
+            console.log(strNew);
+
+
+            $.ajax({
+                "url": "http://h6.duchengjiu.top/shop/api_goods.php",
+                "type":"GET",
+                "data":{
+                    "goods_id":strNew
+                },
+                "dataType":"json",
+                "success":function(response){
+                    var obj = response;
+                    console.log(obj);
+                    $("#goodsUl").html("");
+                    $("#goodsUl").append('<li><img src="' +obj.data[0].goods_thumb+ '" /><p>' +obj.data[0].goods_name+ '</p><p>' +obj.data[0].goods_desc+ '</p><p class="price">' +obj.data[0].price+ '</p></li>');
+                }
+            })
+        })
+    </script>
+</body>
+</html>

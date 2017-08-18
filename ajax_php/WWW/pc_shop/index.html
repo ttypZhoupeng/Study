@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pc_shop</title>
+    <link rel="stylesheet" type="" href="css/style.css">
+</head>
+<body>
+    <div id="top">
+        <div class="login_bar same_width clear_top">
+            <a href="http://www.iliangcang.com/"></a>
+            <ul class="login_list">
+                <li><span><a href="#">登录</a></span>&nbsp;&nbsp;&nbsp;&nbsp;<span><a href="#">注册</a></span></li>
+                <span class="line"></span>
+                <li class="bg_change">
+                    <a href="#">购物车</a>
+                    <div class="subnav">
+                        <p class="item1">你的购物车暂时没有商品...</p>
+                        <p class="item2"><a href="#">快去抢购良仓商品吧</a></p>
+                    </div>
+                </li>
+                <span class="line"></span>
+                <li class="bg_change">
+                    <a href="#">消息</a>
+                    <ul class="message_nav">
+                        <li>
+                            动态 <span>0</span>
+                        </li>
+                        <li>
+                            评论 <span>0</span>   
+                        </li>
+                        <li>
+                            私信 <span>0</span>   
+                        </li>
+                        <li>
+                            粉丝 <span>0</span>
+                        </li>
+                        <li>
+                            喜欢 <span>0</span>
+                        </li>
+                        <li>
+                            通知 <span>0</span>
+                        </li>
+                    </ul>
+                </li>
+                <span class="line"></span>
+                <li><a href="#">添加良品</a></li>
+            </ul>
+        </div>
+    </div>
+    <header>
+        <ul id="nav" class="clear_float same_width">
+        </ul>
+    </header>
+
+    <section >
+        <ul class="goodsUl clear_float same_width" id="goodsUl">
+            
+        </ul>
+    </section>
+
+
+
+
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script>
+        $(function(){
+
+            $.get("http://h6.duchengjiu.top/shop/api_cat.php",function(response){
+                var obj = response;
+                console.log(obj);
+                console.log(obj.data);
+
+                for(var i=0;i<obj.data.length;i++){
+                    $("#nav").append('<li><a href="list.html?cat_id=' +obj.data[i].cat_id+ '">' + obj.data[i].cat_name +  '</a></li>');
+                }
+            })
+
+
+            $.get("http://h6.duchengjiu.top/shop/api_goods.php",function(response){
+                var obj = response;
+                
+                for(var i=0;i<obj.data.length;i++){
+                    $("#goodsUl").append('<li><img src="' +obj.data[i].goods_thumb+ '" /><p><a href="detail.html?goods_id='+obj.data[i].goods_id+'">' +obj.data[i].goods_name+ '</a></p><p>' +obj.data[i].goods_desc+ '</p><p class="price">' +obj.data[i].price+ '</p></li>');
+                }
+            })
+
+        })
+        
+    </script>
+</body>
+</html>

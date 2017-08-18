@@ -1,0 +1,173 @@
+/*init  */
+html,body,ul,li,p,h1,h2,h3,h4,h5{
+    padding:0;
+    margin:0;
+}
+ul{
+    list-style: none;
+}
+a{
+    color:black;
+    text-decoration: none;
+}
+.clear_top::before,.clear_top:before{
+    content:"";
+    display: block;
+    overflow: hidden;
+}
+.clear_float::after,.clear_float:after{
+    content: "";
+    display: block;
+    clear:both;
+}
+.same_width{
+    width:1000px;
+    margin:auto;
+}
+
+
+
+
+/*top  */
+body{
+    width:100%;
+}
+#top{
+    width: 100%;
+    height: 56px;
+    background:#25292e;
+}
+#top .login_bar{
+    height:56px;
+    line-height:56px;
+    vertical-align: middle;
+}
+#top .login_bar>a{
+    float:left;
+    display: block;
+    width:95px;
+    height:38px;
+    margin-top:9px;
+    background:url("../images/download.png");
+}
+
+#top .login_list{
+    position:relative;
+    height:56px;
+    float:right;  
+}
+#top .login_list li{
+    float:left;
+    padding:0 15px;
+}
+#top .bg_change:hover{
+    background:#292f34;
+
+}
+#top .bg_change:hover .subnav{
+    display: block; 
+}
+#top .login_list li>a{
+    color:#666;
+    font-size:14px;
+}
+#top .login_list li>a:hover{
+    color:#ccc;
+}
+#top .login_list li span a{
+    font-size: 14px;
+    color:#ccc;
+}
+#top .login_list>span{
+    float:left;
+    width:1px;
+    height:10px;
+    margin:25px 0;
+    border-left:1px solid #666;
+}
+
+#top .subnav{
+    display: none;
+    position:absolute;
+    top:56px;
+    right:0;
+    width: 320px;
+    text-align: center;
+}
+#top .subnav .item1{
+    height:70px;
+    line-height: 70px;
+    background:#292f34;
+    color:#ccc;
+    
+}
+#top .subnav .item2{
+    height:50px;
+    line-height: 50px;
+    background:#7dbfde;
+}
+#top .subnav .item2:hover{
+    background:#96cbe0
+}
+#top .subnav .item2 a{
+    display: block;
+    color:white;
+}
+
+#top .message_nav{
+    display: none;
+    position:absolute;
+    top:56px;
+    right:0;
+    width:190px;
+}
+#top .bg_change:hover .message_nav{
+    display: block;
+}
+#top .message_nav li{
+    width:190px;
+    height:44px;
+    padding:0 15px;
+    background:#292f34;
+    color:#ccc;
+    font-size:14px;
+    border-bottom:1px solid #3f4449;
+}
+#top .message_nav li:hover{
+    background:#2e353d;
+}
+#top .message_nav li>span{
+    float:right;
+}
+/*header  */
+
+header #nav li{
+    float:left;
+    height:30px;
+    line-height: 30px;
+    padding:0 15px;
+    margin-right:10px;
+    background:skyblue;
+}
+header #nav li:hover{
+    background:#7dbfde;
+    font-weight: bold;
+}
+header #nav a{
+    color:white;
+    font-size:16px; 
+}
+
+
+/*section  */
+section #goodsUl li{
+    float:left;
+    width: 200px;
+    height:500px;
+    margin:10px 10px 0 0;
+    background:orange;
+}
+section #goodsUl li img{
+    width:200px;
+}
+
