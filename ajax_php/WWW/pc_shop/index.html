@@ -52,42 +52,77 @@
     </div>
     <header>
         <ul id="nav" class="clear_float same_width">
+            <div class="search_form">
+                <input type="text" placeholder="search">
+
+                <em></em>
+            </div>
         </ul>
+        
+        
     </header>
 
-    <section >
+    <section class="same_width">
+        <div class="banner">
+            <img src="images/banner.gif" alt="">
+        </div>
         <ul class="goodsUl clear_float same_width" id="goodsUl">
             
         </ul>
+        <div class="more"><i>MORE</i></div>
+
+        
     </section>
+
+    <footer> 
+        <div class="our_shop same_width clear_top">
+            <div class="title"><em></em><span>良仓商店/OUR SHOP</span></div>
+            <ul>
+                <li>
+                    <em class="gs"></em>
+                    <div class="desc">
+                        <p >全球精品</p>
+                        <p class="en">Global Selections</p>
+                    </div>
+                </li>
+                <li>
+                    <em class="ag"></em>
+                    <div class="desc">
+                        <p >正品保证</p>
+                        <p class="en">Authenticity Guaranteed</p>
+                    </div>
+                </li>
+                <li>
+                    <em class="gd"></em>
+                    <div class="desc">
+                        <p >全场包邮</p>
+                        <p class="en">Free Delivery</p>
+                    </div>
+                </li>
+                <li>
+                    <em class="num"></em>
+                    <div class="desc">
+                        <p >400-897-6336</p>
+                        <p class="en">工作日 09:00-18:00</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </footer>
+
+    <div id="bottom">
+        <div class="bottom_content same_width">
+            
+        </div>
+    </div>
 
 
 
 
     <script src="js/jquery-1.12.3.min.js"></script>
-    <script>
-        $(function(){
-
-            $.get("http://h6.duchengjiu.top/shop/api_cat.php",function(response){
-                var obj = response;
-                console.log(obj);
-                console.log(obj.data);
-
-                for(var i=0;i<obj.data.length;i++){
-                    $("#nav").append('<li><a href="list.html?cat_id=' +obj.data[i].cat_id+ '">' + obj.data[i].cat_name +  '</a></li>');
-                }
-            })
-
-
-            $.get("http://h6.duchengjiu.top/shop/api_goods.php",function(response){
-                var obj = response;
-                
-                for(var i=0;i<obj.data.length;i++){
-                    $("#goodsUl").append('<li><img src="' +obj.data[i].goods_thumb+ '" /><p><a href="detail.html?goods_id='+obj.data[i].goods_id+'">' +obj.data[i].goods_name+ '</a></p><p>' +obj.data[i].goods_desc+ '</p><p class="price">' +obj.data[i].price+ '</p></li>');
-                }
-            })
-
-        })
+    <script src="js/main.js">
+        
         
     </script>
 </body>

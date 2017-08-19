@@ -2,14 +2,14 @@
 
 *废话不多说，先看一下雪碧图到底是什么样的*
 
-![what is it](img/download.png)
+![what is it](https://github.com/zhoupeng520/Study/blob/master/20170818_%E9%9B%AA%E7%A2%A7%E5%9B%BE%E5%88%86%E4%BA%AB/img/download.png?raw=true)
 
 > 1.首先先解释下为什么叫雪碧图
 
 * ->谐音 css sprite (个人认为)
 * ->直译 就是 sprite单词原本就有雪碧的意思，也有精灵的意思，所以也有人叫css精灵
 
- ![why call it sprite](img/1.png)
+ ![why call it sprite](https://github.com/zhoupeng520/Study/blob/master/20170818_%E9%9B%AA%E7%A2%A7%E5%9B%BE%E5%88%86%E4%BA%AB/img/1.png?raw=true)
 
  > 2.雪碧图到底是干什么用的
  
@@ -31,7 +31,7 @@
 
 加入下面的图片为：200px×65px的三个按钮图拼合而成的图片button.png，从上到下一次为按钮的普通、鼠标滑过、鼠标点击的状态。则可以使用CSS进行定义。
 
-![a simple example](img/button.png)
+![a simple example](https://github.com/zhoupeng520/Study/raw/master/20170818_%E9%9B%AA%E7%A2%A7%E5%9B%BE%E5%88%86%E4%BA%AB/img/button.png)
 
 
 ### CSS：
@@ -55,7 +55,7 @@ a:active {
 
 *而更多的CSS雪碧，图片更复杂，背景定位更精确。可能会用到大量的数值，如：background:url("button.png") -180px 24px no-repeat; 来达到更精确的定位。*
 
-url("")
+url("")最好加引号
 
 > 4.运用这个到底有什么优点呢
 
@@ -75,6 +75,15 @@ url("")
 > 6.使用的一些小技巧
 
 1. 定位时尽量避免使用bottom或right
+
+
+> 7.最后附上在线制作雪碧图的网址
+
+    http://alloyteam.github.io/gopng/###
+
+还有软件
+
+http://pan.baidu.com/s/1nuOZDqT?errno=0&errmsg=Auth%20Login%20Sucess&&bduss=&ssnerror=0#list/path=%2F
 
 
 

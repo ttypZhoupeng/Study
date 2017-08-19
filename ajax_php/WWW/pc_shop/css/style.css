@@ -3,7 +3,7 @@ html,body,ul,li,p,h1,h2,h3,h4,h5{
     padding:0;
     margin:0;
 }
-ul{
+li{
     list-style: none;
 }
 a{
@@ -141,33 +141,222 @@ body{
 }
 /*header  */
 
+
+header #nav{
+    border-bottom:3px solid #ededed;
+}
 header #nav li{
     float:left;
     height:30px;
     line-height: 30px;
-    padding:0 15px;
+    padding:10px 15px;
     margin-right:10px;
-    background:skyblue;
 }
 header #nav li:hover{
-    background:#7dbfde;
-    font-weight: bold;
+    margin-bottom:-3px;
+    border-bottom: 3px solid #25292e;
 }
 header #nav a{
-    color:white;
     font-size:16px; 
 }
+header .search_form {
+    float:right;
+    margin-top:10px;
+    margin-bottom:-3px;
+}
+header .search_form:hover{
+    border-bottom:3px solid #25292e;
+}
+header input{
+    float:left;
+    height:30px;
+    font-size:16px;
+    border:none;
+    outline:none;
+}
+
+ .search_form em{
+    display: inline-block;
+    width: 33px;
+    height: 40px;
+    margin-top:-5px;
+    background: url("../images/download.png") -167px -145px no-repeat;
+} 
+
 
 
 /*section  */
-section #goodsUl li{
-    float:left;
-    width: 200px;
-    height:500px;
-    margin:10px 10px 0 0;
-    background:orange;
+section{
+    padding-top:30px;
 }
-section #goodsUl li img{
-    width:200px;
+section .banner{
+
 }
 
+
+#goodsUl{
+    margin-top:40px;
+}
+.hot_item{
+    position:relative;
+    width:316px;
+    height:316px;
+    float:left;
+    margin:0 26px 100px 0;
+}
+.hot_item:hover .hot_item_cover{
+    display: block;
+}
+.hot_item img{
+    position: relative;
+    width: 316px;
+    height: 316px;
+}
+#goodsUl .hot_item:nth-child(3n){
+    margin-right:0;
+}
+.hot_item_cover{
+    display:none;
+    position: absolute;
+    width:276px;
+    height:276px;
+    padding:20px;
+    top:0;
+    left:0;
+    background:rgba(0, 0, 0, 0.71); 
+}
+.goods_price{
+    color: #0c6eba;
+    font-size: 20px;
+    font-style: italic;
+}
+.goods_content{
+    margin-top:80px;
+    text-align: center;
+    color:white;
+}
+.goods_name,.goods_desc{
+    height: 25px;
+    line-height: 20px;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.goods_name{
+    margin-bottom:10px;
+    font-size:14px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.goods_desc{
+    font-size:12px;
+    font-weight:400;
+    white-space: normal;
+}
+
+#goodsUl .bottom_bar{
+    width:100%;
+    padding:20px 0;
+}
+#goodsUl .bottom_bar img{
+    display: inline-block;
+    
+    vertical-align: middle;
+}
+#goodsUl .bottom_bar>img{
+    width:40px;
+    height:40px;
+    margin-right:10px;
+}
+#goodsUl .thumb_up img{
+    width:20px;
+    height:20px;
+}
+#goodsUl .thumb_up span{
+    margin-right:15px;
+}
+#goodsUl .bottom_bar>span{
+    display: inline-block;
+    width:80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+#goodsUl .thumb_up{
+    float:right;
+}
+
+
+
+/*more  */
+section .more{
+    width:148px;
+    height:50px;
+    line-height: 50px;
+    margin:100px auto 80px;
+    text-align: center;
+    border:3px solid #252921;
+    color:#252921;
+    font-weight: bold;
+}
+section .more:hover{
+    background:#252921;
+    color:white;
+}
+
+
+/*our_shop  */
+footer{
+    width:100%;
+    height:250px;
+    background:#fbfdfe;
+}
+footer .our_shop .title{
+    text-align:center;
+    margin:45px 0;
+    font-weight: bold;
+}
+ 
+.our_shop>ul>li{
+    float:left;
+}
+.our_shop>ul>li em{
+    display: block;
+    float:left;
+    width:56px;
+    height:60px;
+    margin:-10px 15px 0 0;
+}
+.our_shop>ul>li .gs{
+     background:url("../images/download.png") 0 -355px no-repeat;
+}
+.our_shop>ul>li .ag{
+    
+     background:url("../images/download.png") -153px -217px no-repeat;
+}
+.our_shop>ul>li .gd{
+     background:url("../images/download.png") -57px -353px no-repeat;
+}
+.our_shop>ul>li .num{
+     background:url("../images/download.png") -114px -353px no-repeat;
+}   
+.our_shop>ul>li .desc{
+    float:right;
+    width:179px;
+}  
+.our_shop>ul>li .en{
+    margin-top:3px;
+    color:#ccc;
+    font-size: 13px;
+} 
+
+
+#bottom{
+    height:223px;
+    background:#25292e;
+}
+.bottom_content{
+    padding-top:40px;
+    background:skyblue;
+}
