@@ -63,9 +63,34 @@
     </header>
 
     <section class="same_width">
-        <div class="banner">
-            <img src="images/banner.gif" alt="">
+        
+        <div class="banner clear_float" id="banner">
+            <div class="btns">
+                <a href="javascript:;" class="leftBtn"></a>
+                <a href="javascript:;" class="rightBtn"></a>             
+            </div>
+            <div class="m_unit">
+                <ul>
+                    <li><a href="#"><img src="images/banner1.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="images/banner2.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="images/banner1.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="images/banner2.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="images/banner.gif" alt=""></a></li>
+                </ul>
+            </div>
+            
         </div>
+        <div class="focus">
+            <ol>
+                <li class="cur"></li> 
+                <li></li>                   
+                <li></li>     
+                <li></li>     
+                <li></li>     
+            </ol>
+        </div>
+
+
         <ul class="goodsUl clear_float same_width" id="goodsUl">
             
         </ul>
@@ -112,18 +137,102 @@
     </footer>
 
     <div id="bottom">
-        <div class="bottom_content same_width">
-            
+        <div class="bottom_content same_width clear_float">
+            <div class="left">
+                <em></em>
+                <div class="desc">
+                    <p><a href="#">iphone Adroid</a></p>
+                    <p class="app"><a href="#">客户端下载</a></p>
+                </div>
+                <div class="two_bar_codes">
+                    <dl class="iphone">
+                        <dt></dt>
+                        <dd>下载iphone版</dd>
+                    </dl>
+                    
+                    <dl class="android">
+                        <dt></dt>
+                        <dd>下载android版</dd>
+                    </dl>
+                </div>
+            </div>
+            <ul>
+                <li><a href="#" class="weixin"></a></li>
+                <li><a href="#" class="weibo"></a></li>
+                <li><a href="#" class="douban"></a></li>
+            </ul>
         </div>
+        <div class="copyright same_width">
+            <ul class="clear_float">
+                <li><a href="#">关于良仓</a></li>
+                <span></span>
+                <li><a href="#">服务协议</a></li>
+                <span></span>
+                <li><a href="#">隐私保护政策</a></li>
+                <span></span>
+                <li><a href="#">使用指南</a></li>
+                <span></span>
+                <li><a href="#">联系我们</a></li>
+                <span></span>
+                <li><a href="#">加入我们</a></li>
+                <span></span>
+                <li><a href="#">友情链接</a></li>
+                <span></span>
+                <li><a href="#">私信良仓</a></li>
+            </ul>
+        </div>
+        <div class="bottom_desc same_width">
+            <p>
+                © 2013-2015 北京良仓文化传播有限公司版权所有 京ICP备13010677号-1 京公网安备11010502025627
+            </p>
+            <p>
+                &nbsp;&nbsp;&nbsp;公司名称：北京良仓文化传播有限公司&nbsp;&nbsp;&nbsp;&nbsp;  电话：010-58263516
+            </p>
+            <p>
+                &nbsp;&nbsp;&nbsp;公司地址：北京朝阳区百子湾路32号6号楼1层60号.
+            </p>
+            <p>
+                &nbsp;&nbsp;&nbsp;社会信用统一代码：91110105059231575L&nbsp;&nbsp;&nbsp;&nbsp;  食品许可证：JY11105160159557
+            </p>
+            <p>
+                &nbsp;&nbsp;&nbsp; 图书证名称：中华人民共和国出版物经营许可证&nbsp;&nbsp;&nbsp;&nbsp;  图书证编号：新出发京零 字第 朝 150051 号 
+            </p>
+        </div>
+        
     </div>
 
 
 
-
     <script src="js/jquery-1.12.3.min.js"></script>
-    <script src="js/main.js">
-        
-        
-    </script>
+    <script src="js/main.js"></script>
+    <!-- <script>
+        (function(){
+
+            var str = location.search;
+
+            var catId = str.split("=");
+            console.log(str);
+            console.log(catId);
+            console.log(catId[1]);
+
+            $.ajax({
+                    "url": "http://h6.duchengjiu.top/shop/api_goods.php",
+                    "type": "GET",
+                    "data": {
+                        "cat_id": catId[1]
+                    },
+                    "dataType": "json",
+                    "success": function(response){
+                        var obj = response;
+                        for(var i=0;i<obj.data.length;i++){
+                            $("#goodsUl").append('<li><img src="'+obj.data[i].goods_thumb+'"><p><a href="detail.html?goods_id='+obj.data[i].goods_id+'">'+obj.data[i].goods_name+'</a></p><p>'+obj.data[i].goods_desc+'</p><p>'+obj.data[i].price+'</p></li>')
+                        }
+                    }
+                    
+                    
+                })
+
+        })
+    </script> -->
 </body>
 </html>

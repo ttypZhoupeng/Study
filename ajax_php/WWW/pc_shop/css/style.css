@@ -1,5 +1,5 @@
 /*init  */
-html,body,ul,li,p,h1,h2,h3,h4,h5{
+html,body,ul,li,p,h1,h2,h3,h4,h5,dl,dd,dt{
     padding:0;
     margin:0;
 }
@@ -93,6 +93,8 @@ body{
     right:0;
     width: 320px;
     text-align: center;
+    font-size: 14px;
+    z-index: 200;
 }
 #top .subnav .item1{
     height:70px;
@@ -120,6 +122,7 @@ body{
     top:56px;
     right:0;
     width:190px;
+    z-index:200;
 }
 #top .bg_change:hover .message_nav{
     display: block;
@@ -157,7 +160,8 @@ header #nav li:hover{
     border-bottom: 3px solid #25292e;
 }
 header #nav a{
-    font-size:16px; 
+    font-size:14px;
+    display: block; 
 }
 header .search_form {
     float:right;
@@ -175,7 +179,7 @@ header input{
     outline:none;
 }
 
- .search_form em{
+.search_form em{
     display: inline-block;
     width: 33px;
     height: 40px;
@@ -189,10 +193,62 @@ header input{
 section{
     padding-top:30px;
 }
-section .banner{
-
+#banner{
+    width:1000px;
+    height:475px;
+    margin:0 auto;
+    position: relative;
+    overflow:hidden;
 }
-
+#banner .m_unit{
+    width:9000px;
+    position: absolute;
+    top:0;
+    left:0;
+}
+#banner .m_unit ul li{
+    float: left;
+    width:1000px;
+    height:475px;
+    overflow:hidden
+}
+#banner .btns a{
+    display: block;
+    position: absolute;
+    width:50px;
+    height: 50px;
+    top:50%;
+    margin-top:-25px;
+    border-radius:50%;
+    z-index:100;
+    display:none;
+}
+#banner .btns a.leftBtn{
+    background:url("../images/leftBtn.png");
+    background-color:rgba(0,0,0,0.4);
+    left:10px;
+}
+#banner .btns a.rightBtn{
+    background:url("../images/rightBtn.png");
+    background-color:rgba(0,0,0,0.6);
+    right:10px;
+}
+.focus{
+    width:200px;
+    height: 10px;
+    margin:10px auto;  
+}
+.focus ol li{
+    float: left;
+    width:25px;
+    height: 7px;
+    margin-right:5px;
+    background:#e8e8e8;
+    cursor: pointer;
+}
+.focus .cur{
+    background:#49494d;
+}
 
 #goodsUl{
     margin-top:40px;
@@ -294,7 +350,7 @@ section .more{
     width:148px;
     height:50px;
     line-height: 50px;
-    margin:100px auto 80px;
+    margin:50px auto 80px;
     text-align: center;
     border:3px solid #252921;
     color:#252921;
@@ -353,10 +409,130 @@ footer .our_shop .title{
 
 
 #bottom{
-    height:223px;
     background:#25292e;
 }
 .bottom_content{
     padding-top:40px;
-    background:skyblue;
 }
+.bottom_content .left{
+    position: relative;
+    float:left;
+    width:200px;
+}
+.bottom_content .left:hover .two_bar_codes{
+    display: block;
+}
+.two_bar_codes{
+    display: none;
+    position: absolute;
+    width:235px;
+    height:150px;
+    bottom:87px;
+    left:0;
+    background:white;
+}
+.two_bar_codes dl{
+    float:left;
+}
+.two_bar_codes dt{
+    display: block;
+    width:95px;
+    height:95px;
+}
+.two_bar_codes dd{
+    height:50px;
+    line-height: 50px;
+    font-size: 14px;
+    font-weight: 400;
+    color:#333;
+}
+
+.two_bar_codes .iphone dt{
+    padding-right:20px;
+    background:url("../images/download.png") -99px -47px no-repeat;
+    border-right:1px solid #eee;
+}
+.two_bar_codes .android{
+    margin-left:20px;
+}
+.two_bar_codes .android dt{
+    background:url("../images/download.png") 0px -47px no-repeat;
+}
+
+.bottom_content .left:hover a{
+    color:#999999;
+}
+.bottom_content .left p a{
+    color:#5c5c5c;
+    /* color:#9997d; */
+}
+
+.bottom_content .left em{
+    display: block;
+    float:left;
+    width:30px;
+    height:47px;
+    margin-right:20px;
+    background:url("../images/download.png") -175px 0 no-repeat;
+}
+.bottom_content>ul {
+    float:right;
+}
+.bottom_content>ul>li{
+    float: left;
+    margin-right:25px;
+}
+.bottom_content>ul>li a{
+    display: block;
+    opacity: 0.2;
+}
+.bottom_content>ul>li .weixin{
+    width:26px;
+    height:20px;
+    background:url("../images/download.png") -100px -23px no-repeat;
+}
+.bottom_content>ul>li .weibo{
+    width:23px;
+    height:20px;
+    background:url("../images/download.png") -150px -23px no-repeat;
+}
+.bottom_content>ul>li .douban{
+    width:18px;
+    height:20px;
+    background:url("../images/download.png") -129px -25px no-repeat;
+}
+.bottom_content>ul>li:hover a{
+    opacity: 1;
+}
+.copyright{
+    margin-top:20px;
+}
+.copyright>ul {
+    width:1000px;
+    display: block;
+}
+.copyright>ul>li{
+    float:left;
+    padding:0 8px;
+
+}
+.copyright>ul>li a{
+    color:#5c5c5c;
+    font-size:12px;
+}
+.copyright>ul>li a:hover{
+    color:#999999;
+}
+.copyright>ul span{
+    display: block;
+    float: left;
+    width:1px;
+    height:10px;
+    margin-top:8px;
+    border-right:1px solid #5c5c5c;
+}
+.bottom_desc{
+    padding:20px 0;
+    font-size:12px;
+    color:#5c5c5c;
+} 
