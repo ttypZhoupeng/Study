@@ -185,6 +185,7 @@ header input{
     height: 40px;
     margin-top:-5px;
     background: url("../images/download.png") -167px -145px no-repeat;
+    cursor: pointer;
 } 
 
 

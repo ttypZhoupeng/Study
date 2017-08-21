@@ -27,46 +27,50 @@
                 },2000);
             }
             
-            $("#login").click(function(){
-                var username = $('input[name="username"]').val();
-                var password = $('input[name="password"]').val();
+
+            $(function(){
+                $("#login").click(function(){
+                    var username = $('input[name="username"]').val();
+                    var password = $('input[name="password"]').val();
 
 
-                console.log(username,password);
+                    console.log(username,password);
 
-                $.ajax({
-                    "url":"http://h6.duchengjiu.top/shop/api_user.php",
-                    "type":"POST",
-                    "data":{
-                        "status":"login",
-                        "username":username,
-                        "password":password
-                    },
-                    "dataType":"json",
-                    "success":function(response){
-                        console.log(response);
+                    $.ajax({
+                        "url":"http://h6.duchengjiu.top/shop/api_user.php",
+                        "type":"POST",
+                        "data":{
+                            "status":"login",
+                            "username":username,
+                            "password":password
+                        },
+                        "dataType":"json",
+                        "success":function(response){
+                            console.log(response);
 
-                        // localStorage.setItem("token",response.data.token);
-                        // alert(response.message);
+                            // localStorage.setItem("token",response.data.token);
+                            // alert(response.message);
 
 
-                        if(response.code === 0){
-                            var data = response.data;
+                            if(response.code === 0){
+                                var data = response.data;
 
-                            for( prop in data){
-                                if(data.hasOwnProperty(prop)){
-                                    localStorage.setItem(prop,data[prop]);
+                                for( prop in data){
+                                    if(data.hasOwnProperty(prop)){
+                                        localStorage.setItem(prop,data[prop]);
+                                    }
                                 }
+
+                                console.log("11111");
+                                alert(response.message);
+                                location.href ="index.html";
                             }
 
-
-                            alert(response.message);
-                            location.href ="index.html";
                         }
-
-                    }
-                })
-            });
+                    })
+                });
+            })
+            
     </script>
 </body>
 </html>
