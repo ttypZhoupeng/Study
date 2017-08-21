@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .success{
+            color: green;
+            font-size: 16px;
+             display: none; 
+        }
+        .error{
+            color: red;
+            font-size: 16px;
+             display: none; 
+            
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <input type="text" name="username">
+        <span class="success">用户名可以使用</span>
+        <span class="error">用户名已被注册，请重新填写!</span>
+        
+    </p>
+    <p>
+        <input type="password" name="password">
+        <span class="password"></span>
+    </p>
+    <input type="button" value="注册" id="reg"> 
+
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script>
+
+        $('input[name="username"]').blur(function(){
+            var username = $('input[name="username"]').val();
+            console.log($(this).val());
+
+            $.ajax({
+                "url":"http://h6.duchengjiu.top/shop/api_user.php",
+                "type":"POST",
+                "data":{
+                    "status":"check",
+                    "username":username
+                },
+                "datatype":"json",
+                "success":function(response){
+                    console.log(response);
+                    if(response.code === 0){
+                        $(".success").show();
+                        $(".error").hide();
+                    }else if(response.code ===2001){
+                        $(".error").show();
+                        $(".success").hide();
+                    }
+                }
+            })
+        })
+
+
+
+
+        $("#reg").click(function(){
+            var username = $("input[name='username']").val();
+            var password = $("input[name='password']").val();
+
+            // console.log(username,password);
+
+
+            if(password.length<6 ||password.length>20){
+                alert("密码长度应该是6-20位之内");
+                return;
+            }
+
+            
+
+            $.ajax({
+                "type":"POST",
+                "url":"http://h6.duchengjiu.top/shop/api_user.php",
+                "data":{
+                    "status":"register",
+                    "username":username,
+                    "password":password
+                },
+                "dataType":"json",
+                "success":function(response){
+                    console.log(response);
+                    alert(response.message);
+                    window.location.href = "login.html";
+                }
+            })
+
+        })
+    </script>
+</body>
+</html>

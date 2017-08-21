@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		<header>
+			<p class="login">
+				<a href="register.html">注册</a>
+			</p>
+			<p>
+				<input type="text" id="search" />
+				<input type="button" id="btn1" value="搜索" />
+			</p>
+			<ul id="nav">
+				<!--'<li><a href="list.html?cat_id=' +obj.data[i].cat_id+ '">' + obj.data[i].cat_name +  '</a></li>'-->
+			</ul>
+			
+		</header>
+		
+		<section>
+			<ul class="goodsUl" id="goodsUl">
+				 <!--'<li><img src="' +obj.data[i].goods_thumb+ '" /><p>' +obj.data[i].goods_name+ '</p><p>' +obj.data[i].goods_desc+ '</p><p>' +obj.data[i].price+ '</p></li>'-->
+			</ul>
+		</section>
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				
+				//页面导航；分类列表功能
+				$.get("http://h6.duchengjiu.top/shop/api_cat.php",function(data){
+					var obj = data;
+//					console.log(obj);
+					
+					for(var i=0;i<obj.data.length;i++){
+						
+						$("#nav").append('<li><a href="list.html?cat_id=' +obj.data[i].cat_id+ '">' + obj.data[i].cat_name +  '</a></li>');
+					}
+					
+				})
+				
+				
+				//热门商品
+				$.get("http://h6.duchengjiu.top/shop/api_goods.php",function(data){
+					var obj = data;
+//					console.log(obj);
+					
+					for(var i=0;i<obj.data.length;i++){
+						
+						$("#goodsUl").append('<li><img src="' +obj.data[i].goods_thumb+ '" /><p><a href=detail.html?goods_id='+obj.data[i].goods_id+'>' +obj.data[i].goods_name+ '</a></p><p>' +obj.data[i].goods_desc+ '</p><p class="price">' +obj.data[i].price+ '</p></li>');
+					}
+					
+				})
+				
+				
+				//搜索按钮 实现跳转
+				$("#btn1").click(function(){
+					
+					var search = $("#search").val();
+					
+					console.log(search);  //253286
+					
+					window.location.href = "detail.html?goods_id=" + search;
+					
+				})
+			})
+			
+		</script>
+	</body>
+</html>
