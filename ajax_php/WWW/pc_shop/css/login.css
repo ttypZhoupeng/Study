@@ -44,18 +44,22 @@ a{
     vertical-align: middle;
     margin-right:5px; 
 }
-.phone_icon{
+.username{
+    width:300px;
+    margin-right:10px;
+    position: relative;
+}
+.username_icon{
     background:url("../images/phone.png");
     background-size:cover;
 }
-.code_icon{
-    float:left;
+.password_icon{
     background:url("../images/code.png");
     background-size:cover;
 }
 .login p{
     padding:5px;
-    margin: 20px 0;
+    margin: 20px 0 0;
     border-bottom: 1px solid #000;
 }
 .login p input{
@@ -64,26 +68,8 @@ a{
     display: inline-block;
     outline:none;
 }
-.login .code{
-    display: inline-block;
-    width:185px;
-}
-.login .code input{
-    width: 130px;
-    margin-left:5px;
-}
-#codeBtn{
-    display: inline-block;
-    float:right;
-    margin-top:15px;
-    background:#fff;
-    padding:10px;
-    border:1px solid #000;
-    border-radius: 5px;
-    outline: none;
-    cursor: pointer;
-}
-#loginBtn{
+
+#loginBtn,#registerBtn{
     width: 300px;
     height:50px;
     margin-top:30px;
@@ -106,4 +92,23 @@ a{
 }
 .login .more a:hover{
     text-decoration: underline;
+}
+
+
+
+
+/* 注册 */
+.success{
+    color: green;
+    font-size: 16px;
+     display: none; 
+}
+.error,.error2{
+    color: red;
+    font-size: 16px;
+    display: none; 
+}
+
+.register .password{
+    margin-top:25px;
 }

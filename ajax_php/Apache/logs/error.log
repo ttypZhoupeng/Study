@@ -1094,3 +1094,9 @@ core:warn] [pid 5352:tid 512] AH00098: pid file H:/phpStudy/Apache/logs/httpd.pi
 [Tue Aug 22 11:32:34.325119 2017] [core:notice] [pid 7816:tid 676] AH00094: Command line: 'C:\\Users\\ucai\\Desktop\\web-1706\\ajax_php\\Apache\\bin\\httpd.exe -d C:/Users/ucai/Desktop/web-1706/ajax_php/Apache'
 [Tue Aug 22 11:32:34.392163 2017] [mpm_winnt:notice] [pid 7816:tid 676] AH00418: Parent: Created child process 10440
 [Tue Aug 22 11:32:35.549930 2017] [mpm_winnt:notice] [pid 10440:tid 684] AH00354: Child: Starting 150 worker threads.
+[Tue Aug 22 22:39:02.509039 2017] [core:warn] [pid 11108:tid 708] AH00098: pid file F:/Study/ajax_php/Apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Tue Aug 22 22:39:08.688469 2017] [mpm_winnt:notice] [pid 11108:tid 708] AH00455: Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.4.45 configured -- resuming normal operations
+[Tue Aug 22 22:39:08.689486 2017] [mpm_winnt:notice] [pid 11108:tid 708] AH00456: Server built: Jul  1 2016 16:42:20
+[Tue Aug 22 22:39:08.689486 2017] [core:notice] [pid 11108:tid 708] AH00094: Command line: 'F:\\Study\\ajax_php\\Apache\\bin\\httpd.exe -d F:/Study/ajax_php/Apache'
+[Tue Aug 22 22:39:08.819501 2017] [mpm_winnt:notice] [pid 11108:tid 708] AH00418: Parent: Created child process 8188
+[Tue Aug 22 22:39:14.006758 2017] [mpm_winnt:notice] [pid 8188:tid 552] AH00354: Child: Starting 150 worker threads.
