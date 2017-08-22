@@ -9,11 +9,47 @@
 			<input type="text" id="str"/>
 			<input type="button" id="btn" value="搜索"/>
 		</p>		
+		<div id="box"></div>
+		
+		<button id="cart">加入购物车</button>
 		
 		
 		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			
+			$(function(){
+//				通过location.search获取get传参的数据 截取？后面的内容
+				var str = location.search.substr(1);
+//				用分割方法得到 = 号两边内容
+				var goodsId = str.split("=");
+//				用下标找到id的值
+				console.log(goodsId[1]);
+				
+				//下面是转义URI码
+//				console.log(decodeURI(goodsId[1]));
+				
+				$.ajax({
+				"url": "http://h6.duchengjiu.top/shop/api_goods.php",
+				"type": "GET",
+				"data": {
+					"goods_id": goodsId[1]
+				},
+				"dataType": "json",
+				"success": function(response){
+					var obj = response;
+					console.log(obj);
+//					for(var i=0;i<obj.data.length;i++){
+//						
+//						$("#goodsUl").append('<li><img src="' +obj.data[i].goods_thumb+ '" /><p>' +obj.data[i].goods_name+ '</p><p>' +obj.data[i].goods_desc+ '</p><p class="price">' +obj.data[i].price+ '</p></li>');
+//					}
+					$("#box").html('<li><img src="' +obj.data[0].goods_thumb+ '" /><p>' +obj.data[0].goods_name+ '</p><p>' +obj.data[0].goods_desc+ '</p><p class="price">' +obj.data[0].price+ '</p></li>')
+				}
+				
+				
+			})
+				
+				
+				//通过goods_id查询商品数据
 			$("#btn").click(function(){
 				
 				var strNew = $("#str").val();
@@ -24,21 +60,55 @@
 				"url": "http://h6.duchengjiu.top/shop/api_goods.php",
 				"type": "GET",
 				"data": {
-					"goods_id": strNew
+					"search_text": strNew
 				},
 				"dataType": "json",
 				"success": function(response){
 					var obj = response;
 					console.log(obj);
-//					for(var i=0;i<obj.data.length;i++){
-//						
-//						$("#goodsUl").append('<li><img src="' +obj.data[i].goods_thumb+ '" /><p>' +obj.data[i].goods_name+ '</p><p>' +obj.data[i].goods_desc+ '</p><p class="price">' +obj.data[i].price+ '</p></li>');
-//					}
+					$("#box").html('<li><img src="' +obj.data[0].goods_thumb+ '" /><p>' +obj.data[0].goods_name+ '</p><p>' +obj.data[0].goods_desc+ '</p><p class="price">' +obj.data[0].price+ '</p></li>')
 				}
 				
 				
 			})
 			})
+			
+			//加入购物车的事件
+			$("#cart").click(function(){
+					
+					//判断当前是否登录，没登录无法加入购物车
+					if(!localStorage.getItem("token")){
+						alert("请登录后才能使用购物车功能！");
+						
+						location.href = "login.html#callback=" + location.href;
+						return;
+					}
+					console.log(goodsId[1]);
+					//获取本地存储中的商品数量信息
+					var goods_number = localStorage.getItem("cart" + goodsId[1]);
+					//如果有 则是买过！让之前的数量+1 如果没有就是第一次购买，那数量就是1
+					goods_number = goods_number ? parseInt(goods_number)+1 : 1 ;
+					
+					$.ajax({
+						"url": "http://h6.duchengjiu.top/shop/api_cart.php?token="+ localStorage.token,
+						"type": "POST",
+						"data": {
+							"goods_id": goodsId[1],
+							"number": goods_number
+						},
+						"dataType": "json",
+						"success": function(response){
+							console.log(111);
+							console.log(localStorage);
+							console.log(response);
+							
+							//使用后存储商品的购买数量到本地存储中
+							localStorage.setItem("cart" + decodeURI(goodsId[1]) ,goods_number );
+							location.href="cart.html";
+						}
+					})
+				})
+		})
 			
 			
 		</script>

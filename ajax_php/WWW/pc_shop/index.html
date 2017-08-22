@@ -12,7 +12,7 @@
         <div class="login_bar same_width clear_top">
             <a href="http://www.iliangcang.com/"></a>
             <ul class="login_list">
-                <li><span><a href="#">登录</a></span>&nbsp;&nbsp;&nbsp;&nbsp;<span><a href="register.html">注册</a></span></li>
+                <li class="login_register"><span><a href="login.html">登录</a></span>&nbsp;&nbsp;&nbsp;&nbsp;<span><a href="register.html">注册</a></span></li>
                 <span class="line"></span>
                 <li class="bg_change">
                     <a href="#">购物车</a>
@@ -206,6 +206,11 @@
     <script src="js/jquery-1.12.3.min.js"></script>
     <script src="js/main.js"></script>
     <script>
+        if(localStorage.getItem("token")){
+            $(".login_register").html('<span><a href="#">'+localStorage.getItem("username")+'</a></span>')
+        }
+
+
         (function(){
 
             // $.get("http://h6.duchengjiu.top/shop/api_goods.php",function(response){
@@ -224,9 +229,9 @@
                 
                 for(var i=0;i<obj.data.length;i++){
                     $("#goodsUl").append(
-                    '<div class="hot_item"><img src="'
+                    '<div class="hot_item"><a href="detail.html?goods_id='+obj.data[i].goods_id+'"><img src="'
                     +obj.data[i].goods_thumb+
-                    '"><div class="hot_item_cover"><p class="goods_price">'
+                    '"></a><div class="hot_item_cover"><p class="goods_price">'
                     +response.data[i].price+
                     '</p><div class="goods_content"><p class="goods_name">'
                     +response.data[i].goods_name+
@@ -242,14 +247,34 @@
                 }
             })
 
-            console.log($(".search_btn"))
+
             $(".search_btn").click(function(){
-                console.log("jinru");
                 var search = $("#search").val();
                 console.log(search);
+                window.location.href = "detail.html?goods_id="+search;
             })
 
-        })
+
+            //  $(".search_btn").click(function(){
+            //     var search = $("#search").val();
+            //     console.log(search);
+            //     $.ajax({
+            //         "url":"http://h6.duchengjiu.top/shop/api_goods.php",
+            //         "type":"get",
+            //         "dataType":"json",
+            //         "data":{
+            //             "serch_text":search,
+            //         },
+            //         "success":function(response){
+            //             var goodsId = response.data[0].goods_id;
+            //             window.location.href = "detail.html?goods_name="+search+"?goods_id="+goodsId;
+            //         }
+            //     })
+                
+                
+            // })
+
+        })()
     </script>
 </body>
 </html>

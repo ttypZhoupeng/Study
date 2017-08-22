@@ -4,73 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        input{
-            margin:5px 0;
-        }
-    </style>
+    <title>良仓登录</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <input type="text" name="username" placeholder="请输入用户名"><br>
-    <input type="password" name="password" placeholder="请输入密码"><br>
-    <input type="button" name="btn" value="登录" id="login">
-
-
-    <script src="js/jquery-1.12.3.min.js"></script>
-    <script>
-
-            if(localStorage.getItem("token")){
-                $("body").html(localStorage.getItem("username")+"您已经成功登录！请不要重复登录");
-                setTimeout(function(){
-                    location.href="index.html";
-                },2000);
-            }
+    <div class="login">
+        <img src="images/login.png" alt="">
+        <form action="http://www.iliangcang.com/">
+            <!--action="http://www.iliangcang.com/"  -->
+            <p class="phone">
+                <em class="phone_icon"></em>
+                <input type="text" name="" placeholder="请输入手机号" id="phoneNum">
+            </p>
+            
+            <p class="code"> 
+                <em class="code_icon"></em>
+                <input type="text" name="" placeholder="请输入验证码" id="checkCode">
+            </p>
             
 
-            $(function(){
-                $("#login").click(function(){
-                    var username = $('input[name="username"]').val();
-                    var password = $('input[name="password"]').val();
+            <input type="button"  value="获取验证码" id="codeBtn"><br>
 
+            <input type="checkbox" value="自动登录" id="checkBox">自动登录 <br>
 
-                    console.log(username,password);
+            <input type="submit" value="登录" id="loginBtn"><br>
 
-                    $.ajax({
-                        "url":"http://h6.duchengjiu.top/shop/api_user.php",
-                        "type":"POST",
-                        "data":{
-                            "status":"login",
-                            "username":username,
-                            "password":password
-                        },
-                        "dataType":"json",
-                        "success":function(response){
-                            console.log(response);
+            <div class="more">
+                <a href="#">更多登录方式></a>
+            </div>
+        </form>
+    </div>
 
-                            // localStorage.setItem("token",response.data.token);
-                            // alert(response.message);
-
-
-                            if(response.code === 0){
-                                var data = response.data;
-
-                                for( prop in data){
-                                    if(data.hasOwnProperty(prop)){
-                                        localStorage.setItem(prop,data[prop]);
-                                    }
-                                }
-
-                                console.log("11111");
-                                alert(response.message);
-                                location.href ="index.html";
-                            }
-
-                        }
-                    })
-                });
-            })
-            
-    </script>
+     <script src="js/ajax.js"></script> 
+    <script src="js/main.js"></script>
 </body>
 </html>

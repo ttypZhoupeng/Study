@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录页面</title>
+	</head>
+	<body>
+		<div>
+			<p><input type="text" name="username" placeholder="请输入用户名3-20"/></p>
+			<p><input type="password" name="password" placeholder="请输入密码6-20"/></p>
+			<p><input type="button" id="login" value="登录" /></p>
+		</div>
+		
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			//判断当前用户已登录则显示用户名，否则显示注册登录
+			if( localStorage.getItem("token")){
+				$("body").html( localStorage.getItem("username") + "您已经登录成功！请不要重复登录");
+			
+				setTimeout(function(){
+					location.href = "index.html";
+				},2000);
+			}
+			
+			
+			$(function(){
+				//登录验证
+				$("#login").click(function(){
+					//获取用户名和密码
+					var username = $('input[name="username"]').val();
+					var password = $('input[name="password"]').val();
+					
+					console.log(username,password);
+					
+					$.ajax({
+						"url": "http://h6.duchengjiu.top/shop/api_user.php",
+						"type": "POST",
+						"data": {
+							"status": "login",
+							"username": username,
+							"password": password
+						},
+						"dataType": "json",
+						"success": function(response){
+							console.log(response);
+							
+//							localStorage.setItem("token",response.data.token);
+//							
+							//当登录成功的时候
+							if( response.code === 0 ){
+								//把个人信息存入变量data
+								var data = response.data;
+								//遍历每一项   prop属性单词的简写这个是变量
+								for( prop in data ){
+									
+									//判断这个属性是否是本身的属性
+									if( data.hasOwnProperty(prop)){
+										//存储到本地仓库，(属性,数据[属性])
+										localStorage.setItem(prop,data[prop]);
+														//data[prop]相当于response.data.username
+									}
+								}
+							//写在if code===0 里面！成功后提示，然后跳转到首页
+							alert(response.message);
+							
+							//判断有callback则跳到指定callbackURl页面，否则跳到首页
+							var callbackURl = location.hash.substr(10);
+							
+							if( callbackURl ){
+								location.href = callbackURl;
+							}else{
+								location.href = "index.html";	
+							}
+							
+							
+								
+							}
+							
+						}
+					})
+					
+				})
+				
+				
+				
+			})
+			
+		</script>
+	</body>
+</html>

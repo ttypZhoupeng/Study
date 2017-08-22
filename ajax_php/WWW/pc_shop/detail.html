@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    
 </head>
 <body>
     
@@ -15,31 +16,96 @@
         <ul id="goodsUl">
             
         </ul>
+        <button id="cart">加入购物车</button>
     </section>
 
 
     <script src="js/jquery-1.12.3.min.js"></script>
     <script>
-        $("#btn").click(function(){
-            var strNew = $("#str").val();
-            console.log(strNew);
 
+
+        $(function(){
+
+            var str = location.search.substr(1);
+
+            var goodsId = str.split("=");
+
+            console.log(goodsId[1]);
 
             $.ajax({
-                "url": "http://h6.duchengjiu.top/shop/api_goods.php",
+                "url":"http://h6.duchengjiu.top/shop/api_goods.php",
                 "type":"GET",
-                "data":{
-                    "goods_id":strNew
-                },
                 "dataType":"json",
+                "data":{
+                    "goods_id":goodsId[1]
+                },
                 "success":function(response){
-                    var obj = response;
-                    console.log(obj);
-                    $("#goodsUl").html("");
-                    $("#goodsUl").append('<li><img src="' +obj.data[0].goods_thumb+ '" /><p>' +obj.data[0].goods_name+ '</p><p>' +obj.data[0].goods_desc+ '</p><p class="price">' +obj.data[0].price+ '</p></li>');
+                    console.log(response);
+                    $("#goodsUl").html('<li><img src="' +response.data[0].goods_thumb+ '" /><p>' +response.data[0].goods_name+ '</p><p>' +response.data[0].goods_desc+ '</p><p class="price">' +response.data[0].price+ '</p></li>');
+                    
                 }
+            });
+
+
+
+
+            $("#btn").click(function(){
+                var strNew = $("#str").val();
+                console.log(strNew);
+
+
+                $.ajax({
+                    "url": "http://h6.duchengjiu.top/shop/api_goods.php",
+                    "type":"GET",
+                    "data":{
+                        "search_text":strNew
+                    },
+                    "dataType":"json",
+                    "success":function(response){
+                        var obj = response;
+                        console.log(obj);
+                        $("#goodsUl").html("");
+                        $("#goodsUl").append('<li><img src="' +obj.data[0].goods_thumb+ '" /><p>' +obj.data[0].goods_name+ '</p><p>' +obj.data[0].goods_desc+ '</p><p class="price">' +obj.data[0].price+ '</p></li>');
+                    }
+                })
+            });
+
+
+
+            $("#cart").click(function(){
+
+
+                if(!localStorage.getItem("token")){
+                    alert("请登录后才能使用购物车功能！");
+
+                    location.href = "login.html#callback="+location.href;
+                    return;
+                }
+
+                console.log(decodeURI(goodsId[1]));
+
+                var goods_number = localStorage.getItem("cart"+decodeURI(goodsId));
+
+                goods_number = goods_number?parseInt(goods_number)+1:1;
+                $.ajax({
+                    "url":"http://h6.duchengjiu.top/shop/api_cart.php?token="+localStorage.getItem("token"),
+                    "type":"POST",
+                    "dataType":"json",
+                    "data":{
+                        "goods_id":goodsId[1],
+                        "number":goods_number
+                    },
+                    "success":function(response){
+                        localStorage.setItem("cart"+goodsId[1],goods_number);
+                        location.href="cart.html";
+                        console.log(response);
+                    }
+                })
             })
+
+
         })
+        
     </script>
 </body>
 </html>
