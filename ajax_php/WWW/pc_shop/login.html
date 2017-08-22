@@ -19,7 +19,7 @@
             
             <p class="password"> 
                 <em class="password_icon"></em>
-                <input type="password" name="" placeholder="请输入密码" id="passwords">
+                <input type="password" name="" placeholder="请输入密码" id="password">
             </p><br>
 
             <input type="checkbox" value="自动登录" id="checkBox">自动登录 <br>
@@ -63,7 +63,7 @@
 
                         alert(response.message);
 
-                        var callbackURL = location.hash.suvstr(10);
+                        var callbackURL = location.hash.substr(10);
 
                         if(callbackURL){
                             location.href = callbackURL;

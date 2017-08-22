@@ -50,14 +50,15 @@
                     if(response.code === 0){
                         $(".success").show();
                         $(".error").hide();
+                        $(".error2").hide();
                     }else if(response.code === 2001){
                         $(".success").hide();
                         $(".error").show();
-                    }else{
+                        $(".error2").hide();
+                    }else if(response.code === 1000){
                         $(".success").hide();
                         $(".error").hide();
                         $(".error2").show();
-                        return;
                     }
                 }
 
@@ -89,11 +90,11 @@
                 "success":function(response){
                     console.log(response);
                     
-                    if(response.mesage != 0){
-                        return;
-                    }else{
+                    if(response.code === 0){
                         alert(response.message);
                         window.location.href = "login.html";
+                    }else{
+                        return false;
                     }
                    
                 }
