@@ -26,21 +26,18 @@
 
         $(function(){
 
-            var str = location.search.substr(0);
-            console.log(decodeURI(str));
-            var goods = str.split("?");
-            var goodsName = goods[1].substr(11);
-            var goodsId = goods[2].substr(9);
+            var str = location.search.substr(1);
 
-            console.log(decodeURI(goodsName));
-            console.log(decodeURI(goodsId));
+            var goodsId = str.split("=");
+
+            console.log(goodsId[1]);
 
             $.ajax({
                 "url":"http://h6.duchengjiu.top/shop/api_goods.php",
                 "type":"GET",
                 "dataType":"json",
                 "data":{
-                    "search_text":goodsName
+                    "goods_id":goodsId[1]
                 },
                 "success":function(response){
                     console.log(response);
@@ -85,7 +82,7 @@
                     return;
                 }
 
-                console.log(decodeURI(goodsId));
+                console.log(decodeURI(goodsId[1]));
 
                 var goods_number = localStorage.getItem("cart"+decodeURI(goodsId));
 
@@ -95,11 +92,11 @@
                     "type":"POST",
                     "dataType":"json",
                     "data":{
-                        "goods_id":goodsId,
+                        "goods_id":goodsId[1],
                         "number":goods_number
                     },
                     "success":function(response){
-                        localStorage.setItem("cart"+goodsId,goods_number);
+                        localStorage.setItem("cart"+goodsId[1],goods_number);
                         location.href="cart.html";
                         console.log(response);
                     }
@@ -112,3 +109,12 @@
     </script>
 </body>
 </html>
+
+
+<!-- <img src="http://imgs-qn.iliangcang.com/ware/goods/big/2/257/257557.jpg?t=1497600292">
+        <div class="detail_desc">
+            <p class="detail_goods_name">轻金属竖开合收纳登机旅行箱 | 安检神器 按键即开 站着就能轻松取物【玫瑰金20寸】</p>
+            <p class="detail_goods_desc">TUPLUS ONE「途加1号」旅行箱，研发周期13个月，代表TUPLUS途加的第一款...</p>
+            <p class="detail_price">￥1259.00</p>   
+        </div> -->
+        

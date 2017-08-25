@@ -56,7 +56,7 @@
 							<em id="Money">￥0</em>
 						</span>
 					</p>
-					<a href="/checkout.html">去结算</a>
+					<a href="checkout.html">去结算</a>
 				</div>
 			</div>
 		</div>
@@ -130,6 +130,58 @@
 				});
 				
 			})
+
+$("#Delete").click(function(){
+	var inputs =$(".goods input:checked");
+
+	for(var i=0;i<inputs.length;i++){
+		var goods_id = document.getElementsByClassName("goods_id")[0].value;
+		console.log(goods_id);
+		var goodsL = inputs[i].parentNode.parentNode;
+		console.log(goodsL);
+		goodsL.parentNode.removeChild(goodsL);
+	}
+})
+
+
+function showSum(){
+	var goods = document.getElementsByClassName("goods");
+
+	var sum = 0;
+	var num = 0;
+
+	for(var i=0;i<goods.length;i++){
+		var objGoods = goods[i];
+
+		if($(objGoods).children("div:first").children("input").is(":checked")){
+			sum += parseInt($(objGoods).children("div:eq(3)").text());
+			num += parseInt($(objGoods).children("div:eq(2)").children("input").val());
+		}
+	}
+	$("#Money").text("￥"+sum);
+	$("#Amount").text(num);
+}
+$("#Shop").click(function(event){
+	if(event.target.id === "selectAll"){
+		var selected = event.target.checked;
+		// console.log(selected);
+		// console.log(event.target);
+
+		var checkboxs = document.getElementsByClassName("chkbox");
+		// console.log(checkboxs);
+
+		for(var i=0;i<checkboxs.length;i++){
+			checkboxs[i].checked = selected;
+		}
+		showSum();
+		return;
+	}
+	if(event.target.type === "checkbox"){
+		showSum();
+	}
+})
+
+
 //上、下按钮监听
 function stepSetGoods(obj,event){
 	var event = event || window.event;
@@ -166,7 +218,7 @@ function updataCart(obj,num){  //obj当前触发事件的元素，num = +1 -1
 	var goods_number_value = parseInt(goods_number.value);
 	var goods_price = Shop.getElementsByClassName("goods-one")[0];
 	var goods_price_value = parseInt(goods_price.innerText);
-	var goods_subtotal = Shop.getElementsByClassName("goods_sum")[0];
+	var goods_subtotal = Shop.getElementsByClassName("goods-sum")[0];
 	
 	//判断范围
 	if( num == "-1" && goods_number_value <= 1 ){
@@ -188,11 +240,13 @@ function updataCart(obj,num){  //obj当前触发事件的元素，num = +1 -1
 	//当前商品的值                  信号量改变后的值
 	goods_number.value = goods_number_value;
 	//算出合计金额
-//	var subtotal = goods_number_value * goods_price_value;
+	var subtotal = goods_number_value * goods_price_value;
 	//把合计金额写入页面
-//	goods_subtotal.innerText = subtotal;
+
+	console.log(goods_subtotal);
+	goods_subtotal.innerText = subtotal;
 	
-	
+	showSum();
 	
 }
 	

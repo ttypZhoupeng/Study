@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>订单详情页</title>
+	</head>
+	<body>
+		
+		
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			
+					$.ajax({
+						"url": "http://h6.duchengjiu.top/shop/api_order.php?token="+localStorage.token,
+						"type": "GET",
+						"dataType": "json",
+						"success": function(response){
+							console.log(response);
+						}
+						
+					})
+		</script>
+		
+	</body>
+</html>

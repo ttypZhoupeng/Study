@@ -62,9 +62,7 @@
         
     </header>
 
-    <section class="same_width">
-        
-        <div class="banner clear_float" id="banner">
+    <div class="banner clear_float same_width" id="banner">
             <div class="btns">
                 <a href="javascript:;" class="leftBtn"></a>
                 <a href="javascript:;" class="rightBtn"></a>             
@@ -89,6 +87,8 @@
                 <li></li>     
             </ol>
         </div>
+
+    <section class="same_width">
 
 
         <ul class="goodsUl clear_float same_width" id="goodsUl">
@@ -204,14 +204,14 @@
 
 
     <script src="js/jquery-1.12.3.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/banner.js"></script>
+    <script src="js/search.js"></script>
+
     <script>
-        if(localStorage.getItem("token")){
-            $(".login_register").html('<span><a href="#">'+localStorage.getItem("username")+'</a></span>')
-        }
 
 
-        (function(){
+        $(function(){
 
             // $.get("http://h6.duchengjiu.top/shop/api_goods.php",function(response){
             //     var obj = response;
@@ -237,7 +237,7 @@
                     +response.data[i].goods_name+
                     '</p><p class="goods_desc">'
                     +response.data[i].goods_desc+
-                    '</p></div></a></div><div class="bottom_bar"><img src="'
+                    '</p></div></div></a><div class="bottom_bar"><img src="'
                     +obj.data[i].goods_thumb+
                     '"><span>'
                     +obj.data[i].goods_name+
@@ -249,33 +249,16 @@
 
 
 
-            $(".search_btn").click(function(){
-                var search = $("#search").val();
-                console.log(search);
-                window.location.href = "detail.html?goods_id="+search;
-            })
-
-
-            //  $(".search_btn").click(function(){
+            // $(".search_btn").click(function(){
             //     var search = $("#search").val();
             //     console.log(search);
-            //     $.ajax({
-            //         "url":"http://h6.duchengjiu.top/shop/api_goods.php",
-            //         "type":"get",
-            //         "dataType":"json",
-            //         "data":{
-            //             "serch_text":search,
-            //         },
-            //         "success":function(response){
-            //             var goodsId = response.data[0].goods_id;
-            //             window.location.href = "detail.html?goods_name="+search+"?goods_id="+goodsId;
-            //         }
-            //     })
-                
-                
+            //     window.location.href = "detail.html?goods_id="+search;
             // })
 
-        })()
+
+            
+
+        })
     </script>
 </body>
 </html>

@@ -98,12 +98,10 @@
 						},
 						"dataType": "json",
 						"success": function(response){
-							console.log(111);
-							console.log(localStorage);
 							console.log(response);
 							
 							//使用后存储商品的购买数量到本地存储中
-							localStorage.setItem("cart" + decodeURI(goodsId[1]) ,goods_number );
+							localStorage.setItem("cart" + goodsId[1] ,goods_number );
 							location.href="cart.html";
 						}
 					})

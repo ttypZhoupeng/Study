@@ -197,7 +197,7 @@ section{
 #banner{
     width:1000px;
     height:475px;
-    margin:0 auto;
+    margin:40px auto 0;
     position: relative;
     overflow:hidden;
 }
@@ -251,9 +251,7 @@ section{
     background:#49494d;
 }
 
-#goodsUl{
-    margin-top:40px;
-}
+
 .hot_item{
     position:relative;
     width:316px;
@@ -351,7 +349,7 @@ section .more{
     width:148px;
     height:50px;
     line-height: 50px;
-    margin:50px auto 80px;
+    margin:50px auto 0;
     text-align: center;
     border:3px solid #252921;
     color:#252921;
@@ -365,14 +363,26 @@ section .more:hover{
 
 /*our_shop  */
 footer{
+    margin-top:50px;
     width:100%;
     height:250px;
     background:#fbfdfe;
 }
 footer .our_shop .title{
+    width:250px;
     text-align:center;
-    margin:45px 0;
+    margin:45px auto;
     font-weight: bold;
+}
+footer .our_shop .title>em{
+    display: inline-block;
+    width:27px;
+    height:15px;
+    margin:10px 15px 0 0;
+    background:url("../images/download.png") -173px  -356px no-repeat;
+}
+footer .our_shop .title>span{
+    display: inline-block;
 }
  
 .our_shop>ul>li{
@@ -389,7 +399,6 @@ footer .our_shop .title{
      background:url("../images/download.png") 0 -355px no-repeat;
 }
 .our_shop>ul>li .ag{
-    
      background:url("../images/download.png") -153px -217px no-repeat;
 }
 .our_shop>ul>li .gd{

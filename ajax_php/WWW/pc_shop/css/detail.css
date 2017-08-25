@@ -1,0 +1,103 @@
+body,html,input{
+    padding:0;
+    margin:0;
+}
+
+
+.detail_img{
+    float:left;
+    margin-right:40px;
+}
+.detail_desc{
+    width:500px;
+    float:left;
+}
+.detail_like{
+    margin-bottom:20px;
+}
+.detail_like em{
+    display: inline-block;
+    width:28px;
+    height:26px;
+    margin-right:10px;
+    background:url("../images/black_heart.png");
+    vertical-align: middle;
+}
+.detail_goods_name{
+    font-size:20px;
+    color:#333;
+    line-height: 26px;
+}
+.detail_goods_desc{
+    margin-top:20px;
+}
+.detail_price{
+    margin-top:20px;
+    color:#1083ff;
+    font-size: 18px;
+}
+.detail_price>span,.detail_num>span{
+    color:#878787;
+}
+.detail_num{
+    margin-top:20px;
+    font-size:18px;
+}
+.detail_num .text{
+    width:40px;
+    height:25px;
+    text-align: center;
+}
+.detail_num .btn{
+    background:none;
+    border:1px solid black;
+    padding:0 5px;
+    cursor: pointer;
+}
+.detail_num .btn:hover{
+    background:#e8e8e8;
+}
+.detail_buy_now{
+    margin-top:40px;
+}
+.detail_buy_now a{
+    display: block;
+    width:498px;
+    height: 42px;
+    line-height:42px;
+    background:black;
+    color:white;
+    font-size: 18px;
+    text-align: center;
+    border:1px solid #000;
+}
+.detail_buy_now a:hover{
+    background: #4A4848;
+}
+.detail_add_share{
+    margin-top:10px;
+}
+.detail_add_share .btn{
+     display: block;
+     width:240px;
+     height: 42px;
+     line-height: 42px;
+     background:white;
+     font-size:18px;
+     text-align: center;
+     float:left;
+     border:1px solid #000;
+     cursor: pointer;
+}
+.detail_add_share .btn:first-child{
+    margin-right:16px;
+}
+.detail_add_share img{
+    display: inline-block;
+    width:15px;
+    margin-right:10px;
+}
+.detail_add_share span{
+    display: inline-block;
+}
+

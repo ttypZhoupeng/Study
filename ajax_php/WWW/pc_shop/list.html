@@ -12,10 +12,10 @@
         <div class="login_bar same_width clear_top">
             <a href="http://www.iliangcang.com/"></a>
             <ul class="login_list">
-                <li><span><a href="#">登录</a></span>&nbsp;&nbsp;&nbsp;&nbsp;<span><a href="#">注册</a></span></li>
+                <li class="login_register"><span><a href="login.html">登录</a></span>&nbsp;&nbsp;&nbsp;&nbsp;<span><a href="register.html">注册</a></span></li>
                 <span class="line"></span>
                 <li class="bg_change">
-                    <a href="#">购物车</a>
+                    <a href="cart.html">购物车</a>
                     <div class="subnav">
                         <p class="item1">你的购物车暂时没有商品...</p>
                         <p class="item2"><a href="#">快去抢购良仓商品吧</a></p>
@@ -53,18 +53,16 @@
     <header>
         <ul id="nav" class="clear_float same_width">
             <div class="search_form">
-                <input type="text" placeholder="search">
+                <input type="text" placeholder="search" id="search">
 
-                <em></em>
+                <em class="search_btn"></em>
             </div>
         </ul>
         
         
     </header>
 
-    <section class="same_width">
-        
-        <div class="banner clear_float" id="banner">
+    <div class="banner clear_float" id="banner">
             <div class="btns">
                 <a href="javascript:;" class="leftBtn"></a>
                 <a href="javascript:;" class="rightBtn"></a>             
@@ -90,7 +88,8 @@
             </ol>
         </div>
 
-
+    <section class="same_width">
+        
         <ul class="goodsUl clear_float same_width" id="goodsUl">
             
         </ul>
@@ -204,50 +203,11 @@
 
 
     <script src="js/jquery-1.12.3.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/banner.js"></script>
+    <script src="js/hot_goods.js"></script>
+    <script src="js/search.js"></script>
 
-    <script>
-        
-            var str = location.search;
-        
-            var catId = str.split("=");
-            console.log(str);
-            console.log(catId);
-            console.log(catId[1]);
-
-            $.ajax({
-                    "url": "http://h6.duchengjiu.top/shop/api_goods.php",
-                    "type": "GET",
-                    "data": {
-                        "cat_id": catId[1]
-                    },
-                    "dataType": "json",
-                    "success": function(response){
-                        var obj = response;
-                        for(var i=0;i<obj.data.length;i++){
-                            $("#goodsUl").append(
-                            '<div class="hot_item"><img src="'
-                            +obj.data[i].goods_thumb+
-                            '"><div class="hot_item_cover"><p class="goods_price">'
-                            +response.data[i].price+
-                            '</p><div class="goods_content"><p class="goods_name">'
-                            +response.data[i].goods_name+
-                            '</p><p class="goods_desc">'
-                            +response.data[i].goods_desc+
-                            '</p></div></div><div class="bottom_bar"><img src="'
-                            +obj.data[i].goods_thumb+
-                            '"><span>'
-                            +obj.data[i].goods_name+
-                            '</span><div class="thumb_up"><span>'
-                            +parseInt(obj.data[i].price)+
-                            '</span><img src="images/heart.png"></div></div></div>' );
-                        }
-                    }
-                    
-                    
-                })
-        
-    </script>
     
 </body>
 </html>
