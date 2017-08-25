@@ -72,29 +72,36 @@
 
         <button id="cart">加入购物车</button> -->
         <div id="detail">
-            <!-- <img src="http://imgs-qn.iliangcang.com/ware/goods/big/2/257/257557.jpg?t=1497600292" class="detail_img">
-            <div class="detail_desc">
-                <p class="detail_like">
+            <div class="detail_goods_pic">
+                <!-- ` <img src="${obj.data[0].goods_thumb}" class="detail_img">` -->
+            </div>
+            <div class="detail_goods_price">
+                <!-- `<p class="detail_like">
                     <em></em>
-                    <span>1199</span>
+                    <span>${parseInt(obj.data[0].price)}</span>
                 </p>
-                <p class="detail_goods_name">轻金属竖开合收纳登机旅行箱 | 安检神器 按键即开 站着就能轻松取物【玫瑰金20寸】</p>
-                <p class="detail_goods_desc">TUPLUS ONE「途加1号」旅行箱，研发周期13个月，代表TUPLUS途加的第一款...</p>
-                <p class="detail_price"><span>价格：</span> ￥1259.00</p>   
+                <p class="detail_goods_name">${obj.data[0].goods_name}</p>
+                <p class="detail_goods_desc">${obj.data[0].goods_desc}</p>
+                <p class="detail_price"><span>价格：</span> ￥${obj.data[0].price}</p>   
                 <p class="detail_num">
                     <span>数量：</span>
                     <input type="button" value="-"  class="btn">
                     <input type="text" value="1" class="text">
                     <input type="button" value="+" class="btn">
-                </p>
+                </p>` -->
+
+            </div>
+            
+            <div class="detail_desc">
+                
                 <div class="detail_buy_now">
                     <a href="#">立即购买</a>
                 </div>
                 <div class="detail_add_share">
-                    <a href="#"><img src="images/cart.png" alt=""><span>加入购物车</span> </a>
-                    <a href="#"><img src="images/share.png" alt=""><span>分享</span></a>
+                    <div class="btn" id="cart"><img src="images/cart.png" alt=""><span>加入购物车</span> </div>
+                    <div class="btn"><img src="images/share.png" alt=""><span>分享</span></div>
                 </div>   
-            </div> -->
+            </div>
         </div>
         
         
@@ -210,6 +217,7 @@
         
         $(function(){
 
+
             $(".search_btn").click(function(){
                 var search = $("#search").val();
                 console.log(search);
@@ -225,32 +233,24 @@
                         console.log(obj);
                         // $("#goodsUl").html("");
                         // $("#goodsUl").append('<li><img src="' +obj.data[0].goods_thumb+ '" /><p>' +obj.data[0].goods_name+ '</p><p>' +obj.data[0].goods_desc+ '</p><p class="price">' +obj.data[0].price+ '</p></li>');
-                        $("#detail").html("");
-                        $("#detail").append(
-                            `<img src="${obj.data[0].goods_thumb}" class="detail_img">
-                            <div class="detail_desc">
-                                <p class="detail_like">
-                                    <em></em>
-                                    <span>${parseInt(obj.data[0].price)}</span>
-                                </p>
-                                <p class="detail_goods_name">${obj.data[0].goods_name}</p>
-                                <p class="detail_goods_desc">${obj.data[0].goods_desc}</p>
-                                <p class="detail_price"><span>价格：</span> ￥${obj.data[0].price}</p>   
-                                <p class="detail_num">
-                                    <span>数量：</span>
-                                    <input type="button" value="-"  class="btn">
-                                    <input type="text" value="1" class="text">
-                                    <input type="button" value="+" class="btn">
-                                </p>
-                                <div class="detail_buy_now">
-                                    <a href="#" id="cart">立即购买</a>
-                                </div>
-                                <div class="detail_add_share">
-                                    <div class="btn" id="cart"><img src="images/cart.png" alt=""><span>加入购物车</span> </div>
-                                    <div class="btn"><img src="images/share.png" alt=""><span>分享</span></div>
-                                </div>   
-                            </div>`
-                        )
+                        $(".detail_goods_pic").html("");
+                        $(".detail_goods_pic").prepend(`<img src="${obj.data[0].goods_thumb}" class="detail_img">`);
+                        $(".detail_goods_price").html("");
+                        $(".detail_goods_price").prepend(`<p class="detail_like">
+                                                        <em></em>
+                                                        <span>${parseInt(obj.data[0].price)}</span>
+                                                    </p>
+                                                    <p class="detail_goods_name">${obj.data[0].goods_name}</p>
+                                                    <p class="detail_goods_desc">${obj.data[0].goods_desc}</p>
+                                                    <p class="detail_price"><span>价格：</span> ￥${obj.data[0].price}</p>   
+                                                    <p class="detail_num">
+                                                        <span>数量：</span>
+                                                        <input type="button" value="-"  class="btn">
+                                                        <input type="text" value="1" class="text">
+                                                        <input type="button" value="+" class="btn">
+                                                    </p>`)
+                        
+
                     }
                 })
   
@@ -272,40 +272,32 @@
                 },
                 "success":function(response){
                     console.log(response);
+                    console.log($("#cart"));
+                    
                     var obj = response;
                     // $("#goodsUl").html('<li><img src="' +response.data[0].goods_thumb+ '" /><p>' +response.data[0].goods_name+ '</p><p>' +response.data[0].goods_desc+ '</p><p class="price">' +response.data[0].price+ '</p></li>');
-                    $("#detail").html("");
-                        $("#detail").append(
-                            `<img src="${obj.data[0].goods_thumb}" class="detail_img">
-                            <div class="detail_desc">
-                                <p class="detail_like">
-                                    <em></em>
-                                    <span>${parseInt(obj.data[0].price)}</span>
-                                </p>
-                                <p class="detail_goods_name">${obj.data[0].goods_name}</p>
-                                <p class="detail_goods_desc">${obj.data[0].goods_desc}</p>
-                                <p class="detail_price"><span>价格：</span> ￥${obj.data[0].price}</p>   
-                                <p class="detail_num">
-                                    <span>数量：</span>
-                                    <input type="button" value="-"  class="btn">
-                                    <input type="text" value="1" class="text">
-                                    <input type="button" value="+" class="btn">
-                                </p>
-                                <div class="detail_buy_now">
-                                    <a href="javascrpt:;"  id="cart">立即购买</a>
-                                </div>
-                                <div class="detail_add_share">
-                                    <div class="btn" id="cart"><img src="images/cart.png" alt=""><span>加入购物车</span> </div>
-                                    <div class="btn"><img src="images/share.png" alt=""><span>分享</span></div>
-                                </div>   
-                            </div>`
-                        )
+                    $(".detail_goods_pic").html("");
+                    $(".detail_goods_pic").prepend(`<img src="${obj.data[0].goods_thumb}" class="detail_img">`);
+                    $(".detail_goods_price").html("");
+                    $(".detail_goods_price").prepend(`<p class="detail_like">
+                                                    <em></em>
+                                                    <span>${parseInt(obj.data[0].price)}</span>
+                                                </p>
+                                                <p class="detail_goods_name">${obj.data[0].goods_name}</p>
+                                                <p class="detail_goods_desc">${obj.data[0].goods_desc}</p>
+                                                <p class="detail_price"><span>价格：</span> ￥${obj.data[0].price}</p>   
+                                                <p class="detail_num"> 
+                                                    <span>数量：</span>
+                                                    <input type="button" value="-"  class="btn">
+                                                    <input type="text" value="1" class="text">
+                                                    <input type="button" value="+" class="btn">
+                                                </p>`);
                 }
             });
 
-
+            console.log($("#cart").html());
             $("#cart").click(function(){
-
+                console.log("abcdefg");
 
                 if(!localStorage.getItem("token")){
                     alert("请登录后才能使用购物车功能！");
