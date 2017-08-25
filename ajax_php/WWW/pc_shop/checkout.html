@@ -112,7 +112,7 @@
                     "type":"GET",
                     "dataType":"json",
                     "success":function(response){
-                        console.log(response);
+                        // console.log(response);
 
                         var htmlData = "";
                         for(var i=0;i<response.data.length;i++){
@@ -130,18 +130,21 @@
                         }
                         $(".address-ul").html(htmlData);
 
-                        $("address-item").click(function(){
+                        $(".address-item").click(function(){
                             $(this).addClass("active").siblings().removeClass("active");
                         })
+
                     }
                 })
             }
 
 
             $(".newAddress").click(function(){
+                console.log("111");
                 $("#add").show();
             })
             $(".close").click(function(){
+                console.log("222");
                 $("#add").hide();
             })
 
@@ -151,7 +154,7 @@
 
 
                 $.ajax({
-                    "url":"http://h6.duchengjiu.top/shop/api_useraddress.php?token="+localStorage.token +"&status = add",
+                    "url":"http://h6.duchengjiu.top/shop/api_useraddress.php?token="+localStorage.token+"&status=add",
                     "type":"POST",
                     "dataType":"json",
                     "data":data,
