@@ -58,6 +58,23 @@
         .active{
             background: deepskyblue;
         }
+        .remove{
+            width:100px;
+            float:right;
+            margin-right:10px;
+            display:block;
+            color:blue;
+        }
+        .remove:hover{
+            color:red;
+        }
+        #order{
+            width:100px;
+            height: 50px;
+            background:orange;
+            border-radius: 10px;
+            outline:none;
+        }
     </style>
 </head>
 <body>
@@ -101,10 +118,14 @@
             
         </form>
     </div>
+    <div id="sum"></div>
+    <input type="button" id="order" value="下订单">
 
     <script src="js/jquery-1.12.3.min.js"></script>
     <script>
         $(function(){
+            var address_id = 0;
+
             addressAjax();
             function addressAjax(){
                 $.ajax({
@@ -125,18 +146,43 @@
 								+'  地区：'+obj.district 
 								+'  街道：'+obj.address 
 								+'  手机号：'+obj.mobile 
-								+'</li>';
+								+'<span class="remove">删除</span></li>';
 
                         }
                         $(".address-ul").html(htmlData);
 
-                        $(".address-item").click(function(){
+                        $(".address-item").click(function(event){
                             $(this).addClass("active").siblings().removeClass("active");
+                        
+                            // console.log(event.target.nodeName);
+                            if(event.target){
+                                // console.log(event.target);
+                                address_id = event.target.getAttribute("data-id");
+                                console.log(address_id);
+                            }
+
+                        })
+
+
+                        $(".remove").click(function(){
+                            var removeLi = this.parentNode;
+                            console.log(removeLi);
+                            removeLi.parentNode.removeChild(removeLi);
+
+                            removeAjax(removeLi);
+                            
                         })
 
                     }
                 })
             }
+            // 获取总金额
+            var str = location.search.substr(1);
+            // console.log(location.search);
+            var sum = str.split("=");
+            // console.log(sum);
+
+            $("#sum").html("<span>当前订单总金额：￥"+sum[1]+"</span>");
 
 
             $(".newAddress").click(function(){
@@ -169,6 +215,46 @@
                 });
             })
 
+            $("#order").click(function(){
+                if(address_id === 0){
+                    alert("请先选择地址再下订单！");
+                    return;
+                }
+
+
+                $.ajax({
+                    "url":"http://h6.duchengjiu.top/shop/api_order.php?token="+localStorage.token+"&status=add",
+                    "type":"POST",
+                    "dataType":"json",
+                    "data":{
+                        "order_id":address_id,
+                        "total_prices":sum[1]
+                    },
+                    "success":function(response){
+                        console.log(response);
+                        if(response.code === 0){
+                            alert("提交订单成功");
+                            location.href = "order.html";
+                        }
+                    }
+                })
+            })
+
+            function removeAjax(obj){
+                var address_id = $(obj).attr("data-id");
+
+                $.ajax({
+                    "url":"http://h6.duchengjiu.top/shop/api_useraddress.php?token="+localStorage.token+"&status=delete&address_id="+address_id,
+                    "type":"GET",
+                    "dataType":"json",
+                    "success":function(response){
+                        console.log(response);
+                    }
+                })
+            }
+
+
+            
 
 
         })

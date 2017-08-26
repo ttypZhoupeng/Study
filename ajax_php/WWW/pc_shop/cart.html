@@ -56,7 +56,7 @@
 							<em id="Money">￥0</em>
 						</span>
 					</p>
-					<a href="checkout.html">去结算</a>
+					<a id="checkout">去结算</a>
 				</div>
 			</div>
 		</div>
@@ -108,6 +108,8 @@
 								alert("确定");
 								var goods = this.parentNode;
 								$(goods).remove();
+								
+								updataCartAjax(goods,0)
 							})
 							//减号按钮事件监听
 							$(".left-button").click(function(){
@@ -140,6 +142,8 @@ $("#Delete").click(function(){
 		var goodsL = inputs[i].parentNode.parentNode;
 		console.log(goodsL);
 		goodsL.parentNode.removeChild(goodsL);
+		//删除商品数据
+		updataCartAjax(goodsL,0);
 	}
 })
 
@@ -234,6 +238,8 @@ function updataCart(obj,num){  //obj当前触发事件的元素，num = +1 -1
 		goods_number_value++;
 	}else if( num > 0){
 		goods_number_value = num;
+	}else{
+		goods_number_value = 0;
 	}
 	
 	
@@ -250,6 +256,34 @@ function updataCart(obj,num){  //obj当前触发事件的元素，num = +1 -1
 	
 }
 	
+
+function updataCartAjax(obj,num){
+	var goods_id = obj.getElementsByClassName("goods_id")[0].value;
+	console.log(goods_id);
+
+	console.log(obj);
+
+	$.ajax({
+		"url":"http://h6.duchengjiu.top/shop/api_cart.php?token="+localStorage.token,
+		"type":"POST",
+		"dataType":"json",
+		"data":{
+			"goods_id":goods_id,
+			"number":num
+		},
+		"success":function(response){
+			console.log(response);
+		}
+	})
+}
+
+$("#checkout").click(function(){
+	var sum = $("#Money").text().substr(1);
+
+	console.log(sum);
+
+	location.href = "checkout.html?sum="+sum;
+})
 				
 				
 			
