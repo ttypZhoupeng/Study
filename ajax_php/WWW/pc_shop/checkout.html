@@ -227,11 +227,12 @@
                     "type":"POST",
                     "dataType":"json",
                     "data":{
-                        "order_id":address_id,
+                        "address_id":address_id,
                         "total_prices":sum[1]
                     },
                     "success":function(response){
                         console.log(response);
+                        console.log(address_id);
                         if(response.code === 0){
                             alert("提交订单成功");
                             location.href = "order.html";

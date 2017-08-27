@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>分页显示商品</title>
+		<link rel="stylesheet" type="text/css" href="css/paging.css"/>
+	</head>
+	<body>
+		<ul class="shop" id="shop">
+			
+		</ul>
+		
+		<div class="button" id="button">
+			<em id="ButtonPrev">上一页</em>
+			
+			<div class="button-center">
+				<div id="ButtonCenter"></div>
+			</div>
+			
+			<em id="ButtonNext">下一页</em>
+		</div>
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var page = 1;
+			function showShop(page){
+					$.ajax({
+				"url": "http://h6.duchengjiu.top/shop/api_goods.php?page="+page+"&pagesize=20",
+				"type": "GET",
+				"dataType": "json",
+				"success": function(response){
+					console.log(response);
+					//添加分页
+					for(var j = 0;j<response.page.page_count;j++){
+						$("#ButtonCenter").append($('<span>' + (j+1) + '</span>' ));
+					}
+					
+					//添加展示的商品数据
+					var obj = response;
+					for(var i=0;i<obj.data.length;i++){
+						
+						$("#shop").append('<li><img src="' +obj.data[i].goods_thumb+ '" /><p><a href="detail.html?goods_id=' + obj.data[i].goods_id + '">' +obj.data[i].goods_name+ '</a></p><p>' +obj.data[i].goods_desc+ '</p><p class="price">' +obj.data[i].price+ '</p></li>');
+					}
+				}
+			})
+			}
+			showShop(page);
+			
+			//上一页
+			$("#ButtonPrev").click(function(){
+				//信号量改变
+				page--;
+				//范围
+				if(page <= 1) page = 1;
+				//清空商品数据，防止累积
+				$("#shop").html('');
+				//调用ajax 传入信号量改变内容
+				showShop(page);
+				//让分页进行移动
+				ButtonCenter.style.marginLeft = (page-1) * -52 +"px";
+			})
+			//下一页
+			$("#ButtonNext").click(function(){
+				page++;
+				$("#shop").html('');
+				showShop(page);
+				ButtonCenter.style.marginLeft = (page-1) * -52 +"px";
+			})
+			
+			//分页的点击事件
+			$("#ButtonCenter").click(function(event){
+				event = event || window.event;
+				var target = event.target || event.srcElement;
+//				console.log(target.nodeName)
+				if( target.nodeName === "SPAN" ){
+					//得到当前分页的内容，存入信号量
+					page = target.innerText;
+					$("#shop").html('');
+					ButtonCenter.style.marginLeft = (page-1) * -52 +"px";
+					showShop(page);
+					
+				}
+				
+				
+			})
+		</script>
+	</body>
+</html>
