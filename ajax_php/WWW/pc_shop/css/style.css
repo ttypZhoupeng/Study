@@ -49,6 +49,11 @@ body{
     height:38px;
     margin-top:9px;
     background:url("../images/download.png");
+    opacity: 1;
+}
+#top .login_bar>a:hover{
+    opacity: 0.8;
+    background:blue;
 }
 
 #top .login_list{

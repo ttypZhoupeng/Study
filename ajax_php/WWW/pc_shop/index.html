@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>pc_shop</title>
+    <title>良仓:生活美学平台</title>
     <link rel="stylesheet" type="" href="css/style.css">
 </head>
 <body>
@@ -204,9 +204,7 @@
 
 
     <script src="js/jquery-1.12.3.min.js"></script>
-    <script src="js/nav.js"></script>
-    <script src="js/banner.js"></script>
-    <script src="js/search.js"></script>
+    <script src="js/main.js"></script>
 
     <script>
 
@@ -231,7 +229,7 @@
                     $("#goodsUl").append(
                     '<div class="hot_item"><img src="'
                     +obj.data[i].goods_thumb+
-                    '"><a href="detail.html?goods_id='+obj.data[i].goods_id+'"><div class="hot_item_cover"><p class="goods_price">'
+                    '"><a href="detail.html?goods_id='+obj.data[i].goods_id+'"><div class="hot_item_cover"><p class="goods_price">￥'
                     +response.data[i].price+
                     '</p><div class="goods_content"><p class="goods_name">'
                     +response.data[i].goods_name+
