@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>详细信息</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .address{
+            width: 100%;
+            background: #ccc;
+        }
+        .address .newAddress{
+            float:right;
+            
+        }
+        .address .newAddress:hover{
+            background: black;
+            color: white;
+            
+        }
+        .address ul{
+            width: 80%;
+            min-height: 300px;
+            margin-top: 20px;
+        }
+        .address ul li{
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid darkgoldenrod;
+        }
+        .address ul li:hover{
+            background: orange;
+        }
+        .add{
+            width: 600px;
+            height: 500px;
+            background: gold;
+            position: absolute;
+            left:300px;
+            top:100px;				
+            display: none;
+        }
+        .add span{
+            float:right;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            background: red;
+        }
+        .active{
+            background: deepskyblue;
+        }
+        .remove{
+            width:100px;
+            float:right;
+            margin-right:10px;
+            display:block;
+            color:blue;
+        }
+        .remove:hover{
+            color:red;
+        }
+        #order{
+            width:100px;
+            height: 50px;
+            background:orange;
+            border-radius: 10px;
+            outline:none;
+        }
+    </style>
+</head>
+<body>
+    <h4>收货地址</h4>
+    <div class="address">
+        <span class="newAddress">新增地址</span>
+        <ul class="address-ul">
+            <li class="address-item" data-id="1">收货人：小石 北京 石景山 13678766898 实兴大街朗城大厦2楼</li>
+        </ul>
+    </div>
+    
+    <div class="add" id="add">
+        <span class="close">X</span>
+        <form action="">
+            <p>
+                收货人名称：
+                <input type="text" name="address_name"  placeholder="请输入收货人姓名"/>
+            </p>
+            <p>
+                手机：
+                <input type="text" name="mobile" placeholder="请输入收货人手机"/>
+            </p>
+            <p>
+                省：
+                <input type="text" name="province"  placeholder="请输入收货人省"/>
+            </p>
+            <p>
+                市：
+                <input type="text" name="city"  placeholder="请输入收货人市"/>
+            </p>
+            <p>
+                区：
+                <input type="text" name="district"  placeholder="请输入收货人区"/>
+            </p>
+            <p>
+                地址：
+                <input type="text" name="address"  placeholder="请输入收货人地址"/>
+            </p>
+            <input type="button" id="btn" value="新建收货信息" />
+            
+            
+        </form>
+    </div>
+    <div id="sum"></div>
+    <input type="button" id="order" value="下订单">
+
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script>
+        $(function(){
+            var address_id = 0;
+
+            addressAjax();
+            function addressAjax(){
+                $.ajax({
+                    "url":"http://h6.duchengjiu.top/shop/api_useraddress.php?token="+localStorage.token,
+                    "type":"GET",
+                    "dataType":"json",
+                    "success":function(response){
+                        // console.log(response);
+
+                        var htmlData = "";
+                        for(var i=0;i<response.data.length;i++){
+                            var obj = response.data[i];
+
+                            htmlData +='<li class="address-item" data-id="' +obj.address_id+ '">收货人：'
+								+obj.address_name 
+								+'  省份：'+obj.province 
+								+'  市：'+obj.city 
+								+'  地区：'+obj.district 
+								+'  街道：'+obj.address 
+								+'  手机号：'+obj.mobile 
+								+'<span class="remove">删除</span></li>';
+
+                        }
+                        $(".address-ul").html(htmlData);
+
+                        $(".address-item").click(function(event){
+                            $(this).addClass("active").siblings().removeClass("active");
+                        
+                            // console.log(event.target.nodeName);
+                            if(event.target){
+                                // console.log(event.target);
+                                address_id = event.target.getAttribute("data-id");
+                                console.log(address_id);
+                            }
+
+                        })
+
+
+                        $(".remove").click(function(){
+                            var removeLi = this.parentNode;
+                            console.log(removeLi);
+                            removeLi.parentNode.removeChild(removeLi);
+
+                            removeAjax(removeLi);
+                            
+                        })
+
+                    }
+                })
+            }
+            // 获取总金额
+            var str = location.search.substr(1);
+            // console.log(location.search);
+            var sum = str.split("=");
+            // console.log(sum);
+
+            $("#sum").html("<span>当前订单总金额：￥"+sum[1]+"</span>");
+
+
+            $(".newAddress").click(function(){
+                console.log("111");
+                $("#add").show();
+            })
+            $(".close").click(function(){
+                console.log("222");
+                $("#add").hide();
+            })
+
+            $("#btn").click(function(){
+                var data = $("form").serialize();
+                console.log(data);
+
+
+                $.ajax({
+                    "url":"http://h6.duchengjiu.top/shop/api_useraddress.php?token="+localStorage.token+"&status=add",
+                    "type":"POST",
+                    "dataType":"json",
+                    "data":data,
+                    "success":function(response){
+                        if(response.code === 0){
+                            console.log(response);
+                            console.log(111);
+                            $("#add").hide();
+                            addressAjax();
+                        }
+                    }
+                });
+            })
+
+            $("#order").click(function(){
+                if(address_id === 0){
+                    alert("请先选择地址再下订单！");
+                    return;
+                }
+
+
+                $.ajax({
+                    "url":"http://h6.duchengjiu.top/shop/api_order.php?token="+localStorage.token+"&status=add",
+                    "type":"POST",
+                    "dataType":"json",
+                    "data":{
+                        "address_id":address_id,
+                        "total_prices":sum[1]
+                    },
+                    "success":function(response){
+                        console.log(response);
+                        console.log(address_id);
+                        if(response.code === 0){
+                            alert("提交订单成功");
+                            location.href = "order.html";
+                        }
+                    }
+                })
+            })
+
+            function removeAjax(obj){
+                var address_id = $(obj).attr("data-id");
+
+                $.ajax({
+                    "url":"http://h6.duchengjiu.top/shop/api_useraddress.php?token="+localStorage.token+"&status=delete&address_id="+address_id,
+                    "type":"GET",
+                    "dataType":"json",
+                    "success":function(response){
+                        console.log(response);
+                    }
+                })
+            }
+
+
+            
+
+
+        })
+    </script>
+</body>
+</html>

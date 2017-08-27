@@ -229,11 +229,11 @@
 .shop-set-box-ri-1{
     text-align: right;
     width: 445px;
-    line-height:30px;
+    line-height:75px;
     height: 100%;
-		font-size: 22px;
-		position: relative;
-		top: -20px;
+    font-size: 22px;
+    position: relative;
+    top: -20px;
 }
 .shop-set-box-ri-1 em{
     font-size: 18px;

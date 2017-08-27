@@ -5,123 +5,230 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>详细信息</title>
-    <style type="text/css">
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        .address{
-            width: 100%;
-            background: #ccc;
-        }
-        .address .newAddress{
-            float:right;
-            
-        }
-        .address .newAddress:hover{
-            background: black;
-            color: white;
-            
-        }
-        .address ul{
-            width: 80%;
-            min-height: 300px;
-            margin-top: 20px;
-        }
-        .address ul li{
-            display: block;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            cursor: pointer;
-            border: 1px solid darkgoldenrod;
-        }
-        .address ul li:hover{
-            background: orange;
-        }
-        .add{
-            width: 600px;
-            height: 500px;
-            background: gold;
-            position: absolute;
-            left:300px;
-            top:100px;				
-            display: none;
-        }
-        .add span{
-            float:right;
-            cursor: pointer;
-            width: 50px;
-            height: 50px;
-            background: red;
-        }
-        .active{
-            background: deepskyblue;
-        }
-        .remove{
-            width:100px;
-            float:right;
-            margin-right:10px;
-            display:block;
-            color:blue;
-        }
-        .remove:hover{
-            color:red;
-        }
-        #order{
-            width:100px;
-            height: 50px;
-            background:orange;
-            border-radius: 10px;
-            outline:none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/checkout.css">
 </head>
 <body>
-    <h4>收货地址</h4>
-    <div class="address">
-        <span class="newAddress">新增地址</span>
-        <ul class="address-ul">
-            <li class="address-item" data-id="1">收货人：小石 北京 石景山 13678766898 实兴大街朗城大厦2楼</li>
+    <div id="top">
+        <div class="login_bar same_width clear_top">
+            <a href="http://www.iliangcang.com/"></a>
+            <ul class="login_list">
+                <li class="login_register"><span><a href="login.html">登录</a></span>&nbsp;&nbsp;&nbsp;&nbsp;<span><a href="register.html">注册</a></span></li>
+                <span class="line"></span>
+                <li class="bg_change">
+                    <a href="cart.html">购物车</a>
+                    <div class="subnav">
+                        <p class="item1">你的购物车暂时没有商品...</p>
+                        <p class="item2"><a href="#">快去抢购良仓商品吧</a></p>
+                    </div>
+                </li>
+                <span class="line"></span>
+                <li class="bg_change">
+                    <a href="#">消息</a>
+                    <ul class="message_nav">
+                        <li>
+                            动态 <span>0</span>
+                        </li>
+                        <li>
+                            评论 <span>0</span>   
+                        </li>
+                        <li>
+                            私信 <span>0</span>   
+                        </li>
+                        <li>
+                            粉丝 <span>0</span>
+                        </li>
+                        <li>
+                            喜欢 <span>0</span>
+                        </li>
+                        <li>
+                            通知 <span>0</span>
+                        </li>
+                    </ul>
+                </li>
+                <span class="line"></span>
+                <li><a href="#">添加良品</a></li>
+            </ul>
+        </div>
+    </div>
+    <header>
+        <ul id="nav" class="clear_float same_width">
+            <div class="search_form">
+                <input type="text" placeholder="search" id="search">
+
+                <em class="search_btn"></em>
+            </div>
         </ul>
+            
+            
+    </header>
+    
+    <div class="saved_address same_width clear_float">
+        <div>
+            <h4>已保存的常用地址</h4>
+            <span class="newAddress">新增地址</span>
+        </div>
+        
+        <table id="address-table">
+            
+
+        </table>
+        <!-- <div class="address">
+            <span class="newAddress">新增地址</span>
+            <ul class="address-ul">
+                <li class="address-item" data-id="1">收货人：小石 北京 石景山 13678766898 实兴大街朗城大厦2楼</li>
+            </ul>
+        </div> -->
+        <!-- <div class="add-box"> -->
+            <div class="add" id="add">
+                <span class="close">X</span>
+                <form action="">
+                    <p>
+                        <strong>收货人名称：</strong>   
+                        <input type="text" name="address_name"  placeholder="请输入收货人姓名"/>
+                    </p>
+                    <p>
+                        <strong>手机：</strong>  
+                        <input type="text" name="mobile" placeholder="请输入收货人手机"/>
+                    </p>
+                    <p>
+                        <strong>省：</strong>
+                        <input type="text" name="province"  placeholder="请输入收货人省"/>
+                    </p>
+                    <p>
+                        <strong>市：</strong>
+                        <input type="text" name="city"  placeholder="请输入收货人市"/>
+                    </p>
+                    <p>
+                        <strong>区：</strong>
+                        <input type="text" name="district"  placeholder="请输入收货人区"/>
+                    </p>
+                    <p>
+                        <strong>地址：</strong>
+                        <input type="text" name="address"  placeholder="请输入收货人地址"/>
+                    </p>
+                    <input type="button" id="btn" value="新建收货信息" />
+                    
+                    
+                </form>
+            </div>
+        <!-- </div> -->
+        
+        <div class="sum-bar">
+            <div id="sum"></div>
+            <input type="button" id="order" value="下订单">
+        </div>
+        
     </div>
     
-    <div class="add" id="add">
-        <span class="close">X</span>
-        <form action="">
-            <p>
-                收货人名称：
-                <input type="text" name="address_name"  placeholder="请输入收货人姓名"/>
-            </p>
-            <p>
-                手机：
-                <input type="text" name="mobile" placeholder="请输入收货人手机"/>
-            </p>
-            <p>
-                省：
-                <input type="text" name="province"  placeholder="请输入收货人省"/>
-            </p>
-            <p>
-                市：
-                <input type="text" name="city"  placeholder="请输入收货人市"/>
-            </p>
-            <p>
-                区：
-                <input type="text" name="district"  placeholder="请输入收货人区"/>
-            </p>
-            <p>
-                地址：
-                <input type="text" name="address"  placeholder="请输入收货人地址"/>
-            </p>
-            <input type="button" id="btn" value="新建收货信息" />
+
+
+
+    <footer> 
+            <div class="our_shop same_width clear_top">
+                <div class="title"><em></em><span>良仓商店/OUR SHOP</span></div>
+                <ul>
+                    <li>
+                        <em class="gs"></em>
+                        <div class="desc">
+                            <p >全球精品</p>
+                            <p class="en">Global Selections</p>
+                        </div>
+                    </li>
+                    <li>
+                        <em class="ag"></em>
+                        <div class="desc">
+                            <p >正品保证</p>
+                            <p class="en">Authenticity Guaranteed</p>
+                        </div>
+                    </li>
+                    <li>
+                        <em class="gd"></em>
+                        <div class="desc">
+                            <p >全场包邮</p>
+                            <p class="en">Free Delivery</p>
+                        </div>
+                    </li>
+                    <li>
+                        <em class="num"></em>
+                        <div class="desc">
+                            <p >400-897-6336</p>
+                            <p class="en">工作日 09:00-18:00</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+    
+        </footer>
+    
+        <div id="bottom">
+            <div class="bottom_content same_width clear_float">
+                <div class="left">
+                    <em></em>
+                    <div class="desc">
+                        <p><a href="#">iphone Adroid</a></p>
+                        <p class="app"><a href="#">客户端下载</a></p>
+                    </div>
+                    <div class="two_bar_codes">
+                        <dl class="iphone">
+                            <dt></dt>
+                            <dd>下载iphone版</dd>
+                        </dl>
+                        
+                        <dl class="android">
+                            <dt></dt>
+                            <dd>下载android版</dd>
+                        </dl>
+                    </div>
+                </div>
+                <ul>
+                    <li><a href="#" class="weixin"></a></li>
+                    <li><a href="#" class="weibo"></a></li>
+                    <li><a href="#" class="douban"></a></li>
+                </ul>
+            </div>
+            <div class="copyright same_width">
+                <ul class="clear_float">
+                    <li><a href="#">关于良仓</a></li>
+                    <span></span>
+                    <li><a href="#">服务协议</a></li>
+                    <span></span>
+                    <li><a href="#">隐私保护政策</a></li>
+                    <span></span>
+                    <li><a href="#">使用指南</a></li>
+                    <span></span>
+                    <li><a href="#">联系我们</a></li>
+                    <span></span>
+                    <li><a href="#">加入我们</a></li>
+                    <span></span>
+                    <li><a href="#">友情链接</a></li>
+                    <span></span>
+                    <li><a href="#">私信良仓</a></li>
+                </ul>
+            </div>
+            <div class="bottom_desc same_width">
+                <p>
+                    © 2013-2015 北京良仓文化传播有限公司版权所有 京ICP备13010677号-1 京公网安备11010502025627
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;公司名称：北京良仓文化传播有限公司&nbsp;&nbsp;&nbsp;&nbsp;  电话：010-58263516
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;公司地址：北京朝阳区百子湾路32号6号楼1层60号.
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;社会信用统一代码：91110105059231575L&nbsp;&nbsp;&nbsp;&nbsp;  食品许可证：JY11105160159557
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp; 图书证名称：中华人民共和国出版物经营许可证&nbsp;&nbsp;&nbsp;&nbsp;  图书证编号：新出发京零 字第 朝 150051 号 
+                </p>
+            </div>
             
-            
-        </form>
-    </div>
-    <div id="sum"></div>
-    <input type="button" id="order" value="下订单">
+        </div>
 
     <script src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/search.js"></script>
     <script>
         $(function(){
             var address_id = 0;
@@ -133,31 +240,54 @@
                     "type":"GET",
                     "dataType":"json",
                     "success":function(response){
-                        // console.log(response);
+                        console.log(response);
 
-                        var htmlData = "";
+                        var htmlData = `<tr>
+                                            <th width="60px">收货人</th>
+                                            <th width="140px">省份</th>
+                                            <th width="160px">市</th>
+                                            <th width="160px">区/县</th>
+                                            <th width="160px">街道</th>
+                                            <th width="150px">手机号码</th>
+                                            <th width="100px">操作</th>
+                                        </tr>`;
                         for(var i=0;i<response.data.length;i++){
                             var obj = response.data[i];
 
-                            htmlData +='<li class="address-item" data-id="' +obj.address_id+ '">收货人：'
-								+obj.address_name 
-								+'  省份：'+obj.province 
-								+'  市：'+obj.city 
-								+'  地区：'+obj.district 
-								+'  街道：'+obj.address 
-								+'  手机号：'+obj.mobile 
-								+'<span class="remove">删除</span></li>';
+                            // htmlData +='<li class="address-item" data-id="' +obj.address_id+ '">收货人：'
+							// 	+obj.address_name 
+							// 	+'  省份：'+obj.province 
+							// 	+'  市：'+obj.city 
+							// 	+'  地区：'+obj.district 
+							// 	+'  街道：'+obj.address 
+							// 	+'  手机号：'+obj.mobile 
+							// 	+'<span class="remove">删除</span></li>';
+
+                            htmlData += `
+                                        <tr class="table-tr" data-id="${obj.address_id}">
+                                            <td width="60px">${obj.address_name}</td>
+                                            <td width="140px">${obj.province}</td>
+                                            <td width="160px">${obj.city}</td>
+                                            <td width="160px">${obj.district}</td>
+                                            <td width="160px">${obj.address}</td>
+                                            <td width="150px">${obj.mobile}</td>
+                                            <td width="100px"><span class="remove">删除<span></td>
+                                         </tr>`
 
                         }
-                        $(".address-ul").html(htmlData);
+                        // $(".address-ul").html(htmlData);
+                        // console.log($("#address-table"))
+                         $("#address-table").html(htmlData);
+                        
+                        // $("tr:even").css("background","#e8e8e8");
 
-                        $(".address-item").click(function(event){
+                        $(".table-tr").click(function(event){
                             $(this).addClass("active").siblings().removeClass("active");
                         
                             // console.log(event.target.nodeName);
                             if(event.target){
                                 // console.log(event.target);
-                                address_id = event.target.getAttribute("data-id");
+                                address_id = event.target.parentNode.getAttribute("data-id");
                                 console.log(address_id);
                             }
 
@@ -165,7 +295,7 @@
 
 
                         $(".remove").click(function(){
-                            var removeLi = this.parentNode;
+                            var removeLi = this.parentNode.parentNode;
                             console.log(removeLi);
                             removeLi.parentNode.removeChild(removeLi);
 
@@ -182,7 +312,7 @@
             var sum = str.split("=");
             // console.log(sum);
 
-            $("#sum").html("<span>当前订单总金额：￥"+sum[1]+"</span>");
+            $("#sum").html("<span>当前订单总金额：<b>￥"+sum[1]+"</b></span>");
 
 
             $(".newAddress").click(function(){
