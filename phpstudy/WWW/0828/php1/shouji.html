@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" placeholder="请输入手机号" class="mobile"/>
+		<input type="button" id="btn" value="点击获取" />
+		<div id="oDiv">
+			
+		</div>
+
+		<script src="js/jquery-1.12.3.min.js"></script>
+		<script>
+			$.get('api.php?str="13107733057"',function(response){
+				console.log(response);
+			})	
+		</script>
+	</body>
+</html>

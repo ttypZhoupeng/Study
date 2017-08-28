@@ -1,0 +1,31 @@
+.order_main{
+    margin-top:20px;
+}
+.order_main h4{
+    color:#5b6e92;
+}
+.order-item{
+    margin:20px 0;
+    border: 1px solid #e8e8e8;
+}
+.order-item-header{
+    border-bottom: 1px solid #e8e8e8;
+}
+.order-item img{
+    width: 300px;
+}
+
+.order_goods_item{
+    position: relative;
+    float:left;
+    margin:10px 49px 10px 0;
+}
+.order-item .order_goods_item:nth-child(4n){
+    margin-right:0;
+}
+.order_goods_item p{
+    width:300px;
+}
+.order_goods_item span{
+    color:#5b6e92;
+}
