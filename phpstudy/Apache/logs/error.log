@@ -1192,3 +1192,11 @@ core:warn] [pid 5352:tid 512] AH00098: pid file H:/phpStudy/Apache/logs/httpd.pi
 [Tue Aug 29 17:52:16.250486 2017] [:error] [pid 11152:tid 2060] [client ::1:62227] PHP Notice:  Undefined variable: time in C:\\Users\\ucai\\Desktop\\Study\\phpstudy\\WWW\\0829\\liuyan\\addliuyan.php on line 14, referer: http://localhost/0829/liuyan/liuyan.html
 [Tue Aug 29 17:52:16.250486 2017] [:error] [pid 11152:tid 2060] [client ::1:62227] PHP Fatal error:  Function name must be a string in C:\\Users\\ucai\\Desktop\\Study\\phpstudy\\WWW\\0829\\liuyan\\addliuyan.php on line 14, referer: http://localhost/0829/liuyan/liuyan.html
 [Tue Aug 29 18:00:33.210815 2017] [:error] [pid 11152:tid 2060] [client ::1:62605] PHP Parse error:  syntax error, unexpected '{' in C:\\Users\\ucai\\Desktop\\Study\\phpstudy\\WWW\\0829\\liuyan\\addliuyan.php on line 21, referer: http://localhost/0829/liuyan/liuyan.html
+[Tue Aug 29 23:36:03.904923 2017] [core:warn] [pid 3856:tid 760] AH00098: pid file F:/Study/phpstudy/Apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Tue Aug 29 23:36:07.712492 2017] [mpm_winnt:notice] [pid 3856:tid 760] AH00455: Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.4.45 configured -- resuming normal operations
+[Tue Aug 29 23:36:07.712492 2017] [mpm_winnt:notice] [pid 3856:tid 760] AH00456: Server built: Jul  1 2016 16:42:20
+[Tue Aug 29 23:36:07.712492 2017] [core:notice] [pid 3856:tid 760] AH00094: Command line: 'F:\\Study\\phpstudy\\Apache\\bin\\httpd.exe -d F:/Study/phpstudy/Apache'
+[Tue Aug 29 23:36:07.858498 2017] [mpm_winnt:notice] [pid 3856:tid 760] AH00418: Parent: Created child process 9256
+[Tue Aug 29 23:36:11.218391 2017] [mpm_winnt:notice] [pid 9256:tid 688] AH00354: Child: Starting 150 worker threads.
+[Wed Aug 30 00:23:21.844505 2017] [:error] [pid 9256:tid 2028] [client ::1:55036] PHP Notice:  Undefined index: tid in F:\\Study\\phpstudy\\WWW\\0829\\liuyan2\\msg.php on line 12, referer: http://localhost/0829/liuyan2/
+[Wed Aug 30 00:23:21.875682 2017] [:error] [pid 9256:tid 2028] [client ::1:55036] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in F:\\Study\\phpstudy\\WWW\\0829\\liuyan2\\msg.php on line 21, referer: http://localhost/0829/liuyan2/
