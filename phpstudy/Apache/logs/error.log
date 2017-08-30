@@ -1200,3 +1200,9 @@ core:warn] [pid 5352:tid 512] AH00098: pid file H:/phpStudy/Apache/logs/httpd.pi
 [Tue Aug 29 23:36:11.218391 2017] [mpm_winnt:notice] [pid 9256:tid 688] AH00354: Child: Starting 150 worker threads.
 [Wed Aug 30 00:23:21.844505 2017] [:error] [pid 9256:tid 2028] [client ::1:55036] PHP Notice:  Undefined index: tid in F:\\Study\\phpstudy\\WWW\\0829\\liuyan2\\msg.php on line 12, referer: http://localhost/0829/liuyan2/
 [Wed Aug 30 00:23:21.875682 2017] [:error] [pid 9256:tid 2028] [client ::1:55036] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in F:\\Study\\phpstudy\\WWW\\0829\\liuyan2\\msg.php on line 21, referer: http://localhost/0829/liuyan2/
+[Wed Aug 30 11:53:51.177052 2017] [core:warn] [pid 10824:tid 540] AH00098: pid file C:/Users/ucai/Desktop/Study/phpstudy/Apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Aug 30 11:53:51.418937 2017] [mpm_winnt:notice] [pid 10824:tid 540] AH00455: Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.4.45 configured -- resuming normal operations
+[Wed Aug 30 11:53:51.418937 2017] [mpm_winnt:notice] [pid 10824:tid 540] AH00456: Server built: Jul  1 2016 16:42:20
+[Wed Aug 30 11:53:51.418937 2017] [core:notice] [pid 10824:tid 540] AH00094: Command line: 'C:\\Users\\ucai\\Desktop\\Study\\phpstudy\\Apache\\bin\\httpd.exe -d C:/Users/ucai/Desktop/Study/phpstudy/Apache'
+[Wed Aug 30 11:53:51.479483 2017] [mpm_winnt:notice] [pid 10824:tid 540] AH00418: Parent: Created child process 16252
+[Wed Aug 30 11:53:52.819487 2017] [mpm_winnt:notice] [pid 16252:tid 556] AH00354: Child: Starting 150 worker threads.

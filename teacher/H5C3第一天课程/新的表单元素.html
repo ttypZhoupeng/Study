@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="" id="biaodan">
+			<p>
+				请输入年龄：
+				<input type="number" id="age" min="10" max="80" step="1"/>
+				<span id="age-error"></span>
+			</p>
+			<p>
+				请输入邮箱：
+				<input type="email" />
+			</p>
+			<p>
+				请输入手机号：
+				<input type="tel" pattern="^1[3,4,5,7,8]\d{9}$" />
+			</p>
+			<p>
+				请输入你的生日：
+				<input type="date" />
+			</p>
+			<p>
+				请输入你的搜索内容：
+				<input type="search" autofocus/>
+			</p>
+			<p>
+				请输入你喜欢的颜色：
+				<input type="color" id="color"/>
+			</p>
+			<p>
+				有提示文本的内容：
+				<input type="text" list="datalist"/>
+				<datalist id="datalist">
+					<option value="北京">北京</option>
+					<option value="山西">山西</option>
+					<option value="哈尔滨">哈尔滨</option>
+					<option value="新疆">新疆</option>
+				</datalist>
+			</p>
+			<p>
+				来报道的日期：
+				<input type="week" />
+			</p>
+			<p>
+				时间：
+				<input type="time" />
+			</p>
+			<p>
+				<input type="submit" />
+			</p>
+		</form>
+		
+		密码：<input type="password"  name="up" form="biaodan"/>
+		
+		
+		<form oninput="result.value=light.value">
+			<p>
+				<input type="range" name="light" min="0" max="1000" step="10"/>
+				<output name="result"></output>
+			</p>
+		</form>
+		<script type="text/javascript">
+			var age = document.querySelector("#age");
+			var ageError = document.querySelector("#age-error");
+			
+			var color = document.querySelector("#color");
+			
+			
+			age.addEventListener("invalid",function(event){
+				console.log(1);
+				event.preventDefault();
+				ageError.innerText = "年龄区间是10岁到80岁之间！";
+			})
+			
+			
+			color.onchange=function(){
+				console.log(this.value);
+				document.body.bgColor=this.value;
+			}
+			
+		</script>
+	</body>
+</html>

@@ -6,7 +6,6 @@
 
 
 
-
 # 2.arguments对象中有一个非常有用的属性：callee
 
 * arguments.callee返回此arguments对象所在的当前函数引用。在使用函数递归调用时推荐使用arguments.callee代替函数名本身。
@@ -35,6 +34,81 @@
 
 优点：主要就是兼容性,不用说,绝对棒棒的
 
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .out{
+            width:300px;
+            height:100px;
+            margin:0 auto;
+            position:relative;
+            background:red;
+            top:100px;
+        }
+
+        .arrow{
+            width:100px;
+            height:100px;
+            position: absolute;;
+            left:50%;
+            background:skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="out">
+        <div class="arrow"></div>
+    </div>
+
+
+    <script src="./jquery-1.12.3.min.js"></script>
+    <script>    
+        var direction='right';
+        // (function(){
+        //     var css={
+        //         'left':'40%'
+        //     };
+        //     if(direction==='right'){
+        //         direction='left';
+        //         css.left='60%';
+        //     }else{
+        //         direction='right';
+        //     }
+        //     $('.arrow').animate(css,arguments.callee);
+        // })();
+
+
+
+        $(".out").mouseenter(function(){
+            (function(){
+                var css={
+                    'left':'40%'
+                };
+                if(direction==='right'){
+                    direction='left';
+                    css.left='60%';
+                }else{
+                    direction='right';
+                }
+                $('.arrow').animate(css,500,arguments.callee);
+            })()
+        })
+        $(".out").mouseleave(function(){
+            $(".arrow").stop();
+            $(".arrow").animate({"left":"50%"});
+        })
+    </script>
+</body>
+</html>
+```
 
 
 

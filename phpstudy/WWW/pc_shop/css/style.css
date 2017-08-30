@@ -378,7 +378,9 @@ footer .our_shop .title{
     margin:45px auto;
     font-weight: bold;
 }
+
 footer .our_shop .title>em{
+    position: relative;
     display: inline-block;
     width:27px;
     height:15px;
@@ -425,6 +427,7 @@ footer .our_shop .title>span{
 #bottom{
     background:#25292e;
 }
+
 .bottom_content{
     padding-top:40px;
 }
@@ -489,6 +492,7 @@ footer .our_shop .title>span{
     margin-right:20px;
     background:url("../images/download.png") -175px 0 no-repeat;
 }
+
 .bottom_content>ul {
     float:right;
 }

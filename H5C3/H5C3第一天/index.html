@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input:invalid{
+            border:2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <hgroup>
+        <h1>Main title</h1>
+        <h2>Secondary title</h2>
+    </hgroup>
+
+
+    <figure>
+        <img src="images/login.png" alt="">
+        <figcaption>这是登录logo</figcaption>
+    </figure>
+
+    <progress value="60" max="100">60%</progress>
+
+    <address>杭州市西湖区雷峰塔</address>
+
+    <time datetime="2017-08-28">情人节</time>
+
+    <time>9:00</time>
+
+    <p>
+       <mark>ajax</mark>  一定要好好学
+    </p>
+
+
+    <ruby>
+        漢 <rp>(</rp><rt>hàn</rt><rp>)</rp>
+        字 <rp>(</rp><rt>zì</rt><rp>)</rp>
+    </ruby>
+
+
+    <p>
+        <embed src='http://player.youku.com/player.php/sid/XMTczMzkxMDkwOA==/v.swf' allowFullScreen='true' quality='high' width='480' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>
+    </p>
+
+    <form action="">
+        <p>
+            请输入电话号码：<input type="tel" name="dianhua"  pattern="^1[\d]{10}$" >
+        </p>
+        <p>
+            请输入网址: <input type="url" name="wangzhi" required placeholder="请输入网址"> 
+        </p>
+        <p>
+            请输入邮箱：<input type="email" name="youxiang" required autofocus>
+        </p>
+        <p>
+            请搜索：<input type="search" required>
+        </p>
+        <p>
+            时间：<input type="date" >
+        </p>
+        <p>
+            周：<input type="week" >
+        </p>
+        <p>
+            时间：<input type="time" >
+        </p>
+        <p>
+            <input type="submit">
+        </p>
+        
+
+        请输入你的家乡
+        <input type="text" list="tishi">
+
+        <datalist id="tishi">
+            <option value="北京">北京</option>
+            <option value="上海">上海</option>
+            <option value="东莞">东莞</option>
+            <option value="东京">东京</option>
+        </datalist>
+
+        <p>
+            请输入购买数量：
+            <input type="range" id="range" min="1" max="55">
+        </p>
+
+        <p>
+            <input type="color" id="colorPicker">
+        </p>
+    </form>
+
+
+    <video width="500" height="400" controls src="video/trailer.mp4">
+        很遗憾你的浏览器不支持video标签
+    </video>
+
+    <p>
+        丑八怪
+        <audio src="mp3/丑八怪.mp3" autoplay controls muted id="audio"></audio>
+        <input type="button" value="暂停" id="audioPlay">
+        <input type="button" value="静音" id="muted">
+        <input type="text" value="100" id="volume">
+    </p> 
+
+
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script>
+        // js原生实现音乐的暂停播放
+        var playBtn = document.getElementById("audioPlay");
+        // console.log(playBtn);
+        var audio = document.getElementById("audio");
+        // console.log(audio);
+        var volume = document.getElementById("volume");
+
+        // playBtn.onclick = function(){
+        //     if(this.value == "播放"){
+        //         this.value = "暂停";
+        //         audio.play();
+        //     }else{
+        //         this.value = "播放";
+        //         audio.pause();
+        //     }
+        // }
+
+        //音频播放暂停切换
+        $("#audioPlay").click(function(){
+            if(this.value == "播放"){
+                this.value = "暂停";
+                $("#audio")[0].play();
+            }else{
+                this.value = "播放";
+                $("#audio")[0].pause();
+            }
+            
+        })
+        //静音切换
+        $("#muted").click(function(){
+            console.log($("#audio")[0].muted);
+            $("#audio")[0].muted = !$("#audio")[0].muted;
+        })
+        //音量调整
+        $("#volume").change(function(){
+            $("#audio")[0].volume = parseInt(this.value)/100;
+        })
+
+
+
+
+
+    </script>
+</body>
+</html>

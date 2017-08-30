@@ -248,8 +248,31 @@
                 }
             })
 
+            var direction = "right";
+            $(".our_shop .title").mouseenter(function(){
+                
+                (function(){
+                    var css = {
+                        "left":"-10px"
+                    }
+                    if(direction == "right"){
+                        direction="left";
+                        css.left = "10px";
+                    }else{
+                        direction = "right";
+                    }
+                    $("em.hand").animate(css,arguments.callee);
+                    
+                })()
+                
+            });
 
-            console.log($("em.hand"));
+            $(".our_shop .title").mouseout(function(){
+                $("em.hand").stop();
+                $("em.hand").animate({"left":0});
+            });
+
+            
 
         })
     </script>

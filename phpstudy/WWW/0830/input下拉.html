@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" list="datalist">
+
+    <datalist id="datalist">
+        <!-- <option value="北京">北京</option>
+        <option value="北京">北京</option>
+        <option value="北京">北京</option>
+        <option value="杭州">杭州</option> -->
+    </datalist>
+
+
+    <script>
+        var xhr = new XMLHttpRequest();
+        var datalist = document.getElementById("datalist");
+
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4){
+                var obj = JSON.parse(xhr.responseText);
+                console.log(obj);
+                var html="";
+                for(var i=0;i<obj.length;i++){
+                    html += `<option value="${obj[i]}">${obj[i]}</opiton>`
+                }
+                datalist.innerHTML = html;
+            }
+        }
+
+        xhr.open("GET","json/data.json",true);
+
+        xhr.send("null");
+    </script>
+
+</body>
+</html>
