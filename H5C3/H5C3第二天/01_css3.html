@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wutai{
+            width:600px;
+            height:450px;
+            perspective:600px;
+            margin:200px auto;
+            transition:all 0.5s;
+            border:1px solid #000;
+        }
+        .wutai img{
+            /* transform-origin: 0 0; */
+            transition:all 0.5s;
+        }
+        .wutai:hover img{
+            transform:translateZ(300px);
+        }
+    </style>
+</head>
+<body>
+    <div class="wutai">
+        <img src="images/aaa.jpg" alt="">
+    </div>
+</body>
+</html>

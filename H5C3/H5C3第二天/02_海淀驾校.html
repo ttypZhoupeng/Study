@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,body,ul{
+            padding:0;
+            margin:0;
+        }
+        body{
+            background:#e8e8e8;
+        }
+        ul{
+            list-style: none;  
+            width:600px;
+            margin:100px auto;
+        }
+        li{
+            position: relative;
+            display: block;
+            width:107px;
+            height:111px;
+            float:left;
+            margin-right:30px;
+            z-index: 100;              
+        }
+        .out{
+            position:absolute;
+            display:block;
+            top:0;
+            left:0;
+            width:107px;
+            height:107px;  
+            transition:all 1s;  
+        }
+        li:hover>.out{
+            transform: rotate(360deg);
+        }
+        .oL1 em{
+            background:url("images/a_1.png");
+        }
+        .oL1:hover em{
+            background:url("images/a_1_h1.png");
+        }
+        .oL2 em{
+            background:url("images/a_2.png");
+        }
+        .oL2:hover em{
+            background:url("images/a_2_h1.png");
+        }
+        .oL3 em{
+            background:url("images/a_3.png");
+        }
+        .oL3:hover em{
+            background:url("images/a_3_h1.png");
+        }
+        .oL4 em{
+            background:url("images/a_4.png");
+        }
+        .oL4:hover em{
+            background:url("images/a_4_h1.png");
+        }
+        .in{
+            position:absolute;
+            left:33px;
+            top:20px;   
+        }
+        span{
+            position: absolute;
+            font-size:14px;
+            font-weight: 600;
+            color:white;
+            top:68px;
+            left:27px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="oL1">
+            <em class="out"></em>
+            <img src="images/tb_1.png" alt="" class="in">
+            <span>我要预约</span>
+        </li>
+        <li class="oL2">
+            <em class="out"></em>
+            <img src="images/tb_2.png" alt="" class="in">
+            <span>我要预约</span>
+        </li>
+        <li class="oL3">
+            <em class="out"></em>
+            <img src="images/tb_3.png" alt="" class="in">
+            <span>我要预约</span>
+        </li>
+        <li class="oL4">
+            <em class="out"></em>
+            <img src="images/tb_1.png" alt="" class="in">
+            <span>我要预约</span>
+        </li>
+    </ul>
+
+
+    <script src="../H5C3第一天/js/jquery-1.12.3.min.js"></script>
+    <script>
+        // var lis = document.getElementsByTagName("li");
+        // var out = document.getElementsByClassName("out");
+
+
+        // for(var i=1;i<lis.length;i++){
+        //     var index = i;
+        //     lis[index].onmouseover = function(){
+        //         out[index].setAttribute("src","images/a__h1.png")
+        //     }
+        // }
+
+        // $("li img[src='images/a_1.png']").mouseenter(function(){
+        //     console.log($(this));
+        //     $(this).attr("src","images/a_1_h1.png").fadeIn(6000);
+        // })
+        // $("li img[src='images/a_1_h1.png']").mouseleave(function(){
+        //     console.log($(this));
+        //     $(this).attr("src","images/a_1.png").fadeOut(6000);
+        // })
+
+
+
+    </script>
+</body>
+</html>
