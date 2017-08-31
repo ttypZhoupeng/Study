@@ -64,8 +64,7 @@
 			
 			//初始化，遍历每个li，让每个li旋转不一样的度数deg
 			$(".unit ul li").each(function(i){
-				
-				$(this).css("transform","rotateY(" + (i * 40) + "deg) translateZ(275px)");
+				$(this).css("transform","rotateY(" + (i * 40) + "deg) translateZ("+400/Math.sin(Math.PI*5/18)+"px)");
 			});
 			
 			
@@ -98,24 +97,24 @@
 				},1000);
 			});
 			
-			$unit.mousedown(function(event){
-				// $unit.css("transform",rotateX("+"));
-				// console.log(event.clientX);
-				// console.log(event.clientY);
-				var oldX = event.clientX-300;
-				var oldY = event.clientY-135;
-				console.log(oldX,oldY);
+			// $unit.mousedown(function(event){
+			// 	// $unit.css("transform",rotateX("+"));
+			// 	// console.log(event.clientX);
+			// 	// console.log(event.clientY);
+			// 	var oldX = event.clientX-300;
+			// 	var oldY = event.clientY-135;
+			// 	console.log(oldX,oldY);
 
-				$unit.mousemove(function(event){
-					var moveX = event.clientX-oldX;
-					var moveY = event.clientY-oldY;
-					console.log(moveX,moveY);
+			// 	$unit.mousemove(function(event){
+			// 		var moveX = event.clientX-oldX;
+			// 		var moveY = event.clientY-oldY;
+			// 		console.log(moveX,moveY);
 
 
-					$(this).css("transform","rotate("+moveX+"deg,"+moveY+"deg)")
-				})
-				// $(this).css("transform","rotate("+newX+"deg,"+newY+"deg)");
-			})
+			// 		$(this).css("transform","rotate("+moveX+"deg,"+moveY+"deg)")
+			// 	})
+			// 	// $(this).css("transform","rotate("+newX+"deg,"+newY+"deg)");
+			// })
 			
 		</script>
 	</body>
