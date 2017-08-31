@@ -113,14 +113,14 @@
 * color&nbsp;&nbsp;&nbsp; 颜色
 * date &nbsp;&nbsp;&nbsp;日期  time week
 
-### 新的表单属性
+### 1.6新的表单属性
 
 > 1.pattern  自定义正则
 > 2.required 必填项
 > 3.placehoder 提示文本
 > 4.autofocus 自动得到焦点
 
-### 表单元素有一些更新
+### 1.7表单元素有一些更新
 
 >1.label标签能直接包裹input
 ```
