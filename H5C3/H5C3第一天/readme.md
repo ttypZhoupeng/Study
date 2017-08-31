@@ -10,23 +10,23 @@
 
 ### 1.2新的规范
 
-* 标签大小写都行
+#### (1) 标签大小写都行
 
 \<DiV>我是一个盒子\</DiV>
 
-* 自封闭标签不一定有反斜杠
+#### (2)自封闭标签不一定有反斜杠
 
 \<img src="images/1.jpg" alt="">
 
-* 引号可以不加
+#### (3)引号可以不加
 
 \<img src=images/1.jpg alt=我是一个图图 >
 
-* type属性都不用写了
+#### (4) type属性都不用写了
 
 \<link rel="stylesheet" href="1.css">
 
-* 不再区分容器级和文本级
+#### (5) 不再区分容器级和文本级
 ```
 <a href="">
 	<p>文字文字文字文字</p>
@@ -42,6 +42,107 @@
 * 文章 \<article>
 * 侧边内容 \<aside>
 * 导航条 \<nav>
+
+
+
+### 1.4新的语义元素
+
+#### (1)模板
+```
+<template>
+    <ul>
+        <li><%=name%> </li>
+        <li><%=name%> </li>
+        <li><%=name%> </li>
+        <li><%=name%> </li>
+    </ul>
+</template>
+```
+
+#### (2)主体部分
+```
+<section>
+    <aside></aside>
+    <main></main>
+</section>
+```
+#### (3).图文
+```
+<figure>
+	<img src="images/0.jpg" alt="">
+	<figcaption>这是一只狗</figcaption>
+</figure>
+```
+
+#### (4).进度条
+
+\<progress value="60" max="100">60%\</progress>
+
+#### (5).地址
+\<address>杭州西湖\</address>
+
+#### (6).时间
+```
+<p>
+    注意，周一<time>9:00</time>上课
+</p>
+```
+
+#### (7).高亮，标注
+
+```
+<p>
+	Ajax<mark>一定</mark>要好好复习！
+</p>
+```
+
+#### (8).注音
+```
+<p>
+    傻<ruby>屌<rt>diǎo</rt></ruby>
+</p>
+```
+
+### 1.5新的表单元素
+
+* search&nbsp;&nbsp;&nbsp;搜索框
+* tel &nbsp;&nbsp;&nbsp;电话
+* url &nbsp;&nbsp;&nbsp;网址
+* email&nbsp;&nbsp;&nbsp; 邮箱
+* number&nbsp;&nbsp;&nbsp; 数字
+* color&nbsp;&nbsp;&nbsp; 颜色
+* date &nbsp;&nbsp;&nbsp;日期  time week
+
+### 新的表单属性
+
+> 1.pattern  自定义正则
+> 2.required 必填项
+> 3.placehoder 提示文本
+> 4.autofocus 自动得到焦点
+
+### 表单元素有一些更新
+
+>1.label标签能直接包裹input
+```
+<label>
+	<input type="radio" name="sex">男
+</label>
+```
+>2.智能感应
+```
+请输入你的家乡
+<input type="text" list="tishi">
+
+<datalist id="tishi">
+    <option value="北京">北京</option>
+    <option value="上海">上海</option>
+    <option value="东莞">东莞</option>
+    <option value="东京">东京</option>
+</datalist>
+```
+
+## 音频、视频
+
 
 
 
@@ -73,7 +174,7 @@
 
 ## 5.querySelectAll与getElementsBy区别
 
-> 5.1前者接收的参数是css选择器，后者是只能是className,tagName,name
+### 5.1前者接收的参数是css选择器，后者是只能是className,tagName,name
 
 ```
 try {
@@ -86,7 +187,7 @@ console.log(e1 && e1[0].className);
 console.log(e2 && e2[0].className);
 ```
 
-> 5.2返回值不同，前者返会的是静态节点集合，后者返会的是动态节点集合
+### 5.2返回值不同，前者返会的是静态节点集合，后者返会的是动态节点集合
 
 举个栗子：
 ```
@@ -104,7 +205,7 @@ for(var i = 0; i < lis.length ; i++){
 }
 
 ```
-> 5.3getElementById / querySelector
+### 5.3getElementById / querySelector
 
 getElementById / querySelector 这两个获取到的都是dom节点，结果没有区别
 

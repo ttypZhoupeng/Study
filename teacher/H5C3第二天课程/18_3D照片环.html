@@ -97,7 +97,24 @@
 				},1000);
 			});
 			
-			
+			$unit.mousedown(function(event){
+				// $unit.css("transform",rotateX("+"));
+				// console.log(event.clientX);
+				// console.log(event.clientY);
+				var oldX = event.clientX-300;
+				var oldY = event.clientY-135;
+				console.log(oldX,oldY);
+
+				$unit.mousemove(function(event){
+					var moveX = event.clientX-oldX;
+					var moveY = event.clientY-oldY;
+					console.log(moveX,moveY);
+
+
+					$(this).css("transform","rotate("+moveX+"deg,"+moveY+"deg)")
+				})
+				// $(this).css("transform","rotate("+newX+"deg,"+newY+"deg)");
+			})
 			
 		</script>
 	</body>
