@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>落花</title>
+    <style>
+        .img1{
+            position:absolute;
+            width:100px;
+            top:100px;
+            right:0;
+            left:0;
+            margin:0 auto;
+            opacity: 0;
+            transform:rotate(-40deg);
+            animation: luohua 5s linear 1s infinite;
+            /* animation: luohua2 5s linear; */
+        }
+        .img2{
+            position:absolute;
+            width:50px;
+            top:50px;
+            right:0;
+            left:300px;
+            opacity: 0;
+            transform:rotate(20deg);
+            animation: luohua2 10s linear 2s infinite;
+        }
+        .img3{
+            position:absolute;
+            width:70px;
+            top:70px;
+            right:0;
+            left:100px;
+            opacity: 0;
+            transform:rotate(20deg);
+            animation: luohua3 10s linear 3s infinite;
+        }
+        .img{
+            position:absolute;
+            opacity: 0; 
+        }
+        .img4{
+            width:60px;
+            top:60px;
+            left:700px;
+            transform:rotate(-40deg);
+            animation: luohua 10s linear 4s infinite;
+        }
+        .img6{
+            width:60px;
+            top:60px;
+            left:500px;
+            transform:rotate(-40deg);
+            animation: luohua 10s linear 6s infinite;
+        }
+
+        @-webkit-keyframes luohua{
+            0%{
+                top:100px;
+                left:0;
+                transform:rotate(-40deg);
+                opacity: 0;
+            }
+            50%{
+                top:300px;
+                left:-700px;
+                opacity: 1;
+                transform:rotate(20deg);
+            }
+            100%{
+                top:500px;
+                left:700px;
+                opacity:0;
+                transform:rotate(0deg);
+            }
+            
+        }
+
+        @-webkit-keyframes luohua2{
+            0%{
+                top:100px;
+                left:300px;
+                transform:rotate(20deg);
+            }
+            33.3333%{
+                top:200px;
+                left:700px;
+                opacity: 1;
+                transform:rotate(-40deg);
+            }
+            66.9999%{
+                top:300px;
+                left:300px;
+                transform:rotate(20deg);
+            }
+            100%{
+                top:400px;
+                left:700px;
+                opacity:0;
+                transform:rotate(0deg);
+            }
+        }
+        @-webkit-keyframes luohua3{
+            0%{
+                top:100px;
+                left:100px;
+                transform:rotate(20deg);
+            }
+            33.3333%{
+                top:200px;
+                left:500px;
+                opacity: 1;
+                transform:rotate(-40deg);
+            }
+            66.9999%{
+                top:300px;
+                left:100px;
+                transform:rotate(20deg);
+            }
+            100%{
+                top:400px;
+                left:500px;
+                opacity:0;
+                transform:rotate(0deg);
+            }
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <img src="images/luohua.png" alt="" class="img1">
+    <img src="images/luohua.png" alt="" class="img2">
+    <img src="images/luohua.png" alt="" class="img3">
+    <img src="images/luohua.png" alt="" class="img4 img">
+    <img src="images/luohua.png" alt="" class="img5 img">
+    <img src="images/luohua.png" alt="" class="img6 img">
+    <img src="images/luohua.png" alt="" class="img7 img">
+    
+</body>
+</html>

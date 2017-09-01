@@ -17,7 +17,7 @@
 				width: 800px;
 				height: 400px;
 				margin: 0 auto;
-				perspective: 900px;
+				perspective: 1600px;
 				border: 1px solid #000;
 			}
 			.stage .unit{
@@ -43,21 +43,21 @@
 		<div class="stage">
 			<div class="unit">
 				<ul>
-					<li><img src="img/1.png"/></li>
-					<li><img src="img/2.png"/></li>
-					<li><img src="img/3.png"/></li>
-					<li><img src="img/4.png"/></li>
-					<li><img src="img/5.png"/></li>
-					<li><img src="img/6.png"/></li>
-					<li><img src="img/7.png"/></li>
-					<li><img src="img/8.png"/></li>
-					<li><img src="img/9.png"/></li>
+					<li><img src="images/1.png"/></li>
+					<li><img src="images/2.png"/></li>
+					<li><img src="images/3.png"/></li>
+					<li><img src="images/4.png"/></li>
+					<li><img src="images/5.png"/></li>
+					<li><img src="images/6.png"/></li>
+					<li><img src="images/7.png"/></li>
+					<li><img src="images/8.png"/></li>
+					<li><img src="images/9.png"/></li>
 				</ul>
 			</div>
 		</div>
 		
-		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/jquery.mousewheel.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../H5C3第一天/js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../jQuery资料/jquery.mousewheel.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			var $unit = $(".unit");
 			
@@ -97,24 +97,33 @@
 				},1000);
 			});
 			
-			// $unit.mousedown(function(event){
-			// 	// $unit.css("transform",rotateX("+"));
-			// 	// console.log(event.clientX);
-			// 	// console.log(event.clientY);
-			// 	var oldX = event.clientX-300;
-			// 	var oldY = event.clientY-135;
-			// 	console.log(oldX,oldY);
+			$(document).mousedown(function(event){
+				// $unit.css("transform",rotateX("+"));
+				// console.log(event.clientX);
+				// console.log(event.clientY);
+				var oldX = event.clientX;
+				var oldY = event.clientY;
+				console.log(oldX,oldY);
 
-			// 	$unit.mousemove(function(event){
-			// 		var moveX = event.clientX-oldX;
-			// 		var moveY = event.clientY-oldY;
-			// 		console.log(moveX,moveY);
+				$unit.css("transition","none");
+
+				$(document).mousemove(function(event){
+					var moveX = event.clientX-oldX;
+					var moveY = event.clientY-oldY;
+					console.log(moveX,moveY);
 
 
-			// 		$(this).css("transform","rotate("+moveX+"deg,"+moveY+"deg)")
-			// 	})
-			// 	// $(this).css("transform","rotate("+newX+"deg,"+newY+"deg)");
-			// })
+					$unit.css("transform","rotateX("+-moveY/10+"deg) rotateY("+moveX/10+"deg)")
+
+					return false;
+				})
+			})
+
+			$(document).mouseup(function(event){
+				$(document).off("mousemove");
+
+				$unit.css("transition","all 0.5s ease 0s");
+			})
 			
 		</script>
 	</body>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        div{
+            width: 60px;
+            height: 60px;
+            background-color: orange;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            /* border-radius: 50%; */
+        }
+    </style>
+</head>
+<body>
+        <div></div>
+		<div></div>
+        
+        
+        <script>
+            var oDiv = document.querySelector("div");
+
+            var yuanxin = {a:200,b:200} ;
+
+            var r = 200;
+
+            var degree = 0;
+
+            setInterval (function(){
+                degree++;
+                go(degree);
+            },40);
+
+            function go(){
+                oDiv.style.left = yuanxin.a + r * Math.sin(degreeToRad(degree)) + "px";
+				oDiv.style.top = yuanxin.b - r * Math.cos(degreeToRad(degree)) + "px";
+            }
+
+            function degreeToRad(degree){
+                return degree*Math.PI/180;
+            }
+        </script>
+</body>
+</html>
