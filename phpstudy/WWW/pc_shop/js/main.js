@@ -104,4 +104,19 @@ $(function(){
             }
         })
     })
+
+
+    //返回顶部
+    $(window).scroll(function(){
+        if($(window).scrollTop() > 100){
+            $(".backTop").fadeIn(1000);
+        }else{
+            $(".backTop").fadeOut(1000);
+        }
+    });
+
+    $(".backTop").click(function(){
+        $("html,body").animate({scrollTop:0},1000);
+        return false;
+    })
 })

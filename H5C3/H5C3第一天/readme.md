@@ -105,6 +105,8 @@
 
 ### 1.5新的表单元素
 
+**表单元素不需要再放在form中**
+
 * search&nbsp;&nbsp;&nbsp;搜索框
 * tel &nbsp;&nbsp;&nbsp;电话
 * url &nbsp;&nbsp;&nbsp;网址
@@ -115,10 +117,10 @@
 
 ### 1.6新的表单属性
 
-> 1.pattern  自定义正则
-> 2.required 必填项
-> 3.placehoder 提示文本
-> 4.autofocus 自动得到焦点
+* 1.pattern  自定义正则
+* 2.required 必填项
+* 3.placehoder 提示文本
+* 4.autofocus 自动得到焦点
 
 ### 1.7表单元素有一些更新
 
@@ -142,6 +144,88 @@
 ```
 
 ## 音频、视频
+
+### 1.视频 video
+
+>1.1标准模式
+```
+<video src="video/1.mp4" width="500" autoplay controls loop>
+	很遗憾，你的浏览器不支持video标签
+</video>
+```
+
+* src 视频地址
+* width、height 视频的宽高
+* autopay 自动播放
+* controls 显示播放按钮的控件
+* loop 自动循环
+
+>1.2多视频列表
+```
+<video width="500" autoplay controls loop>
+    很遗憾，你的浏览器不支持video标签
+    <source src="video/1.mp4" />
+    <source src="video/2.mp4" />
+    <source src="video/3.mp4" />
+</video>
+```
+
+如果有很多视频，就用source一一列出
+
+
+>1.3需要注意的地方
+
+**支持的视频格式是mp4、ogv，其他都不支持**
+
+>1.4这个控件所持有的事件以及方法
+
+事件：
+
+* onpause 当暂停的时候
+* onplay 当播放的时候
+
+方法：
+
+* pause()暂停
+* play()播放
+
+
+### 2.音频 audio
+```
+<audio src="audio/a.mp3" autoplay controls></audio>
+```
+
+>2.1 支持的 格式
+
+**mp3 ogg**
+
+>2.2 IE9开始支持
+
+
+
+## 本地存储
+
+### 1.localStorage 本地存储
+
+**API很简单只有3个**
+* localStorage.setItem(k,v);  //存储
+* localStorage.getItem(k);    //读取
+* localStorage.removeItem(k); //删除
+
+### 2.sessionStorage 会话存储
+
+**API和本地存储一样，也是简单的三个**
+* sessionStorage.setItem(k,v);  //存储
+* sessionStorage.getItem(k);    //读取
+* sessionStorage.removeItem(k); //删除
+
+
+
+
+
+
+
+
 
 
 
@@ -215,6 +299,41 @@ https://www.zhihu.com/question/24702250/answer/28695133
 
 
 ### 5.4lable
+
+* <label> 标签为 input 元素定义标签（label）。
+* label 元素不会向用户呈现任何特殊的样式。不过，它为鼠标用户改善了可用性，因为如果用户点击 label 元素内的文本，则会切换到控件本身。<br>
+* <label> 标签的 for 属性应该等于相关元素的 id 元素，以便将它们捆绑起来。
+
+**也就是说使用label标签，用户点击其中的文本，也能聚焦到input中**
+
+
+**需要用for绑定input的id**
+
+>不包含input
+```
+<form>
+<label for="male">Male</label>
+<input type="radio" name="sex" id="male" />
+<br />
+<label for="female">Female</label>
+<input type="radio" name="sex" id="female" />
+</form>
+```
+
+
+>包含input
+```
+<label for="ye">
+    <input id="ye" type="checkbox" />
+    文本
+</label>
+```
+
+点击文本能够实现聚焦，将文本与input绑定在一起
+
+
+
+
 
 
 

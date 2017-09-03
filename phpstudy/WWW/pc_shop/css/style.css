@@ -554,3 +554,39 @@ footer .our_shop .title>span{
     font-size:12px;
     color:#5c5c5c;
 } 
+
+.contact{
+    position: fixed;
+    right: 30px;
+    bottom:0;
+    width:90px;
+    height: 30px;
+    line-height:30px;
+    background:#58799a;
+    text-align:center;
+    border-radius: 5px;
+}
+
+.contact a{
+    display: block;
+    font-size: 14px;
+    color:white;
+
+}
+.backTop{
+    display:none;
+}
+.backTop a{
+    display: block;
+    position: fixed;
+    bottom:40px;
+    right:50px;
+    width:59px;
+    height: 59px;
+    background:url("../images/download.png");
+    background-position:-20px -813px;
+    transition: all 0.5s;
+}
+.backTop a:hover{
+    opacity: 0.3;
+}
