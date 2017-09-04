@@ -323,3 +323,78 @@ body {
     right: 0;
     top: 65%;
 }
+
+
+/* 第六页 */
+
+.swiper-slide:nth-child(6) {
+    background: url("../images/runBg.jpg") 0 0 no-repeat #837571;
+    text-align: center;
+}
+
+.run-avatar {
+    position: absolute;
+    left: 9%;
+    top: 10%;
+    text-align: center;
+}
+
+.run-ta {
+    position: absolute;
+    left: 13%;
+    top: 52%;
+}
+
+.run-txt {
+    position: absolute;
+    left: 22%;
+    top: 55%;
+}
+
+
+/* 第七页 */
+
+.swiper-slide:nth-child(7) {
+    background: #4add9d;
+    text-align: center;
+}
+
+.city-avatar {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+}
+
+.salary-city {
+    position: absolute;
+    top: 3%;
+    left: 0;
+    right: 0;
+}
+
+.salary-city img {
+    width: 70%;
+    height: 70%;
+}
+
+.salary-avatar {
+    top: 3%;
+    left: 0;
+    right: 7%;
+    margin-top: 40px;
+}
+
+.salary-avatar img {
+    width: 40%;
+    height: 40%;
+}
+
+.salary-ta {
+    left: 10%;
+    top: 60%;
+}
+
+.salary-txt {
+    left: 20%;
+    top: 60%;
+}
