@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        /* div{
+            position:relative;
+        } */
+        
+        p:nth-child(1){
+            width:200px;
+            height:100px;
+            background:skyblue;
+        }
+        p:nth-child(2){
+            height:100px;
+            background:yellow;
+        }
+        p:nth-child(3){
+            width:200px;
+            height:100px;
+            background:red;
+        }
+        p{
+            float:left;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+    </div>
+
+    <script src="../js/jquery-1.12.3.min.js"></script>
+    <script>
+        $(function(){
+            
+            changeWidth();
+            $(window).resize(function(){
+                changeWidth();
+            })
+            function changeWidth(){
+                var $width =  $(window).width();
+                console.log($width);
+                $("p:nth-child(2)").css("width",$width-400+"px");
+            }
+        })
+    </script>
+</body>
+</html>

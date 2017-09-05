@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        div{
+            display:-webkit-box;
+        }
+        
+        p:nth-child(1){
+            -webkit-box-flex:1;
+            background:skyblue;
+            height:100px;
+        }
+        p:nth-child(2){
+            -webkit-box-flex:2;
+            background:gold;
+            height:100px;
+        }
+        p:nth-child(3){
+            -webkit-box-flex:3;
+            background:#b5effd;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+    </div>
+</body>
+</html>
