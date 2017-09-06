@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        @media(min-width:600px){
+            html{
+                font-size:16px;
+                background:skyblue;
+            }
+        }
+        @media(min-width:1000px){
+            html{
+                font-size:18px;
+                background:greenyellow;
+            }
+        }
+        header{
+            height: 2.5em;
+            position: relative;
+        }
+        header.logo{
+            position:absolute;
+            top:0;
+            left:0;
+            width:7.5rem;
+            height:2.5rem;
+            background:purple;
+        }
+        header .btn{
+            position:absolute;
+            top:0;
+            right:0;
+            width:7.5rem;
+            height: 2.5rem;
+            background:orange;
+        }
+        header ul{
+            list-style: none;
+        }
+        header ul li{
+            float:left;
+            margin-right:0.625rem;
+            line-height:2.5rem;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">网站栏目</a>
+                    <a href="#">网站栏目</a>
+                    <a href="#">网站栏目</a>
+                    <a href="#">网站栏目</a>
+                    <a href="#">网站栏目</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="btn"></div>
+    </header>
+</body>
+</html>
