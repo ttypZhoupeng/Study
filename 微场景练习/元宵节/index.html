@@ -13,7 +13,7 @@
 <body>
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">1</div>
+            <div class="swiper-slide"></div>
             <div class="swiper-slide">2</div>
             <div class="swiper-slide">3</div>
             <div class="swiper-slide">4</div>
@@ -29,11 +29,11 @@
 
 
         var mySwiper = new Swiper ('.swiper-container', {
-            direction: 'vertical',
             paginationClickable: true,
             // 如果需要分页器
             pagination: '.swiper-pagination',
             
+            direction: 'vertical',
 
 
             onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
