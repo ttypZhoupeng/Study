@@ -45,9 +45,7 @@
         $(function(){
             
             changeWidth();
-            $(window).resize(function(){
-                changeWidth();
-            })
+            $(window).resize(changeWidth);
             function changeWidth(){
                 var $width =  $(window).width();
                 console.log($width);

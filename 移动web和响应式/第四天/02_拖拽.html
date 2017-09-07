@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img{
+            position:absolute;
+            top:0;
+            left:0;
+            width:30%;
+        }
+    </style>
+</head>
+<body>
+    <img src="img/cat.jpg" alt="">
+
+    <script>
+        var img = document.querySelector("img");
+
+        var deltaX,deltaY;
+        
+        var newX = 0;
+        var newY = 0;
+
+        img.addEventListener("touchstart",function(event){
+            event.preventDefault();
+
+            console.log(event.touches[0].clientX);
+            console.log(event.touches[0].clientY);
+
+            deltaX = event.touches[0].clientX -newX;
+            deltaY = event.touches[0].clientY -newY;
+
+
+        },false);
+
+        img.addEventListener("touchmove",function(){
+            event.preventDefault();//清除两手指移动缩放屏幕的默认事件
+
+            newX = event.touches[0].clientX-deltaX;
+            newY = event.touches[0].clientY-deltaY;
+
+            img.style.left=newX+"px";
+            img.style.top=newY +"px";
+
+        },false)
+    </script>
+</body>
+</html>

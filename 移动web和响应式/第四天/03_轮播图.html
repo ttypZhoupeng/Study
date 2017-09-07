@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>手机轮播图</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        body{
+            overflow:hidden;
+        }
+        .carousel{
+            width:100%;
+            height:300px;
+            overflow:hidden;
+            border-bottom:11px solid #000;
+        }
+        .carousel ul{
+            list-style:none;
+        }
+        .carousel ul li{
+            position:absolute;
+            width:100%;
+            left:0;
+            top:0;
+        }
+        .carousel ul li img{
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- .carousel#carousel>.imageList>ul>li*5>a[href=#]>img[src=images/$.png] -->
+    <div class="carousel" id="carousel">
+        <div class="imageList">
+            <ul>
+                <li><a href="#"><img src="images/0.png" alt=""></a></li>
+                <li><a href="#"><img src="images/1.png" alt=""></a></li>
+                <li><a href="#"><img src="images/2.png" alt=""></a></li>
+                <li><a href="#"><img src="images/3.png" alt=""></a></li>
+                <li><a href="#"><img src="images/4.png" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script>
+        var carousel = document.querySelector("#carousel");
+        var imageLis = document.querySelectorAll(".imageList ul li");
+        
+
+        var idx = 0;
+        var next = 1;
+        var prev = 4;
+
+        var windowWidth;
+
+        init();
+        window.onresize = init;
+
+        function init(){
+            windowWidth = document.documentElement.clientWidth;
+            console.log(document.documentElement);
+
+            carousel.style.height = windowWidth/(200/130)+"px";
+
+            for(var i=0;i<imageLis.length;i++){
+                imageLis[i].style.webkitTransform = "translateX("+windowWidth+"px)";
+            }
+            imageLis[idx].style.transition = "none";
+            imageLis[prev].style.transition = "none";
+            imageLis[next].style.transition = "none";
+
+            imageLis[idx].style.webkitTransform = "translateX(0)";
+            imageLis[prev].style.webkitTransform = "translateX("+windowWidth+")";
+            imageLis[next].style.webkitTransform = "translateX("+ -windowWidth +")";
+    
+        }
+
+        
+
+        carousel.addEventListener("touchstart",touchstartHandler,false);
+        carousel.addEventListener("touchmove",touchmoveHandler,false);
+        carousel.addEventListener("touchend",touchendHandler,false);
+
+        var deltaX;
+        var starX;
+        var startTime;
+
+        var timer = setInterval(function(){
+            showNext();
+        },2000);
+
+        function showNext(){
+            console.log("向左移动成功");
+
+            prev = idx;
+            idx = next;
+
+            next++;
+            if(next>4){
+                next = 0;
+            }
+
+            imageLis[prev].style.transition ="all 0.3s ease 0s";
+            imageLis[idx].style.transition ="all 0.3s ease 0s";
+
+            imageLis[prev].style.webkitTransform ="translateX("+ -windowWidth +")";
+            imageLis[idx].style.webkitTransform =  "translateX(0px)";
+
+        }
+
+        function showPrev(){
+            console.log("向左移动成功");
+
+            next = idx;
+            idx = prev;
+
+            prev--;
+            if(prev<0){
+                prev = 4;
+            }
+
+            imageLis[idx].style.transition = "all 0.3s ease 0s";
+            imageLis[next].style.transtion = "all 0.3s ease 0s ";
+
+            imageLis[next].style.webkitTransform =  "translateX(" + windowWidth+ "px)";
+            imageLis[idx].style.webkitTransform =  "translateX(0px)";
+        }
+
+        function touchstartHandler(event){
+            event.preventDefault();
+
+            if(event.touches.length>1){
+                return;
+            }
+
+            clearInterval(timer);
+
+            deltaX = event.touches[0].clientX;
+
+            startX = event.touches[0].clientX;
+
+            imageLis[idx].style.transition = "none";
+            imageLis[prev].style.transition = "none";
+            imageLis[next].style.transition = "none";
+
+            startTime = new Date();
+
+            imageLis[idx].style.webkitTransform = "translateX(0)";
+            imageLis[prev].style.webkitTransform = "translateX(" + -windowWidth+ ")";
+            imageLis[next].style.webkitTransform = "translateX(" + windowWidth + ")";
+        }
+
+        function touchmoveHandler(event){
+            event.preventDefault();
+
+            if(event.touches.lefnth>1){
+                return;
+            }
+
+            clearInterval(timer);
+
+            var clientX = event.touches[0].clientX;
+
+            imageLis[idx].style.webkitTransform = "translateX("+ (clientX-deltaX) +"px)";
+            imageLis[next].style.webkitTransform = "translateX("+ (windowWidth+clientX-deltaX) +"px)";
+            imageLis[prev].style.webkitTransform = "translateX("+ (-windowWidth+clientX-deltaX) +"px)";
+        }
+
+        function touchendHandler(event){
+            event.preventDefault();
+
+            var distance = event.changedTouches[0].clientX - startX;
+            console.log(distance);
+
+            var time = new Date() - startTime;
+
+            if(distance>= windowWidth/2||(distance>30&&time<300)){
+                showPrev();
+            }else if( distance >= windowWidth / 2 || (distance<-30 && time <300)){
+                showNext();
+            }else{
+                console.log("不成功！");
+
+                imageLis[prev].style.transition = "all 0.3s ease 0s";
+				imageLis[idx].style.transition = "all 0.3s ease 0s";
+				imageLis[next].style.transition = "all 0.3s ease 0s";
+
+                imageLis[prev].style.webkitTransform =  "translateX(" + -windowWidth+ "px)";
+				imageLis[next].style.webkitTransform =  "translateX(" + windowWidth+ "px)";
+				imageLis[idx].style.webkitTransform =  "translateX(0px)";
+            }
+
+            clearInterval(timer);
+            timer = setInterval(function(){
+                showNext();
+            },2000);
+        }
+    </script>
+</body>
+</html>

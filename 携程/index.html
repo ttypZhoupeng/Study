@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="css/cssreset-min.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
     <!-- header>(.soso>.soso_box>input)+(.user>a[href=#]) -->
     <header>
@@ -21,8 +23,8 @@
         </div>
     </header>
 
-    <section class="banner"> 
-    <!-- banner -->
+    <section class="banner">
+        <!-- banner -->
         <!-- <div class="banner"></div> -->
     </section>
 
@@ -152,16 +154,17 @@
                         <div class="tmh-hot">
                             <img src="images/hot.jpg" alt="">
                             <span>爆款</span>
-                        </div>  
-                        <p>长滩岛5日4晚自由行·★秒杀甩尾  指定高尔夫酒店 赠接送机</p>
-                        <div class="tmh-price"><b>￥1999起</b><span>省￥1500</span>  </div>
+                        </div>
+                        <p>长滩岛5日4晚自由行·★秒杀甩尾 指定高尔夫酒店 赠接送机</p>
+                        <div class="tmh-price"><b>￥1999起</b><span>省￥1500</span> </div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <dl>
                             <dt>千款特价</dt>
-                            <dd>走过路过不错过<dd>
+                            <dd>走过路过不错过
+                                <dd>
                         </dl>
                         <img src="images/pic-tmh-02.png" alt="">
                     </a>
@@ -170,16 +173,18 @@
                     <a href="#">
                         <dl>
                             <dt>海外精选</dt>
-                            <dd><span>百元</span>出境游<dd>
+                            <dd><span>百元</span>出境游
+                                <dd>
                         </dl>
-                        <img src="images/pic-tmh-03.png" alt="">
+                        <img src="images/pic-tmh-04.png" alt="">
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <dl>
-                            <dt>海外精选</dt>
-                            <dd><span>百元</span>出境游<dd>
+                            <dt>周边玩乐</dt>
+                            <dd><span>十元</span>度周末
+                                <dd>
                         </dl>
                         <img src="images/pic-tmh-03.png" alt="">
                     </a>
@@ -191,12 +196,62 @@
     <div class="sales-box sales-huodong">
         <div class="sales-hd">
             <h2 class="title title-huodong"></h2>
+            <em></em>
             <a href="#" class="button-gradient">获取更多福利</a>
         </div>
-        <div class="sales-activity"></div>
+        <div class="sales-activity">
+            <ul>
+                <li>
+                    <a href="#">
+                        <dl>
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                        <img src="" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <dl>
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                        <img src="" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <dl>
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                        <img src="" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <dl>
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                        <img src="" alt="">
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <dl>
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                        <img src="" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-    
-    
+
+
 
     <script>
         var banner = document.querySelector(".banner");
@@ -205,13 +260,14 @@
 
         set();
 
-        function set(){
+        function set() {
             var bannerWidth = parseInt(getComputedStyle(banner)["width"]);
 
             console.log(bannerWidth);
 
-            banner.style.height = bannerWidth/(1242/248)+"px";
+            banner.style.height = bannerWidth / (1242 / 248) + "px";
         }
     </script>
 </body>
+
 </html>

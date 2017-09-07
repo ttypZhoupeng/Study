@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>触摸事件</title>
+</head>
+<body>
+    <h1 class="title"> </h1>
+
+    <script>
+        var biaoti = document.querySelector(".title");
+
+        document.addEventListener("touchstart",function(event){
+            biaoti.innerHTML = "你正在用"+ event.touches.length +"根手指";
+            console.log(event.touches[0]);
+        })
+
+        document.addEventListener("touchmove",function(event){
+            // event.preventDefault();
+            biaoti.innerHTML = "";
+            for(var i=0;i<event.touches.length;i++){
+                biaoti.innerHTML += "第" + i +"手指信息<br />";
+                biaoti.innerHTML += event.touches[i].clientX +"<br/>"+event.touches[i].clientX +"<br/>"
+            }
+        })
+
+        document.addEventListener("touchend",function(){
+            event.preventDefault();
+
+            biaoti.innerHTML ="touch结束";
+        })
+    </script>
+</body>
+</html>
