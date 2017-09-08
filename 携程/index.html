@@ -238,7 +238,9 @@
 
     <footer>
         <div class="tool-cn">
-            <a href=""></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
         </div>
     </footer>
 
@@ -246,8 +248,8 @@
 
     <script>
         var banner = document.querySelector(".banner");
-
         window.onresize = set;
+        
 
         set();
 
@@ -257,7 +259,13 @@
             console.log(bannerWidth);
 
             banner.style.height = bannerWidth / (1242 / 248) + "px";
+
         }
+
+
+
+        // 解决padding-top猫腻
+
     </script>
 </body>
 

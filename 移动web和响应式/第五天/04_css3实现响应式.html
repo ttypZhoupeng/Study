@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index1200.css">
+    <link rel="stylesheet" href="css/index980.css"  media="screen and (min-width:980px) and (max-width:1200px)">
+    <link rel="stylesheet" href="css/index640.css"  media="screen and (min-width:640px) and (max-width:980px)">
+    <link rel="stylesheet" href="css/index320.css"  media="screen and (max-width:640px)">
+</head>
+<body>
+    <!-- header>(.logo)+(nav>ul>li*8>a[href=#]{$$}) -->
+    <header>
+        <div class="logo"></div>
+        <nav>
+            <ul>
+                <li><a href="#">01</a></li>
+                <li><a href="#">02</a></li>
+                <li><a href="#">03</a></li>
+                <li class="s"><a href="#">04</a></li>
+                <li class="s"><a href="#">05</a></li>
+                <li class="s"><a href="#">06</a></li>
+                <li class="s"><a href="#">07</a></li>
+                <li class="s"><a href="#">08</a></li>
+                <li class="s"><a href="#">09</a></li>
+                <li class="s"><a href="#">10</a></li>
+                <li class="s"><a href="#">11</a></li>
+                <li class="s"><a href="#">12</a></li>
+            </ul>
+        </nav>
+        <div class="tools"></div>
+        <div class="btns"></div>
+    </header>
+
+
+    <section class="main">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col hide-980"></div>
+        <div class="col hide-980"></div>
+        <div class="col hide-980"></div>
+        <div class="col hide-980"></div>
+    </section>
+
+
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script>
+        $(".btns").click(function(){
+            $("nav").slideToggle();
+        })
+    </script>
+</body>
+</html>

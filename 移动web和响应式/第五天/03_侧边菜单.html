@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+        }
+        .container{
+            position:absolute;
+            top:0;
+            left:0;
+            background-color:white;
+            width:100%;
+
+        }
+        header{
+            height:40px;
+            background-color:skyblue;
+            box-shadow: 1px 1px 1px black;
+            position:fixed;
+            width:100%;
+        }
+        header .btn{
+            float:left;
+            width:10%;
+            height:40px;
+            background:gold;
+            position:relative;
+        }
+        header .btn::before{
+            content: ">";
+            width:16px;
+            height:16px;
+            position:absolute;
+            font-size:16px;
+            text-align: center;
+            line-height:16px;
+            left:50%;
+            top:50%;
+            margin-left:-8px;
+            margin-top:-8px;
+            transition:all 1s ease 0s;
+            font-weight: bold;
+        }
+        header .btn.isopen::before{
+            transform:rotate(180deg);
+        }
+        header .title{
+            text-align: center;
+        }
+        header .title h1{
+            font-size:22px;
+            line-height: 40px;
+        }
+        .content img{
+            width:100%;
+        }
+        nav{
+            background-color:#ccc;
+            position: fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+        }
+        nav{
+            font-size:16px;
+            color:orange;
+        }
+        nav ul{
+            list-style: none;
+        }
+        nav ul li a {
+            text-decoration: none;
+            line-height:30px;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <!-- nav>(.title{新浪网}+(ul>li*8>a[href=#]{$$$})) -->
+    <nav>
+        <div class="title">新浪网</div>
+        <ul>
+            <li><a href="#">001</a></li>
+            <li><a href="#">002</a></li>
+            <li><a href="#">003</a></li>
+            <li><a href="#">004</a></li>
+            <li><a href="#">005</a></li>
+            <li><a href="#">006</a></li>
+            <li><a href="#">007</a></li>
+            <li><a href="#">008</a></li>
+        </ul>
+    </nav>
+
+    <!-- .container>(header>.btn#btn+.title+.user)+(section.content>p*5>img[src=imges/page1.jpg]) -->
+    <div class="container">
+        <header>
+            <div class="btn" id="btn"></div>
+            <div class="title">
+                <h1>新浪网</h1>
+            </div>
+            <div class="user"></div>
+        </header>
+        <section class="content">
+            <p><img src="images/flower.png" alt=""></p>
+            <p><img src="images/flower.png" alt=""></p>
+            <p><img src="images/flower.png" alt=""></p>
+            <p><img src="images/flower.png" alt=""></p>
+            <p><img src="images/flower.png" alt=""></p>
+        </section>
+    </div>
+
+
+    <script src="js/zepto.js"></script>
+    <script src="js/zeptoFX.js"></script>
+    <script>
+        var navisopen = false;
+        $("#btn").click(function(){
+            if(navisopen){
+                $(".container").animate({"left":0},300);
+                $(this).removeClass("isopen");
+            }else{
+                $(".container").animate({"left":"100px"},300);
+                $(this).addClass("isopen");
+            }
+            
+            navisopen = !navisopen;
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        div{
+            width:60px;
+            height:60px;
+            background-color:skyblue;
+            position:absolute;
+            top:100px;
+            left:100px;
+
+        }
+        span{
+            width:1px;
+            height:600px;
+            position:absolute;
+            left:300px;
+            background:red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <span class="line"></span>
+
+
+    <script>
+        var box = document.querySelector("div");
+
+        //起点位置
+        var deltaX;
+
+        var newX = 100;
+
+        var movearr = [];
+
+
+        // 触摸开始
+        box.addEventListener("touchstart",function(event){
+
+            event.preventDefault();
+
+            //去掉过渡
+            box.style.transition = "none";
+
+            
+
+            deltaX = event.touches[0].clientX-newX;
+
+        },false);
+
+        //触摸移动
+        // touchmove事件并不是说滑动了多少像素就触发几次，而是有一个时间周期
+        // 在一定事件内触发一次，如果滑动的慢，clientX间距小，滑动快间距大
+        box.addEventListener("touchmove",function(event){
+            event.preventDefault();
+
+            newX = event.touches[0].clientX - deltaX;
+
+            box.style.left = newX + "px";
+
+            movearr.push(event.touches[0].clientX);
+
+            console.log(movearr);
+        },false);
+
+        // 触摸结束
+        box.addEventListener("touchend",function(event){
+            event.preventDefault();
+
+            //计算movearr最后两点间的距离
+            var s = movearr[movearr.length-1] - movearr[movearr.length-2];
+
+            //s的大小就决定了你的速度，计算一个新 的有惯性 的targte
+            var target  = newX +s*5;
+
+            if(target>240){
+                target = 240;
+                box.style.transition = "all 0.4s cubic-bezier(0.15, 0.85, 0.15,2.08) 0s"
+            }else if( target < 0){
+                target = 0;
+                box.style.transition = "all 0.4s cubic-bezier(0.15, 0.85, 0.15,2.08) 0s"
+            }else{
+                box.style.transition = "all 0.4s cubic-bezier(0.15, 0.85, 0.15,2.08) 0s"
+            }
+
+            box.style.left = target + "px";
+
+            newX = target;
+
+
+        },false);
+
+    </script>
+</body>
+</html>
