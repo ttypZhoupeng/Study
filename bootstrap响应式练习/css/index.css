@@ -1,0 +1,50 @@
+html{
+    font-size:14px;
+}
+body{
+    background:#ebebeb;
+}
+
+
+
+
+/* header start */
+header{
+    width:100%;
+    padding:62px 0 90px;
+    background-image:url("../images/header-bg.jpg");
+    background-position: center 20%;
+    background-size:cover;
+}
+
+/* nav */
+nav{
+    background:white;
+}
+nav .menu>li>a{
+    display: block;
+    padding:0 21px;
+    line-height: 4em;
+    color:#505050;
+}
+.nav-current{
+    border-bottom:2px solid #e67e22;
+    margin-bottom:-2px;
+}
+nav .menu>li a:hover{
+    background:#fff;
+    color:#e67e22;
+}
+.navbar-header{
+    text-align: center;
+}
+.navbar-header i{
+    height: 56px;
+    line-height: 56px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+
+
+
