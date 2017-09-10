@@ -8,6 +8,7 @@
     <title>Ghost 开源博客平台</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 
@@ -36,7 +37,7 @@
                     <div class="navbar-header">
                         <span type="button" class="nav-toggle-button" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
                             <span class="sr-only">Toggle navigation</span>
-                            <i class="glyphicon glyphicon-menu-hamburger"></i>
+                        <i class="glyphicon glyphicon-menu-hamburger"></i>
                         </span>
                     </div>
                     <div class="collapse navbar-collapse" id="main-menu">
@@ -54,6 +55,299 @@
         </div>
         </div>
     </nav>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content">
+                    <article class="post">
+                        <div class="post-head">
+                            <h1 class="title"><a href="#">自定义文章摘要（Excerpt）</a></h1>
+                            <div class="post-meta">
+                                <span class="author">作者：<a href="#">王赛</a></span> •
+                                <time class="post-date">2017年8月9日</time>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <p>
+                                随着 Ghost 1.0 和 Hemingway Mode 的发布，今天我们又发布了“自定义文章摘要”功能。 默认情况下，Ghost 会截取文章正文开头部分的文字（一般是55个字）作为文章摘要并显示在文章归档列表中。 摘要有助于读者快速了解文章所要表达的内容。但是，如果你希望自己定
+                            </p>
+                        </div>
+                        <div class="post-permalink">
+                            <a href="#" class="btn btn-default">阅读全文</a>
+                        </div>
+                        <footer class="post-footer clear-fix">
+                            <div class="pull-left tag-list">
+                                <i class="fa fa-folder-open-o"></i>
+                            </div>
+                            <div class="pull-right share">
+
+                            </div>
+                        </footer>
+                    </article>
+                    <article class="post">
+                        <div class="post-head">
+                            <h1 class="title"><a href="#">首要“标签”</a></h1>
+                            <div class="post-meta">
+                                <span class="author">作者：<a href="#">王赛</a></span> •
+                                <time class="post-date">2017年8月3日</time>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <p>
+                                在 Ghost 中，每一篇博文都可以有多个标签（tag）， 并且这些标签的排列顺序也被 Ghost 完整保存。第一个标签被认为是最重要的，因此被特殊对待。 现在，你可以在后台通过拖拽标签的位置来设置“首要标签”，并且能够通过 {{tags.[0]}}
+                                获取到第一个标签。由于这种语法
+                            </p>
+                        </div>
+                        <div class="post-permalink">
+                            <a href="#" class="btn btn-default">阅读全文</a>
+                        </div>
+                        <footer class="post-footer clear-fix">
+                            <div class="pull-left tag-list">
+                                <i class="fa fa-folder-open-o"></i>
+                            </div>
+                            <div class="pull-right share">
+
+                            </div>
+                        </footer>
+                    </article>
+                    <article class="post">
+                        <div class="post-head">
+                            <h1 class="title"><a href="#">Ghost 1.0 版本正式发布</a></h1>
+                            <div class="post-meta">
+                                <span class="author">作者：<a href="#">王赛</a></span> •
+                                <time class="post-date">2017年7月29日</time>
+                            </div>
+                        </div>
+                        <div class="featured-media">
+                            <a href="#">
+                                <img src="images/article1.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="post-content">
+                            <p>
+                                大约四年前，我们在 Kickstarter 上推出了一个还处在原型阶段的 Ghost，这个小小的原型寄托了我们的一个想法，那就是创建 Web 上的下一代伟大的开源博客平台。 在初期阶段，我们真的只是专注于让所有功能能够运转起来。Ghost 是
+                                Node.js 平台上为数不多的一个
+                            </p>
+                        </div>
+                        <div class="post-permalink">
+                            <a href="#" class="btn btn-default">阅读全文</a>
+                        </div>
+                        <footer class="post-footer clear-fix">
+                            <div class="pull-left tag-list">
+                                <i class="fa fa-folder-open-o"></i>
+                            </div>
+                            <div class="pull-right share">
+
+                            </div>
+                        </footer>
+                    </article>
+                    <article class="post">
+                        <div class="post-head">
+                            <h1 class="title"><a href="#">Ghost 1.0 RC1 发布，可用于生产环境</a></h1>
+                            <div class="post-meta">
+                                <span class="author">作者：<a href="#">王赛</a></span> •
+                                <time class="post-date">2017年7月13日</time>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <p>
+                                今天，我们正式发布了首个 Ghost 1.0 RC 版本，希望这是到达最终版本的最后一步。你可以通过 Ghost-CLI 安装此最新版本，并且可以使用到 生产环境中！！！ 如果你需要从 LTS (0.11) 版本迁移到 1.0 版本，请阅读迁移指南。
+                                同时，下面列出从上一个 bet
+                            </p>
+                        </div>
+                        <div class="post-permalink">
+                            <a href="#" class="btn btn-default">阅读全文</a>
+                        </div>
+                        <footer class="post-footer clear-fix">
+                            <div class="pull-left tag-list">
+                                <i class="fa fa-folder-open-o"></i>
+                            </div>
+                            <div class="pull-right share">
+
+                            </div>
+                        </footer>
+                    </article>
+                    <article class="post">
+                        <div class="post-head">
+                            <h1 class="title"><a href="#">Ghost 1.0.0-beta.2 发布啦！</a></h1>
+                            <div class="post-meta">
+                                <span class="author">作者：<a href="#">王赛</a></span> •
+                                <time class="post-date">2017年6月24日</time>
+                            </div>
+                        </div>
+                        <div class="featured-media">
+                            <a href="#">
+                                    <img src="images/article2.png" alt="">
+                                </a>
+                        </div>
+                        <div class="post-content">
+                            <p>
+                                紧跟前两周发布的 Ghost 1.0.0-beta.1 的步伐，今天发布了 Ghost 1.0.0-beta.2 ，我们距离最终版本又迈了一大步。 我们非常期盼这是最后一个 beta 版本，希望下一次发布的就是最终候选版。 在第一个 beta
+                                版本发布后的日子里，我们发现并修复了
+                            </p>
+                        </div>
+                        <div class="post-permalink">
+                            <a href="#" class="btn btn-default">阅读全文</a>
+                        </div>
+                        <footer class="post-footer clear-fix">
+                            <div class="pull-left tag-list">
+                                <i class="fa fa-folder-open-o"></i>
+                            </div>
+                            <div class="pull-right share">
+
+                            </div>
+                        </footer>
+                    </article>
+                    <nav class="pagination" role="navigation">
+                        <span class="page-number">第1页/共9页</span>
+                        <a href="#" class="older-posts">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </nav>
+                </main>
+                <aside class="col-md-4 sidebar">
+                    <div class="widget">
+                        <h4 class="title">社区</h4>
+                        <div class="content community">
+                            <p>QQ群：277327792</p>
+                            <p>
+                                <a href="#">
+                                    <i class="fa fa-comments"></i>
+                                    问答社区
+                                </a>
+                            </p>
+                            <p>
+                                <a href="#">
+                                    <i class="fa fa-weibo"></i>
+                                    官方微博
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <h4 class="title">下载 Ghost</h4>
+                        <div class="content download">
+                            <a href="#" class="btn btn-default btn-block">Ghost 中文版（0.7.4）</a>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <h4 class="title">标签云</h4>
+                        <div class="content tag-cloud">
+                            <a href="#">jQuery</a>
+                            <a href="#">Ghost 0.7 版本</a>
+                            <a href="#">开源</a>
+                            <a href="#">助手函数</a>
+                            <a href="#">标签云</a>
+                            <a href="#">导航</a>
+                            <a href="#">自定义页面</a>
+                            <a href="#">静态页面</a>
+                            <a href="#">Roon.io</a>
+                            <a href="#">配置文件</a>
+                            <a href="#">又拍云存储</a>
+                            <a href="#">上传</a>
+                            <a href="#">Handlebars</a>
+                            <a href="#">邮件</a>
+                            <a href="#">快捷键</a>
+                            <a href="#">用户指南</a>
+                            <a href="#">主题市场</a>
+                            <a href="#">新版本发布</a>
+                            <a href="#">…</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="widget">
+                        <h4 class="title">最新文章</h4>
+                        <div class="content recent-post">
+                            <div class="recent-single-post">
+                                <a href="#" class="post-title"> 自定义文章摘要（Excerpt）</a>
+                                <div class="date">2017年8月9日</div>
+                            </div>
+                            <div class="recent-single-post">
+                                <a href="#" class="post-title">首要“标签”</a>
+                                <div class="date">2017年8月3日</div>
+                            </div>
+                            <div class="recent-single-post">
+                                <a href="#" class="post-title">Ghost 1.0 版本正式发布</a>
+                                <div class="date">2017年7月29日</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="widget">
+                        <h4 class="title">标签云</h4>
+                        <div class="content tag-cloud">
+                            <a href="#">jQuery</a>
+                            <a href="#">Ghost 0.7 版本</a>
+                            <a href="#">开源</a>
+                            <a href="#">助手函数</a>
+                            <a href="#">标签云</a>
+                            <a href="#">导航</a>
+                            <a href="#">自定义页面</a>
+                            <a href="#">静态页面</a>
+                            <a href="#">Roon.io</a>
+                            <a href="#">配置文件</a>
+                            <a href="#">又拍云存储</a>
+                            <a href="#">上传</a>
+                            <a href="#">Handlebars</a>
+                            <a href="#">邮件</a>
+                            <a href="#">快捷键</a>
+                            <a href="#">用户指南</a>
+                            <a href="#">主题市场</a>
+                            <a href="#">新版本发布</a>
+                            <a href="#">…</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="widget">
+                        <h4 class="title">合作伙伴</h4>
+                        <div class="content tag-cloud friend-links">
+                            <a href="#">Bootstrap中文网</a>
+                            <a href="#">开放CDN服务</a>
+                            <a href="#">Grunt中文网</a>
+                            <a href="#">Gulp中文网</a>
+                            <hr>
+                            <a href="#">Lodash中文文档</a>
+                            <a href="#">jQuery中文文档</a>
+                            <hr>
+                            <a href="#">阿里云</a>
+                            <hr>
+                            <a href="#">又拍云</a>
+                            <a href="#">七牛云存储</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span>Copyright © 
+                        <a href="http://www.ghostchina.com/">Ghost 中文网</a>
+                    </span>
+                    |
+                    <span>
+                        <a href="http://www.miibeian.gov.cn/" target="_black">京ICP备11008151号</a>
+                    </span>
+                    |
+                    <span>京公网安备11010802014853</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="js/jquery-1.12.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

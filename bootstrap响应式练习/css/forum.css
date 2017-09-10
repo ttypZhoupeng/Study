@@ -1,0 +1,39 @@
+html{
+    font-size:14px;
+}
+body{
+    background:#ebebeb;
+}
+a,
+a:hover {
+    color: #333;
+    text-decoration: none;
+}
+h4{
+    font-size: 1.5em;
+}
+
+
+/* top_menu */
+.aw-top-menu-wrap {
+    position: relative;
+    z-index: 1001;
+    width: 100%;
+    min-height: 50px;
+    background-color: #fff;
+}
+.aw-search-box, .aw-top-nav {
+    position: relative;
+    float: left;
+    margin:10px 0;
+}
+.aw-search-box #global_search_btns {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 18px;
+    color: #999;
+}
+
+
+

@@ -4,6 +4,28 @@ html{
 body{
     background:#ebebeb;
 }
+a,
+a:hover {
+    color: #333;
+    text-decoration: none;
+}
+h4{
+    font-size: 1.5em;
+}
+
+
+.btn-default{
+    border: 1px solid #e67e22;
+    background: #e67e22;
+    color: #ffffff;
+    transition: all 0.2s ease;
+}
+.btn-default:hover {
+    border: 1px solid #303030;
+    background: #303030;
+    color: #ffffff;
+    transition: none;
+}
 
 
 
@@ -20,6 +42,7 @@ header{
 /* nav */
 nav{
     background:white;
+    margin-bottom:35px;
 }
 nav .menu>li>a{
     display: block;
@@ -46,5 +69,184 @@ nav .menu>li a:hover{
 }
 
 
+/* section */
+
+/* main */
+.post{
+    padding:35px;
+    background:#fff;
+    margin-bottom:35px;
+    position: relative;
+    overflow:hidden;
+}
+
+.post .post-head{
+    text-align: center;
+}
+.post .post-head .post-meta {
+    color: #959595;
+    margin: 14px 0 0px;
+}
+
+.post .post-head .post-meta a {
+    color: #e67e22;
+    outline: none;
+}
+.post .post-content{
+    margin:39px 0;
+    font:400 18px/1.62 "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+    color: #444443;
+}
+
+.post-permalink a:hover{
+    border: 1px solid #303030;
+    background: #303030;
+    color: #ffffff;
+}
+.post .post-footer .tag-list {
+    color: #959595;
+    line-height: 28px;
+}
+.post .post-footer {
+    margin-top: 30px;
+    border-top: 1px solid #ebebeb;
+    padding: 21px 0 0;
+}
+.post .featured-media {
+    margin-top: 30px;
+    overflow: hidden;
+}
+.post .featured-media img{
+    width:100%;
+}
+.pagination {
+    margin: 0 0 35px;
+    text-align: center;
+    display: block;
+    background:none;
+}
+.pagination .page-number {
+    background: #e67e22;
+    color: #ffffff;
+    margin: 0px 3px;
+    display: inline-block;
+    line-height: 36px;
+    padding: 0 14px;
+    border-radius: 2px;
+}
+.pagination a {
+    text-align: center;
+    display: inline-block;
+    color: #ffffff;
+    background: #e67e22;
+    border-radius: 2px;
+}
+.pagination a i {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size:12px;
+    font-weight: 400;
+}
+.sidebar .widget{
+    background:#fff;
+    padding:21px 30px;
+    margin-bottom:35px;
+}
+.widget .title{
+    margin-top:0;
+    padding-bottom:7px;
+    border-bottom:1px solid #ebebeb;
+    margin-bottom:21px;
+    position:relative;
+}
+.widget .title::after,.widget .title:after{
+    content: "";
+    width: 90px;
+    height: 1px;
+    background: #e67e22;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+}
+.widget .community p a{
+    color:#e67e22;
+    outline:none;
+}
+.widget .tag-cloud a{
+    border: 1px solid #ebebeb;
+    padding: 2px 7px;
+    color: #959595;
+    line-height: 1.5em;
+    display: inline-block;
+    margin: 0 7px 7px 0;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+.widget .tag-cloud a:hover{
+    color: #ffffff;
+    background: #e67e22;
+    border: 1px solid #e67e22;
+    text-decoration: none;
+}
 
 
+/* footer */
+.main-footer{
+    background: #202020;
+    padding: 35px 0 0;
+    color: #959595; 
+}
+.main-footer .widget{
+    padding:0 35px;
+}
+.widget {
+    margin-bottom: 35px;
+}
+.main-footer .recent-post .recent-single-post{
+    padding-bottom:14px;
+    margin-bottom:14px;
+    border-bottom:1px dashed #303030;
+}
+.main-footer .widget .title{
+    color:#fff;
+    border-bottom:1px solid #303030;
+}
+.main-footer .widget .recent-post .recent-single-post .post-title {
+    color: #959595;
+}
+.main-footer .widget .recent-post .recent-single-post .post-title:hover {
+    color: #e67e22;
+}
+.main-footer .widget .recent-post .recent-single-post .date {
+    color: #505050;
+}
+.main-footer .widget .tag-cloud a{
+    border:1px solid #303030;
+}
+.main-footer .widget .friend-links a{
+    border:none;
+}
+.main-footer .widget .friend-links hr{
+    margin:1em 0;
+    border-top:1px dashed #303030;
+}
+
+
+/* conpyright */
+.copyright {
+    background: #111;
+    font-size: 13px;
+    text-align: center;
+    color: #555555;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    border-top: 1px solid #303030;
+}
+.copyright a{
+    color: #555555;
+}
+.copyright span{
+    margin:0.5em;
+}
