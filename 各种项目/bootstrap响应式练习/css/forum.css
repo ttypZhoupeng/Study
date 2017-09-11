@@ -56,4 +56,83 @@ h4{
 }
 
 
+.login{
+    padding-left:20px;
+    padding-right:20px;
+    margin-right:10px;
+    border:none;
+    background:#4daaff;
+    color:white;
+}
+.reg{
+    padding-left:20px;
+    padding-right:20px;
+    border:none;
+    background:#38b836;
+    color:white;
+}
+
+/* 主体部分 */
+.main-content{
+    background:#fff;
+    border:1px solid #e8e8e8;
+}
+.sidebar{
+    background:#fff;
+}
+.main-content .media {
+    padding-top:10px;
+    border-top:1px solid #e8e8e8;
+}
+.main-content .media img{
+    width:40px;
+    height:40px;
+}
+.main-content .media p{
+    line-height: 22px;
+}
+.main-content .media .problem{
+    color:#155faa;
+}
+.main-content .media .problem:hover{
+    color:#499ef3;
+}
+.main-content .media .time{
+    margin-top:10px;
+    color:#999;
+}
+.main-content .media p>span{
+    color:#000;
+}
+.main-content .media .theme{
+    display: inline-block;
+    padding:0 5px;
+    background-color:#f2f2f2;
+    color:#999;
+    border-radius: 5px;
+}
+.main-content .media .theme:hover{
+    background-color: #ddd;
+    color: #fff;
+}
+.mian-content .sidebar{
+    padding:15px 20px 0;
+}
+.sidebar .top{
+    width:100%;
+}
+.sidebar .top>a{
+    float:right;
+}
+.sidebar>a:hover{
+    background:#fff;
+}
+
+
+.copyright{
+    text-align: center;
+    margin:15px 0;
+}
+
+
 

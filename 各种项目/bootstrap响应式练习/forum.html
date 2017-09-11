@@ -2,58 +2,241 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/forum.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/forum.css">
 </head>
 
 <body>
-    <!-- 页眉 start -->
-    <nav class="navbar navbar-default">
-            <div class="container">
-              <!-- Brand and toggle get grouped for better mobile display -->
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+  <!-- 页眉 start -->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false">
                   <span class="sr-only">Toggle navigation</span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Logo</a>
-              </div>
-          
+        <a class="navbar-brand" href="#">Logo</a>
+      </div>
 
-              <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="搜索问题、话题或人">
-                    </div>
-                    <span class="search-icon">
+
+      <form class="navbar-form navbar-left hidden-xs">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="搜索问题、话题或人">
+        </div>
+        <span class="search-icon">
                         <i class="fa fa-search"></i>
                     </span>
-                  </form>
-              <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                  <li class="current"><a href="#"><i class="fa fa-list-ul"></i> 发现 <span class="sr-only">(current)</span></a></li>
-                  <li><a href="#"><i class="fa fa-comment-o"></i>话题</a></li>
-                </ul>
-                
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#">登录</a></li>
-                  <li><a href="#">注册</a></li>
-                </ul>
-              </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-          </nav>
-    <!-- 页眉 end -->
+      </form>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="current"><a href="#"><i class="fa fa-list-ul"></i> 发现 <span class="sr-only">(current)</span></a></li>
+          <li><a href="#"><i class="fa fa-comment-o"></i>话题</a></li>
+        </ul>
 
-    <script src="js/jquery-1.12.3.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+        <ul class="nav navbar-nav navbar-right navbar-form">
+          <li><button type="submit" class="btn btn-default login">登录</button></li>
+          <li><button type="submit" class="btn btn-default reg">注册</button></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <!-- 页眉 end -->
+
+
+  <!-- 主体 start -->
+  <div class="container">
+    <div class="row">
+      <main class="col-md-9 main-content">
+        <div class="media">
+          <div class="media-left media-middle">
+            <a href="#">
+                    <img class="media-object" src="images/avatar1.jpg" alt="...">
+                  </a>
+          </div>
+          <div class="media-body">
+            <p class="media-heading">
+              <a href="#" class="problem">麻烦问一下，我最近刚安装ghost博客，文章怎么插入图片，编辑器好像直接就是个markdown的命令框</a>
+            </p>
+            <p class="time"><a href="#" class="theme">主题/模板</a> • <span>WellJohn</span> 回复了问题 • 2 人关注 • 1 个回复 • 1330 次浏览 • 2017-07-25 09:39</p>
+          </div>
+
+        </div>
+        <div class="media">
+          <div class="media-left media-middle">
+            <a href="#">
+                      <img class="media-object" src="images/avatar2.jpg" alt="...">
+                    </a>
+          </div>
+          <div class="media-body">
+            <p class="media-heading">
+              <a href="#" class="problem">ghost gmail 配置</a>
+            </p>
+            <p class="time"><a href="#" class="theme">默认分类</a> • <span>WellJohn</span> 回复了问题 • 2 人关注 • 1 个回复 • 584 次浏览 • 2017-07-23 10:49</p>
+          </div>
+
+        </div>
+        <div class="media">
+          <div class="media-left media-middle">
+            <a href="#">
+                        <img class="media-object" src="images/avatar3.jpg" alt="...">
+                      </a>
+          </div>
+          <div class="media-body">
+            <p class="media-heading">
+              <a href="#" class="problem">进入ghost后台出现Access Denied from url,config.js和nginx均已配置为正确地址</a>
+            </p>
+            <p class="time"><a href="#" class="theme">主题/模板</a> • <span>WellJohn</span> 回复了问题 • 2 人关注 • 1 个回复 • 1330 次浏览 • 2017-07-25 09:39</p>
+          </div>
+
+        </div>
+        <div class="media">
+          <div class="media-left media-middle">
+            <a href="#">
+                      <img class="media-object" src="images/avatar1.jpg" alt="...">
+                    </a>
+          </div>
+          <div class="media-body">
+            <p class="media-heading">
+              <a href="#" class="problem">麻烦问一下，我最近刚安装ghost博客，文章怎么插入图片，编辑器好像直接就是个markdown的命令框</a>
+            </p>
+            <p class="time"><a href="#" class="theme">主题/模板</a> • <span>WellJohn</span> 回复了问题 • 2 人关注 • 1 个回复 • 1330 次浏览 • 2017-07-25 09:39</p>
+          </div>
+
+        </div>
+        <div class="media">
+          <div class="media-left media-middle">
+            <a href="#">
+                        <img class="media-object" src="images/avatar2.jpg" alt="...">
+                      </a>
+          </div>
+          <div class="media-body">
+            <p class="media-heading">
+              <a href="#" class="problem">ghost gmail 配置</a>
+            </p>
+            <p class="time"><a href="#" class="theme">默认分类</a> • <span>WellJohn</span> 回复了问题 • 2 人关注 • 1 个回复 • 584 次浏览 • 2017-07-23 10:49</p>
+          </div>
+
+        </div>
+        <div class="media">
+          <div class="media-left media-middle">
+            <a href="#">
+                          <img class="media-object" src="images/avatar3.jpg" alt="...">
+                        </a>
+          </div>
+          <div class="media-body">
+            <p class="media-heading">
+              <a href="#" class="problem">进入ghost后台出现Access Denied from url,config.js和nginx均已配置为正确地址</a>
+            </p>
+            <p class="time"><a href="#" class="theme">主题/模板</a> • <span>WellJohn</span> 回复了问题 • 2 人关注 • 1 个回复 • 1330 次浏览 • 2017-07-25 09:39</p>
+          </div>
+
+        </div>
+        <div class="media">
+            <div class="media-left media-middle">
+              <a href="#">
+                <img class="media-object" src="images/avatar1.jpg" alt="...">
+              </a>
+            </div>
+            <div class="media-body">
+              <p class="media-heading">
+                <a href="#" class="problem">麻烦问一下，我最近刚安装ghost博客，文章怎么插入图片，编辑器好像直接就是个markdown的命令框</a>
+              </p>
+              <p class="time"><a href="#" class="theme">主题/模板</a> • <span>WellJohn</span>  回复了问题 • 2 人关注 • 1 个回复 • 1330 次浏览 • 2017-07-25 09:39</p>
+            </div>
+            
+          </div>
+          <div class="media">
+              <div class="media-left media-middle">
+                <a href="#">
+                  <img class="media-object" src="images/avatar2.jpg" alt="...">
+                </a>
+              </div>
+              <div class="media-body">
+                <p class="media-heading">
+                  <a href="#" class="problem">ghost gmail 配置</a>
+                </p>
+                <p class="time"><a href="#" class="theme">默认分类</a> • <span>WellJohn</span>  回复了问题 • 2 人关注 • 1 个回复 • 584 次浏览 • 2017-07-23 10:49</p>
+              </div>
+              
+            </div>
+            <div class="media">
+                <div class="media-left media-middle">
+                  <a href="#">
+                    <img class="media-object" src="images/avatar3.jpg" alt="...">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <p class="media-heading">
+                    <a href="#" class="problem">进入ghost后台出现Access Denied from url,config.js和nginx均已配置为正确地址</a>
+                  </p>
+                  <p class="time"><a href="#" class="theme">主题/模板</a> • <span>WellJohn</span>  回复了问题 • 2 人关注 • 1 个回复 • 1330 次浏览 • 2017-07-25 09:39</p>
+                </div>
+                
+              </div>
+
+
+
+      </main>
+      <aside class="col-md-3 sidebar">
+          <div class="widget">
+              <h4 class="title">社区</h4>
+              <div class="content community">
+                  <p>QQ群：277327792</p>
+                  <p>
+                      <a href="#">
+                          <i class="fa fa-comments"></i>
+                          问答社区
+                      </a>
+                  </p>
+                  <p>
+                      <a href="#">
+                          <i class="fa fa-weibo"></i>
+                          官方微博
+                      </a>
+                  </p>
+              </div>
+          </div>
+        
+          
+      </aside>
+    </div>
+  </div>
+  <!-- 主体 end -->
+
+  <div class="copyright">
+      
+     <div class="container">
+         <div class="row">
+             <div class="col-sm-12 copyright" >
+                 <span>Copyright © 
+                     <a href="http://www.ghostchina.com/">Ghost 中文网</a>
+                 </span>
+                 |
+                 <span>
+                     <a href="http://www.miibeian.gov.cn/" target="_black">京ICP备11008151号</a>
+                 </span>
+                 |
+                 <span>京公网安备11010802014853</span>
+             </div>
+         </div>
+     </div>
+ </div>
+
+  <script src="js/jquery-1.12.3.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>
