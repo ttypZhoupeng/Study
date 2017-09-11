@@ -15,7 +15,7 @@ h4{
 
 
 /* top_menu */
-.aw-top-menu-wrap {
+/* .aw-top-menu-wrap {
     position: relative;
     z-index: 1001;
     width: 100%;
@@ -33,6 +33,26 @@ h4{
     top: 5px;
     font-size: 18px;
     color: #999;
+} */
+
+/* navbar start */
+.navbar{
+    background:#fff;
+}
+.search-icon{
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+}
+.navbar-form{
+    position: relative;
+}
+.current{
+    background:#fff;
+    font-weight:600;
 }
 
 
