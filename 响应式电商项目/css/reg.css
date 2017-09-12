@@ -55,7 +55,7 @@ h1,h2,h3,h4,h5,p{
     display: none; 
     margin-top:10px;
 }
-.login-box .error,.login-box .error2,.login-box .pw-error{
+.login-box .error,.login-box .error2,.login-box .pw-error,.login-box .pw-con-error,.login-box .check-error{
     color: red;
     font-size: 14px;
     display: none;

@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <div class="col-sm-5 login-box">
-                    <form class="clearfix">
+                    <form class="clearfix" action="#">
                         <h3>注册</h3>
                         <div class="form-group">
                             <div class="input-group">
@@ -100,7 +100,7 @@
                                 <span class="input-group-addon icon4" id="basic-addon1"><i class="fa fa-key fa-fw"></i></span>
                                 <input id="pwdCon" type="passwordConfirm" class="form-control" placeholder="确认密码" aria-describedby="basic-addon1" required>
                             </div>
-                            <p class="pw-error">密码长度应该是6~20位之内!</p>
+                            <p class="pw-con-error">与密码不一致，请重新填写！</p>
                         </div>
                         <div class="checkbox" >
                             <label>
@@ -112,7 +112,8 @@
                                 <input type="checkbox" class="rule" id="rule">我已阅读同意<a href="#">条款和条件</a> 
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-default login-btn" id="regBtn">创建账号</button>
+                        <p class="check-error">清先阅读条款和条件！</p>
+                        <input type="submit" class="btn btn-default login-btn" id="regBtn" value="创建账号">
 
                     </form>
 
@@ -164,6 +165,8 @@
             var pwd = $("#pwd").val();
             var username = $("#username").val();
             var pwdCon = $("#pwdCon").val();
+            var rule = $("#rule");
+            console.log(rule);
 
             if(!username){
                 $(".success").hide();
@@ -174,15 +177,34 @@
                 
                 $(".pw-error").show();
                 return;
-            }else{
-                $(".pw-error").hide()
             }
             if(pwdCon != pwd){
-                alert("两次输入密码不一致！")
+                $(".pw-error").hide();
+                $(".pw-con-error").show();
                 return;
             }
-            // if()
-         console.log(pwd);
+            
+            $.ajax({
+                "url":"http://h6.duchengjiu.top/shop/api_user.php",
+                "type":"POST",
+                "dataType":"json",
+                "data":{
+                    "status":"register",
+                    "username":username,
+                    "password":pwd
+                },
+                "success":function(response){
+                    console.log(response);
+                    
+                    if(response.code === 0){
+                        alert(response.message);
+                        window.location.href = "login.html";
+                    }else{
+                        return false;
+                    }
+                   
+                }
+            })
             
         })
     </script>
