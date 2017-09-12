@@ -141,3 +141,12 @@ section .welcome>p{
     display: inline-block;
     margin-right:5px;
 }
+.login-box .had{
+    text-align: center;
+}
+.login-box .had a{
+   color: #18ba9b;
+}
+
+
+

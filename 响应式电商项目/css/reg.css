@@ -47,6 +47,17 @@ h1,h2,h3,h4,h5,p{
 .login-box  .input-group .icon3{
     padding:6px 16px;
 }
-.login-box .had{
-    text-align: center;
+
+/* 表单验证 */
+.login-box .success,.login-box .pw-success{
+    color: green;
+    font-size: 14px;
+    display: none; 
+    margin-top:10px;
+}
+.login-box .error,.login-box .error2,.login-box .pw-error{
+    color: red;
+    font-size: 14px;
+    display: none;
+    margin-top:10px; 
 }

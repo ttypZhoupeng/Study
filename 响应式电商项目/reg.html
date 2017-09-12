@@ -76,8 +76,11 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon icon1" id="basic-addon1"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control" placeholder="用户名" aria-describedby="basic-addon1">
+                                <input id="username" type="text" class="form-control" placeholder="用户名" aria-describedby="basic-addon1" required>
                             </div>
+                            <p class="success">用户名可以使用</p>
+                            <p class="error">用户名已被注册，请重新填写!</p>
+                            <p class="error2">用户名不合法，请填写3-20位的英文数字下划线!</p>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
@@ -88,14 +91,16 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon icon3" id="basic-addon1"><i class="fa fa-lock"></i></span>
-                                <input type="text" class="form-control" placeholder="登录密码" aria-describedby="basic-addon1">
+                                <input id="pwd" type="text" class="form-control" placeholder="登录密码" aria-describedby="basic-addon1" required>
                             </div>
+                            <p class="pw-error">密码长度应该是6~20位之内!</p>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon icon4" id="basic-addon1"><i class="fa fa-key fa-fw"></i></span>
-                                <input type="passwordConfirm" class="form-control" placeholder="确认密码" aria-describedby="basic-addon1">
+                                <input id="pwdCon" type="passwordConfirm" class="form-control" placeholder="确认密码" aria-describedby="basic-addon1" required>
                             </div>
+                            <p class="pw-error">密码长度应该是6~20位之内!</p>
                         </div>
                         <div class="checkbox" >
                             <label>
@@ -104,10 +109,10 @@
                         </div>
                         <div class="checkbox" >
                             <label>
-                                <input type="checkbox" class="rule"> 我已阅读同意<a href="#">条款和条件</a> 
+                                <input type="checkbox" class="rule" id="rule">我已阅读同意<a href="#">条款和条件</a> 
                             </label>
                         </div>
-                        <button type="button" class="btn btn-default login-btn">创建账号</button>
+                        <button type="submit" class="btn btn-default login-btn" id="regBtn">创建账号</button>
 
                     </form>
 
@@ -121,6 +126,66 @@
 
     <script src="js/jquery-1.12.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+        $("#username").blur(function(){
+            var username = $("#username").val();
+            console.log($(this).val());
+
+            $.ajax({
+                "url":"http://h6.duchengjiu.top/shop/api_user.php",
+                "type":"POST",
+                "dataType":"json",
+                "data":{
+                    "status":"check",
+                    "username":username
+                },
+                "success":function(response){
+                    console.log(response);
+                    if(response.code === 0){
+                        $(".success").show();
+                        $(".error").hide();
+                        $(".error2").hide();
+                    }else if(response.code === 2001){
+                        $(".success").hide();
+                        $(".error").show();
+                        $(".error2").hide();
+                    }else if(response.code === 1000){
+                        $(".success").hide();
+                        $(".error").hide();
+                        $(".error2").show();
+                    }
+                }
+
+            })
+        })
+
+        
+        $("#regBtn").click(function(){
+            var pwd = $("#pwd").val();
+            var username = $("#username").val();
+            var pwdCon = $("#pwdCon").val();
+
+            if(!username){
+                $(".success").hide();
+                $(".error").show();
+                return;
+            }
+            if(pwd.length<6 || pwd.length>20){
+                
+                $(".pw-error").show();
+                return;
+            }else{
+                $(".pw-error").hide()
+            }
+            if(pwdCon != pwd){
+                alert("两次输入密码不一致！")
+                return;
+            }
+            // if()
+         console.log(pwd);
+            
+        })
+    </script>
 </body>
 
 </html>
