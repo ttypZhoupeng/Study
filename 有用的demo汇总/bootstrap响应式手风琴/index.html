@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/pay.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+    
+    <section class="clear-fix">
+       <div class="container">
+            <!-- 购物车正文 -->
+            <div class="row wrap-mycart">
+                <div class="col-md-6 zp-choose-pay">
+                    <h2 class="title-type">选择支付方式</h2>
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                        <i class="fa fa-credit-card"></i>
+                                        银行卡或信用卡
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in">
+                                <div class="panel-body cus-form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-4 no-col-space control-label">持卡人姓名</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control required" name="cardholder" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-4 no-col-space control-label">卡号</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control required" name="cardnumber" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-4 no-col-space control-label">选择银行卡</label>
+                                        <div class="col-sm-8">
+                                            <ul class="list-inline payment-type">
+                                                <li><i class="fa fa-cc-paypal"></i></li>
+                                                <li><i class="fa fa-cc-visa"></i></li>
+                                                <li><i class="fa fa-cc-mastercard"></i></li>
+                                                <li><i class="fa fa-cc-discover"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                            <i class="fa fa-paypal"></i>
+                                            选择其他支付方式
+                                        </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse">
+                                <div class="content margin-left-10">
+                                    <div class="row">
+                                            <a href="#" class="col-sm-6"><img src="images/alipay.png" alt="Alipay"></a>
+                                            <a href="#" class="col-sm-6"><img src="images/wechat.png" alt="Wechatpay"></a>                                    
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                <!-- End Accordion -->
+                
+            </div>
+            <div class="col-md-6 zp-problem">
+                    <h2 class="title-type">经常问的问题</h2>
+                    <!-- Accordion -->
+                    <div class="accordion-v2 plus-toggle">
+                        <div class="panel-group" id="accordion-v2">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion-v2" href="#collapseOne-v2">
+                                            <i class="fa fa-plus-square"></i>
+                                            我可以使用什么付款方式？
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne-v2" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        我们不仅支持银行卡、信用卡支付，同时也支持支付宝、微信支付。<br>
+                                        感谢您的回答，该回答已收录，可在官网支付页面看到该条问答。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion-v2" href="#collapseTwo-v2">
+                                            <i class="fa fa-plus-square"></i>                                                
+                                            我们有兑换券，现金抵用券可以用吗？
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo-v2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        有，当然有，各个商店均有对应的现金抵用券，另外成为会员，优惠更多哦。<br>
+                                         感谢您的回答，该回答已收录，可在官网支付页面看到该条问答。   
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion-v2" href="#collapseThree-v2">
+                                            <i class="fa fa-plus-square"></i>
+                                            下订单还要额外收费吗？
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThree-v2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                           不收取任何额外费用，基本都是免邮的，除非偏远地区会有少许的邮费。<br>
+                                           感谢您的回答，该回答已收录，可在官网支付页面看到该条问答。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion-v2" href="#collapseFour-v2">
+                                            <i class="fa fa-plus-square"></i>
+                                            下单后多久能寄到？
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseFour-v2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        除偏远地方，基本两到三天就能送达。 感谢您的回答，该回答已收录，可在官网支付页面看到该条问答。   
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                    <!-- End Accordion -->   
+            </div>
+        </div>
+
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
