@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="800" height="600">
+			对不起~你的浏览器不支持画布功能！请更新！
+		</canvas>
+		
+		
+		<script type="text/javascript">
+			//得到画布
+			var canvas = document.querySelector("canvas");
+			//得到上下文
+			var ctx = canvas.getContext("2d");
+			
+			var image = new Image();//创建一个图片对象
+			image.src = "img/2.png";  //图片的路径
+			
+			
+			image.onload=function(){
+				//图片加载完成后的事情
+				
+				var left = 100;
+				var m = 0;
+				
+				setInterval(function(){
+					//先清除画布上的所有图形
+					ctx.clearRect(0,0,800,600);
+					
+					m++;
+//					范围
+					if(m > 7){
+						m = 0;
+					}
+//					改变信号量
+					left += 3;
+					
+					ctx.drawImage(image,79 * m , 216,79,108,left,100,79,108);
+				},30);
+				
+				
+				
+				
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="800" height="600">
+			对不起~你的浏览器不支持画布功能！请更新！
+		</canvas>
+		
+		
+		<script type="text/javascript">
+			//得到画布
+			var canvas = document.querySelector("canvas");
+			//得到上下文
+			var ctx = canvas.getContext("2d");
+			
+			var image = new Image();//创建一个图片对象
+			image.src = "img/1.gif";  //图片的路径
+			
+			image.onload = function(){
+				ctx.drawImage(image,70,15,100,200,100,100,400,400);
+//				(图片,图片x坐标,图片y坐标,图片宽,图片高度,画布中x坐标,画布中y坐标,宽,高)
+			}
+			
+			ctx.font = "40px 微软雅黑";
+			ctx.fillText("江盟小心点~",200,560);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="800" height="600">
+			对不起~你的浏览器不支持画布功能！请更新！
+		</canvas>
+		
+		
+		<script type="text/javascript">
+			//得到画布
+			var canvas = document.querySelector("canvas");
+			//得到上下文
+			var ctx = canvas.getContext("2d");
+			
+			ctx.font = "40px 微软雅黑";
+			ctx.fillText("小石想海涛了~",200,200);
+		</script>
+	</body>
+</html>

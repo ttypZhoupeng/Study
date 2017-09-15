@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="800" height="600">
+			对不起~你的浏览器不支持画布功能！请更新！
+		</canvas>
+		
+		
+		<script type="text/javascript">
+			//得到画布
+			var canvas = document.querySelector("canvas");
+			//得到上下文
+			var ctx = canvas.getContext("2d");
+			
+			var i = 60;
+			
+			ctx.beginPath();  
+			ctx.arc(100,100,i,1.5*Math.PI,2*Math.PI,true);
+//			arc(x坐标,y坐标,半径,起始角弧度,结束角的弧度,正负时针方向)
+//			ctx.closePath();
+			
+			ctx.stroke();
+			
+		</script>
+	</body>
+</html>
