@@ -1,0 +1,75 @@
+.cus-form-horizontal .form-group {
+    margin: 0 0 15px;
+    overflow: hidden;
+    padding-bottom: 7px;
+}
+.cus-form-horizontal .form-group label {
+    color: #555;
+    margin-top: 4px;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: left;
+}
+
+/* 支付板块 */
+.wrap-mycart{
+    padding-top:50px;
+    padding-bottom:50px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+h2.title-type{
+    font-size: 16px;
+    margin-left: 20px;
+    margin-bottom:15px;
+}
+.cus-form-horizontal .payment-type i {
+    color: #888;
+    font-size: 35px;
+}
+.input-small-field input {
+    width: 20%;
+    float: left;
+    margin-right: 10px;
+}
+.input-small-field span.slash {
+    color: #888;
+    float: left;
+    font-size: 20px;
+    margin-right: 8px;
+}
+.cus-form-horizontal .input-small-field a {
+    top: 5px;
+    color: #18ba9b;
+    position: relative;
+    text-decoration: underline;
+}
+
+#accordion .panel-heading i, #accordion-v2 .panel-heading i{
+    margin-right:5px;
+    font-size: 20px;
+    vertical-align: middle;
+    color:#18ba9b;
+}
+#accordion .panel-heading a,.accordion-v2 .panel-heading a{
+    color: #555;
+    display: block;
+    font-size: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-decoration: none;
+}
+
+#collapseTwo .content{
+    padding-top:40px;
+    padding-bottom:40px;
+    margin-left:10px;
+}
+#collapseTwo .content img{
+    display: block;
+    vertical-align: middle;
+    width:50%;
+    height:100%;
+}
+
+/* 问答板块 */
