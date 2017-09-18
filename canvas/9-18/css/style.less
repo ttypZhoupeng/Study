@@ -1,0 +1,33 @@
+@w200:200px;
+@h40:40px;
+@color-orange:orange;
+@color-sky:skyblue;
+
+*{
+    margin:0;
+    padding:0;
+}
+ul{
+    list-style:none;
+}
+header{
+    width: 100%;
+    height:@h40;
+    .logo{
+        width:@w200;
+        height:@h40;
+        background-color:@color-orange;
+        float:left;
+    }
+    nav{
+        float:left;
+        li{
+            width:@w200;
+            height:@h40;
+            background:@color-sky;
+            border:1px solid #000;
+            border-right:none;
+        }
+    }
+}
+

@@ -4,7 +4,13 @@ $(function () {
     // console.log(userSearch[0][1])
 
     for(var i=0;i<9;i++){
+<<<<<<< HEAD
         showShop();
+=======
+        if(userSearch[i]){
+            showShop();
+        }
+>>>>>>> 8787ed892e86d3a8a9e9195d616c2c2e0ef23b3d
     }
 
     function showShop(){

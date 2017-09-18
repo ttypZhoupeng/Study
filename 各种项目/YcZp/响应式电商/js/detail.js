@@ -31,8 +31,12 @@ $(function () {
             "goods_id": goodsId[1]
         },
         "success": function (response) {
+<<<<<<< HEAD
             console.log(response);
             console.log($("#cart"));
+=======
+            // console.log(response);
+>>>>>>> 8787ed892e86d3a8a9e9195d616c2c2e0ef23b3d
 
             var obj = response;
             // $("#goodsUl").html('<li><img src="' +response.data[0].goods_thumb+ '" /><p>' +response.data[0].goods_name+ '</p><p>' +response.data[0].goods_desc+ '</p><p class="price">' +response.data[0].price+ '</p></li>');
@@ -50,8 +54,11 @@ $(function () {
         }
     });
 
+<<<<<<< HEAD
     console.log($("#cart").html());
 
+=======
+>>>>>>> 8787ed892e86d3a8a9e9195d616c2c2e0ef23b3d
     // 添加到购物车
     $("#cart").click(function () {
 

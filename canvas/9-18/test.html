@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>运动时钟</title>
+    <style>
+        canvas{
+            background:#ccc;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500">
+        您的浏览器暂不支持canvas，请及时更新！
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+
+        var context = canvas.getContext("2d");
+
+        drawClock();
+
+        function drawClock(){
+            // 清除画布
+            context.clearRect(0, 0, 500, 500);
+
+            // 获取时间
+            var date = new Date();
+
+            var sec = date.getSeconds();
+
+            var minute = date.getMinutes();
+
+            var hour = date.getHours();
+
+            hour = hour + minute/60;
+
+            hour = hour>12?hour-12:hour
+
+            // 石英钟
+
+            //表盘
+            context.beginPath();
+            context.lineWidth=5;
+            context.strokeStyle='black';
+            context.arc(250, 250, 200, 0, 360, false);
+            context.stroke();
+            context.closePath();
+            
+
+            //刻度
+            // 时针刻度
+            for(var i=0;i<12;i++){
+                // context.save();
+                
+                // 设置时针的样式
+                context.lineWidth=7;
+                context.strokeStyle='#000';
+
+                // 设置异次元空间原点
+                context.translate(250, 250);
+                // 设置旋转的角度
+                context.rotate(10);
+                context.beginPath();
+                context.moveTo(0, -170);
+                context.lineTo(0, -190);
+                context.stroke();
+                context.closePath();
+                
+                
+                // context.restore();
+
+            }
+
+            context.beginPath();
+            context.strokeStyle='red';
+            context.arc(250, 250, 5, 0, 360, false);
+            context.fillStyle='#fff';
+            context.fill();
+            context.stroke();
+            context.closePath();
+            
+            
+            
+            
+        }
+    </script>
+</body>
+</html>

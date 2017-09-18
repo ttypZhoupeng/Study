@@ -60,12 +60,16 @@ function login() {
 
                 $(".error2").hide();
 
+<<<<<<< HEAD
                 layer.open({
                     content: `${response.message}`,
                     scrollbar: false,
                 }, {
                     icon: 6
                 });
+=======
+                layer.msg(response.message, {icon: 6});
+>>>>>>> 8787ed892e86d3a8a9e9195d616c2c2e0ef23b3d
 
                 setTimeout(function () {
                     var callbackURL = location.hash.substr(10);

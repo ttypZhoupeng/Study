@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas width="600" height="400" id="canvas">
+			您的浏览器版本不支持canvas，请升级浏览器
+		</canvas>
+		
+		
+		<script type="text/javascript">
+			var canvas = document.querySelector("#canvas");
+			
+			var ctx = canvas.getContext("2d");
+			
+			ctx.fillStyle = "gold"; //设置用于填充绘画的颜色，
+			ctx.strokeStyle = "gold";//笔触颜色
+			
+			ctx.beginPath();
+			ctx.moveTo(100,100);
+			
+			
+			
+			function draw(current){
+				ctx.arc(100,100,80,-0.5*Math.PI,current*(1.5*Math.PI) - Math.PI/2,false);
+				ctx.closePath();
+				ctx.fill();
+				ctx.stroke();
+				
+			}
+			
+//			draw(0.9);
+			
+			var t = 0;
+			var timer = null;
+			function loadCanvas(num){
+				
+				timer = setInterval(function(){
+					//定时器中
+//					判断信号量 t 是否大于目标值
+					if(t>num){
+						//达到指定目标角度
+						draw(num);
+						clearInterval(timer);
+					}else{
+//						信号量+=0.005,饼状图角度增加
+						draw(t);
+						t+=0.005;
+					}
+					
+					
+					
+				},50)
+				
+			}
+			loadCanvas(0.8);
+		</script>
+	</body>
+</html>

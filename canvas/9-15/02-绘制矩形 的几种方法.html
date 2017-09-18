@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas{
+            border:1px solid #000;
+            
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="600">
+        对不起~你的浏览器不支持画布功能！请更新！
+    </canvas>
+
+
+    <script>
+        var canvas = document.querySelector("#canvas");
+
+        var ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "skyblue";
+        ctx.fillRect(400,300,200,300);
+
+        ctx.strokeRect(300,100,100,150);
+
+        ctx.beginPath();
+        ctx.moveTo(500,100);
+        ctx.lineTo(500,200);
+        ctx.lineTo(600,200);
+        ctx.closePath();
+
+        ctx.fillStyle = "skyblue";   
+        ctx.lineWidth = "10"; 
+        ctx.fill();
+        ctx.strokeStyle = "blue";       
+        ctx.stroke();
+        
+           
+    </script>
+</body>
+</html>
