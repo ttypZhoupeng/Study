@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #canvas{
+            background:#ccc;
+        }
+    </style>
+</head>
+<body>
+        <canvas id="canvas" width="600" height="400">
+            您的浏览器暂不支持canvas，请及时更新！
+        </canvas>
+
+        <script>
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+
+            context.fillStyle='#fff';
+            context.beginPath();
+            context.arc(300, 200, 150, -0.5*Math.PI, 0.5*Math.PI, true);
+            context.closePath();
+            context.fill();
+
+
+            context.fillStyle='#000';
+            context.beginPath();
+            context.arc(300, 200, 150, -0.5*Math.PI, 0.5*Math.PI, false);
+            context.closePath();
+            context.fill();
+            
+
+            context.fillStyle='#000';
+            context.beginPath();
+            context.arc(300, 275, 75, -0.5*Math.PI, 0.5*Math.PI, true);
+            context.closePath();
+            context.fill();
+
+            context.fillStyle='#fff';
+            context.beginPath();
+            context.arc(300, 125, 75, -0.5*Math.PI, 0.5*Math.PI, false);
+            context.closePath();
+            context.fill();
+
+            context.fillStyle='#000';
+            context.beginPath();
+            context.arc(300, 125, 20, -0.5*Math.PI, 1.5*Math.PI, false);
+            context.closePath();
+            context.fill();
+
+            context.fillStyle='#fff';
+            context.beginPath();
+            context.arc(300, 275, 20, -0.5*Math.PI, 1.5*Math.PI, false);
+            context.closePath();
+            context.fill();
+            
+        </script>
+</body>
+</html>

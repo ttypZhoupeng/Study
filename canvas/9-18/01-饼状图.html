@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="600" height="400" id="canvas">
+        您的浏览器版本不支持canvas,请升级浏览器
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+
+        var context = canvas.getContext("2d");
+
+        context.fillStyle = "gold";
+        context.strokeStyle = "gold";
+        
+        context.beginPath();
+        context.moveTo(100, 100);
+        
+        
+        
+        function draw(current){
+            context.arc(100, 100, 80, -0.5*Math.PI, current*(1.5*Math.PI) - 0.5*Math.PI, false);
+            context.closePath();
+            context.fill();
+            context.stroke();
+        }
+
+
+        // draw(0.9);
+
+        var t = 0;
+        var timer = null;
+
+        function loadCanvas(num){
+            timer = setInterval(function(){
+                if(t>num){
+                    draw(num);
+                    clearInterval(timer);
+                }else{
+                    draw(t);
+                    t+=0.005;
+                }
+            },50);
+        }
+
+        loadCanvas(0.8);
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				background: yellowgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas width="500" height="500" id="canvas">您的浏览器当前版本不支持canvas</canvas>
+	
+		<script type="text/javascript">
+			var canvas = document.querySelector("#canvas");
+			
+			var ctx = canvas.getContext("2d");
+			
+			function drawClock(){
+//				清除画布
+				ctx.clearRect(0,0,500,500);
+				
+				//获取系统时间
+				var date = new Date();
+				//获取秒
+				var sec = date.getSeconds();
+				//获取分钟
+				var minute = date.getMinutes();
+				//获取小时
+				var hour = date.getHours();
+				//小时必须获取浮点类型，产生偏移（小时加分钟比）
+				hour = hour + minute/60;
+				
+				hour = hour>12?hour-12:hour;
+
+				
+//				石英钟
+				//表盘（蓝色）
+				ctx.beginPath();
+				ctx.lineWidth = 5; //笔触的线宽
+				ctx.strokeStyle = "blue"; //画笔颜色
+				ctx.arc(250,250,200,0,360,false); //绘制圆形，坐标250，250，半径200，整圆（0-360），false顺时针
+				ctx.stroke();
+				ctx.closePath();
+				
+				//刻度
+				//时针刻度
+				for(var i=0;i<12;i++){
+					ctx.save();
+					//设置时针刻度的样式
+					ctx.lineWidth = 7; //线宽
+					ctx.strokeStyle = "#000";  //颜色黑色
+					
+					//设置异次元空间原点
+					ctx.translate(250,250);
+					//设置旋转的角度
+					ctx.rotate(i * 30*Math.PI/180);
+					ctx.beginPath();
+					ctx.moveTo(0,-170); //画线，从坐标0，-170开始
+					ctx.lineTo(0,-190); //到坐标0，-190结束
+					ctx.stroke();
+					ctx.closePath();
+					
+					ctx.restore();
+				}
+				//分针刻度
+				for(var i=0;i<60;i++){
+					ctx.save();
+					//设置时针刻度的样式
+					ctx.lineWidth = 5; //线宽
+					ctx.strokeStyle = "#000";  //颜色黑色
+					
+					//设置异次元空间原点
+					ctx.translate(250,250);
+					//设置旋转的角度
+					ctx.rotate(i * 6*Math.PI/180);
+					ctx.beginPath();
+					ctx.moveTo(0,-180); //画线，从坐标0，-180开始
+					ctx.lineTo(0,-190); //到坐标0，-190结束
+					ctx.stroke();
+					ctx.closePath();
+					
+					ctx.restore();
+				}
+				
+				
+				//时针
+				ctx.save();
+				
+				//时针样式
+				ctx.lineWidth = 7;
+				ctx.strokeStyle = "purple";
+				//设置异次元空间原点
+				ctx.translate(250,250);
+				//设置旋转的角度
+				ctx.rotate(hour * 30*Math.PI/180);
+				
+				ctx.beginPath();
+				ctx.moveTo(0,-140); //画线，从坐标0，-180开始
+				ctx.lineTo(0,10); //到坐标0，-190结束
+				ctx.stroke();
+				ctx.closePath();
+				
+				ctx.restore();
+				
+				
+				//分针
+				
+				ctx.save();
+				
+				//时针样式
+				ctx.lineWidth = 5;
+				ctx.strokeStyle = "orange";
+				//设置异次元空间原点
+				ctx.translate(250,250);
+				//设置旋转的角度
+				ctx.rotate(minute * 6*Math.PI/180);
+				
+				ctx.beginPath();
+				ctx.moveTo(0,-160); //画线，从坐标0，-180开始
+				ctx.lineTo(0,15); //到坐标0，-190结束
+				ctx.stroke();
+				ctx.closePath();
+				
+				ctx.restore();
+				//秒针
+				ctx.save();
+				
+				//时针样式
+				ctx.lineWidth = 3;
+				ctx.strokeStyle = "red";
+				//设置异次元空间原点
+				ctx.translate(250,250);
+				//设置旋转的角度
+				ctx.rotate(sec * 6*Math.PI/180);
+				
+				ctx.beginPath();
+				ctx.moveTo(0,-185); //画线，从坐标0，-180开始
+				ctx.lineTo(0,20); //到坐标0，-190结束
+				ctx.stroke();
+
+				//秒针装饰
+				ctx.beginPath();
+				ctx.strokeStyle = "#f00";
+				ctx.arc(0,-160,5,0,360,false);
+				ctx.fillStyle = "#fff";
+				ctx.fill();
+				ctx.stroke();
+				
+				ctx.closePath();
+
+				
+				ctx.restore();
+				
+				//画出时针、分针、秒针交叉点
+				ctx.beginPath();
+				ctx.strokeStyle = "#f00";
+				ctx.arc(250,250,5,0,360,false);
+				ctx.fillStyle = "#fff";
+				ctx.fill();
+				ctx.stroke();
+				ctx.closePath();
+					
+				
+				//文本内容（珍惜时间）
+				ctx.font="20px 微软雅黑";
+				ctx.lineWidth = 2;
+				ctx.fillStyle ="black";
+				ctx.fillText("珍惜时间",210,340);
+			}
+			drawClock();
+//			定时器
+			setInterval(function(){
+				drawClock();
+			},1000);
+		</script>
+	</body>
+</html>
