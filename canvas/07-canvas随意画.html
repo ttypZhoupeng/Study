@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas{
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="600" height="600" id="canvas">
+        对不起，您不支持画布，请升级浏览器！
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        context.strokeStyle='skyblue';
+        context.lineWidth='4';
+        context.strokeRect(100, 100, 100, 100);
+        
+        context.fillStyle='red';
+        context.fillRect(200,200,100,100);
+
+
+        context.beginPath();
+        context.moveTo(300, 300);
+        context.lineTo(400, 300);
+        context.lineTo(400, 400);
+        context.lineTo(300, 400);
+        context.lineTo(300, 300);
+        
+        context.closePath();
+
+        context.strokeStyle = "blue";
+        context.lineWidth=20;
+        context.stroke();
+        context.fillStyle='yellow';
+        context.fill();
+
+
+        context.beginPath();
+        context.arc(400, 400, 100, Math.PI / 180 * 0, Math.PI / 180 * 2, true);
+        context.closePath();
+        context.strokeStyle='green';
+        context.lineWidth=4;
+        context.stroke();
+        
+        context.font='16px sans-serif';
+        context.fillText("周鹏", 100, 400);
+        
+        
+    </script>
+</body>
+</html>
