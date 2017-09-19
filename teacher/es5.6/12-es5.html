@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+//			es5新增了一个toJSON方法,转化一个可读性的日期格式
+			var date = new Date();
+			
+			console.log(date);
+			console.log(date.toJSON());
+			
+//			function fun(){
+//				console.log(this);
+////				console.log(this.name);
+//			}
+//			
+//			var obj = {
+//				name : "江盟"
+//			}
+//			call和apply会改变this指向并立即执行
+//			fun.call(obj);
+//			fun.apply(obj);
+			
+//			var fun1 = fun.bind(obj);
+			//bind改变this指向，但不立即执行，在调用的时候执行
+			
+//			fun1();
+
+
+			function fun(){
+				console.log(this);
+//				console.log(this.name);
+				console.log(arguments);//4,5,6,7
+			}
+			
+			var obj = {
+				name : "江盟"
+			}
+			
+			function find(fn,obj){
+				
+				return function(){
+					fn.apply(obj);
+				}
+				
+			}
+			
+			var fun1 = find(fun,obj,4,5,6,7);
+
+// //			扩展-1
+// 			function find(fn,obj){
+// //				console.log(arguments);
+// 				//通过数组裁剪方法，改变this指向，让arguments可以进行参数的裁剪
+// 				var args = [].slice.call(arguments,2);
+// 				console.log(args);
+				
+// 				return function(name,age){
+// //					合并数组
+// 					var	newArgs = args.concat( [].slice.call(arguments))
+					
+// 					fn.apply(obj,newArgs);
+// 				}
+				
+// 			}
+			
+// 			var fun1 = find(fun,obj,4,5,6,7);
+			
+// //			console.log(fun1);
+// 			fun1("江盟",22);
+			
+			
+//			var a = [1,2,3,4,5,6];
+//			var b = [7,8,9];
+			
+//			console.log(a.slice(2));
+			
+//			console.log(a.concat(b));
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

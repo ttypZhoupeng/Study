@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>局部严格模式</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        fun();
+        // 严格模式下函数内部作用域是undefined；
+        function fun(){
+            var ttyp = "澹台宇鹏";
+            console.log(ttyp);
+            console.log(this);   
+        }
+
+        // 参数名相同会报错
+        function fun2(name,name1){
+            console.log(name);
+            console.log(name1);
+        }
+        fun2(2,3);
+
+
+        // 不允许定义相同属性名称
+        var obj = {
+            "color":"red",
+            "color":"blue"
+        }
+        console.log(obj);
+
+
+        //不允许使用关键字，保留字，特殊变量定义变量的
+        // var public = 'red'
+        // console.log(public)
+        function demo() {
+        	// var arguments = 123
+        	console.log(arguments)
+        }
+        // 调用demo
+        demo(4, 5, 6)
+        // var eval = 'hello';
+        console.log(eval)
+
+
+        // 删除变量会报错
+        var a = 123;
+        // delete a;
+        console.log(a)
+        // 定义函数
+        function demo () {}
+        // delete demo;
+        console.log(demo)
+        // 删除属性
+        var obj = {
+        	color: 'red'
+        }
+        delete obj.color;
+        console.log(obj)
+
+        // 不允许使用八进制
+        // var num = 012;
+        // console.log(num);
+        // var str = '\102';
+        // console.log('1'+str+'2');
+
+
+        // eval("var b = 'green'");
+        // console.log(age);
+
+         var myEval = eval;
+         myEval("var b = 'green'");
+         console.log(b);
+
+
+         function addNum(num) {
+        	// 如果num是1直接返回，不要再迭代了
+        	if (num <= 1) {
+        		return num;
+        	}
+        	// 调用下一个num相加
+        	// 这里功能与方法的名称耦合了，所以方法名称永远不能修改
+        	// return num + addNum(num - 1)
+        	// 为了解决这个问题，提供了arguments.callee方法
+        	return num + arguments.callee(num - 1)
+        }
+        // addNum(5);
+
+
+
+    </script>
+</body>
+</html>

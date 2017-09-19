@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>reduce</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4,5];
+
+        // console.log(
+        //     arr.reduce(function(sum,current){
+        //         console.log(sum);
+        //         console.log(current);
+        //         return sum +current;
+        //     })
+        // )
+
+        function diyReduce(arr,fn){
+            var result = arr[0];
+            for(var i=1;i<arr.length;i++){
+                result = fn(result,arr[i]);
+            }
+            return result;
+        }
+
+        console.log(
+            diyReduce(arr,function(s,v){
+                return s+v;
+            })
+        )
+
+
+        // 从右向左加
+        var arr1 = [1,2,3];
+        function diyReduceRight(arr,fn){
+            var result = arr[arr.length-1];
+            for(var i=arr.length-2;i>-1;i--){
+                result = fn(result,arr[i]);
+            }
+            return result;
+        }
+
+        console.log(
+            diyReduceRight(arr1,function(s,v){
+                return s+v;
+            })
+        )
+    </script>
+</body>   
+</html>

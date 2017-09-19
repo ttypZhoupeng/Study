@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			//累加
+			var arr = [1,2,3];
+			
+//			console.log( 
+//				arr.reduce(function(sum,current){
+//					console.log(sum);
+//					console.log(current);
+//					return sum + current;
+//				})
+//			)
+			
+			var arr1 = [1,3,5];
+			
+			function reduce(arr,fn){
+				
+				//把数组第一个存入变量
+				var result = arr[0];
+				for(var i=1;i<arr.length;i++){
+					//让变量进行累加
+					result = fn( result,arr[i] );
+				}
+				return result;
+			}
+			
+			console.log( 
+				reduce( arr1,function(s,v){
+					return s+v;
+				})
+			
+			)
+			
+			//从右往左加
+			function reduceRight(arr,fn){
+				
+				//把数组最后一个存入变量
+				var result = arr[arr.length-1];
+				for(var i=arr.length-2;i>-1;i--){
+					//让变量进行累加
+					result = fn( result,arr[i] );
+				}
+				return result;
+			}
+			
+			console.log( 
+				reduceRight( [2,4,6],function(s,v){
+					return s+v;
+				})
+			
+			)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

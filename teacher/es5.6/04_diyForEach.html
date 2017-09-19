@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+//			var arr = [1,2,3];
+//			
+//			arr.forEach(function(value,index,content){
+//				console.log("value是"+value);
+//				console.log("index是"+index);
+//				console.log("content是"+content);
+//			});
+			
+			var arr1 = ["凯凯","张雪","海涛"];
+			
+//			arr1.forEach(function(v,k){
+//				console.log(k);
+//				console.log(v);
+//			})
+			
+			//在数组中添加一个方法
+			Array.prototype.diyForEach = function(fn){
+				for(var i=0;i<this.length;i++){
+					fn(this[i],i,this);
+				}
+			}
+			
+			arr1.diyForEach(function(value,index,content){
+//				console.log(this);
+				console.log("value是"+value);
+				console.log("index是"+index);
+				console.log("content是"+content);
+			})
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

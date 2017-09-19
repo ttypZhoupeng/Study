@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			"use strict";
+			
+			//正常模式下正常使用！严格模式下报错
+//			eval("var age = 22");
+//			console.log(age);
+			
+			//用一个小窍门，改变方法名
+//			var diyEavl = eval;
+			
+//			diyEavl("var sex='男'");
+//			console.log(sex);
+			
+			
+			//递归函数
+//			arguments.callee 指向函数本身,严格模式报错
+//			function addNumber(num){
+//				if(num <= 1){
+//					return num;
+//				}
+//				console.log(arguments.callee);
+//				return num + addNumber(num-1);
+
+//				return num + arguments.callee(num - 1);
+//			}
+			
+//			console.log( addNumber(5) );
+			
+			
+			var a = 3;
+			var b = 4;
+			var obj = {c: 5};
+			
+//			console.log( a + b + obj.c);
+			
+//			with(obj){
+//				a = a + b + c;  //c 相当于 obj.c, Math.PI
+//			}
+//			console.log(a);
+
+				
+				
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//严格模式开启
+			"use strict";
+			
+			function fun(){
+				"use strict";
+				
+				//this在不开启严格模式下是window，在严格模式下是undefined
+				console.log(this);
+			}
+			fun();
+			
+//			zhangsan = "张三";
+//			console.log(zhangsan);
+
+			
+//			function fun1(name,name){
+//				开启严格模式后,重复的参数名会报错!
+//				console.log(name);
+//			}
+//			fun1("小明","江盟");
+			
+			var obj = {
+				"color" : "red",
+				"color" : "green"
+			}
+			console.log(obj.color);
+			
+			//关键字和保留字报错！
+//			public 是es6的内容
+//			var public = "abc";
+//			console.log(public);
+			
+//			function fun2(){
+//				
+//				console.log(arguments);
+//				arguments = 1;
+//				console.log(arguments);
+//				
+//			}
+//			fun2();
+
+//			eval()里面的字符串可以执行
+//			eval = 12;
+//			console.log(eval);
+
+			//删除变量和函数，严格模式下会报错
+//			var name  = "小石";
+//			delete name;
+//			console.log(name);
+			
+//			function show(){
+//				
+//			}
+//			delete show;
+//			console.log(show);
+			
+			//正常使用delete删除对象的属性
+			var obj = {
+				"name": "江盟",
+				"age": 30
+			}
+			
+			delete obj.name;
+			console.log(obj);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

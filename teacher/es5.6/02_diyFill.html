@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var arr = [1,2,3];
+			
+//			fill()替换数组内容为括号里面的值
+//			console.log( arr.fill("隔壁老王"));
+			
+			//封装
+			function diyFill(arr,value){
+				for(var i=0;i<arr.length;i++){
+					arr[i]=value;
+				}
+				return arr;
+				
+			}
+			console.log( diyFill(arr,"二哈"));
+			console.log(typeof diyFill);
+			
+//			//在数组原型里面加一个方法
+			Array.prototype.diyFill = function(value){
+//				this是谁? 谁调用是谁!
+				
+				for(var i=0;i<this.length;i++){
+					this[i] = value;
+				}
+				return this;
+			}
+			
+			console.log( arr.diyFill("皮卡丘"));
+
+			//在数组原型里面加一个方法-1
+// 			Array.prototype.diyFill = function(value){
+// //				this是谁? 谁调用是谁!
+				
+// 				for(var i=0;i<this.length;i++){
+// 					this[i] = (typeof value) === 'function' ? value() : value;
+// 				}
+// 				return this;
+// 			}
+			
+// 			console.log( arr.diyFill(function(){
+// 				return "小明";
+// 			}));
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

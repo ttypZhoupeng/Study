@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			var arr = [1,2,3];
+			
+			var newArr = arr.map(function(a){
+				return a * 2;
+			})
+			console.log(arr);
+			console.log(newArr);
+			
+			function map(arr,fn){
+				var result = [];
+				for(var i=0;i<arr.length;i++){
+					
+					//空数组中第i个 = 函数（【原数组中第i个】）
+					result[i] = fn(arr[i]);
+					
+				}
+				return result;
+			}
+			
+			var arr1 = map(arr,function(str){
+				return str * 5;
+			})
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
