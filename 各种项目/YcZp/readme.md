@@ -28,6 +28,10 @@
 3. [mo.js](http://mojs.io/tutorials/easing/path-easing/)
 
 - 由于是基于[bootstrap](http://www.bootcss.com/)的响应式网站，所以主要用到的框架为[bootstrap](http://www.bootcss.com/)，整个网站都为响应式，可适配各种屏幕，手机端暂时还有很多没有适配
-- 另外YcZp用到的最浓墨重彩的一个插件,[laye]
+- 另外YcZp用到的最浓墨重彩的一个插件,[layer](http://layer.layui.com/),该插件就是一个弹窗插件，但是比不同的alert弹窗要更符合用户体验，网站基本所有弹窗都使用这个插件卡法
+
+- 最后用到的一个动画库，[mo.js](http://mojs.io/tutorials/easing/path-easing/),这是一个强大的js动画库，但是由于中文文档有限，需要查看英文文档，但是其中有很多实例，相对也能看懂上手，主要用到这个添加了一个点赞特效，分类页面的商品点赞特效
+
+
 
 
