@@ -124,9 +124,9 @@
 				ctx.closePath();
 				
 				ctx.restore();
+
 				//秒针
 				ctx.save();
-				
 				//时针样式
 				ctx.lineWidth = 3;
 				ctx.strokeStyle = "red";
@@ -141,7 +141,6 @@
 				ctx.stroke();
 
 				//秒针装饰
-				ctx.beginPath();
 				ctx.strokeStyle = "#f00";
 				ctx.arc(0,-160,5,0,360,false);
 				ctx.fillStyle = "#fff";

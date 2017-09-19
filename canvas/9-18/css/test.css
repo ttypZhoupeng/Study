@@ -1,0 +1,9 @@
+.container p {
+  color: skyblue;
+}
+.container p a {
+  color: orange;
+}
+.container p a:hover {
+  color: red;
+}

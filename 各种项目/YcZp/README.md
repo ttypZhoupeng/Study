@@ -3,7 +3,7 @@
 - [一. 项目总结](#一-项目总结)
     - [1.任务分配](#1任务分配)
         - [（1）登录页面](#1登录页面)
-    - [2.使用的框架以及插件](#2使用的框架以及插件)
+    - [2.使用的框架，插件以及库](#2使用的框架插件以及库)
 
 <!-- /TOC -->
 
@@ -22,8 +22,12 @@
 
 ### （1）登录页面
 
-## 2.使用的框架以及插件
-- 由于是基于bootstrap的响应式网站，所以主要用到的框架为bootstrap，整个网站都为响应式，可适配各种屏幕，手机端暂时还有很多不能实现，没有适配
-- 
+## 2.使用的框架，插件以及库
+1. [bootstrap](http://www.bootcss.com/) 
+2. [layer](http://layer.layui.com/)
+3. [mo.js](http://mojs.io/tutorials/easing/path-easing/)
+
+- 由于是基于[bootstrap](http://www.bootcss.com/)的响应式网站，所以主要用到的框架为[bootstrap](http://www.bootcss.com/)，整个网站都为响应式，可适配各种屏幕，手机端暂时还有很多没有适配
+- 另外YcZp用到的最浓墨重彩的一个插件,[laye]
 
 

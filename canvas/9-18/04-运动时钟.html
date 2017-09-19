@@ -70,14 +70,7 @@
                 context.stroke();
                 context.closePath();
                 
-                context.restore();
-
-
-                // // 时间数字
-                // context.font = "20px 微软雅黑";
-                // context.lineWidth=5;
-                // context.fillStyle='black';
-                // context.fillText(i, 210, 340);       
+                context.restore();    
 
             }
             
@@ -150,7 +143,7 @@
             context.save();
             // 秒针样式
             context.lineWidth=3;
-            context.strokeStyle='black';
+            context.strokeStyle='red';
 
             context.translate(250, 250);
             context.rotate(Math.PI / 180 * 6*sec);
@@ -162,12 +155,12 @@
             context.stroke();
 
             //秒针装饰
-            ctx.beginPath();
-            ctx.strokeStyle = "#f00";
-            ctx.arc(0,-160,5,0,360,false);
-            ctx.fillStyle = "#fff";
-            ctx.fill();
-            ctx.stroke();
+            context.beginPath();
+            context.strokeStyle = "#f00";
+            context.arc(0,-160,5,0,360,false);
+            context.fillStyle = "#fff";
+            context.fill();
+            context.stroke();
 
             
             context.closePath();
@@ -187,7 +180,31 @@
             context.font = "20px 微软雅黑"
             context.lineWidth=2;
             context.fillStyle='red';
-            context.fillText("珍惜时间", 210, 340);       
+            context.fillText("珍惜时间", 210, 340);     
+
+            // 时间数字12
+            context.font = "40px 微软雅黑";
+            context.lineWidth=10;
+            context.fillStyle='black';
+            context.fillText("12", 225, 120);
+
+            // 时间数字3
+            context.font = "40px 微软雅黑";
+            context.lineWidth=10;
+            context.fillStyle='black';
+            context.fillText("3", 390, 260);
+
+            // 时间数字6
+            context.font = "40px 微软雅黑";
+            context.lineWidth=10;
+            context.fillStyle='black';
+            context.fillText("6", 240, 410); 
+
+             // 时间数字9
+            context.font = "40px 微软雅黑";
+            context.lineWidth=10;
+            context.fillStyle='black';
+            context.fillText("9", 85, 260);              
         }
 
         setInterval(function(){
