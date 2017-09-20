@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>箭头函数</title>
+    <script>
+        // var arr = [1,2,3,4];
+
+        // arr.forEach(function(v){
+        //     console.log(v);
+        // })
+        
+
+        // arr.forEach(v => console.log(v));
+
+        // // 多个参数需要加小括号
+        // arr.forEach((v,k) => console.log(v,k));
+
+        // // 多个语句需要加大括号
+        // arr.forEach((v,k) => {
+        //     console.log(v);
+        //     console.log(k);
+        // })
+
+
+        // 下面是一个函数，x是参数，不用写return,=>自带return
+        // var fn = x => x*x;
+        // console.log(fn(3));
+
+        // 不传参数
+        // var fn1 = () => 5;
+        // console.log(fn1());
+
+        var obj = {
+            birth:1995,
+            getAge:function(){
+                // console.log(this.birth);
+
+                // 平常方法
+                var self = this;
+                // var fn = function(){
+                //     return new Date().getFullYear() -self.birth;
+                // }
+                // return fn();
+
+                // es6方法
+
+                var fn = () =>new Date().getFullYear()-self.birth;
+                return fn();
+            }
+        }
+
+        obj.getAge();
+
+        console.log(obj.getAge());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

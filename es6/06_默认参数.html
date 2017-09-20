@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>默认参数</title>
+</head>
+<body>
+    <script>
+        function fun(name){
+            name  = name || "没有传参!";
+
+            console.log(name);
+        }
+
+        fun();
+        fun("zhoupeng");
+
+        // 默认参数
+        function fun1( name = "没有传参"){
+            console.log(name);
+        }
+        fun1();
+        fun1("周鹏");
+
+        // 剩余参数
+        function fun2(a,...rest) {
+            console.log(a);
+            console.log(rest);
+        }
+        fun2(1);//
+        fun2(1,2,3,4,5);
+        fun2(5,4,3,2,1);
+
+        var arr = ["ttyp","zp","zhoupeng"];
+        function fun4(a,b,c) {
+            console.log(a,b,c);
+        }
+        fun4(arr[0],arr[1],arr[2]);
+
+        // apply
+        fun4.apply(null,arr);//如果不改变this指向，第一个参数为null
+
+        fun4(...arr);//这种方式是以扩展参数映射方式传递，他能很好的映射那个参数
+    </script>
+</body>
+</html>

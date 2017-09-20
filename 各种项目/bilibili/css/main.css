@@ -1,0 +1,288 @@
+html,
+body,
+p,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: #f4f4f4;
+}
+ul,
+li {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: normal;
+}
+.clear-top::before,
+.clear-top:before {
+  content: "";
+  display: block;
+  overflow: hidden;
+}
+.clear-float::after,
+.clear-float:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+a {
+  text-decoration: none;
+  color: #757575;
+}
+.top {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background: white;
+}
+.headerDiv-position {
+  float: right;
+  margin-right: 20px;
+}
+header {
+  height: 50px;
+  padding: 10px 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+header .logo {
+  float: left;
+}
+header .logo img {
+  width: 57px;
+  height: 25px;
+  margin-left: 15px;
+}
+header .search {
+  float: right;
+  margin-right: 20px;
+}
+header .search a {
+  color: #ccc;
+}
+header .search a i {
+  font-size: 25px;
+  font-weight: 200;
+}
+header .avatar {
+  float: right;
+  margin-right: 20px;
+}
+header .avatar img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+header .download {
+  float: right;
+  margin-right: 10px;
+}
+header .download a {
+  display: block;
+  padding: 3px;
+  border-radius: 5px;
+  background: #fb7299;
+  color: white;
+}
+nav {
+  position: relative;
+  height: 40px;
+  padding: 0 30px;
+}
+nav ul {
+  height: 35px;
+  overflow: hidden;
+}
+nav ul li {
+  float: left;
+  margin-right: 25px;
+}
+nav ul li a {
+  display: block;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 600;
+}
+nav ul .current {
+  border-bottom: 2px solid #fb7299;
+}
+nav ul .current a {
+  color: #fb7299;
+}
+nav #downBtn {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  padding: 5px;
+}
+nav #downBtn i {
+  font-size: 25px;
+  color: #ccc;
+}
+.em-display {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+.banner {
+  margin-top: 90px;
+}
+.banner .banner-box {
+  height: 115px;
+}
+.banner .banner-box .swiper-slide:nth-child(1) em,
+.banner .banner-box .swiper-slide:nth-child(6) em {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url("../images/banner1.jpg");
+}
+.banner .banner-box .swiper-slide:nth-child(2) em,
+.banner .banner-box .swiper-slide:nth-child(7) em {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url("../images/banner2.jpg");
+}
+.banner .banner-box .swiper-slide:nth-child(3) em {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url("../images/banner3.jpg");
+}
+.banner .banner-box .swiper-slide:nth-child(4) em {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url("../images/banner4.jpg");
+}
+.banner .banner-box .swiper-slide:nth-child(5) em {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url("../images/banner5.jpg");
+}
+section {
+  margin: 0px 15px;
+}
+section .action-box {
+  margin: 20px 0;
+  background: #f4f4f4;
+}
+section .action-box .action-title .h-middle {
+  display: inline-block;
+  vertical-align: middle;
+}
+section .action-box .action-title .left-title {
+  float: left;
+}
+section .action-box .action-title .left-title i {
+  vertical-align: middle;
+  margin-right: 5px;
+  color: #fb7299;
+}
+section .action-box .action-title .left-title h3 {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: 500;
+}
+section .action-box .action-title .right-title {
+  float: right;
+}
+section .action-box .action-title .right-title i {
+  vertical-align: middle;
+}
+section .action-box .action-title .right-title i.fa-signal {
+  color: #ffa726;
+}
+section .action-box .action-title .right-title h4 {
+  display: inline-block;
+  vertical-align: middle;
+  color: #ffa726;
+  margin: 0 5px;
+}
+section .action-box .action-title .right-title i.fa-angle-right {
+  color: #ccc;
+  font-size: 20px;
+}
+section .action-box .action-item {
+  width: 100%;
+  margin-top: 20px;
+}
+section .action-box .action-item .action-img-box {
+  position: relative;
+  width: 48%;
+  height: 115px;
+  border-radius: 10px;
+  color: white;
+}
+section .action-box .action-item .action-img-box:nth-child(2n-1) {
+  float: left;
+}
+section .action-box .action-item .action-img-box:nth-child(2n) {
+  float: right;
+}
+section .action-box .action-item .action-img-box .bottom-icon-position {
+  position: absolute;
+  bottom: 5px;
+}
+section .action-box .action-item .action-img-box .left-play {
+  position: absolute;
+  bottom: 5px;
+  left: 15px;
+}
+section .action-box .action-item .action-img-box .right-comment {
+  position: absolute;
+  bottom: 5px;
+  right: 10%;
+}
+section .action-box .action-item .action-img-box:nth-child(1) em {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  border-radius: 10px;
+  background-image: url("../images/action1.png");
+}
+section .action-box .action-item .action-img-box:nth-child(2) em {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  border-radius: 10px;
+  background-image: url("../images/action2.png");
+}
+section .action-box .action-item .action-img-box:nth-child(3) em {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  border-radius: 10px;
+  background-image: url("../images/action3.png");
+}
+section .action-box .action-item .action-img-box:nth-child(4) em {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  border-radius: 10px;
+  background-image: url("../images/action4.png");
+}

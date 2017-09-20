@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>解构赋值</title>
+    <script>
+        var {a,b} = {a:"zhoupeng",b:"ttyp"};
+
+        // var obj = {a:"zhoupeng",b:"ttyp"};
+        // var a = obj.a;
+        // var b = obj.b;
+        console.log(a,b);
+
+
+        function fun(){
+            return {name:"zp"};
+        }
+        var {name} = fun();
+        console.log(name);
+
+
+        var [name,age] = ["周鹏",22];
+        console.log(name,age);
+
+        var [a,b,c,d]=["东","南","西","北"];
+        console.log(a,b,c,d);
+
+        console.log([a,b,c,d]);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

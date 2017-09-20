@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>es6</title>
+    <style>
+        li{
+            list-style: none;
+            width:300px;
+            height: 100px;
+            background:gold;     
+        }
+        li p{
+            width: 100px;
+            height:30px;
+            background:skyblue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <ul id="people"></ul>
+    <script>    
+        var obj = {
+            "name":"周鹏",
+            "age":22
+        }
+
+        var str = `<li>
+                        <p>${obj.name}</p>
+                        <p>${obj.age}</p>
+                    </li>`;
+
+        document.getElementById("people").innerHTML = str;
+
+        // for(let i=0;i<10;i++){
+        //     console.log(i);
+        // }
+        // console.log(i);
+
+        for(var i=0;i<10;i++){
+            console.log(i);
+        }
+        console.log(i);
+    </script>   
+</body>
+</html>

@@ -14,15 +14,7 @@
 由于是基于良仓项目，bootstrap，以及网站模板进行开发，再由两人协同共同开发，相对速度较快一点。
 
 
-## 1.任务分配
-
-我主要负责的部分有:
-
-登录页(login.html)，注册页(reg.html)，分类页(list.html)，订单详情页(detail.html)以及支付页(pay.html)。
-
-### （1）登录页面
-
-## 2.使用的框架，插件以及库
+## 1.使用的框架，插件以及库
 1. [bootstrap](http://www.bootcss.com/) 
 2. [layer](http://layer.layui.com/)
 3. [mo.js](http://mojs.io/tutorials/easing/path-easing/)
@@ -33,5 +25,12 @@
 - 最后用到的一个动画库，[mo.js](http://mojs.io/tutorials/easing/path-easing/),这是一个强大的js动画库，但是由于中文文档有限，需要查看英文文档，但是其中有很多实例，相对也能看懂上手，主要用到这个添加了一个点赞特效，分类页面的商品点赞特效
 
 
+## 2.任务分配
+
+我主要负责的部分有:
+
+登录页(login.html)，注册页(reg.html)，分类页(list.html)，订单详情页(detail.html)以及支付页(pay.html)。
+
+### （1）登录页面
 
 
