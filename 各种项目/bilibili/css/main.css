@@ -25,6 +25,10 @@ h4,
 h5 {
   font-weight: normal;
 }
+a {
+  text-decoration: none;
+  color: #757575;
+}
 .clear-top::before,
 .clear-top:before {
   content: "";
@@ -37,9 +41,9 @@ h5 {
   display: block;
   clear: both;
 }
-a {
-  text-decoration: none;
-  color: #757575;
+.border-box {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 .top {
   position: fixed;
@@ -101,25 +105,34 @@ nav {
   height: 40px;
   padding: 0 30px;
 }
-nav ul {
-  height: 35px;
-  overflow: hidden;
-}
-nav ul li {
+nav .nav-li {
   float: left;
-  margin-right: 25px;
+  margin-right: 18px;
 }
-nav ul li a {
+nav .nav-li a {
   display: block;
   padding: 5px;
   font-size: 14px;
-  font-weight: 600;
 }
-nav ul .current {
+nav .current {
+  margin-top: -2px;
   border-bottom: 2px solid #fb7299;
 }
-nav ul .current a {
+nav .current a {
   color: #fb7299;
+}
+nav .main-nav {
+  height: 35px;
+  overflow: hidden;
+}
+nav .main-nav li {
+  float: left;
+  margin-right: 18px;
+}
+nav .main-nav li a {
+  display: block;
+  padding: 5px;
+  font-size: 14px;
 }
 nav #downBtn {
   position: absolute;
@@ -131,6 +144,33 @@ nav #downBtn i {
   font-size: 25px;
   color: #ccc;
 }
+nav .down-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  padding: 15px 15px 30px;
+  background: white;
+}
+nav .down-nav li {
+  float: left;
+  margin-right: 18px;
+  line-height: 27px;
+}
+nav .down-nav li a {
+  display: block;
+  padding: 5px;
+  font-size: 14px;
+}
+nav .down-nav #upBtn {
+  position: absolute;
+  right: 50%;
+  bottom: 5px;
+}
+nav .down-nav #upBtn i {
+  font-size: 30px;
+  color: #ccc;
+}
 .em-display {
   display: block;
   width: 100%;
@@ -138,7 +178,7 @@ nav #downBtn i {
   background-size: cover;
 }
 .banner {
-  margin-top: 90px;
+  margin: 90px 0 20px;
 }
 .banner .banner-box {
   height: 115px;
@@ -184,7 +224,6 @@ section {
   margin: 0px 15px;
 }
 section .action-box {
-  margin: 20px 0;
   background: #f4f4f4;
 }
 section .action-box .action-title .h-middle {
@@ -199,7 +238,7 @@ section .action-box .action-title .left-title i {
   margin-right: 5px;
   color: #fb7299;
 }
-section .action-box .action-title .left-title h3 {
+section .action-box .action-title .left-title h4 {
   display: inline-block;
   vertical-align: middle;
   font-weight: 500;
@@ -213,7 +252,7 @@ section .action-box .action-title .right-title i {
 section .action-box .action-title .right-title i.fa-signal {
   color: #ffa726;
 }
-section .action-box .action-title .right-title h4 {
+section .action-box .action-title .right-title h5 {
   display: inline-block;
   vertical-align: middle;
   color: #ffa726;
@@ -224,13 +263,13 @@ section .action-box .action-title .right-title i.fa-angle-right {
   font-size: 20px;
 }
 section .action-box .action-item {
-  width: 100%;
   margin-top: 20px;
 }
 section .action-box .action-item .action-img-box {
   position: relative;
   width: 48%;
   height: 115px;
+  margin-bottom: 55px;
   border-radius: 10px;
   color: white;
 }
@@ -285,4 +324,22 @@ section .action-box .action-item .action-img-box:nth-child(4) em {
   background-size: cover;
   border-radius: 10px;
   background-image: url("../images/action4.png");
+}
+section .action-box .action-item .action-img-box .desc {
+  position: absolute;
+  bottom: -45px;
+  left: 0;
+}
+section .action-box .action-item .action-img-box .desc a {
+  font-size: 10px;
+  color: black;
+}
+footer {
+  margin: 30px 0 20px;
+}
+footer p {
+  line-height: 30px;
+  text-align: center;
+  color: #ccc;
+  font-size: 14px;
 }

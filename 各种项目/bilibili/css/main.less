@@ -17,6 +17,10 @@ ul,li{
 h1,h2,h3,h4,h5{
     font-weight: normal;
 }
+a{
+    text-decoration: none;
+    color:@color-a;
+}
 .clear-top{
     &::before,&:before{
         content:"";
@@ -31,10 +35,12 @@ h1,h2,h3,h4,h5{
         clear: both;
     }
 }
-a{
-    text-decoration: none;
-    color:@color-a;
+.border-box{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
+
+
 
 
 .top{
@@ -50,8 +56,7 @@ a{
 header{
     height:50px;
     padding:10px 0;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    .border-box;
     .logo{
         float:left;
         img{
@@ -95,27 +100,31 @@ nav{
     position: relative;
     height: 40px;
     padding:0 30px;
-    // margin-right:35px;
-    ul{
+    .nav-li{
+        float:left;
+        margin-right:18px;
+        a{
+            display: block;
+            padding:5px;
+            font-size:14px;
+
+        }
+    }
+    .current{
+        margin-top:-2px;
+        border-bottom:2px solid @color-main;
+        a{
+            color:@color-main;
+        }
+    }
+    .main-nav{
         // width:9999px;
         height: 35px;
         overflow: hidden;
         li{
-            float:left;
-            margin-right:25px;
-            a{
-                display: block;
-                padding:5px;
-                font-size:14px;
-                font-weight: 600;
-            }
+            .nav-li
         }
-        .current{
-            border-bottom:2px solid @color-main;
-            a{
-                color:@color-main;
-            }
-        }
+        
     }
     #downBtn{
         position: absolute;
@@ -127,7 +136,27 @@ nav{
             color:#ccc;
         }
     }
-    
+    .down-nav{
+        position: absolute;
+        top:0;
+        left:0;
+        display: none;
+        padding:15px 15px 30px;
+        background:white;
+        li{
+            .nav-li;
+            line-height:27px;
+        }
+        #upBtn{
+            position: absolute;
+            right:50%;
+            bottom:5px;
+            i{
+                font-size:30px;
+                color:#ccc;
+            }
+        }
+    }
 }
 
 
@@ -138,7 +167,7 @@ nav{
     background-size:cover;
 }
 .banner{
-    margin-top:90px;
+    margin:90px 0 20px;
     // background:@color-main;
     .banner-box{
         height:115px;
@@ -181,7 +210,6 @@ nav{
 section{
     margin:0px 15px;
     .action-box{
-        margin:20px 0;
         background:@color-body;
         .action-title{
             .h-middle{
@@ -196,7 +224,7 @@ section{
                     color: @color-main;
                    
                 }
-                h3{
+                h4{
                     .h-middle;
                     font-weight: 500;
                 }
@@ -209,7 +237,7 @@ section{
                 i.fa-signal{
                     color:#ffa726;
                 }
-                h4{
+                h5{
                     .h-middle;
                     color:#ffa726;
                     margin:0 5px;
@@ -221,13 +249,13 @@ section{
             }
         }
         .action-item{
-            width:100%;
             margin-top:20px;
             
             .action-img-box{
                 position: relative;
                 width:48%;
                 height:115px;
+                margin-bottom:55px;
                 border-radius: 10px;
                 color:white;
                 &:nth-child(2n-1){
@@ -277,7 +305,27 @@ section{
                         background-image:url("../images/action4.png");
                     }
                 }
+                .desc{
+                    position: absolute;
+                    bottom:-45px;
+                    left:0;
+                    a{
+                        font-size:10px;
+                        color:@color-black;
+                    }
+                }
             } 
+            
         }
+    }
+}
+
+footer{
+    margin:30px 0 20px;
+    p{
+        line-height: 30px;
+        text-align: center;
+        color:#ccc;
+        font-size:14px;
     }
 }

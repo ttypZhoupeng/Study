@@ -1,0 +1,38 @@
+.nav-li {
+  float: left;
+  margin-right: 18px;
+}
+.nav-li a {
+  display: block;
+  padding: 5px;
+  font-size: 14px;
+}
+.current {
+  margin-top: -2px;
+}
+.current a {
+  color: #fb7299;
+}
+.action-sect {
+  margin-top: 150px;
+}
+.recommend {
+  position: absolute;
+  top: 89px;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: #f9f9f9;
+}
+.recommend ul {
+  width: 999px;
+}
+.recommend li {
+  float: left;
+  margin-right: 18px;
+}
+.recommend li a {
+  display: block;
+  padding: 5px;
+  font-size: 14px;
+}
