@@ -54,6 +54,43 @@ console.log(Object.prototype.toString.call(arr) === [object,Array]);
 less在客户端处理，sass在服务器端处理
 换句话说，，less基于JavaScript，sass基于Ruby
 
+## URI URN URL的定义以及区别
+
+### 官方解释
+URI：统一资源标识符 Uniform Resource Identifier 是一个用于标识某一互联网资源名称的字符串
+
+URN: 统一资源名称  Uniform Resource Name  唯一标识一个实体的标识符
+
+URL: 统一资源定位符 Uniform Resource Locator 统一资源定位符是统一资源标志符的一个下种。统一资源标志符确定一个资源，而统一资源定位符不但确定一个资源，而且还表示出它在哪里。
+
+### 三者的关系
+
+![url,urn,uri](images/url.png);
+
+### 通俗的讲呢
+
+假如有这么一个人，这个人可以看做是URI，可以把URN看做是这个人的名字，URL则可以看做是这个人的住址
+但是人名是会有重复的，这不符合官方解释，唯一标识实体的标识符，所以又可以把URN看做是身份证号
+
+### 结合实例
+URI：
+http://bitpoetry.io/posts/hello.html#intro
+
+http://
+如何访问资源的方式
+
+bitpoetry.io/posts/hello.html
+资源放置的位置
+
+#intro
+就是资源
+
+URL：
+http://bitpoetry.io/posts/hello.html
+
+URN:
+bitpoetry.io/posts/hello.html#intro
+
 
 
 
