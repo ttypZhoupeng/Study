@@ -46,6 +46,7 @@ a{
 .top{
     position: fixed;
     top:0;
+    width:100%;
     z-index: 999;
     background:white;
 }
@@ -99,7 +100,8 @@ header{
 nav{
     position: relative;
     height: 40px;
-    padding:0 30px;
+    padding:0  30px;
+    overflow: hidden;
     .nav-li{
         float:left;
         margin-right:18px;
@@ -117,10 +119,12 @@ nav{
             color:@color-main;
         }
     }
+    // .swiper-slide{
+    //     width:999px;
+    // }
     .main-nav{
-        // width:9999px;
+        // width:999px;
         height: 35px;
-        overflow: hidden;
         li{
             .nav-li
         }
@@ -143,6 +147,7 @@ nav{
         display: none;
         padding:15px 15px 30px;
         background:white;
+        z-index: 100;
         li{
             .nav-li;
             line-height:27px;
@@ -156,6 +161,10 @@ nav{
                 color:#ccc;
             }
         }
+    }
+    #swiperNav{
+        z-index: 10;
+        // overflow: hidden;
     }
 }
 

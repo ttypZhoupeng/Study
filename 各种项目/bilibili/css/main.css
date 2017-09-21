@@ -48,6 +48,7 @@ a {
 .top {
   position: fixed;
   top: 0;
+  width: 100%;
   z-index: 999;
   background: white;
 }
@@ -103,7 +104,8 @@ header .download a {
 nav {
   position: relative;
   height: 40px;
-  padding: 0 30px;
+  padding: 0  30px;
+  overflow: hidden;
 }
 nav .nav-li {
   float: left;
@@ -123,7 +125,6 @@ nav .current a {
 }
 nav .main-nav {
   height: 35px;
-  overflow: hidden;
 }
 nav .main-nav li {
   float: left;
@@ -151,6 +152,7 @@ nav .down-nav {
   display: none;
   padding: 15px 15px 30px;
   background: white;
+  z-index: 100;
 }
 nav .down-nav li {
   float: left;
@@ -170,6 +172,9 @@ nav .down-nav #upBtn {
 nav .down-nav #upBtn i {
   font-size: 30px;
   color: #ccc;
+}
+nav #swiperNav {
+  z-index: 10;
 }
 .em-display {
   display: block;
