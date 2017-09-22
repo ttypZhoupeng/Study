@@ -12,6 +12,11 @@ db.once("open",function(callback){
     var kittySchema = mongoose.Schema({
         name:String
     })
+
+    // var ttyp = mongoose.Schema({
+    //     name:String,
+
+    // })
     // 类似在原型中添加方法，用的少，methods里面存储方法
     kittySchema.methods.speak = function(){
         var greeting = this.name ? 
@@ -43,4 +48,7 @@ db.once("open",function(callback){
         if(err) return console.error(err);
         console.log(kittens);
     })
+
+
+    kitten.
 })
