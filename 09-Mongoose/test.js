@@ -14,7 +14,7 @@ db.once("open",function(callback){
     })
 
     // var ttyp = mongoose.Schema({
-    //     name:String,     
+    //     name:String,
 
     // })
     // 类似在原型中添加方法，用的少，methods里面存储方法

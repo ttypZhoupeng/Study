@@ -590,3 +590,21 @@ footer .our_shop .title>span{
 .backTop a:hover{
     opacity: 0.3;
 }
+
+
+
+/* 修改，升级 */
+.top-fix{
+    position: fixed;
+    top:0;
+    right:0;
+    width:100%;
+    z-index: 1000;
+}
+header{
+    background:#fff;
+}
+#banner{
+    margin-top:135px;
+}
+
