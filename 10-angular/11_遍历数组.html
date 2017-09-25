@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>遍历数组</title>
+    
+</head>
+<body>
+    
+    <div ng-controller="Aaa">
+        <p>{{name}}</p>
+    </div>
+   
+
+    <script src="js/angular.min.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[]);
+        m1.controller("Aaa",function($scope){
+            $scope.name="zhoupeng";
+
+        })
+
+        var values = ['a','b','c'];
+        // var values = ['name','hello','age','20'];
+        angular.forEach(values,function(value,i){
+            console.log(value);
+            console.log(i);
+            // console.log(this);
+            this.push(value+i);
+            // console.log(arr);
+            
+        },values);
+        console.log(values);
+
+       
+    </script>
+</body>
+</html>

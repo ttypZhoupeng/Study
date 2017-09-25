@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			{{name}}
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope,$rootScope){
+				$scope.name = "路飞";
+			})
+			
+//			function show(){
+//				alert(this);
+//			}
+//			show(); //window
+//			angular.bind(document,show)();
+			
+//			function show(a,b){
+//				console.log(a);
+//				console.log(b);
+//			}
+//			angular.bind(document,show)(2,3);
+//			angular.bind(document,show,4,5)();
+//			angular.bind(document,show,6)(7);
+			
+			var obj = {name : "凯凯"};
+			var fun = function(age){
+				console.log("我的名字是"+ this.name +" 今天"+age);
+			}
+			angular.bind(obj,fun,"22岁")();
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			{{name}}
+		</div>
+		
+		<div id="oDiv">oDiv</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope,$rootScope){
+				$scope.name = "路飞";
+			})
+			
+			//angular.lowercase/uppercase  转换大写小写
+			console.log(angular.uppercase('hello'));//把小写转换大写
+			
+			var oDiv = document.querySelector("#oDiv");
+			
+			angular.element(oDiv).css("background","red");
+			
+			
+		</script>
+	</body>
+</html>
+

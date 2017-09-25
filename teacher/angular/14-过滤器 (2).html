@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			<!--{{name | currency:"￥":4 }}-->
+			<!--{{name | number:0 }}-->
+			<!--{{name | uppercase }}-->
+			<!--{{name | lowercase }}-->
+			<!--<pre>{{name | json }}</pre>-->
+			<!--<p>{{ name | limitTo:4}}</p>-->
+			<!--<p>{{ name | date : 'yyyy-MM-dd HH:dd:ss'}}-->
+			<!--<p>{{ name | orderBy : "color" : true}}</p>-->
+			<p>{{ name | filter : 'red' }}</p>
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope){
+//				$scope.name = "123123.12131";
+//				$scope.name = "ucai";
+//				$scope.name = {'name':'xiaoyang','age':22};
+//				$scope.name = ["a","b","c","d"];
+//				$scope.name = "hello";
+//				$scope.name = '128832363001';
+				$scope.name = [
+					{"color": "red","age": 22},
+					{"color": "green","age": 12},
+					{"color": "blue","age": 42},
+					{"color": "purple","age": 32}
+				];
+			})
+			
+// number:可以把数字转换千分符形式，默认是保留小数点后三位可以通过传参改成{{ name | number : 2}} :0是不保留
+		
+ // lowercase/uppercase：转换数据的大小写{{ name | uppercase }}小写转换大写   {{ name | lowercase }}大写转换小写 
+
+//currency:可以把数字转换金额形式，第一个参数是改变币种，第二个参数是保留位数
+
+//json：转换成json格式 一定要用<pre>标签：可以识别空格和换行。
+
+// limitTo：可以支持字符串和数组截取几位根据参数实现
+
+ // date:把一组数字转换成时间的格式   也有很多参数
+
+
+
+
+		</script>
+	</body>
+</html>

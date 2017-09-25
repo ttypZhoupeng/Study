@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基础格式</title>
+    
+</head>
+<body>
+    
+    <div ng-controller="Aaa">
+        <p>{{name}}</p>
+    </div>
+   
+
+    <script src="js/angular.min.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[]);
+        m1.controller("Aaa",function($scope){
+            $scope.name="zhoupeng";
+
+        })
+
+
+        var  a = 1;
+        var  b = 1;
+        console.log(angular.equals(a,b));
+
+        var a1 = [];
+        var b1 = [];
+        console.log(a1 == b1);
+        console.log(angular.equals(a1,b1));
+
+        var a2 = NaN;
+        var b2 = NaN;
+        console.log(a2 == b2);
+        console.log(angular.equals(a2,b2));
+
+
+        var obj = [{a:"澹台宇鹏"},{a:"周鹏"}];
+        
+
+    </script>
+</body>
+</html>

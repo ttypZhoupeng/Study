@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			{{name}}
+			<!--{{age}}-->
+			<div ng-controller="Bbb">
+				{{name}}
+				{{age}}
+			</div>
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope,$rootScope){
+			// 在m1之下绑定controller控制器，把相关的视图和控制器连接到一起
+				$scope.name = "路飞";
+//				$scope.age = 25;
+				$rootScope.age=19;
+			})
+			m1.controller('Bbb',function($scope){
+			// 在m1之下绑定controller控制器，把相关的视图和控制器连接到一起
+				$scope.name = "索隆";
+//				$scope.age = 22;
+			})
+			
+		</script>
+	</body>
+</html>

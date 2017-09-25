@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			<p>单价：<input type="text" ng-model="iphone.money"/></p>
+			<p>数量：<input type="text" ng-model="iphone.num"/></p>
+			<p>费用：{{ show() | currency:"￥"}}</p>
+			<p>运费：{{ iphone.fre | currency:"￥" }}</p>
+			<p>合计：{{ show()+iphone.fre | currency:"￥":2 }}</p>
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope,$rootScope){
+				$scope.iphone = {
+					money: 5,
+					num: 1,
+					fre: 10
+				};
+				$scope.show = function(){
+					return $scope.iphone.money * $scope.iphone.num; 
+				}
+				$scope.$watch($scope.show,function(newVal,oldVal){
+//					console.log((newVal));  //新值
+//					console.log((oldVal));	//旧值
+					$scope.iphone.fre = newVal >= 100 ? 0 : 10;
+				},true)
+			})
+		</script>
+	</body>
+</html>

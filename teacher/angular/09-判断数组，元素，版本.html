@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			{{name}}
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope,$rootScope){
+				$scope.name = "路飞";
+			})
+			
+			//angular.isArray()判断是否是数组
+			var a = [];
+			console.log(angular.isArray(a));
+			
+			
+			//angular.isElement  判断是否是元素
+			console.log(angular.isElement(document.body));
+			
+			//angular.version   判断当前angular的版本
+			console.log(angular.version);
+			
+		</script>
+	</body>
+</html>

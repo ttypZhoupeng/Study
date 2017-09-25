@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<div ng-controller="Aaa" ng-click="show()">-->
+		<div ng-controller="Aaa" ng-click="name='hi'">
+			{{name}}
+		</div>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope,$timeout){
+				$scope.name = "路飞";
+//				setTimeout(function(){
+//					console.log(1);
+//					$scope.name = "鹏飞";
+//				},2000);
+				$timeout(function(){
+					$scope.name = "鹏飞";
+				},2000)
+				$scope.show=function(){
+					$scope.name = "江盟";
+				}
+			})
+			
+		</script>
+	</body>
+</html>

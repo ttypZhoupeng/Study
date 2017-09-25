@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			{{name}}
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope,$rootScope){
+				$scope.name = "路飞";
+			})
+			
+			var a = { name: "boy"};
+			var b = { age: 20};
+			
+//			var c = angular.copy(a);
+//			console.log(c); //复制a的内容
+			
+//			var c = angular.copy(a,b);  //a的内容 覆盖了 b的内容
+//			console.log(a);  
+//			console.log(b);
+//			console.log(c);
+			
+			
+//			对象继承
+			var c = angular.extend(b,a);  //a把所有值 给了 b
+			console.log(a);  
+			console.log(b);
+			console.log(c);
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			{{name}}
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope,$rootScope){
+				$scope.name = "路飞";
+			})
+			
+			
+			//angular.equals      判断两个元素是否相等
+//			var a = 1;
+//			var b = 1;
+			
+//			var a = [1,2,3];
+//			var b = [1,2,3];
+			
+			var a = NaN;
+			var b = NaN;
+			console.log(angular.equals(a,b)); //会判断两个相同就是真，不同就是假
+//			在js这两个例子 都是不等的
+			
+//			angular.forEach  遍历
+//			var obj = ['name','hello','age','20'];
+//			angular.forEach(obj,function(value,index,arr){
+////				console.log(value);
+////				console.log(index);
+//				console.log(arr[index]);
+//			})
+			
+//			var obj = [{a:"路飞"},{a:"索隆"}];
+//			angular.forEach(obj,function(value,index,arr){
+//				console.log(value.a);
+//			})
+			
+			
+			//angular.fromJson/toJson 对字符串格式的json解析和对json字符串的转换
+			var arr =['name','hello','age','20'];
+			var str = angular.toJson(arr);
+			console.log(str);
+			
+//			var json = '{ "name":"zhangsan","password": "123456"}';
+			var json = '[{ "name":"zhangsan","password": "123456"},{ "name":"lisi","password": "654321"}]';
+			var obj = angular.fromJson(json);
+			console.log(obj);
+			console.log(obj[0].name);
+			console.log(obj[1].password);
+			
+			
+		</script>
+	</body>
+</html>

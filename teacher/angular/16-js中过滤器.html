@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			{{name}}
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',["$scope","$filter",function($scope,$filter){
+//				$scope.name = $filter('number')('123132.6789',4);
+				$scope.name = $filter('number')('123132.6789',2);
+//				$scope.name = $filter('lowercase')('UCAI');
+			}])
+		</script>
+	</body>
+</html>

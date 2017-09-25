@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基础格式</title>
+</head>
+<body>
+    <div ng-controller="Aaa">
+        <p>{{name}}</p>
+    </div>  
+
+    <script src="js/angular.min.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[]);
+        m1.controller("Aaa",function($scope){
+            $scope.name="zhoupeng";
+        })
+
+
+        var arr = [1,2,3];
+        console.log(angular.isArray(arr));
+
+        var date = new Date();
+        console.log(angular.isDate(date));
+
+        var arr1
+        console.log(angular.isDefined(arr1));
+        console.log(angular.isUndefined(arr1));
+
+        function fun(){
+            console.log(111);
+        }
+        console.log(angular.isFunction(fun));
+
+        var num = 1;
+        console.log(angular.isNumber(num));
+
+        var obj = {
+            "name":"zhoupeng ",
+        }
+        console.log(angular.isObject(obj));
+
+        var string = "123";
+        console.log(angular.isString(string));
+
+        console.log(document.body);
+        console.log(angular.isElement(document.body));
+        
+        // 查看angular版本
+        console.log(angular.version);
+
+
+        
+
+
+
+
+
+
+    </script>
+</body>
+</html>
