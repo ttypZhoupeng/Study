@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基础格式</title>
+    
+</head>
+<body>
+    
+    <div ng-controller="Aaa">
+        <!-- <p>{{name}}</p> -->
+        <p ng-bind="name"></p>
+        <!-- 可以增加用户体验，在网络延迟首不会显示表达式 -->
+        <!-- ng-bind不支持多个表达式的解析 -->
+        <!-- <p gn-bind="name name"></p> -->
+        <!-- ng-bind-template支持多个表达式的解析 -->        
+        <p ng-bind-template="{{name}},{{name}}"></p>
+    </div>
+   
+
+    <script src="js/angular.min.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[]);
+        m1.controller("Aaa",function($scope){
+            $scope.name="zhoupeng";
+
+        })
+        alert(1);
+    </script>
+</body>
+</html>

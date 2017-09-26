@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.blue{
+				color: blue;
+			}
+			.orange{
+				background: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			<!--<p ng-class="{blue:true,orange:true}">{{ name }}</p>-->
+			<!--用class改变样式-->
+			<!--<p ng-class="{{ class1 }}">{{ name }}</p>-->
+			
+			<!--行内样式-->
+			<!--<p ng-style="{background:'yellowgreen',color:'red'}">{{ name }}</p>-->
+			
+			<!--<p ng-style="{{ style1 }}">{{ name }}</p>-->
+			
+			<a ng-href="{{ url1 }}">百度</a>
+			
+			<img ng-src="{{ url2 }}" alt="" />
+			
+			<a ng-href="{{ url1 }}" ng-attr-title="{{ name }}">百度</a>
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope){
+				$scope.name = "路飞";
+				$scope.class1 = {blue:true,orange:true};
+				$scope.style1 = {background:'#006699',color:'white'}
+				$scope.url1 = "http://www.baidu.com";
+				$scope.url2 = "img/1.gif";
+				
+			})
+		</script>
+	</body>
+</html>

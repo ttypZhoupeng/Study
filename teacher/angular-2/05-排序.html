@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			<input type="text" ng-model="searchVal"/><input type="button" value="查询" ng-click="dataSearch()"/>
+			<table border="1">
+				<tr>
+					<td ng-click="dataSort('name')">姓名</td>
+					<td ng-click="dataSort('age')">年龄</td>
+				</tr>
+				<tr ng-repeat='data in dataList'>
+					<td>{{ data.name }}</td>
+					<td>{{ data.age }}</td>
+				</tr>
+			</table>
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope,$filter){
+				var data1 = [
+					{name: '江盟',age: 20},
+					{name: '小明',age: 30},
+					{name: '凯凯',age: 40},
+					{name: '小石',age: 10}
+				];
+				
+				
+				$scope.dataList = data1;
+				
+				$scope.dataSort = function(arg){
+//					$scope.dataList = $filter('orderBy')($scope.dataList,arg,true);
+//					console.log(arguments.callee['dataSort'+arg]);  //第一次是未定义
+//					console.log(arguments);
+
+					arguments.callee['dataSort'+arg] = !arguments.callee['dataSort'+arg];
+//					console.log(arguments.callee['dataSort'+arg]);  //未定义是false取反后是true
+					
+					$scope.dataList = $filter('orderBy')($scope.dataList,arg,arguments.callee['dataSort'+arg]);
+				}
+				$scope.dataSearch = function(){
+					$scope.dataList = $filter('filter')(data1,$scope.searchVal);
+				}
+			})
+		</script>
+	</body>
+</html>

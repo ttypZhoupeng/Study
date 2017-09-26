@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表格排序扩展</title>
+    <link rel="stylesheet" href="css/19.css">
+    <link rel="stylesheet" href="css/button.css">
+</head>
+<body>
+    <div class="main">
+        <div ng-controller="Aaa" class="table-box" >
+            <input type="text" ng-model="searchVal" id="textInput" ng-keydown="todoSomething($event)" >
+            <a href="javascript:;" ng-click="dataSearch()"class="button button-glow button-rounded button-caution">查询</a>
+            <table border="1">
+                <tr>
+                    <th ng-click="dataSort('id')">编号</th>
+                    <th  ng-click="dataSort('name')">花名</th>
+                    <th  ng-click="dataSort('price')">单价</th>
+                    <th  ng-click="dataSort('num')">数量</th>
+                    <th  ng-click="dataSort('place')">产地</th>
+                </tr>
+                <tr class="{{$even?'even':'odd'}}" ng-repeat="data in dataList">
+                    <td>{{ data.id }}</td>
+                    <td>{{ data.name }}</td>
+                    <td>￥{{ data.price }}</td>
+                    <td>{{ data.num }}</td>
+                    <td>{{ data.place }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+   
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/test.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[]);
+        m1.controller("Aaa",["$scope","$filter",function($scope,$filter){
+            $scope.data1 = [
+                {id:"01",name:"玫瑰花",price:"100.00",num:10,place:"杭州"},
+                {id:"02",name:"郁金香",price:"123.00",num:2,place:"北京"},
+                {id:"03",name:"百合花",price:"75.00",num:3,place:"西安"},
+                {id:"04",name:"大花蕙兰",price:"59.00",num:12,place:"长沙"},
+                {id:"05",name:"秋海棠",price:"99.00",num:45,place:"南昌"},
+                {id:"06",name:"夕阳杜鹃",price:"120.00",num:54,place:"上海"},
+                {id:"07",name:"天堂鸟",price:"89.00",num:325,place:"宁波"},
+                {id:"08",name:"万代兰",price:"40.00",num:123,place:"杭州"},
+                {id:"09",name:"三色堇",price:"94.00",num:123,place:"吉安"},
+                {id:"10",name:"仙客来",price:"39.00",num:132,place:"杭州"},
+                {id:"11",name:"扶郎花",price:"90.00",num:45,place:"赣州"},
+                {id:"12",name:"荷包花",price:"20.00",num:36,place:"杭州"},
+            ];
+            $scope.dataList = $scope.data1;
+            $scope.dataSort = function(arg){
+                $scope.dataList = $filter("orderBy")($scope.dataList,arg);
+
+                //加入正向排序和逆向排序功能
+                arguments.callee['dataSort'+arg] = !arguments.callee['dataSort'+arg];
+                $scope.dataList = $filter('orderBy')($scope.dataList,arg,arguments.callee['dataSort'+arg]);
+            };
+            $scope.dataSearch = function(){
+                $scope.dataList = $filter("filter")($scope.data1,$scope.searchVal);
+            }
+            $scope.todoSomething=function($event){
+                if($event.keyCode==13){//回车
+                    $scope.dataSearch();
+                }
+            }
+            
+
+        }]);
+    </script>
+</body>
+</html>

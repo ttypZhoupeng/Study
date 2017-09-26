@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基础格式</title>
+    
+</head>
+<body>
+    
+    <div ng-controller="Aaa">
+        <input type="checkbox" ng-model="show">
+        
+        <!-- <div ng-show="show">{{ name }}</div> -->
+        <!--通过display 控制样式的显示、隐藏。true是显示，false隐藏-->
+        
+        <!-- <div ng-hide="show">{{name1}}</div> -->
+		<!--通过display 控制样式的显示、隐藏。跟ng-show相反-->
+    
+        <div ng-if="show">{{name1}}</div>
+		<!--通过添加和删除元素的方法实现操作，并不是改变样式-->
+    
+        <!-- <div ng-switch on="show">
+            <span ng-switch-default>默认显示的效果</span>
+            <span ng-switch-when="false">false切换后显示的效果</span> -->
+        </div>
+    </div>
+   
+
+    <script src="js/angular.min.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[]);
+        m1.controller("Aaa",function($scope){
+            $scope.name="zhoupeng";
+            $scope.name1 = "周鹏";
+            $scope.show = true;
+
+        })
+    </script>
+</body>
+</html>

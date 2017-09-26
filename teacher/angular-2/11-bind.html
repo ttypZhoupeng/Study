@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			<p>{{name}}</p>
+			<!--可以增加用户体验，在网络延迟时候不会显示表达式-->
+			<!--<p ng-bind="name"></p>-->
+			
+			<p>{{name}}，{{name}}</p>
+			<!--ng-bind方法不支持多个表达式的解析-->
+			<!--<p ng-bind="name name"></p>-->
+			
+			<!--ng-bind-template是支持多个表达式解析的-->
+			<p ng-bind-template="{{name}},{{name}}"></p>
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope){
+				$scope.name = "路飞";
+			})
+			alert(1);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			<input type="checkbox" ng-model="show"/>
+			
+			<details ng-open="show">
+			    <summary>今天天气很冷</summary>
+			    <p>谁开电扇</p>
+			</details>
+		</div>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope){
+				$scope.name = "路飞";
+				$scope.name1 = "索隆";
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			<input type="text" ng-model="myVal"/>
+			
+			<div ng-switch="myVal">
+				<div ng-switch-when="ucai">
+					<h1>优才</h1>
+					<p>欢迎你的到来~</p>
+				</div>
+				<div ng-switch-when="zq">
+					<h1>中秋佳节</h1>
+					<p>快放假了！~</p>
+				</div>
+				<div ng-switch-when="taobao">
+					<h1>淘宝</h1>
+					<p>十月一日有没有特价</p>
+				</div>
+			</div>
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope){
+				$scope.name = "路飞";
+			})
+		</script>
+	</body>
+</html>

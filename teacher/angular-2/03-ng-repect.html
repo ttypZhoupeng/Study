@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul ng-controller="Aaa">
+			<li ng-repeat="data in dataList">{{ data }}</li>
+		</ul>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope){
+				$scope.dataList = ["img","index","left"];
+			})
+		</script>
+	</body>
+</html>

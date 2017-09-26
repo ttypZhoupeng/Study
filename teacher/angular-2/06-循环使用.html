@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.red{
+				background: red;
+			}
+			.blue{
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			<ul>
+				<!--<li ng-repeat="data in dataList">{{ $index }}</li>-->
+				<!--$index : 得到相对应的索引号-->
+				<!--<li class="{{ $first ? 'red' : 'blue'; }}" ng-repeat="data in dataList">{{ $first }}</li>-->
+					<!--$first : 第一个为真true，其他的是假false-->
+				<!--<li ng-repeat="data in dataList">{{ $middle }}</li>-->
+					<!--$middle : 第一个和最后一个是假，中间所有为真-->
+				<!--<li class="{{ $last ? 'red' : 'blue'; }}" ng-repeat="data in dataList">{{ $last }}</li>-->
+					<!--$last : 最后一个为真true，其他的是假false-->	
+				<!--<li class="{{ $odd ? 'red' : 'blue'; }}" ng-repeat="data in dataList">{{ $odd }}</li>-->
+					<!--$odd : 偶数行是真，奇数行是假-->
+				<!--<li class="{{ $even ? 'red' : 'blue'; }}" ng-repeat="data in dataList">{{ $even }}</li>-->
+					<!--$even : 偶数行是假，奇数行是真-->
+					
+				<!--ng-repeat-start  开始循环
+					内容
+				ng-repeat-end    结束循环-->
+				
+				<span ng-repeat-start="data in dataList">开始:{{data}}</span>
+				<p>{{data}}</p>
+				<div ng-repeat-end>结束:{{data}}</div>
+			</ul>
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope){
+				$scope.dataList = ["html","css","js","jq","angular"];
+			})
+		</script>
+	</body>
+</html>

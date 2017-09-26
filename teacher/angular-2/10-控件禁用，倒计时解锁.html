@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			<input type="text" value="{{ name }}" ng-disabled="isdisabled"/>
+			<input type="button" value="{{ name }}" ng-disabled="isdisabled"/>
+			<input type="checkbox" ng-checked="isdisabled"/>
+				<!--当isdisabled为true时候，复选框是选中-->
+				<!--当isdisabled为false时候，复选框是未选中-->
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope,$interval){
+				
+				var num = 5;
+				
+				$scope.name = num +"秒";
+				
+				$scope.isdisabled = true;
+				
+				var timer = $interval(function(){
+					num--;
+					$scope.name = num +"秒";
+					
+					if(num == 0){
+						$interval.cancel(timer);
+						$scope.name = "可以正常使用了~";
+						$scope.isdisabled = false;
+					}
+				},1000);
+				//setInterval()  ==>需要搭配$scope.$apply()
+				//clearInterval（）在上面方法不适用
+			})
+		</script>
+	</body>
+</html>

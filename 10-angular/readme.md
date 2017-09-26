@@ -17,6 +17,8 @@
     - [6.3 $currency 过滤器](#63-currency-过滤器)
     - [6.4 $watch 监听](#64-watch-监听)
 - [7. angularJS的工具方法](#7-angularjs的工具方法)
+- [8.扩展知识](#8扩展知识)
+    - [8.1 依赖注入](#81-依赖注入)
 
 <!-- /TOC -->
 
@@ -102,6 +104,8 @@ ng-controller: 是控制器 是有作用域的
 监听相关数据变化，做出相应处理。
 接受第三个参数，前两个是必选的，第三个是可选的。
 $scope.$watch("iphone.money","function()")
+第一个是监听的对象，第二个是回调函数，第三个是true或false，深度监听，设置为深度监控，只要对象发生变化，那么监听就会触发,监听整体，例如购物车中监听iphone，无论num还是money改变都会触发回调函数
+
 
 ## 7. angularJS的工具方法
 angular.bind();-->更改this指向
@@ -143,6 +147,10 @@ angular.lowercase/uppercase 转换大写小写
 angular.element 可以使用jQ中的部分方法
 angular.element(oDiv).css('background','red')
 
+
+## 8.扩展知识
+
+### 8.1 依赖注入
 
 
 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			<!--<input type="text" value="今天的内容还是比较难的" ng-cut="cut='true'"/>{{cut}}-->
+				<!--进行剪切动作后触发条件-->
+			<!--<input type="text" value="今天的内容还是比较难的" ng-copy="copy='true'"/>{{copy}}-->
+				<!--进行复制动作后触发条件-->
+			<input type="text" value="今天的内容还是比较难的" ng-paste="paste='true'"/>{{paste}}
+				<!--进行粘贴动作后触发条件-->
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope){
+				$scope.name = "路飞";
+			})
+		</script>
+	</body>
+</html>

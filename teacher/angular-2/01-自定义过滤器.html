@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			{{name | firstUp : 4 }}
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			
+			m1.filter("firstUp",function(){
+				return function(str,num){
+//					console.log(str);  //可以得到要改变的内容
+					//在自定义方法名称后面 ：传参的值
+//					console.log(num);
+					
+//					return str.charAt(0).toUpperCase()+str.substring(1);
+					return str.charAt(0).toUpperCase()+str.substring(1,5)+str.charAt(5).toUpperCase()+str.substring(6);
+				}
+			})
+			
+			m1.controller('Aaa',function($scope){
+//				$scope.name = "jiangmeng";
+//				$scope.name = "zhangxue";
+//				$scope.name = "ucai";
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			{{ name }}
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			
+			m1.filter("firstUp",function(){
+				return function(str,num){
+					
+					return str.charAt(0).toUpperCase()+str.substring(1);
+				}
+			})
+			
+			m1.controller('Aaa',function($scope,$filter){
+				$scope.name =$filter('firstUp')('hello');
+			})
+		</script>
+	</body>
+</html>
