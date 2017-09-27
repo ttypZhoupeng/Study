@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			<!--{updateOn:'blur'}规则指定事件发生后绑定数据-->
+			<!--{debounce:2000} 延迟2000毫秒改变数据局-->
+			<input type="text" ng-model="name" ng-model-options="{debounce:2000}"/>
+			{{name}}
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope){
+				$scope.name = "路飞";
+			})
+		</script>
+	</body>
+</html>

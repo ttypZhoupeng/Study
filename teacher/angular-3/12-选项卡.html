@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.oDiv div{
+				display: none;
+				width: 200px;
+				height: 200px;
+				border: 2px solid purple;
+			} 
+			.red{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<my-hi></my-hi>
+		<!--<div class="oDiv">
+			<span class="red">图片</span>
+			<span>新闻</span>
+			<span>汽车</span>
+			<div style="display:block">图片图片图片图片</div>
+			<div>新闻新闻新闻新闻</div>
+			<div>汽车汽车汽车汽车</div>
+		</div>-->
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			
+			m1.directive("myHi",function(){
+				return {
+					restrict: "E",
+					replace: true,
+//					template: '<div class="oDiv">\
+//								<span class="red">图片</span>\
+//								<span>新闻</span>\
+//								<span>汽车</span>\
+//								<div style="display:block">图片图片图片图片</div>\
+//								<div>新闻新闻新闻新闻</div>\
+//								<div>汽车汽车汽车汽车</div>\
+//							</div>'
+//							不能换行所以需要加上\来连接
+					templateUrl: 'temp2.html'
+				}
+			})
+			
+			m1.controller('Aaa',function($scope){
+				$scope.name = "路飞";
+			})
+		</script>
+	</body>
+</html>

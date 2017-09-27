@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.red{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+			.purple{
+				width: 100px;
+				height: 100px;
+				background: purple;
+			}
+			.blue{
+				width: 100px;
+				height: 100px;
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			<select ng-options="(color.name+'内容') for color in colors" ng-model="lf">
+				<option value="">---请选择---</option>
+			</select>
+			<p>{{ lf.name }}</p>
+			<div class="{{lf.name}}"></div>
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope){
+				$scope.colors =[
+					{name:'red'},
+					{name:'purple'},
+					{name:'blue'}
+				];
+			})
+		</script>
+	</body>
+</html>

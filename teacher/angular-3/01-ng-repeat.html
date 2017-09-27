@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<div ng-controller="Aaa" ng-init="name='hi'">
+		<!--<div ng-controller="Aaa" ng-init="name='hi'"> 相当于$scope.name =hi-->
+			<!--{{name}}
+		</div>-->
+		
+		
+		<!--<div ng-controller="Aaa">
+			<div ng-repeat="arr1 in arr">
+				<p>{{arr1}}</p>
+				
+				<div ng-repeat="arr2 in arr1">
+					遍历出数组每个值
+				<p>{{arr2}}</p>
+			</div>
+			</div>
+			
+			
+		</div>-->
+		
+		<div ng-controller="Aaa">
+			<div ng-repeat="arr1 in arr" ng-init="arr1Index=$index">
+				{{arr1}}{{arr1Index}}
+				<div ng-repeat="arr2 in arr1" ng-init="arr2Index=$index">
+					<!--{{arr2Index}}-->
+				<p>{{arr2}}:{{arr1Index}}{{arr2Index}}</p>
+			</div>
+			</div>
+			
+			
+		</div>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope){
+//				$scope.name = "路飞";
+				$scope.arr = [ ["aaa","bbb"],["ccc","ddd"] ];
+				
+			})
+		</script>
+	</body>
+</html>

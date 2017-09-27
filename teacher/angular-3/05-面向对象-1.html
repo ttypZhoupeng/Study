@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa as a1">
+			<!--通过as 实例化-->
+			<p>{{a1.text}}:{{ a1.show() }}</p>
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',['$scope',FnAaa]);
+			
+			function FnAaa($scope){
+				
+			}
+			FnAaa.prototype.num='123';
+			FnAaa.prototype.text='hello';
+			FnAaa.prototype.show=function(){
+				return 'angular';
+			};
+		</script>
+	</body>
+</html>
