@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			<input type="text" ng-model="name"/>
+			<p>父级：{{name}}</p>
+			
+			<my-hi></my-hi>
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			
+			m1.directive("myHi",function(){
+				return{
+					restrict:"E",
+					replace:true,
+					scope:{},
+					template:'<div>{{name}}<p><input type="text" ng-model="name"/></p></div>'
+				};
+			})
+			
+			m1.controller('Aaa',function($scope){
+				$scope.name = "路飞";
+			})
+		</script>
+	</body>
+</html>

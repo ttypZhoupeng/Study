@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table ng-controller="Aaa" border="1">
+			<tr>
+				<th>id</th>
+				<th>名称</th>
+				<th>价格</th>
+			</tr>
+			<tr ng-repeat="data in dataList">
+				<td>{{data.goods_id}}</td>
+				<td>{{data.goods_name}}</td>
+				<td>{{data.price}}</td>
+			</tr>
+		</table>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope,$http){
+//				$scope.dataList = [
+//				{
+//					"goods_id" : "1111",
+//					"goods_name" : "商品1",
+//					"price" : "1000"
+//				},
+//				{
+//					"goods_id" : "2222",
+//					"goods_name" : "商品2",
+//					"price" : "2000"
+//				}
+//				];
+				
+//				$http({
+//					method: "GET",
+//					//GET POST JSONP
+//					url: "http://h6.duchengjiu.top/shop/api_goods.php"
+//				}).success(function(data,state,headers,config){
+//					console.log(data);
+//					console.log(state);
+//					console.log(headers);
+//					console.log(config);
+//					//data:数,state：状态,headers：头部信息,config：配置
+//				}).error(function(){
+//					console.log("出事了~");
+//				})
+				
+//				$http.get("http://h6.duchengjiu.top/shop/api_goods.php").success(function(data,state,headers,config){
+//					console.log(data);
+//				})
+
+				$http({
+				    method: 'GET',
+				    url: 'http://h6.duchengjiu.top/shop/api_goods.php'
+				}).then(function successCallback(response) {
+				        // 请求成功执行代码
+				        console.log(response);
+				        $scope.dataList = response.data.data;
+				    }, function errorCallback(response) {
+				        // 请求失败执行代码
+				        console.log("出事了~");
+				});
+			})
+		</script>
+	</body>
+</html>

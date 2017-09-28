@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{padding: 0;margin: 0;}
+			#parent div{
+				width:100%;
+				height: 600px;
+				background: skyblue;
+				margin-bottom: 30px;
+			}
+			#parent ul{
+				position: fixed;
+				width: 200px;
+				top: 0;
+				right: 0;
+				list-style: none;
+				border: 2px solid brown;
+			}
+			#parent ul li{
+				margin-bottom: 10px;
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="parent" ng-controller="Aaa">
+			<ul>
+				<li ng-repeat="id in [1,2,3,4,5]" ng-click="change('div'+id)">{{id}}要跳转的第{{id}}个div</li>
+			</ul>
+			<div ng-repeat="id in [1,2,3,4,5]" ng-attr-id="div{{id}}">我是第{{id}}个div的内容</div>
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope,$location,$anchorScroll){
+				$scope.change = function(id){
+//					console.log(id);
+					$location.hash(id);
+					//设置哈希值，
+					$anchorScroll();
+					//不写这个会出现小bug
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			{{name}}
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope,$location){
+//				var a = $location.absUrl();
+				
+//				$location.absUrl() : 编码后的绝对定制
+				
+//				$location.path('aaa/bbb/ccc')
+//				var a = $location.path();
+				//配合路由使用，改变网址路径。有历史记录
+				
+//				$location.path('aaa/bbb').replace();
+//				replace()可以替换保留,历史路径方式,这样就没有历史路径了
+//				
+
+//				$location.hash('hi');
+//				var a = $location.hash();
+//				$location.hash();可以得到相应的哈希值
+
+//				$location.search({"name":"boy"});
+//				var a = $location.search();
+				//可以得到相应的search
+				
+//				var a = $location.url();
+				//得到一个并不是绝对路径的地址
+				
+//				var a = $location.host();
+//				返回url中的主机路径
+				
+//				var a = $location.port();
+//				端口
+
+				var a = $location.protocol();
+//				协议
+				console.log(a);
+
+			})
+		</script>
+	</body>
+</html>

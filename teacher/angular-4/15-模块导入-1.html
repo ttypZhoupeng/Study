@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			{{name}}
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/service.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m2 = angular.module('myApp',['myModule']);
+			
+			m2.controller('Aaa',function($scope,mySecvics){
+				
+				console.log(mySecvics.show());
+				
+			})
+		</script>
+	</body>
+</html>

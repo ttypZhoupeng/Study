@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			{{name}}
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			
+			m1.factory("myNum",function(){
+				return function(num1,num2){
+					return Math.random()*(num2-num1) + num1;
+				}
+			})
+			//m1.factory()：自定义服务，接受两个参数，第一个是名称，第二个是回调
+			//自定义服务的名称不要以$,$开头的是angular内部的服务
+			m1.controller('Aaa',function($scope,myNum){
+				
+				console.log(myNum(3,8));
+				console.log(myNum(3,8));
+				console.log(myNum(3,8));
+				
+			})
+		</script>
+	</body>
+</html>

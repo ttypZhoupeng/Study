@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.oDiv{
+				position: absolute;
+				height: 100px;
+				width: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			<div class="oDiv" id="oDiv" my-run>oDiv</div>
+			<div class="oDiv"  my-run>oDiv1</div>
+		</div>
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			
+			m1.directive("myRun",function(){
+				return{
+					restrict:"A",
+					//A是属性的类型定义
+					link : function(scope,element,attr){
+//						console.log(element);
+//						link阶段主要是对元素绑定scope数据和进行事件绑定
+						//要拖拽的元素
+						element.on('mousedown',function(e){
+							var This = this;
+//							console.log(e.pageX,$(this).offset().left)
+							divX = e.pageX - $(this).offset().left;
+							divY = e.pageY - $(this).offset().top;
+							
+							console.log(divX,divY)
+							$(document).on('mousemove',function(e){
+								$(This).css('left',e.pageX-divX);
+								$(This).css('top',e.pageY-divY);
+							})
+							$(document).on('mouseup',function(e){
+								$(document).off();
+							})
+							return false;
+						})
+					}
+				}
+			})
+			
+			m1.controller('Aaa',function($scope){
+			})
+		</script>
+	</body>
+</html>

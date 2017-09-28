@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope,$q){
+				var df = $q.defer();
+				
+				function show(){
+					setTimeout(function(){
+//						df.resolve();
+						//成功的
+						
+						df.reject();
+						//失败的
+						
+					},2000);
+					
+					return df.promise;
+					//返回一个promise对象
+				}
+				
+//				执行show调用then方法
+				show().then(function(){
+					alert("成功了");
+					//第一参数成功触发
+				},function(){
+					alert("失败了");
+					//第二个参数成功触发
+				})
+			})
+		</script>
+	</body>
+</html>
+

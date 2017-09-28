@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			
+			<my-hi>
+				<my-hello></my-hello>
+			</my-hi>
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			
+			m1.directive("myHi",function(){
+				return{
+					restrict:"E",
+					replace:true,
+					transclude:true,
+					//当我们配置项中transclude为true时，可以在模板中引用其他的自定义指令内容
+					template:'<div>hi 你好{{name}}<h1 ng-transclude></h1></div>'
+				};
+			})
+			m1.directive("myHello",function(){
+				return{
+					restrict:"E",
+					replace:true,
+					template:'<div>hello 你好</div>'
+				};
+			})
+			m1.controller('Aaa',function($scope){
+				$scope.name = "路飞";
+			})
+		</script>
+	</body>
+</html>

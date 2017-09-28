@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			{{name}}
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			m1.controller('Aaa',function($scope,$cacheFactory){
+				
+//				var cache = $cacheFactory("myCache");
+				var cache = $cacheFactory("myCache",{ capacity: 3 });
+				
+//				capacity:限制缓存数量(长度)
+				
+				cache.put('name',"江盟");
+				cache.put('age',"22");
+				cache.put('color',"skyblue");
+				cache.put('sex',"男");
+//				用put()方法缓存数据
+				
+				console.log(cache.info());
+//				用info()方法查看缓存数据
+
+				console.log(cache.get("name"));
+				console.log(cache.get("age"));
+				console.log(cache.get("color"));
+				console.log(cache.get("sex"));
+				
+				cache.removeAll();
+				//删除所有缓存数据
+				console.log(cache.info());
+				console.log(cache.get("sex"));
+			})
+			
+		</script>
+	</body>
+</html>
