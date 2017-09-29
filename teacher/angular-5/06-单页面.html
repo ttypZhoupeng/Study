@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.oDiv{
+				width: 700px;
+				height: 500px;
+				border: 2px solid purple;
+				margin-top: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			<!--<a href="#tp">图片</a>
+			<a href="#qc">汽车</a>
+			<a href="#bk">博客</a>-->
+			<a ng-click="$location.path('tp/111')">图片</a>
+			<a ng-click="$location.path('qc')" >汽车</a>
+			<a ng-click="$location.path('bk')">博客</a>
+			<div class="oDiv" ng-view></div>
+			<!--ng-view 切换的主体内容（路由展示的区域）-->
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',['ngRoute']);
+			
+			m1.config(['$routeProvider',function($routeProvider){
+				$routeProvider
+				.when('/tp/:num',{
+					template: '<p>{{name}}图片图片图片图片</p>',
+					controller:'Aaa'
+				})
+				.when('/qc',{
+					template: '<p>{{name}}汽车汽车汽车汽车</p>',
+					controller:'Bbb'
+				})
+				.when('/bk',{
+					template: '<p>{{name}}博客博客博客</p>',
+					controller:'Ccc'
+				})
+				.otherwise({
+					redirectTo: '/tp'
+//					otherwise:初始是和哈希值错误情况下的默认处理
+//					redirectTo:默认的哈希和模板
+				})
+				
+			}])
+			
+			m1.controller('Aaa',["$scope","$location",function($scope,$location){
+				$scope.name = "王云";
+				
+				$scope.$location = $location;
+			}])
+			m1.controller('Bbb',["$scope",function($scope){
+				$scope.name = "凯凯";
+			}])
+			m1.controller('Ccc',["$scope",function($scope){
+				$scope.name = "小明";
+			}])
+		</script>
+	</body>
+</html>

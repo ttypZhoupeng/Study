@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.oDiv{
+				width: 200px;
+				height: 200px;
+				background: red;
+				transition: all 10s;
+			}
+			.oDiv.ng-enter{
+				width: 0;
+				height: 0;
+				opacity: 0;
+			}
+			.oDiv.ng-enter-active{
+				width: 200px;
+				height: 200px;
+				opacity: 1;
+			}
+			.oDiv.ng-leave{
+				width: 200px;
+				height: 200px;
+				opacity: 1;
+			}
+			.oDiv.ng-leave-active{
+				width: 0;
+				height: 0;
+				opacity: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="Aaa" ng-init="show=true">
+			<button ng-click="show=!show">显示隐藏切换</button>
+			<div ng-if="show" class="oDiv"></div>
+			<!--支持的指令：if、repeat、view、swtich-->
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/angular-animate.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',['ngAnimate']);
+			m1.controller('Aaa',function($scope){
+				$scope.name = "路飞";
+			})
+		</script>
+	</body>
+</html>

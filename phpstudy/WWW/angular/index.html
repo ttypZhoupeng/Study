@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			<ul class="nav">
+				<li><a href="#indexView">首页</a></li>
+				<li><a href="#showView">商品展示</a></li>
+				<li><a href="#userView">我的</a></li>
+			</ul>
+			
+			<div class="oDiv" ng-view></div>
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',['ngRoute']);
+			
+			m1.config(['$routeProvider',function($routeProvider){
+				$routeProvider
+				.when('/indexView',{
+					templateUrl: 'views/indexView.html',
+					controller:'Aaa'
+				})
+				.when('/showView',{
+					templateUrl: 'views/showListView.html',
+					controller:'Bbb'
+				})
+				.when('/userView',{
+					templateUrl: 'views/userView.html',
+					controller:'Ccc'
+				})
+				.otherwise({
+					redirectTo: '/indexView'
+//					otherwise:初始是和哈希值错误情况下的默认处理
+//					redirectTo:默认的哈希和模板
+				})
+				
+			}])
+			
+			m1.controller('Aaa',["$scope",function($scope){
+				$scope.name = "王云";
+				
+			}])
+			m1.controller('Bbb',["$scope","$http",function($scope,$http){
+				$scope.name = "凯凯";
+				
+				$http({
+					method: "GET",
+					url: "http://h6.duchengjiu.top/shop/api_goods.php"
+				}).then(function successCallBack(response){
+					console.log(response.data.data);
+					$scope.dataList = response.data.data;
+				})
+			}])
+			m1.controller('Ccc',["$scope",function($scope){
+				$scope.name = "小明";
+			}])
+		</script>
+	</body>
+</html>

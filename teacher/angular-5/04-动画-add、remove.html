@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.oDiv{
+				width: 200px;
+				height: 200px;
+				background: red;
+				transition: all 10s;
+			}
+			.oDiv.ng-hide-remove{
+				width: 0;
+				height: 0;
+				opacity: 0;
+			}
+			.oDiv.ng-hide-remove-active{
+				width: 200px;
+				height: 200px;
+				opacity: 1;
+			}
+			.oDiv.ng-hide-add{
+				width: 200px;
+				height: 200px;
+				opacity: 1;
+			}
+			.oDiv.ng-hide-add-active{
+				width: 0;
+				height: 0;
+				opacity: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			<input type="checkbox" ng-model="show"/>
+			<div ng-show="show" class="oDiv"></div>
+			<!--支持的指令：show、hide、class、model等-->
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/angular-animate.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',['ngAnimate']);
+			m1.controller('Aaa',function($scope){
+				$scope.name = "路飞";
+			})
+		</script>
+	</body>
+</html>

@@ -1219,3 +1219,9 @@ core:warn] [pid 5352:tid 512] AH00098: pid file H:/phpStudy/Apache/logs/httpd.pi
 [Fri Sep 15 11:22:20.768825 2017] [core:notice] [pid 19232:tid 684] AH00094: Command line: 'C:\\Users\\ucai\\Desktop\\Study\\phpstudy\\Apache\\bin\\httpd.exe -d C:/Users/ucai/Desktop/Study/phpstudy/Apache'
 [Fri Sep 15 11:22:20.862580 2017] [mpm_winnt:notice] [pid 19232:tid 684] AH00418: Parent: Created child process 15048
 [Fri Sep 15 11:22:22.394770 2017] [mpm_winnt:notice] [pid 15048:tid 548] AH00354: Child: Starting 150 worker threads.
+[Fri Sep 29 11:42:29.840947 2017] [core:warn] [pid 14156:tid 684] AH00098: pid file C:/Users/ucai/Desktop/Study/phpstudy/Apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Sep 29 11:42:30.082450 2017] [mpm_winnt:notice] [pid 14156:tid 684] AH00455: Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.4.45 configured -- resuming normal operations
+[Fri Sep 29 11:42:30.082450 2017] [mpm_winnt:notice] [pid 14156:tid 684] AH00456: Server built: Jul  1 2016 16:42:20
+[Fri Sep 29 11:42:30.082450 2017] [core:notice] [pid 14156:tid 684] AH00094: Command line: 'C:\\Users\\ucai\\Desktop\\Study\\phpstudy\\Apache\\bin\\httpd.exe -d C:/Users/ucai/Desktop/Study/phpstudy/Apache'
+[Fri Sep 29 11:42:30.144951 2017] [mpm_winnt:notice] [pid 14156:tid 684] AH00418: Parent: Created child process 13152
+[Fri Sep 29 11:42:31.506423 2017] [mpm_winnt:notice] [pid 13152:tid 688] AH00354: Child: Starting 150 worker threads.
