@@ -1,0 +1,116 @@
+a {
+  font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+}
+nav {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background: #363940;
+}
+nav .widescreen {
+  padding: 10px 60px;
+}
+nav .widescreen #logo {
+  position: absolute;
+  left: 155px;
+  line-height: 40px;
+  display: inline-block;
+}
+nav .widescreen #logo img {
+  font-size: 1.2em;
+  width: 30px;
+  position: absolute;
+  left: -44px;
+  top: 5px;
+}
+nav .widescreen #logo span {
+  color: #a9a9a9;
+  font-size: 27px;
+}
+nav .widescreen ul {
+  position: absolute;
+  right: 70px;
+}
+nav .widescreen ul li {
+  position: relative;
+  float: left;
+  line-height: 40px;
+  margin: 0 15px;
+}
+nav .widescreen ul li a {
+  font-size: 17px;
+  color: #a9a9a9;
+}
+nav .widescreen ul li span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -1px;
+  margin-left: 6px;
+  margin-right: -14px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid #ccc;
+}
+nav .widescreen ul li ul.nav-dropdown {
+  display: none;
+  /* box-sizing: border-box; */
+  /* max-height: calc(100vh - 61px); */
+  height: 190px;
+  overflow-y: auto;
+  position: absolute;
+  top: 100%;
+  right: -50px;
+  background-color: #fff;
+  padding: 10px 0;
+  border: 1px solid #ddd;
+  border-bottom-color: #ccc;
+  text-align: left;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+nav .widescreen ul li ul.nav-dropdown li {
+  float: unset;
+}
+nav .widescreen ul li ul.nav-dropdown li a {
+  color: #363940;
+  font-size: 14px;
+}
+nav .widescreen ul li ul.nav-dropdown li ul {
+  position: unset;
+}
+nav .widescreen ul li ul.nav-dropdown li ul li:hover > a {
+  color: #41b883;
+}
+nav .widescreen ul li ul.nav-dropdown li h4 {
+  font-weight: 800;
+  font-size: 15px;
+  border-top: 1px solid #eee;
+  padding-top: 8px;
+}
+nav .widescreen ul.navitem > li:hover ul.nav-dropdown {
+  display: block;
+}
+nav .widescreen ul.navitem > li:hover > a {
+  color: #41b883;
+}
+nav .widescreen ul.nav-dropdown > li:hover > a {
+  color: #41b883;
+}
+nav .narrowscreen .topnav {
+  line-height: 60px;
+}
+nav .narrowscreen .topnav .btn-default {
+  background: #f9f9f9;
+}
+nav .narrowscreen .sidenav {
+  position: absolute;
+  top: 60px;
+  width: 240px;
+  height: 100px;
+  background: #f9f9f9;
+  overflow-y: auto;
+}

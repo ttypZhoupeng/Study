@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>更多</title>
+  <link rel="stylesheet" href="/stylesheets/docs/wph/common_doc.css">
+  <link rel="stylesheet" href="/stylesheets/docs/wph/prettify.css">
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/angular.js/1.4.0/angular.min.js"></script>
+  <script src="https://cdn.bootcss.com/angular.js/1.4.0/angular-route.min.js"></script>
+</head>
+<body ng-app="mydoc">
+<div class="container" ng-controller="run">
+    <aside class="hidden-xs hidden-sm">
+      <p>赞助者</p>
+      <img src="/images/docs/becomeit.png" alt=""><br>
+      <span class="btn">成为赞助者</span>
+      <div class="list">
+        <p class="title">更多</p>
+        <div ng-view></div>
+      </div>
+    </aside>
+    <div class="content">
+      <div id="show"></div>
+      <footer>发现错误？想参与编辑？ <a href="https://github.com/vuejs/cn.vuejs.org/blob/master/src/v2/guide/join.md">在 Github 上编辑此页！</a></footer>
+    </div>
+</div>
+<script src="/stylesheets/docs/wph/prettify.js"></script>
+<script>
+//  function getDoc(name,cb) {
+//    $.ajax({
+//      method:'GET',
+//      url:'/api/doc/simple',
+//      data:{
+//        name:'更多',
+//        title:name
+//      },
+//      success:function (res) {
+//        show.innerHTML=res.content;
+//        cb(res);
+//      }
+//    });
+//  }
+</script>
+<script>
+  var m=angular.module('mydoc',['ngRoute']);
+  m.controller('compareController',['$scope','$compile','$rootScope',function ($scope,$compile,$rootScope) {
+    $rootScope.getDoc('对比其他框架',function(data){
+      var arr=data.content.match(/<h[23] id="(.+)">(.+)<\/h[23]>/g);
+      var narr=[];
+      for(let i of arr){
+        narr.push(i.replace(/id="(.+)"/,`ng-click="goto('$1')"`));
+      }
+      $('#com').html($compile(narr.join(''))($scope));
+    });
+  }])
+    .controller('joinController',['$scope','$compile','$rootScope',function($scope,$compile,$rootScope){
+      $rootScope.getDoc('加入Vue.js社区',function(data){
+        var arr=data.content.match(/<h[23] id="(.+)">(.+)<\/h[23]>/g);
+        var narr=[];
+        for(let i of arr){
+          narr.push(i.replace(/id="(.+)"/,`ng-click="goto('$1')"`));
+        }
+        $('#join').html($compile(narr.join(''))($scope));
+      });
+    }]);
+  m.config(function ($routeProvider) {
+    $routeProvider
+        .when('/compare',{
+          template:`<h1 class="active"><a href="#/compare">对比其他框架</a></h1>
+                    <div id="com"></div>
+                    <h1><a href="#/join">加入 Vue.js 社区</a></h1>`,
+          controller:'compareController'
+        })
+        .when('/join',{
+          template:`<h1><a href="#/compare">对比其他框架</a></h1>
+                    <h1><a href="#/join">加入 Vue.js 社区</a></h1>
+                    <div id="join"></div>`,
+          controller:'joinController'
+        })
+        .otherwise({
+          redirectTo:'/compare',
+          controller:'compareController'
+        });
+  });
+  m.factory('anchorSmoothScroll',function () {
+    this.scrollTo = function(eID) {
+
+// This scrolling function
+// is from http://www.itnewb.com/tutorial/Creating-the-Smooth-Scroll-Effect-with-JavaScript
+
+      var startY = currentYPosition();
+      var stopY = elmYPosition(eID);
+      var distance = stopY > startY ? stopY - startY : startY - stopY;
+      if (distance < 100) {
+        scrollTo(0, stopY); return;
+      }
+      var speed = Math.round(distance / 100);
+      if (speed >= 20) speed = 20;
+      var step = Math.round(distance / 25);
+      var leapY = stopY > startY ? startY + step : startY - step;
+      var timer = 0;
+      if (stopY > startY) {
+        for ( var i=startY; i<stopY; i+=step ) {
+          setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+          leapY += step; if (leapY > stopY) leapY = stopY; timer++;
+        } return;
+      }
+      for ( var i=startY; i>stopY; i-=step ) {
+        setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+        leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
+      }
+
+      function currentYPosition() {
+// Firefox, Chrome, Opera, Safari
+        if (self.pageYOffset) return self.pageYOffset;
+// Internet Explorer 6 - standards mode
+        if (document.documentElement && document.documentElement.scrollTop)
+          return document.documentElement.scrollTop;
+// Internet Explorer 6, 7 and 8
+        if (document.body.scrollTop) return document.body.scrollTop;
+        return 0;
+      }
+
+      function elmYPosition(eID) {
+        var elm = document.getElementById(eID);
+        var y = elm.offsetTop;
+        var node = elm;
+        while (node.offsetParent && node.offsetParent != document.body) {
+          node = node.offsetParent;
+          y += node.offsetTop;
+        } return y;
+      }
+    };
+  });
+  m.controller('run',['$scope','$location','$anchorScroll','$rootScope',function ($scope,$location,$anchorScroll,$rootScope) {
+    $rootScope.goto=function (href) {
+      $location.hash(href);
+      $anchorScroll();
+    };
+    $rootScope.getDoc=function (name,cb) {
+        $.ajax({
+          method:'GET',
+          url:'/api/doc/simple',
+          data:{
+            name:'更多',
+            title:name
+          },
+          success:function (res) {
+            show.innerHTML=res.content;
+            cb(res);
+          }
+        });
+    };
+  }]);
+</script>
+</body>
+</html>

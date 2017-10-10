@@ -1,0 +1,18 @@
+<%- include("./header.ejs") %>
+<form action="" class="user-form">
+    <h1 class="reg-title">WELCOME BACK!</h1>
+    <div class="control-group">
+        <label for="#log-username">USERNAME<span class='error'></span></label>
+        <input type="text" autocomplete="off" spellcheck="false" id="log-username">
+    </div>
+
+    <div class="control-group">
+        <label for="#log-password">PASSWORD<span class='error'></span></label>
+        <input type="password" autocomplete="off" spellcheck="false" id="log-password">
+        <button type="button" class="forgot-password">FORGOT YOUR PASSWORD?</button>
+    </div>
+    <button class="log btn" type="button">login</button>
+
+    <footer>Need an account? <a href="/register" class="to-register">Register</a></footer>
+</form>
+<%- include("./footer.ejs") %>

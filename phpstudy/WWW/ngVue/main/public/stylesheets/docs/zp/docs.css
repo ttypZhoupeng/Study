@@ -1,0 +1,184 @@
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  color: #2c3e50;
+}
+h1 {
+  font-size: 30px;
+}
+h2 {
+  margin-top: 20px;
+  font-size: 20px;
+}
+h3 {
+  font-size: 17px;
+  margin: 20px 0;
+}
+#main {
+  position: relative;
+  z-index: 1;
+  padding: 0 60px 30px;
+  overflow-x: hidden;
+}
+#main .sidebar {
+  position: fixed;
+  z-index: 10;
+  top: 61px;
+  left: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+#main .sidebar .sidebar-inner {
+  width: 260px;
+  padding: 40px 20px 60px 60px;
+}
+#main .sidebar .sidebar-inner .main-sponsor {
+  color: #7f8c8d;
+}
+#main .sidebar .sidebar-inner .main-sponsor #main-sponsor-link {
+  width: 125px;
+  display: inline-block;
+}
+#main .sidebar .sidebar-inner .main-sponsor #main-sponsor-link img {
+  width: 125px;
+  margin: 3px 0;
+  display: inline-block;
+}
+#main .sidebar .become-backer {
+  border: 1px solid #42b983;
+  border-radius: 2em;
+  display: inline-block;
+  color: #42b983;
+  font-size: 0.8em;
+  width: 125px;
+  padding: 4px 0;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#main .sidebar .menu-root li {
+  margin-top: 10px;
+}
+#main .sidebar .menu-root li .sidebar-link:hover {
+  border-bottom: 2px solid #42b983;
+}
+#main .sidebar .menu-root li .menu-sub {
+  line-height: 22px;
+  padding-left: 14px;
+}
+#main .sidebar .menu-root .current,
+#main .sidebar .menu-root .active {
+  font-weight: bold;
+  color: #42b983;
+}
+#main .content {
+  position: relative;
+  padding: 95px 0;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 50px;
+}
+#main .content h2 {
+  margin: 45px 0 20px;
+  padding-bottom: 0.7em;
+  border-bottom: 1px solid #ddd;
+  z-index: -1;
+}
+#main .content h2::before,
+#main .content h2:before {
+  content: "";
+  display: block;
+  margin-top: -91px;
+  height: 91px;
+  visibility: hidden;
+}
+#main .content p {
+  padding-bottom: 20px;
+  font-size: 15px;
+}
+#main .content p a {
+  color: #42b983;
+  font-weight: 600;
+}
+#main .content code {
+  color: #e96900;
+  padding: 3px 5px;
+  margin: 0 2px;
+  border-radius: 2px;
+  white-space: nowrap;
+  background-color: #f8f8f8;
+}
+#main .content .tip {
+  padding: 12px 24px 12px 30px;
+  margin: 2em 0;
+  border-left: 4px solid #f66;
+  background-color: #f8f8f8;
+  position: relative;
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+}
+#main .content .tip::before,
+#main .content .tip:before {
+  content: "!";
+  background-color: #f66;
+  position: absolute;
+  top: 14px;
+  left: -12px;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 20px;
+  font-weight: bold;
+  font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+}
+#main .content img {
+  max-width: 100%;
+  background: url();
+}
+#main .content .guide-links {
+  margin-top: 25px;
+  height: 20px;
+}
+#main .content .guide-links a {
+  color: #42b983;
+  font-weight: 600;
+}
+#main .content .footer {
+  color: #7f8c8d;
+  margin-top: 2em;
+  padding-top: 2em;
+  border-top: 1px solid #e5e5e5;
+  font-size: 0.9em;
+}
+#main .content .footer a {
+  color: #42b983;
+  font-weight: 600;
+}
+@media screen and (max-width: 1300px) {
+  #main .with-sidebar {
+    margin-left: 290px;
+  }
+}
+@media screen and (max-width: 900PX) {
+  #main .with-sidebar {
+    margin: auto;
+  }
+}
+@media screen and (max-width: 900px) {
+  .sidebar {
+    position: fixed;
+    z-index: 10;
+    background-color: #f9f9f9;
+    height: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0, 1);
+    -webkit-transform: translate(-360px, 0);
+    transform: translate(-360px, 0);
+  }
+}

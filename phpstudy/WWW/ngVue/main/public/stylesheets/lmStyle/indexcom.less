@@ -1,0 +1,175 @@
+a{
+    font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;    
+}
+@h60: 60px;
+@c-bg:rgb(53,73,94);
+@hover-sR:rgb(65,184,131);
+@line-h40:40px;
+@c-font:#a9a9a9;
+@c-wihte: #a9a9a9;
+//通用class
+.border-1px(){
+    border-top: 1px solid #eee;
+}
+.padding-10-60(){
+    padding: 10px 60px;
+}
+.arrow(){
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -1px;
+    margin-left: 6px;
+    margin-right: -14px;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #ccc;
+}
+.nav-dropdown(){
+    display: none;
+    /* box-sizing: border-box; */
+    /* max-height: calc(100vh - 61px); */
+    height: 190px;
+    overflow-y: auto;
+    position: absolute;
+    top: 100%;
+    right: -50px;
+    background-color: #fff; 
+    padding: 10px 0;
+    border: 1px solid #ddd;
+    border-bottom-color: #ccc;
+    text-align: left;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+//混合层级
+nav{
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    width:100%;
+    height:@h60; 
+    background:#363940;
+
+    //大屏幕
+    .widescreen{
+        #logo{
+            position: absolute;
+            left: 155px;
+            line-height: @line-h40;
+            display: inline-block;
+            img{
+                font-size: 1.2em;
+                width: 30px;
+                position: absolute;
+                left: -44px;
+                top: 5px;
+            }
+            span{
+                color:@c-wihte;
+                font-size: 27px;
+            }
+        }
+        ul{
+            position: absolute;
+            right: 70px;
+            li{
+
+                a{
+                    font-size: 17px;
+                    color: #a9a9a9;
+                }
+                span{
+                    .arrow
+                }
+                ul.nav-dropdown{
+                    display: none;
+                    .nav-dropdown;
+                    li{
+                        float: unset;
+                        a{
+                            color: #363940;
+                            font-size: 14px;
+                        }
+                        
+                        ul{
+                            position: unset;
+                            li:hover>a{
+                                color: @hover-sR;
+                            }
+                        }
+                        h4{
+                            font-weight: 800;
+                            font-size: 15px;
+                            border-top: 1px solid #eee;
+                            padding-top: 8px
+                        }
+                    }
+                }
+                position: relative;
+                float: left;
+                line-height: 40px;
+                margin: 0 15px;
+            }
+        }
+        ul.navitem>li:hover{
+                ul.nav-dropdown{
+                    display: block;
+                }
+            
+        }
+        ul.navitem>li:hover>a{
+            color:@hover-sR;
+        }
+        ul.nav-dropdown>li:hover>a{
+            color: @hover-sR;
+        }
+        .padding-10-60;
+    };
+    //小屏幕
+    .narrowscreen{
+        .topnav{
+            
+            .btn-default{
+                background: #f9f9f9;
+            }
+            line-height: 60px;
+        }
+        .sidenav{
+            position: absolute;
+            top: 60px;
+            // left:-240px;
+            width: 240px;
+            height: 100px;
+            background: #f9f9f9;
+            overflow-y: auto;
+            
+
+            .sidenav-inner{
+                .main-menu{
+                }
+            }
+        }
+    }
+}
+
+// header{
+//     // width: 100%;
+//     height: @h68;
+//     .logo{ width: @w200; height: @680; background: @color-gray;float:left;}
+//     nav{
+//         float:left;
+//         li{
+//             width: @w200;
+//             height: @h30;
+//             float: left;
+//             background: @color-sky;
+//             margin-right: 10px+10;
+//             &:hover{
+//                 background: @color-ora;
+//             }
+//         }
+//     }
+// }
+

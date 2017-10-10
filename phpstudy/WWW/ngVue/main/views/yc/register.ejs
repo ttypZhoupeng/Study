@@ -1,0 +1,23 @@
+
+<%- include("./header.ejs") %>
+<form action="" class="user-form">
+    <h1 class="reg-title">CREATE AN ACCOUNT</h1>
+    <div class="control-group">
+        <label for="#reg-email">EMAIL<span class='error'></span></label>
+        <input type="email" autocomplete="off" spellcheck="false" id="reg-email">
+    </div>
+    <div class="control-group">
+        <label for="#reg-username">USERNAME<span class='error'></span></label>
+        <input type="text" autocomplete="off" spellcheck="false" id="reg-username">
+    </div>
+    <div class="control-group">
+        <label for="#reg-password">PASSWORD<span class='error'></span></label>
+        <input type="password" autocomplete="off" spellcheck="false" id="reg-password">
+    </div>
+    <button class="reg btn" type="button">Continue</button>
+
+    <footer class="policy">By registering, you agree to Discord's <a href="javascript:;">Terms of Service</a> and <a href="javascript:;">Privacy Policy</a>.</footer>
+    <div class="divider"></div>
+    <footer>Aleardy have an account? <a href="/login" class="to-login">Login</a></footer>
+</form>
+<%- include("./footer.ejs") %>
