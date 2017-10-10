@@ -1,0 +1,18 @@
+.clear-float{
+    &::after,&:after{
+        content:"";
+        display:block;
+        clear:both;
+    }
+}
+
+
+
+ul{
+    .clear-float;
+    li{
+        float:left;
+        list-style: none;
+    }
+}
+

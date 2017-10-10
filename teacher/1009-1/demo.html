@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>注册</button>
+		
+		
+		<script type="text/javascript">
+			
+			//常量
+			var HOST = "http://localhost:3000/";
+			
+			var REGISTER = "users/register?username=江盟&age=22";
+			
+			var btnReg = document.querySelector("button");
+			
+			btnReg.onclick = function(){
+				//创建实例
+				var xhr = new XMLHttpRequest();
+				//监听就绪的状态
+				xhr.onreadystatechange = function(){
+					
+					//判断就绪状态
+					if( xhr.readyState == 4){
+						console.log( xhr.responseText );
+					}
+				}
+				
+				//创建请求
+				xhr.open("get",HOST+REGISTER)
+				//发送请求
+				xhr.send();
+			}
+			
+			
+		</script>
+	</body>
+</html>

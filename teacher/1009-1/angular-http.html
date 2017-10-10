@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-controller="Aaa">
+		<button ng-click="toReg()">注册</button>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var m1 = angular.module('myApp',[]);
+			
+			m1.controller('Aaa',function($scope,$http,$httpParamSerializerJQLike){
+				
+				$scope.toReg = function(){
+					
+					$http({
+				    method: 'POST',
+				    url: 'http://localhost:3000/wow/register',
+				    data:$httpParamSerializerJQLike({  //表单序列号：把对象转成传送数据
+				    	username: "xiaoming",
+				    	iphone: "1234",
+				    	password: "123456"
+				    }),
+				    headers: {
+				    	"content-type":"application/x-www-form-urlencoded"
+				    }
+				}).then(function(response) {
+				        // 请求成功执行代码
+				        console.log(response);
+				    });
+					
+				}
+				
+			})
+		</script>
+	</body>
+</html>

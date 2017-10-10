@@ -1,0 +1,16 @@
+.clear-float::after,
+.clear-float:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+ul::after,
+ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+ul li {
+  float: left;
+  list-style: none;
+}
