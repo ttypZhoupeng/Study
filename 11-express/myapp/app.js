@@ -8,13 +8,14 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var goods = require('./routes/goods');
+var liuyan = require('./routes/liuyan');
 
 
 var app = express();
 
 app.all("*",function(req,res,next){
   res.header("Access-Control-Allow-Origin","*");//设置允许的主机地址是：任意的
-  res.header("Content-Type","application/json;charset=utf-8");//数据格式是json,语言
+  // res.header("Content-Type","application/json;charset=utf-8");//数据格式是json,语言
   next(); //执行完all之后继续执行下面的接口
 })
 
@@ -32,7 +33,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/wow', goods);
+app.use('/goods', goods);
+app.use('/liuyan', liuyan);
 
 
 // catch 404 and forward to error handler

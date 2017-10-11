@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>angular注册</title>
+</head>
+<body ng-controller="Aaa">
+    <form action="">
+       用户名： <input type="text">
+       密码：  <input type="password"> 
+    </form>
+    <button ng-click="toReg()">注册</button>
+
+
+    <script src="https://cdn.bootcss.com/angular.js/1.4.0/angular.min.js"></script>
+    <script>    
+        var m1 = angular.module('myApp',[]);
+
+        m1.controller('Aaa',function($scope,$http,$httpParamSerializerJQLike){
+            $scope.toReg = function(){
+                $http({
+                    method:'POST',
+                    url:'http://localhost:3000/users/register',
+                    data:$httpParamSerializerJQLike({
+                        username:"周鹏zp",
+                        phone:"1310",
+                        password:"123456"
+                    }),
+                    headers:{
+                        "content-type":"application/x-www-form-urlencoded"
+                    }
+                }).then(function(response){
+                    // 请求成功执行代码
+                    console.log(response);
+                })
+            }
+        })
+    </script>
+</body>
+</html>

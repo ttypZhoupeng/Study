@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>留言</title>
+</head>
+<body ng-controller="Aaa">
+    <form action="">
+        标题：<input type="text" id="title"><br>
+        留言：<input type="text" id="content">
+        <button type="button" ng-click="toLiuyan()">提交</button>
+    </form>
+
+    <script src="https://cdn.bootcss.com/angular.js/1.4.0/angular.min.js"></script>
+    <script>    
+        var m1 = angular.module('myApp',[]);
+
+        m1.controller('Aaa',function($scope,$http,$httpParamSerializerJQLike){
+            $scope.toLiuyan = function(){
+                var title = document.querySelector("#title").value;
+                var content = document.querySelector("#content").value;
+                console.log(title);
+                console.log(content);
+                $http({
+                    method:'POST',
+                    url:'http://localhost:3000/liuyan/add',
+                    data:$httpParamSerializerJQLike({
+                        title:title,
+                        content:content
+                    }),
+                    headers:{
+                        "content-type":"application/x-www-form-urlencoded"
+                    }
+                }).then(function(response){
+                    // 请求成功执行代码
+                    console.log(response);
+                })
+            }
+        })
+    </script>
+</body>
+</html>
