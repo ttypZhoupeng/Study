@@ -35,3 +35,28 @@ mete: {
 分页显示
 发布评论
 点赞功能
+
+
+
+
+创建文件夹
+初始化 得到json文件
+手动输入依赖环境，或者npm install直接安装
+新建各种文件
+server.js启动文件
+导入。。
+modulse模板
+引入mongoose
+利用模板的方式启动模板，并导出
+routes路由
+导入模板
+利用mongoose的语法进行数据库数据操作
+输出路由
+server.js导入路由文件，
+然后确定外部链接，进行访问
+
+
+var reg = new RegExp('^'+category+'$')与/^category$/的区别
+前者中的category是拼接上的一个变量，是动态的，
+后者是静态的只能匹配'category'这个内容
+

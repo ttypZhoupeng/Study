@@ -1,0 +1,57 @@
+/* Tomorrow Night Eighties Theme */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+/* css88 0.1*/
+.prettyprint,pre.prettyprint {
+    background-color: #efefef;
+    border: 1px solid #272822;
+  border:none;
+    overflow: hidden;
+    padding: 0px;
+    margin: 20px 0;
+    /*font: 14px/20px 'courier new';*/
+    font: 14px/22px '微软雅黑';
+  word-spacing: 6px;
+  font-stretch: expanded;
+    color: #666;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.prettyprint.linenums,
+pre.prettyprint.linenums {
+  -webkit-box-shadow: inset 40px 0 0 #39382E, inset 41px 0 0 #464741;
+  -moz-box-shadow: inset 40px 0 0 #39382E, inset 41px 0 0 #464741;
+  box-shadow: inset 40px 0 0 #39382E, inset 41px 0 0 #464741;
+}
+.prettyprint.linenums ol,
+pre.prettyprint.linenums ol {
+    margin: 0 0 0 33px;
+}
+.prettyprint.linenums ol li,
+pre.prettyprint.linenums ol li {
+    padding-left: 12px;
+  color: #bebec5;
+  line-height: 20px;
+  margin-left: 0;
+  list-style: decimal;
+}
+.prettyprint ol.linenums{ margin-bottom: 0;/*margin-bottom: -8px; margin-top:-8px; margin-right: -8px; position:relative;*/background-color: #272822; padding: 8px}
+/*可以修改下边的颜色实现自定义主题*/
+.prettyprint .comment { color: #b3b3b3; }
+.prettyprint .lit { color: #AE81FF; }
+.prettyprint .pun,
+.prettyprint .opn,
+.prettyprint .clo { color: #35495e; }
+.prettyprint .fun { color: #dc322f; }
+.prettyprint .str,
+.prettyprint .atv { color: #42b983; }
+.prettyprint .kwd{color: #e96900; }
+.prettyprint .tag { color: #2973b7; }
+.prettyprint .typ,
+.prettyprint .atn,
+.prettyprint .dec,
+.prettyprint .var { color: #e96900; }
+.prettyprint .pln { color: #35495e; }
+

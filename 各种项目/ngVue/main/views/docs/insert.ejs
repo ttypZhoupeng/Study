@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>教程上传下载页</title>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+<h1>教程上传\下载页</h1>
+<h2>请打开控制台查看结果</h2>
+<p>
+    <lable>上传</lable>
+    <input type="text" id="nameit" placeholder="输入所处一级标题">
+    <input type="text" id="title" placeholder="输入二级标题">
+    <textarea name="" id="html" cols="30" rows="10"></textarea>
+    <button id="submit">上传</button>
+</p>
+<p>
+    <lable>获取</lable>
+    <input type="text" id="getname" placeholder="输入所处一级标题">
+    <input type="text" id="gettitle" placeholder="输入二级标题">
+    <button id="get">获取</button>
+    <div>下面是获取到的数据</div>
+    <div id="show"></div>
+</p>
+
+<p>
+    <lable>删除</lable>
+    <input type="text" id="rmname" placeholder="输入所处一级标题">
+    <input type="text" id="rmtitle" placeholder="输入二级标题">
+    <button id="rm">删除</button>
+</p>
+
+<script>
+    submit.onclick=function () {
+      $.ajax({
+        method:'POST',
+        url:'/api/docs/simple',
+        data:{
+          status:'add',
+          name:nameit.value,
+          title:title.value,
+          content:html.value
+        },
+        success:function (res) {
+          console.log(res)
+        }
+      });
+    };
+    get.onclick=function () {
+      $.ajax({
+        method:'GET',
+        url:'/api/docs/simple',
+        data:{
+          name:getname.value,
+          title:gettitle.value
+        },
+        success:function (res) {
+          console.log(res);
+          show.innerHTML=res.content;
+        }
+      })
+    }
+    rm.onclick=function () {
+      $.ajax({
+        method:'POST',
+        url:'/api/docs/simple',
+        data:{
+          status:'delete',
+          name:rmname.value,
+          title:rmtitle.value
+        },
+        success:function(res){
+          console.log(res);
+        }
+      })
+    }
+</script>
+</body>
+</html>

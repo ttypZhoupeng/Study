@@ -1,0 +1,195 @@
+@green:#4fc08d;
+@grey:#35495e;
+
+.settle{
+  background: #eee;
+  padding-top:50px;
+  h1{
+    color: #000;
+    line-height: 2.2;
+    font-size:18px;
+    font-weight: bold;
+  }
+  li{
+    padding: 0 4%;
+    line-height: 3.5;
+    border:1px solid #c1c1c1;
+    border-top-width: 0;
+    background: #fff;
+    &:first-of-type{
+      border-radius: 4px 4px 0 0;
+      border-width: 1px;
+    }
+    &:last-of-type{
+      border-radius: 0 0 4px 4px;
+    }
+    span{
+      display: inline-block;
+      width: 20%;
+      font-size:18px;
+      color: #000;
+    }
+    input[type='text']{
+      width: 80%;
+      padding: 0 0 0 2%;
+      border:none;
+      border-radius: 2px;
+      font-size: 16px;
+      line-height: 2;
+      &:focus{
+        color: @green;
+        box-shadow: 0 0 0 2px @green;
+        &::placeholder{
+          color: transparent;
+        }
+      }
+    }
+    &.address{
+      padding-top:8px;
+      padding-bottom:8px;
+      line-height: 2;
+      font-size: 18px;
+      color: #000;
+      span{
+        padding-left: 4px;
+        font-size: 16px;
+        color: #333;
+      }
+      input{
+        font-size: 14px;
+        line-height: 1.8;
+      }
+    }
+    .step-1 &:last-of-type{
+      font-size: 16px;
+      input{
+        width: 18px;
+        height: 18px;
+        vertical-align: text-bottom;
+      }
+    }
+  }
+  #next{
+    width: 35%;
+    margin: 8px 0 40px 0;
+    line-height: 3;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    background: @green;
+    transition: background .3s;
+    &:hover{
+      background: @green - #222222;
+    }
+  }
+  .detail{
+    overflow: hidden;
+    div{
+      float: left;
+      margin-right: 40px;
+    }
+    span{
+      font-size: 14px;
+    }
+  }
+  .step-2{
+    
+    li{
+      font-size: 16px;
+    }
+    p{
+      margin-bottom: 40px;
+    }
+    .step{
+      em{
+        margin-left: 10px;
+        font-weight: bold;
+      }
+    }
+  }
+  .step-4{
+    li.check{
+      input[type='text']{
+        width: 30%;
+      }
+      input[type='button']{
+        margin-left: 20px;
+        padding: 0 16px;
+        font-size:16px;
+        line-height: 2;
+        background: @green;
+        color: #fff;
+        font-weight: bold;
+        border: 0;
+        border-radius: 2px;
+        transition: background .3s;
+        &:hover{
+          background: @green - #222;
+        }
+      }
+    }
+    .pay-icon{
+      font-size: 36px;
+      line-height: 50px;
+      color: @green;
+    }
+  }
+  .order{
+    .order-content{
+      overflow: hidden;
+      &>div{
+        overflow: hidden;
+      }
+      img{
+        float: left;
+        margin: 0 12px 12px 0 ;
+        width: 80px;
+        height:80px;
+        border:1px solid #c1c1c1;
+        padding: 1px;
+      }
+    }
+    .total{
+      border-top:1px solid #c1c1c1;
+      padding-top: 16px;
+      input{
+        line-height: 2;
+        width: 60%;
+        margin-right: 6%;
+        margin-bottom: 8px;
+        font-size: 14px;
+        background: #fff;
+        border: none;
+        border-radius: 2px;
+        &:focus{
+          box-shadow: 0 0 0 2px @green;
+        }
+      }
+      button{
+        line-height: 2;
+        width: 34%;
+        color: #fff;
+        border:none;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 4px;
+        background: @green;
+        transition: background .3s;
+        &:hover{
+          background: @green - #222222;
+        }
+      }
+      span{
+        color: #000;
+      }
+      em{
+        line-height: 2;
+        font-size: 18px;
+        font-weight: bold;
+        color: #000;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+一、 须知：
+1. express的路由:
+views里每个文件夹都有一个index.ejs，用于入口
+路由的设置在routes/index.js里面定义的，可以根据需要自定义
+
+**也可以不用ejs进行调试，先用html把样式都做好，后面回来之后再集中添加路由
+
+2. 重要：通过沟通，决定7、8号集中一下，合并逻辑并且测试bug（形式可能线上或者直接到公司）
+
+3. 关于引入JS
+全部使用cdn的方式引入（需要的可以取自BootCDN网站http://www.bootcdn.cn/）；
+jquery使用1.12.4；
+angular及相关模块用1.4.0版本并且尽量用压缩版；
+bootstrap请随意用任何版本
+
+类似于这样，
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/angular.js/1.4.0/angular.min.js"></script>
+<script src="https://cdn.bootcss.com/angular.js/1.4.0/angular-animate.min.js"></script>
+
+4. 清除默认样式以及一些通用样式都已经放在/stylesheets/common.less中，大家用同样的文件
+
+5. 如有某一模块设计的文档，请放在根目录的“设计文档”下
+
+6. “教程”模块请在docs文件夹下建立自己的文件夹
+
+二、 注意点：
+1. 为了后面整合样式，请务必100%还原，并且务必支持响应式
+2. 尽量避免操作同一文件，以防增加沟通成本
+3. 有问题的话，请及时并且有效沟通

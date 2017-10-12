@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/common.css">
+    <link rel="stylesheet" href="/stylesheets/shop/settle.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.0/angular.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.0/angular-route.min.js"></script>
+</head>
+<body>
+<div class="settle" ng-app="settle">
+    <div class="container">
+        <div class="row">
+            <div ng-view></div>
+            <div class="col-lg-3 col-sm-12 order" ng-controller="cart">
+                <h1>您的订单</h1>
+                <div class="order-content">
+                    <div>
+                        <a href=""><img src="" alt=""></a>
+                        <p>
+                            <a href=""><h3>Vue logo</h3></a>
+                            <span>1</span> x <span>￥25.00</span><br>
+                            <span>这是商品的描述</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="total">
+                    <input type="text" placeholder="请输入您的折扣券码"><button>使用</button><br>
+                    <span>结算：￥25.00</span><br>
+                    <span>税费：￥0.00</span><br>
+                    <span>折扣：未使用折扣券</span><br>
+                    <em>总计：￥25.00 </em>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var app=angular.module('settle',['ngRoute']);
+    app.controller('cart',['$scope',function ($scope) {
+      var token=getToken();
+      if(!token){
+        return alert('您还未登录哦~请转去登录去');
+      }
+      function getToken() {
+        return localStorage.getItem('token');
+      }
+      $('.order-content').html('');
+      $.ajax({
+        method:'GET',
+        url:'http://h6.duchengjiu.top/shop/api_cart.php',
+        data:{
+          token:token
+        },
+        success:function (res) {
+          var html;
+          for(let item of res.data){
+            html=`
+                <div>
+                    <a href="./detail?cat_id=${item.cat_id}&goods_id=${item.goods_id}"><img src="${item.goods_thumb}" alt=""></a>
+                    <p>
+                        <a href="./detail?cat_id=${item.cat_id}&goods_id=${item.goods_id}"><h3>${item.goods_name}</h3></a>
+                        <span>${item.goods_number}</span> x <span>￥${item.goods_price}</span><br>
+                        <span>商品ID：${item.goods_id}</span>
+                    </p>
+                </div>
+            `;
+            $('.order-content').append(html);
+          }
+        }
+      })
+
+    }]);
+    app.controller('step1Controller',['$scope',function ($scope) {
+      var token=getToken();
+      if(!token){
+        return alert('您还未登录哦~请转去登录去');
+      }
+      function getToken() {
+        return localStorage.getItem('token');
+      }
+        $('#next').click(function () {
+          var data={
+            'address_name':addressname.value,
+            'consignee':consignee.value,
+            'country':country.value,
+            'province':area.value,
+            'city':city.value,
+            'district':district.value,
+            'address':address.value,
+            'zip_code':zipcode.value,
+            'mobile':phone.value,
+            'email':'',
+            'tel':'',
+            'besttime':'',
+            'sign_building':''
+          };
+          $.ajax({
+            type:'POST',
+            url:'http://h6.duchengjiu.top/shop/api_useraddress.php?token='+token+'&status=add',
+            data:data,
+            success:function (res) {
+              console.log(res)
+              if(res.code===0){
+                location.href='#/step2';
+              }else{
+                alert('添加地址错误~~')
+              }
+            }
+          });
+        });
+    }]);
+    app.controller('step2Controller',['$scope',function ($scope) {
+      var token=getToken();
+      if(!token){
+        return alert('您还未登录哦~请转去登录去');
+      }
+      function getToken() {
+        return localStorage.getItem('token');
+      }
+      $.ajax({
+        type:'GET',
+        url:'http://h6.duchengjiu.top/shop/api_useraddress.php',
+        data:{
+          token:token
+        },
+        success:function (res) {
+          console.log(res)
+          var data= res.data.pop();
+          var html=`
+              <h1>收货信息 <a href="#/step1">编辑</a></h1>
+              <span>${data.consignee}</span><br>
+              <span>${data.district}${data.address}</span><br>
+              <span>${data.city}, ${data.province} ${data.zip_code} CN</span><br>
+              <span>${data.mobile}</span>
+          `;
+          $('.detail>div').eq(0).html(html);
+        }
+      })
+    }]);
+    app.config(['$routeProvider',function ($routeProvider) {
+      $routeProvider
+          .when('/step1',{
+            templateUrl:'/html/settle/settle_1.html',
+            controller:'step1Controller'
+          })
+          .when('/step2',{
+            templateUrl:'/html/settle/settle_2.html',
+            controller:'step2Controller'
+          })
+          .when('/step3',{
+            templateUrl:'/html/settle/settle_3.html'
+          })
+          .when('/step4',{
+            templateUrl:'/html/settle/settle_4.html',
+            controller:''
+          })
+          .otherwise({
+            redirectTo:'/step1'
+          });
+    }]);
+</script>
+</body>
+</html>

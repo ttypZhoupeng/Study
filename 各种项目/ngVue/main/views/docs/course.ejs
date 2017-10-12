@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/angular.js/1.4.0/angular.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.0/angular-route.min.js"></script>
+    <link rel="stylesheet" href="../stylesheets/ycStyle/course.css">
+    <title>course</title>
+</head>
+
+<body ng-controller="Aaa">
+    <div id="placegolder"></div>
+    <div id="main">
+        <div class="sidebar">
+            <div class="course-nav">
+                <div class="main-sponsor">
+                    <span>赞助者</span>
+                    <img src="../images/docs/becomeit.png" alt="">
+                </div>
+                <a class="become-backer" href="/support-vuejs">
+                    成为赞助者
+                </a>
+                <h2>教程
+                    <select name="" id="">
+                        <option value="" selected>2.x</option>
+                        <option value="">1.0</option>
+                    </select>
+                </h2>
+
+                <ul class="menu-root">
+                    <li>
+                        <h3>基础</h3>
+                    </li>
+                    <li><a href="" class="sidebar-link">安装</a></li>
+                    <li><a href="" class="sidebar-link">介绍</a></li>
+                    <li><a href="" class="sidebar-link">Vue实例</a></li>
+                    <li><a href="" class="sidebar-link">模板语法</a></li>
+                    <li><a href="" class="sidebar-link">计算属性和观察者</a></li>
+                    <li><a href="" class="sidebar-link">Class与Style绑定</a></li>
+                    <li><a href="" class="sidebar-link">条件渲染</a></li>
+                    <li><a href="" class="sidebar-link">列表渲染</a></li>
+                    <li><a href="" class="sidebar-link">事件处理</a></li>
+                    <li><a href="" class="sidebar-link">表单输入绑定</a></li>
+                    <li><a href="" class="sidebar-link">组件</a></li>
+                    <li>
+                        <h3>过渡 & 动画</h3>
+                    </li>
+                    <li><a href="" class="sidebar-link">进入/离开 & 列表过渡</a></li>
+                    <li><a href="" class="sidebar-link">状态过渡</a></li>
+                    <li>
+                        <h3>可复用性 & 组合</h3>
+                    </li>
+                    <li><a href="" class="sidebar-link">混合</a></li>
+                    <li><a href="" class="sidebar-link">自定义指令</a></li>
+                    <li><a href="" class="sidebar-link">渲染函数 & JSX</a></li>
+                    <li><a href="" class="sidebar-link">插件</a></li>
+                    <li><a href="" class="sidebar-link">过滤器</a></li>
+                    <li>
+                        <h3>工具</h3>
+                    </li>
+                    <li><a href="" class="sidebar-link">生产环境部署</a></li>
+                    <li><a href="" class="sidebar-link">单文件组件</a></li>
+                    <li><a href="" class="sidebar-link">单元测试</a></li>
+                    <li><a href="" class="sidebar-link">Typescript支持</a></li>
+                    <li>
+                        <h3>规模化</h3>
+                    </li>
+                    <li><a href="#/router" class="sidebar-link">路由</a>
+                        <ul id="router" ng-controller="router">
+                            <li ng-repeat="title in datalist"><a href="" ng-click="gotoAnchor(title)">{{title}}</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#/state-management" class="sidebar-link">状态管理</a>
+                        <ul id="stateManagement" ng-controller="stateManagement">
+                            <li ng-repeat="title in datalist"><a href="" ng-click="gotoAnchor(title)">{{title}}</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#/ssr" class="sidebar-link">服务器端渲染</a>
+                        <ul id="ssr" ng-controller="ssr">
+                            <li ng-repeat="title in datalist"><a href="" ng-click="gotoAnchor(title)">{{title}}</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>内在</h3>
+                    </li>
+                    <li><a href="" class="sidebar-link">深入响应式原理</a></li>
+                    <li>
+                        <h3>迁移</h3>
+                    </li>
+                    <li><a href="" class="sidebar-link">从Vue1.x迁移</a></li>
+                    <li><a href="" class="sidebar-link">从Vue Router0.7.x迁移</a></li>
+                    <li><a href="" class="sidebar-link">从Vuex 0.6.x迁移1.0</a></li>
+                    <li>
+                        <h3>更多</h3>
+                    </li>
+                    <li><a href="" class="sidebar-link">对比其他框架</a></li>
+                    <li><a href="" class="sidebar-link">加入Vue.js社区</a></li>
+                    <li><a href="" class="sidebar-link">认识团队</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div ng-view>
+        </div>
+
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        var m1 = angular.module('myapp', ['ngRoute']);
+        // 用angular.module()方法创建一个模块化，存入m1变量。
+        m1.controller("Aaa", function ($scope, $location, $anchorScroll) {
+            $scope.gotoAnchor = function (id) {
+                // $location.hash(id);
+                // // 设置hash值
+                $(".content h2").each(function () {
+                    if ($(this).attr("id") == id) {
+                        $(".ng-scope").animate({
+                            "scrollTop": $(this).offset().top + "px"
+                        }, 500);
+                    }
+                })
+                $(".content h3").each(function () {
+                    if ($(this).attr("id") == id) {
+                        $(".ng-scope").animate({
+                            "scrollTop": $(this).offset().top + "px"
+                        }, 500);
+                    }
+                })
+                // $anchorScroll();
+                // 不写这个会出现小bug
+            }
+        })
+
+        $(".sidebar-link").each(function (i) {
+            var that = this;
+            $(this).click(function () {
+                $(that).addClass("active").parent().siblings().children(".sidebar-link").removeClass(
+                    "active");
+                setTimeout(function () {
+                    changeTitle();
+                }, 10)
+            })
+        })
+
+        function changeTitle() {
+            var routerStr = location.href.split("#")[1];
+            // console.log(routerStr)
+            if (routerStr == "/router") {
+                $("#router").slideDown();
+                $("#stateManagement").slideUp();
+                $("#ssr").slideUp();
+            } else if (routerStr == "/state-management") {
+                $("#router").slideUp();
+                $("#stateManagement").slideDown();
+                $("#ssr").slideUp();
+            } else if (routerStr == "/ssr") {
+                $("#router").slideUp();
+                $("#stateManagement").slideUp();
+                $("#ssr").slideDown();
+            }
+        }
+        changeTitle();
+
+        var router, stateManagement, ssr;
+        $.ajax({
+            type: "GET",
+            url: "/api/docs/simple",
+            async: false,
+            data: {
+                name: "规模化"
+            },
+            success: function (response) {
+                // console.log(response);
+                router = response[0].content;
+                stateManagement = response[1].content;
+                ssr = response[2].content;
+            }
+        })
+
+
+        m1.config(['$routeProvider', function ($routeProvider) {
+            $routeProvider
+                .when('/router', {
+                    template: router,
+                    controller: "router",
+                }).when('/state-management', {
+                    template: stateManagement,
+                    controller: "stateManagement",
+                }).when('/ssr', {
+                    template: ssr,
+                    controller: "ssr",
+                }).otherwise({
+                    redirectTo: '/router',
+                })
+        }])
+
+
+
+        m1.controller("router", function ($scope) {
+            var arr = [];
+            router.match(/<h[23] id=".+">(.+)<\/h[23]>/g).forEach(function (item) {
+                arr.push(item.match(/>(.+)</)[1]);
+            })
+            $scope.datalist = arr;
+        })
+
+        m1.controller("stateManagement", function ($scope) {
+            var arr = [];
+            stateManagement.match(/<h[23] id=".+">(.+)<\/h[23]>/g).forEach(function (item) {
+                arr.push(item.match(/>(.+)</)[1]);
+            })
+            $scope.datalist = arr;
+        })
+
+        m1.controller("ssr", function ($scope) {
+            var arr = [];
+            ssr.match(/<h[23] id=".+">(.+)<\/h[23]>/g).forEach(function (item) {
+                arr.push(item.match(/>(.+)</)[1]);
+            })
+            $scope.datalist = arr;
+        })
+
+    </script>
+</body>
+
+</html>

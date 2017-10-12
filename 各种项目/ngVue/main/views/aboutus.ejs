@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>aboutUs</title>
+    <link rel="stylesheet" href="../stylesheets/ycStyle/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../stylesheets/ycStyle/about.css">
+
+</head>
+<body>
+    <div class="carrousel">
+        <div class="slide">
+            <h2>Hellow,I'm Vue</h2>
+            <p>Vue.js (读音 /vjuː/，类似于 view) 是一套构建用户界面的渐进式框架</p>
+        </div>
+        <div class="slide">
+            <h2>组件</h2>
+            <p>组件 (Component) 是 Vue.js 最强大的功能之一。组件可以扩展 HTML 元素，封装可重用的代码。在较高层面上，组件是自定义元素，Vue.js 的编译器为它添加特殊功能。</p>
+        </div>
+        <div class="slide">
+            <h2>Class与Style绑定</h2>
+            <p>操作元素的 class 列表和内联样式是数据绑定的一个常见需求。因为它们都是属性，所以我们可以用 v-bind 处理它们：只需要通过表达式计算出字符串结果即可。</p>
+        </div>
+        <div class="slide">
+            <h2>事件监听</h2>
+            <p>可以用 v-on 指令监听 DOM 事件来触发一些 JavaScript 代码。</p>
+        </div>
+        <div class="slide">
+            <h2>混合</h2>
+            <p>混合 (mixins) 是一种分发 Vue 组件中可复用功能的非常灵活的方式。混合对象可以包含任意组件选项。以组件使用混合对象时，所有混合对象的选项将被混入该组件本身的选项。</p>
+        </div>
+        <div class="slide">
+            <h2>生产环境部署</h2>
+            <p>开发时，Vue 会提供很多警告来帮你解决常见的错误与陷阱。生产时，这些警告语句却没有用，反而会增加你的载荷量。再次，有些警告检查有小的运行时开销，生产环境模式下是可以避免的。</p>
+        </div>
+        <div class="slide">
+            <h2>路由</h2>
+            <p>对于大多数单页面应用，都推荐使用官方支持的 vue-router 库。更多细节可以看 vue-router 文档。</p>
+        </div>
+        <div class="slide">
+            <h2>深入响应式原理</h2>
+            <p>Vue 的一个最明显的特性就是其不太引人注意的响应式系统。数据模型仅仅是普通的 JavaScript 对象。而当你修改它们时，视图会进行更新。</p>
+        </div>
+        <div class="slide">
+            <h2>加入Vue.js社区</h2>
+            <p>Vue.js 的社区正在急速增长中，如果你正在阅读本文，这是你准备好加入 Vue.js 社区的大好机会。欢迎！</p>
+        </div>
+    </div>
+    <div class="controller">
+        <a href="#" id="up" class="arrow"><i class="fa fa-caret-up"></i></a>
+        <a href="#" id="down" class="arrow"><i class="fa fa-caret-down"></i></a>
+        <a href="#" id="left" class="arrow"><i class="fa fa-caret-left"></i></a>
+        <a href="#" id="right" class="arrow"><i class="fa fa-caret-right"></i></a>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>    
+    <script>
+        $(function(){
+
+            var idx =0;
+            carrousel(idx);
+
+            $("#left").click(function(){
+                idx--;
+                if(idx>8) idx = 0;
+                if(idx<0) idx = 8;
+                console.log(idx)
+                carrousel(idx);
+            })
+            $("#right").click(function(){
+                idx++;
+                if(idx>8) idx = 0;
+                if(idx<0) idx = 8;
+                console.log(idx)
+                carrousel(idx);
+            })
+
+            function carrousel(idx){
+                var slideArr = [idx-4,idx-3,idx-2,idx-1,idx,idx+1,idx+2,idx+3,idx+4];
+                for(i in slideArr){
+                    if(slideArr[i]>8) slideArr[i]-=9;
+                    if(slideArr[i]<0) slideArr[i]+=9;
+                    $(".slide").eq(slideArr[i]).addClass("order"+i).siblings().removeClass("order"+i);
+                }
+            }
+
+
+        })
+    </script>
+</body>
+</html>

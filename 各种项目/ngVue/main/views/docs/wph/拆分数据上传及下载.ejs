@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>添加文章</title>
+    <link rel='stylesheet' href='/stylesheets/docs/wph/index.css' />
+    <link rel="stylesheet" href="/stylesheets/common.css">
+    <script src="https://cdn.bootcss.com/angular.js/1.4.0/angular.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<style>
+    body{
+        font-size: 20px;
+        padding-left:30px;
+    }
+    h1,h3,p,ul,li{
+        padding: 10px;
+    }
+    h1,h2,h3{
+        display: inline-block;
+    }
+    #additem{
+
+    }
+    p input{
+        font-size: 16px;
+    }
+    select,button{
+        font-size:20px;
+        vertical-align: top;
+    }
+    .left{
+        position: absolute;
+        top: 0;
+        left: 300px;
+    }
+</style>
+<body ng-app="myapp">
+<h1>文章导入</h1>
+<details>
+    <summary>
+        <h3>添加二级标题</h3>
+    </summary>
+    <p>
+        <lable>所处一级标题</lable>
+        <input type="text" id="namea">
+        <lable>要添加的二级标题</lable>
+        <input type="text" id="title">
+    </p>
+    <p><button id="add">添加</button></p>
+</details>
+
+
+<details>
+    <summary>
+        <h3>指定二级标题，添加段落</h3>
+    </summary>
+    <div ng-controller="main" class="left">
+        <p>
+            <lable>所处一级标题</lable>
+            <input type="text" id="nameadd">
+            <lable>指定的二级标题</lable>
+            <input type="text" id="titleadd">
+        </p>
+        <p>
+            <button ng-click="additem()">添加一项</button>
+            <button ng-click="removeitem()">删除一项</button>
+            <button ng-click="clear()">清空所有</button>
+        </p>
+        <ul id="additem">
+            <additem></additem>
+        </ul>
+        <p><button id="addit">追加</button></p>
+    </div>
+</details>
+
+<details>
+    <summary>
+        <h3>获取</h3>
+    </summary>
+    <p>
+        <lable>所处一级标题</lable>
+        <input type="text" id="nameget">
+        <lable>要获取的二级标题</lable><input type="text" id="ntitle">
+    </p>
+    <p><button class="fetch">获取</button><span>请打开console查看结果~</span></p>
+</details>
+
+</body>
+<script>
+  add.onclick=function () {
+    $.ajax({
+      method:'POST',
+      url:'/api/doc',
+      data:{
+        status:'add',
+        name:namea.value,
+        title:title.value
+      },
+      success:function (response) {
+        if(response.code===0){
+          alert('成功');
+        }else{
+          alert(response.msg);
+        }
+      }
+    });
+  };
+
+  addit.onclick=function () {
+//    业务
+    var content=[];
+    $('.type').each(function () {
+      var tmp=$(this)[0].nextSibling.value;
+      if(tmp){
+        content.push(JSON.stringify({
+          type:$(this)[0].value,
+          text:tmp
+        }));
+      }
+    });
+    $.ajax({
+      method:'POST',
+      url:'/api/doc',
+      data:{
+        status:'addit',
+        name:nameadd.value,
+        title:titleadd.value,
+        content: content.join('#')
+      },
+      success:function (res) {
+        if(res.code===0){
+          alert('成功');
+        }else{
+          alert(res.msg);
+        }
+      }
+    });
+  };
+
+  var fetch=document.getElementsByClassName('fetch')[0];
+  fetch.onclick=function () {
+    $.ajax({
+      method:'GET',
+      url:'/api/doc',
+      data:{
+        name:nameget.value,
+        title:ntitle.value
+      },
+      success:function (response) {
+        console.log(response)
+      }
+    })
+  };
+</script>
+<script>
+  var m1=angular.module('myapp',[]);
+  m1.directive('additem',function () {
+    return{
+      restrict:'ECMA',
+      replace:true,
+      template:`
+        <li>
+            <select name="" class="type">
+                <option value="para">一般内容</option>
+                <option value="title">标签</option>
+                <option value="smtitle">小标签</option>
+                <option value="link">链接</option>
+                <option value="keyword">关键字</option>
+                <option value="bold">纯加粗</option>
+                <option value="tip">提示框</option>
+                <option value="new">新增项</option>
+                <option value="html">HTML代码</option>
+                <option value="js">JS代码</option>
+                <option value="css">CSS代码</option>
+            </select><textarea name="" class="text" id="" cols="100" rows="3"></textarea>
+        </li>
+      `
+    }
+  });
+
+  m1.controller('main',['$scope','$compile',function ($scope,$compile) {
+    $scope.additem=function () {
+      $('#additem').append($compile('<additem></additem>')($scope));
+    };
+    $scope.removeitem=function () {
+      $('#additem li').eq(-1).remove();
+    };
+    $scope.clear=function () {
+      $('#additem').html('');
+    }
+  }]);
+</script>
+</html>

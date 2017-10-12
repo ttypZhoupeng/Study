@@ -1,0 +1,146 @@
+#shop{
+.d-goods{
+    margin-top:30px;
+    margin-bottom: 30px;
+}
+.d-goods .goods{
+    overflow: hidden;
+}
+.d-goods .img-detail{
+    float: left;
+    width: 40%;
+}
+.d-goods .img-detail>img{
+    width: 100%;
+}
+.d-goods .img-detail .sm-img{
+    margin-top:10px;
+    padding: 0 10px;
+}
+.d-goods .img-detail .sm-img>img{
+    float: left;
+    margin-right: 20px;
+    width: calc(25%);
+}
+.d-goods .img-detail .sm-img>img:last-of-type{
+    margin-right:0;
+}
+/* TODO：防止类名污染+怎么才能高效开发？？？这里用来测试 */
+.d-goods .detail-content{
+    float: right;
+    position: relative;
+    top: -552px;
+    width: 57%;
+    padding: 20px;
+    border-left: 20px solid transparent;
+    /* background-color: #eee; */
+    background-clip: padding-box;
+}
+.d-goods .detail-content h4{
+    font-size: 20px;
+    font-weight: 900;
+}
+.d-goods .detail-content h4>small{
+    font-weight:bold;
+}
+.d-goods .detail-content p{
+    margin: 21px 0;
+    font-size: 16px;
+    font-weight: bold;;
+}
+.d-goods .detail-content p span{
+    display: inline-block;
+    width: 70px;
+}
+.d-goods .detail-content p:nth-of-type(2) em{
+    font-size:26px;
+    font-weight:900;
+}
+.d-goods .detail-content p:nth-of-type(4) input[type="text"]{
+    width: 40px;
+    height: 30px;
+    padding:0;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+#d-goods-number{
+    text-align: center;
+}
+.d-goods .detail-content p:nth-of-type(4) button{
+    width: 150px;
+    height: 30px;
+    box-shadow: 0 0 2px 1px #eee;
+    transition: all .3s;
+}
+
+.d-goods button#pay-it-rightnow,.d-goods button#add-to-cart{
+    // width: calc(50% - 50px);
+    height: 40px;
+    line-height:1;
+}
+.d-goods button#pay-it-rightnow{
+    border: 1px solid #eee;
+    color: #999;
+    transition: all .3s;
+}
+.d-goods button#add-to-cart{
+    border: 1px solid #eee;
+    color: #999;
+    transition: all .3s;
+}
+// .d-goods button#add-to-cart:hover{
+//     box-shadow: 0 1px 1px 1px #ccc;
+// }
+.d-goods .detail-content p:nth-of-type(6) a i{
+    color: #666;
+    font-size:18px;
+    margin-right:10px;
+    transition: all .3s;
+}
+
+
+.d-goods aside h5{
+    margin: 0;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    border-bottom:3px solid #f4a137;
+    background: #fff;
+}
+/* TODO:加前后中线 */
+.d-goods aside h5::before{
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: #666;
+}
+.d-goods aside h5::after{
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: #666;
+}
+.d-goods .img-list{
+    overflow: hidden;
+}
+.d-goods .img-list>div{
+    position: relative;
+    float: left;
+    margin-bottom:10px;
+}
+.d-goods .img-list>div span{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    background: rgba(0,0,0,.5);
+    transition: all .3s;
+}
+// .d-goods .img-list>div a:hover span{
+//     background: rgba(0,0,0,1);
+// }
+
+}

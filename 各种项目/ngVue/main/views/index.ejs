@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/4.0.0-beta.4/css/swiper.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="http://demo.cssmoban.com/cssthemes4/sbtp_68_unika/inc/owl-carousel/css/owl.carousel.css">
+    <link rel="stylesheet" href="http://demo.cssmoban.com/cssthemes4/sbtp_68_unika/inc/owl-carousel/css/owl.theme.css">
+    <link rel="stylesheet" href="/stylesheets/common.css">
+    <link rel="stylesheet" href="/stylesheets/lmStyle/indexcom.css">
+    <link rel="stylesheet" href="/stylesheets/lmStyle/index.css">
+    <link rel="stylesheet" href="/stylesheets/index/jquery.running.css">
+    <link rel="stylesheet" href="/stylesheets/index/index-bottom.css">
+</head>
+
+<body>
+    <!-- start nav -->
+    <nav ng-app="myNav" ng-controller="Aaa" ng-include="'/lmHtml/nav-common.html'">
+    </nav>
+
+    <!-- banner -->
+    <header class="rowbanner" data-stellar-background-ratio="0.3">
+        <!-- start bannnertop -->
+        <section>
+            <div class="container banner">
+                <div class="col-xs-12">
+                    <div class="news1">
+                        <div class="innerLeft">
+                            <img src="../images/lm/logo.png" alt="" class="logo">
+                        </div>
+                        <div class="innerRight">
+                            <h1>渐进式<br>JavaScript框架</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 测试OK:框架滚动owl -->
+        <section>
+            <div class="container">
+                <div class="caption text-center text-white" data-stellar-ratio="0.7">
+                    <div id="owl-intro-text" class="owl-carousel owl-theme">
+                        <div class="item">
+                            <h1>已经学会了HTML、CSS、JavaScript ?</h1>
+                            <p>即刻阅读指南开始构建应用 !</p>
+                            <div class="extra-space-l"></div>
+                            <a class="btn btn-blank" href="https://creativemarket.com/Themetorium" target="_blank" role="button">教程入口</a>
+                        </div>
+                        <div class="item">
+                            <h1>不断繁荣的生态系统</h1>
+                            <p>可以在一个库和一套完整框架之间自如伸缩 !</p>
+                            <div class="extra-space-l"></div>
+                            <a class="btn btn-blank" href="https://creativemarket.com/Themetorium" target="_blank" role="button">支持Vue</a>
+                        </div>
+                        <div class="item">
+                            <h1>20KB min+gzip运行大小</h1>
+                            <p>超快虚拟DOM，最省心的优化 !</p>
+                            <div class="extra-space-l"></div>
+                            <a class="btn btn-blank" href="https://creativemarket.com/Themetorium" target="_blank" role="button">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- about -->
+    <section id="about">
+        <div class="about-header text-center wow fadeInUp animated" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+            <h2>About</h2>
+            <div class="devider"></div>
+            <p class="subtitle">little information</p>
+        </div>
+        <div class="about-body">
+            <div class="container">
+                <ul class="row">
+                    <li class="col-md-3 col-sm-6">
+                        <a href="#" class="rotate-box-1 square-icon wow zoomIn animated">
+                            <span class="rotate-box-icon">
+                                <i class="fa fa-users "></i>
+                            </span>
+                        <div class="rotate-box-info">
+                            <h4>Who We Are</h4>
+                            <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                        </div>
+                    </a>
+                    </li>
+                    <li class="col-md-3 col-sm-6">
+                        <a href="#" class="rotate-box-1 square-icon wow zoomIn animated data-wow-delay=" 0.2s "" style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">
+                    <span class="rotate-box-icon">
+                                <i class="fa fa-users "></i>
+                            </span>
+                    <div class="rotate-box-info">
+                        <h4>Who We Are</h4>
+                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                    </div>
+                    </a>
+                    </li>
+                    <li class="col-md-3 col-sm-6">
+                        <a href="#" class="rotate-box-1 square-icon wow zoomIn animated data-wow-delay=" 0.4s "" style="visibility: visible; animation-delay: 0.4s; animation-name: zoomIn;">
+                    <span class="rotate-box-icon">
+                                <i class="fa fa-users "></i>
+                            </span>
+                    <div class="rotate-box-info">
+                        <h4>Who We Are</h4>
+                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                    </div>
+                    </a>
+                    </li>
+                    <li class="col-md-3 col-sm-6">
+                        <a href="#" class="rotate-box-1 square-icon wow zoomIn animated data-wow-delay=" 0.6s "" style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn;">
+                    <span class="rotate-box-icon">
+                                <i class="fa fa-users "></i>
+                            </span>
+                    <div class="rotate-box-info">
+                        <h4>Who We Are</h4>
+                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                    </div>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- skill -->
+    <section id="ourSkill">
+        <div class="skill-header">
+            <div class="container">
+                <div class="page-header text-center wow fadeInUp animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                    <h4>Our Skills</h4>
+                </div>
+            </div>
+        </div>
+        <div class="skill-body">
+            <div class="container">
+                <ul class="row">
+                    <li class="col-sm-6">
+                        <div class="skill-bar wow slideInLeft animated" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: slideInLeft;">
+                            <div class="progress-label">
+                                <h6>Photoshop & Illustrator</h6>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-sm-6">
+                        <div class="skill-bar wow slideInRight animated" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: slideInRight;">
+                            <div class="progress-label">
+                                <h6>Photoshop & Illustrator</h6>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-sm-6">
+                        <div class="skill-bar wow slideInLeft animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: slideInLeft;">
+                            <div class="progress-label">
+                                <h6>Photoshop & Illustrator</h6>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-sm-6">
+                        <div class="skill-bar wow slideInRight animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: slideInRight;">
+                            <div class="progress-label">
+                                <h6>Photoshop & Illustrator</h6>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- downPdf -->
+    <section id="downPdf">
+        <div class="downinner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h1>Download Our Pdf</h1>
+                        <p>Inspired by nature, follow technology, appreciate the classics. You can build modern & professional
+                            websites with Unika. The possibilities are just endless.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="down-btn wow bounceInRight animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: bounceInRight;">
+                            <a href="http://www.imransdesign.com/" class="btn btn-default btn-lg">Download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- about as a -->
+    <section id="about">
+        <div class="about-header text-center wow fadeInUp animated" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+            <h2>About</h2>
+            <div class="devider"></div>
+            <p class="subtitle">little information</p>
+        </div>
+        <div class="about-body">
+            <div class="container">
+                <ul class="row">
+                    <li class="col-md-3 col-sm-6">
+                        <a href="#" class="rotate-box-1 square-icon wow zoomIn animated">
+                            <span class="rotate-box-icon">
+                                <i class="fa fa-users "></i>
+                            </span>
+                        <div class="rotate-box-info">
+                            <h4>Who We Are</h4>
+                            <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                        </div>
+                    </a>
+                    </li>
+                    <li class="col-md-3 col-sm-6">
+                        <a href="#" class="rotate-box-1 square-icon wow zoomIn animated data-wow-delay=" 0.2s "" style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">
+                    <span class="rotate-box-icon">
+                                <i class="fa fa-users "></i>
+                            </span>
+                    <div class="rotate-box-info">
+                        <h4>Who We Are</h4>
+                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                    </div>
+                    </a>
+                    </li>
+                    <li class="col-md-3 col-sm-6">
+                        <a href="#" class="rotate-box-1 square-icon wow zoomIn animated data-wow-delay=" 0.4s "" style="visibility: visible; animation-delay: 0.4s; animation-name: zoomIn;">
+                    <span class="rotate-box-icon">
+                                <i class="fa fa-users "></i>
+                            </span>
+                    <div class="rotate-box-info">
+                        <h4>Who We Are</h4>
+                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                    </div>
+                    </a>
+                    </li>
+                    <li class="col-md-3 col-sm-6">
+                        <a href="#" class="rotate-box-1 square-icon wow zoomIn animated data-wow-delay=" 0.6s "" style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn;">
+                    <span class="rotate-box-icon">
+                                <i class="fa fa-users "></i>
+                            </span>
+                    <div class="rotate-box-info">
+                        <h4>Who We Are</h4>
+                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                    </div>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Btn -->
+    <section id="large-Btn">
+        <div class="container">
+            <div class="text-center">
+                <a class="btn btn-default btn-lg-xl" href="http://www.imransdesign.com/">Large Button</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- subbanner -->
+    <section id="subbanner">
+        <div class="banner-inner testimonial text-white parallax" data-stellar-background-ratio="0.3">
+            <!-- 覆盖层 -->
+            <div class="cover"></div>
+            <!-- 标题 -->
+            <div class="header">
+                <div class="container">
+                    <div class="page-header text-center wow fadeInDown animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInDown;">
+                        <h2>Reviews</h2>
+                        <div class="devider"></div>
+                        <p class="subtitle">What people say about us</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 滚动:框架 -->
+            <div class="container">
+                <div class="wrapinner center-block text-center">
+                    <div id="owl-testimonial" class="owl-carousel owl-theme">
+                        <div class="item">
+                            <blockquote>
+                                <p> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                                    ut labore et dolore magna aliqua."</p>
+                                <footer>
+                                    <cite title="John Doe">
+                                    John Doe1
+                                </cite>
+                                </footer>
+                            </blockquote>
+                        </div>
+                        <div class="item">
+                            <blockquote>
+                                <p> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                                    ut labore et dolore magna aliqua."</p>
+                                <footer>
+                                    <cite title="John Doe">
+                                    John Doe2
+                                </cite>
+                                </footer>
+                            </blockquote>
+                        </div>
+                        <div class="item">
+                            <blockquote>
+                                <p> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                                    ut labore et dolore magna aliqua."</p>
+                                <footer>
+                                    <cite title="John Doe">
+                                    John Doe3
+                                </cite>
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- picanimate -->
+    <section id="portfolio-section" class="page bg-style">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="portfolio">
+                        <div class="page-header-wrapper">
+                            <div class="container">
+                                <div class="page-header text-center wow fadeInDown animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInDown;">
+                                    <h2>Our Works</h2>
+                                    <div class="devider"></div>
+                                    <p class="subtitle">What we are proud of</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfoloi_content_area">
+                            <div class="portfolio_menu" id="filters">
+                                <ul>
+                                    <li class><a href="#porfolio_menu" data-filter="*">all</a></li>
+                                    <li class><a href="#porfolio_menu" data-filter=".websites">websites</a></li>
+                                    <li class><a href="#porfolio_menu" data-filter=".webDesign">webDesign</a></li>
+                                    <li class><a href="#porfolio_menu" data-filter=".appsDevelopment">appsDevelopment</a></li>
+                                    <li class><a href="#porfolio_menu" data-filter=".GraphicDesign">GraphicDesign</a></li>
+                                    <li class><a href="#porfolio_menu" data-filter=".responsive">responsive</a></li>
+                                </ul>
+                            </div>
+                            <div class="portfolio_content">
+                                <div class="row" id="portfolio">
+                                    <!-- 01 -->
+                                    <div class="col-xs-12 col-sm-4 appsDevelopment">
+                                        <div class="portfolio_single_content">
+                                            <img src="../images/lm/portfolio/p1.jpg" alt="title">
+                                            <div>
+                                                <a href="#">Skull Awesome</a>
+                                                <span>Subtitle</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 02 -->
+                                    <div class="col-xs-12 col-sm-4 GraphicDesign">
+                                        <div class="portfolio_single_content">
+                                            <img src="../images/lm/portfolio/p2.jpg" alt="title">
+                                            <div>
+                                                <a href="#">Photo Frame</a>
+                                                <span>Subtitle</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 03 -->
+                                    <div class="col-xs-12 col-sm-4 responsive">
+                                        <div class="portfolio_single_content">
+                                            <img src="../images/lm/portfolio/p3.jpg" alt="title">
+                                            <div>
+                                                <a href="#">Hand Shots</a>
+                                                <span>Subtitle</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 04 -->
+                                    <div class="col-xs-12 col-sm-4 webDesign websites">
+                                        <div class="portfolio_single_content">
+                                            <img src="../images/lm/portfolio/p4.jpg" alt="title">
+                                            <div>
+                                                <a href="#">Night Abstract</a>
+                                                <span>Subtitle</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 05 -->
+                                    <div class="col-xs-12 col-sm-4 appsDevelopment websites">
+                                        <div class="portfolio_single_content">
+                                            <img src="../images/lm/portfolio/p5.jpg" alt="title">
+                                            <div>
+                                                <a href="#">Joy of Independence</a>
+                                                <span>Subtitle</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 06 -->
+                                    <div class="col-xs-12 col-sm-4 GraphicDesign">
+                                        <div class="portfolio_single_content">
+                                            <img src="../images/lm/portfolio/p6.jpg" alt="title">
+                                            <div>
+                                                <a href="#">Night Crawlers</a>
+                                                <span>Subtitle</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 07 -->
+                                    <div class="col-xs-12 col-sm-4 responsive">
+                                        <div class="portfolio_single_content">
+                                            <img src="../images/lm/portfolio/p7.jpg" alt="title">
+                                            <div>
+                                                <a href="#">Last Motel</a>
+                                                <span>Subtitle</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 08 -->
+                                    <div class="col-xs-12 col-sm-4 GraphicDesign">
+                                        <div class="portfolio_single_content">
+                                            <img src="../images/lm/portfolio/p8.jpg" alt="title">
+                                            <div>
+                                                <a href="#">Dirk Road</a>
+                                                <span>Subtitle</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 09 -->
+                                    <div class="col-xs-12 col-sm-4 websites">
+                                        <div class="portfolio_single_content">
+                                            <img src="../images/lm/portfolio/p9.jpg" alt="title">
+                                            <div>
+                                                <a href="#">Old is Gold</a>
+                                                <span>Subtitle</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include("./index-bottom.ejs") %>
+
+        <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/wow/1.1.2/wow.min.js"></script>
+        <script src="https://cdn.bootcss.com/angular.js/1.4.0/angular.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+        <script src="http://demo.cssmoban.com/cssthemes4/sbtp_68_unika/inc/owl-carousel/js/owl.carousel.min.js"></script>
+        <script src="http://demo.cssmoban.com/cssthemes4/sbtp_68_unika/inc/isotope.pkgd.min.js"></script>
+        <script src="https://cdn.bootcss.com/stellar.js/0.6.2/jquery.stellar.min.js"></script>
+        <script src="../javascripts/lm/nav-common.js"></script>
+        <script src="../javascripts/index/jquery.running.min.js"></script>
+        <script>
+            // 背景视差滚动启动
+            $.stellar();
+
+            // wow运动初始化
+            new WOW().init()
+
+            //页面滚动数字递增启动
+            $("body").running();
+
+            // Intro text carousel
+            $("#owl-intro-text").owlCarousel({
+                singleItem: true,
+                autoPlay: 6000,
+                stopOnHover: true,
+                navigation: false,
+                navigationText: false,
+                pagination: true
+            })
+
+
+            // Partner carousel
+            $("#owl-partners").owlCarousel({
+                items: 4,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [980, 2],
+                itemsTablet: [768, 2],
+                autoPlay: 3000,
+                stopOnHover: true,
+                pagination: false
+            })
+
+            // Testimonials carousel
+            $("#owl-testimonial").owlCarousel({
+                singleItem: true,
+                pagination: true,
+                autoHeight: true
+            })
+
+
+
+            ////////////////////////////////////////////////////////////////////////////////////////////
+            // Isotop Package
+            ////////////////////////////////////////////////////////////////////////////////////////////
+
+            $('.portfolio_menu ul li').click(function () {
+                $('.portfolio_menu ul li').removeClass('active_prot_menu');
+                $(this).addClass('active_prot_menu');
+
+            });
+            $(".portfolio_menu ul li a").click(function () {
+                $(".portfolio_menu ul li a").css({
+                    "background": "#fff",
+                    "color": "#363940 !important"
+                });
+                $(this).css({
+                    "background": "#363940",
+                    "color": "#fff !important"
+                });
+
+            })
+            // $(".portfolio_menu ul li a").onblur(function(){
+            //     $(this).css("color","#fff !important");
+            // })
+
+            var $container = $('#portfolio');
+            $container.isotope({
+                itemSelector: '.col-sm-4',
+                layoutMode: 'fitRows'
+            });
+            $('#filters').on('click', 'a', function () {
+                var filterValue = $(this).attr('data-filter');
+                $container.isotope({
+                    filter: filterValue
+                });
+                return false;
+            });
+
+
+            // 回到顶部
+            $(window).scroll(function(){
+                if($(window).scrollTop()>"500"){
+                    $("#scrolltotop").show();
+                }else{
+                    $("#scrolltotop").hide();
+                }
+            })
+
+            $("#scrolltotop").click(function(){
+                console.log($(this));
+                $("body,html").animate({scrollTop:0},1000);
+            })
+        </script>
+</body>
+
+</html>

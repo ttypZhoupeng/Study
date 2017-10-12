@@ -1,0 +1,55 @@
+<h1>Vue实例</h1>
+<!-- 创建一个Vue实例 -->
+<a href="#aaa">
+    <h2 id="aaa">
+        创建一个Vue实例
+    </h2>
+</a>
+<p>每个 Vue 应用都是通过 <code>Vue</code> 函数创建一个新的 <strong>Vue 实例</strong>开始的：</p>
+<pre><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue({</div><div class="line">  <span class="comment">// 选项</span></div><div class="line">})</div></pre>
+<p>虽然没有完全遵循 <a href="https://en.wikipedia.org/wiki/Model_View_ViewModel" target="_blank" rel="external">MVVM 模型</a>，Vue 的设计无疑受到了它的启发。因此在文档中经常会使用 <code>vm</code> (ViewModel 的简称) 这个变量名表示 Vue 实例。</p>
+<p>当创建一个 Vue 实例时，你可以传入一个<strong>选项对象</strong>。这篇教程主要描述的就是如何使用这些选项来创建你想要的行为。作为参考，你也可以在 <a href="../api/#选项-数据">API 文档</a> 中浏览完整的选项列表。</p>
+<p>一个 Vue 应用由一个通过 <code>new Vue</code> 创建的<strong>根 Vue 实例</strong>，以及可选的嵌套的、可复用的组件树组成。举个例子，一个 todo 应用的组件树可以是这样的：</p>
+<pre><div class="line">Root Instance</div><div class="line">|- TodoList</div><div class="line">   |- TodoItem</div><div class="line">      |- DeleteTodoButton</div><div class="line">      |- EditTodoButton</div><div class="line">   |- TodoListFooter</div><div class="line">      |- ClearTodosButton</div><div class="line">      |- TodoListStatistics</div></pre>
+<p>我们会在稍后的<a href="components.html">组件系统</a>章节具体展开。不过现在，你只需要明白所有的 Vue 组件都是 Vue 实例，并且接受相同的选项对象即可 (一些根实例特有的选项除外)。</p>
+
+<!-- 数据与方法 -->
+<a href="#数据与方法">
+    <h2 id="数据与方法">数据与方法</h2>
+</a>
+<p>当一个 Vue 实例被创建时，它向 Vue 的<strong>响应式系统</strong>中加入了其 <code>data</code> 对象中能找到的所有的属性。当这些属性的值发生改变时，视图将会产生“响应”，即匹配更新为新的值。</p>
+<pre><div class="line"><span class="comment">// 我们的数据对象</span></div><div class="line"><span class="keyword">var</span> data = { <span class="attr">a</span>: <span class="number">1</span> }</div><div class="line"></div><div class="line"><span class="comment">// 该对象被加入到一个 Vue 实例中</span></div><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue({</div><div class="line">  <span class="attr">data</span>: data</div><div class="line">})</div><div class="line"></div><div class="line"><span class="comment">// 他们引用相同的对象！</span></div><div class="line">vm.a === data.a <span class="comment">// =&gt; true</span></div><div class="line"></div><div class="line"><span class="comment">// 设置属性也会影响到原始数据</span></div><div class="line">vm.a = <span class="number">2</span></div><div class="line">data.a <span class="comment">// =&gt; 2</span></div><div class="line"></div><div class="line"><span class="comment">// ... 反之亦然</span></div><div class="line">data.a = <span class="number">3</span></div><div class="line">vm.a <span class="comment">// =&gt; 3</span></div></pre>
+<p>当这些数据改变时，视图会进行重渲染。值得注意的是只有当实例被创建时 <code>data</code> 中存在的属性是<strong>响应式</strong>的。也就是说如果你添加一个新的属性，像：</p>
+<pre><div class="line">vm.b = <span class="string">'hi'</span></div></pre>
+<p>那么对 <code>b</code> 的改动将不会触发任何视图的更新。如果你知道你会在晚些时候需要一个属性，但是一开始它为空或不存在，那么你仅需要设置一些初始值。比如：</p>
+<pre><div class="line">data: {</div><div class="line">  <span class="attr">newTodoText</span>: <span class="string">''</span>,</div><div class="line">  <span class="attr">visitCount</span>: <span class="number">0</span>,</div><div class="line">  <span class="attr">hideCompletedTodos</span>: <span class="literal">false</span>,</div><div class="line">  <span class="attr">todos</span>: [],</div><div class="line">  <span class="attr">error</span>: <span class="literal">null</span></div><div class="line">}</div></pre>
+<p>除了 data 属性，Vue 实例暴露了一些有用的实例属性与方法。它们都有前缀 <code>$</code>，以便与用户定义的属性区分开来。例如：</p>
+<pre><div class="line"><span class="keyword">var</span> data = { <span class="attr">a</span>: <span class="number">1</span> }</div><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue({</div><div class="line">  <span class="attr">el</span>: <span class="string">'#example'</span>,</div><div class="line">  <span class="attr">data</span>: data</div><div class="line">})</div><div class="line"></div><div class="line">vm.$data === data <span class="comment">// =&gt; true</span></div><div class="line">vm.$el === <span class="built_in">document</span>.getElementById(<span class="string">'example'</span>) <span class="comment">// =&gt; true</span></div><div class="line"></div><div class="line"><span class="comment">// $watch 是一个实例方法</span></div><div class="line">vm.$watch(<span class="string">'a'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">newValue, oldValue</span>) </span>{</div><div class="line">  <span class="comment">// 这个回调将在 `vm.a` 改变后调用</span></div><div class="line">})</div></pre>
+<p>在未来，你可以在 <a href="../api/#实例属性">API 参考</a>查阅到完整的实例属性和方法的列表。</p>
+
+<!-- 实例生命周期 -->
+<a href="#实例生命周期">
+    <h2 id="实例生命周期">实例生命周期</h2>
+</a>
+<p>每个 Vue 实例在被创建之前都要经过一系列的初始化过程。例如需要设置数据监听、编译模板、挂载实例到 DOM、在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做<strong>生命周期钩子</strong>的函数，给予用户机会在一些特定的场景下添加他们自己的代码。</p>
+<p>比如 <a href="../api/#created"><code>created</code></a> 钩子可以用来在一个实例被创建之后执行代码：</p>
+<pre><div class="line"><span class="keyword">new</span> Vue({</div><div class="line">  <span class="attr">data</span>: {</div><div class="line">    <span class="attr">a</span>: <span class="number">1</span></div><div class="line">  },</div><div class="line">  <span class="attr">created</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</div><div class="line">    <span class="comment">// `this` 指向 vm 实例</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'a is: '</span> + <span class="keyword">this</span>.a)</div><div class="line">  }</div><div class="line">})</div><div class="line"><span class="comment">// =&gt; "a is: 1"</span></div></pre>
+<p>也有一些其它的钩子，在实例生命周期的不同场景下调用，如 <a href="../api/#mounted"><code>mounted</code></a>、<a href="../api/#updated"><code>updated</code></a>、<a href="../api/#destroyed"><code>destroyed</code></a>。钩子的 <code>this</code> 指向调用它的 Vue 实例。</p>
+<p class="tip">不要在选项属性或回调上使用<a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank" rel="external">箭头函数</a>，比如 <code>created: () =&gt; console.log(this.a)</code> 或 <code>vm.$watch('a', newValue =&gt; this.myMethod())</code>。因为箭头函数是和父级上下文绑定在一起的，<code>this</code> 不会是如你所预期的 Vue 实例，且 <code>this.a</code> 或 <code>this.myMethod</code> 也会是未定义的。</p>
+
+<!-- 生命周期图示 -->
+<a href="#生命周期图示" data-scroll="">
+    <h2 id="生命周期图示">生命周期图示</h2>
+</a>
+<p>下图说明了实例的生命周期。你不需要立马弄明白所有的东西，不过随着你的不断学习和使用，它的参考价值会越来越高。</p>
+<p><img src="../images/zpimg/lifecycle.png" alt="Vue 实例生命周期"></p>
+<div class="guide-links">      
+    <span>← <a href="/v2/guide/index.html">介绍</a></span>
+    <span style="float: right;"><a href="/v2/guide/syntax.html">模板语法</a> →</span>
+</div>
+<div class="footer">
+    发现错误？想参与编辑？
+    <a href="https://github.com/vuejs/cn.vuejs.org/blob/master/src/v2/guide/instance.md" target="_blank">
+        在 Github 上编辑此页！
+    </a>
+</div>
