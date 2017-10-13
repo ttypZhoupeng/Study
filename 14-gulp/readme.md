@@ -119,7 +119,59 @@ gulp.task('less', () => {
     
 处理CSS：
     less,sass,stylus文件实时编译
-    css文件
+    css文件压缩
+
+处理js文件
+    es6文件 实时编译成js文件，是es5标准
+
+处理图片
+    压缩图片
+
+-S  --save  :存储我们项目运行必须的模块
+-D  --save-dev  :我们开发时候的一些模块
+
+sass
+cnpm i -D gulp-sass
+
+stylus
+cnpm i -D gulp-stylus
+
+第一步下载模块
+第二步写任务，初始化
+第三部 监听文件，初始化
 
 
+js 
+babel用于转化js代码
+cnpm i -D gulp-babel
+cnpm i -D babel-core
 
+需要配置     设置编译的格式
+{
+  "presets": ["es2015"]
+}
+npm install --save-dev babel-preset-es2015
+
+
+cnpm i -D gulp-plumber
+防止报错后崩溃，安装和使用，报错会抛出，会继续执行gulp
+
+
+##gulp
+构建工具
+自动化开发流程
+
+gulp.src  找到文件： 通过路径找到，1个或者多个
+gulp.task 任务 参数：任务名称，前置任务数组，回调函数
+gulp.dest 输出到指定目录   如果当前没有这个文件，那么创建
+gulp.watch 监听文件变化，执行任务
+.pipe   通道、管道 
+
+执行一条  命令  gulp  
+会执行  gulpfile.js  我们需要导入相应的依赖模块
+
+let gulp     = require('gulp')；  //导入模块
+
+通过default任务 去定义工作流
+
+gulp 任务名
