@@ -15,6 +15,7 @@
     - [第一个接口 创建管理员](#第一个接口-创建管理员)
     - [第二个接口 管理员登录](#第二个接口-管理员登录)
     - [第三个接口 博客分类的增删查改](#第三个接口-博客分类的增删查改)
+    - [第四个接口，博客的编写](#第四个接口博客的编写)
 - [创建文件夹](#创建文件夹)
 
 <!-- /TOC -->
@@ -202,7 +203,7 @@ app.use('/setup',setupRoute);   //设置访问路径
 ```
 
 测试
-![基础测试](images/2.png)
+![注册测试](images/2.png)
 
 ### 第二个接口 管理员登录
 >routes/user.js
@@ -251,7 +252,7 @@ var userRoute = require('./app/routes/user');// 导入路由文件
 app.use('/user',userRoute);   //设置访问路径
 ```
 测试
-![基础测试](images/3.png)
+![登录测试](images/3.png)
 
 ### 第三个接口 博客分类的增删查改
 >routes/category.js
@@ -329,8 +330,158 @@ var categoryRoute = require('./app/routes/category');// 导入路由文件
 
 app.use('/category',categoryRoute);   //设置访问路径
 ```
-测试
-![基础测试](images/4.png)
+测试添加分类，查询分类
+![添加](images/4.png)
+![查询](images/5.png)
+
+测试更新分类 首先多添加几条数据，便于查看
+![查询](images/6.png)
+![更新](images/7.png)
+![查询](images/8.png)
+
+测试删除分类
+![更新](images/9.png)
+![查询](images/10.png)
+
+### 第四个接口，博客的编写
+>routes/blog.js
+```
+var express = require("express");
+var Blog = require("../modules/blog");
+
+var router = express.Router();
+
+
+// 显示所有博客
+router.get('/',function(req,res){
+    // 根据分类查找
+    var {category} = req.query;
+    var whereObj = {};
+    if(category){
+        var reg = new RegExp('^'+category+'$');
+        whereObj = {category:reg}
+    }
+    //var reg = new RegExp('^'+category+'$')与/^category$/的区别
+    //前者中的category是拼接上的一个变量，是动态的，
+    //后者是静态的只能匹配'category'这个内容
+
+    Blog.find(whereObj,function(err,blogs){
+        res.json({
+            success:true,
+            data:blogs
+        })
+    })
+})
+
+// 发布博客
+router.post('/',function(req,res){
+    // 结构赋值
+    var {title,body,author,tags,hidden,category} = req.body;
+    console.log(title);
+    if(title.length<3){
+        res.json({
+            success:false,
+            message:"标题长度不能小于3"
+        })
+    }
+
+    // 标签格式应该是对象数组
+
+    // 把标签分割成数组格式
+    var tagsArray = tags.split(",");
+    // 新建一个空数组，用来放对象
+    var tagsObjArray = [];
+    // 通过遍历的方式，把标签内容放入对象里面，通过push方式
+    tagsArray.forEach(function(v){
+        tagsObjArray.push({title:v});
+    })
+
+    var blog = new Blog({
+        title,
+        body,
+        author,
+        tags:tagsObjArray,
+        hidden,
+        category
+    });
+
+   blog.save(function(err){
+       if(err){
+           res.json({success:false,messafe:"博客发布失败"})
+       };
+       res.json({success:true,message:"博客发布成功"})
+   })
+})
+
+// 修改博客
+router.put('/',function(){
+    var {title,newTitle,body,newBody,author,newAuthor} = req.body;
+    if(newTitle.length<3){
+        res.json({
+            success:false,
+            message:"标题长度不能小于3"
+        })
+    }
+    blog.update({
+        title:title,
+        body:body,
+        author:author
+    },{
+        title:newTitle,
+        body:newBody,
+        author:newAuthor
+    },function(err,blog){
+        if(err){
+            res.json({
+                success:false,
+                message:"更新博客失败"
+            })
+        }
+    });
+    res.json({
+        success:true,
+        message:"更新博客成功"
+    })
+
+})
+
+// 删除博客
+router.delete('/',function(req,res){
+
+    // 解构赋值
+    var {title} = req.body;
+
+    Blog.remove({
+        title:title,
+    },function(err){
+        if(err){
+            res.json({
+                success:false,messge:"删除博客失败！"
+            })
+        }
+    })
+    res.json({success:true,message:"删除博客成功！"})
+})
+
+module.exports = router;
+```
+
+然后server.js中导入路由文件
+添加下面两句：
+```
+var blogRoute = require('./app/routes/blog');// 导入路由文件
+
+app.use('/blog',blogRoute);   //设置访问路径
+```
+博客发布测试
+![测试发布](images/11.png)
+![测试发布](images/12.png)
+
+博客修改测试
+![测试发布](images/11.png)
+![测试发布](images/13.png)
+
+
 
 
 

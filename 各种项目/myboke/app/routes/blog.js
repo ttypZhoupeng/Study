@@ -13,6 +13,9 @@ router.get('/',function(req,res){
         var reg = new RegExp('^'+category+'$');
         whereObj = {category:reg}
     }
+    //var reg = new RegExp('^'+category+'$')与/^category$/的区别
+    //前者中的category是拼接上的一个变量，是动态的，
+    //后者是静态的只能匹配'category'这个内容
 
     Blog.find(whereObj,function(err,blogs){
         res.json({
@@ -60,6 +63,56 @@ router.post('/',function(req,res){
        };
        res.json({success:true,message:"博客发布成功"})
    })
+})
+
+// 修改博客
+router.put('/',function(){
+    var {title,newTitle,body,newBody,author,newAuthor} = req.body;
+    if(newTitle.length<3){
+        res.json({
+            success:false,
+            message:"标题长度不能小于3"
+        })
+    }
+    blog.update({
+        title:title,
+        body:body,
+        author:author
+    },{
+        title:newTitle,
+        body:newBody,
+        author:newAuthor
+    },function(err,blog){
+        if(err){
+            res.json({
+                success:false,
+                message:"更新博客失败"
+            })
+        }
+    });
+    res.json({
+        success:true,
+        message:"更新博客成功"
+    })
+
+})
+
+// 删除博客
+router.delete('/',function(req,res){
+
+    // 解构赋值
+    var {title} = req.body;
+
+    Blog.remove({
+        title:title,
+    },function(err){
+        if(err){
+            res.json({
+                success:false,messge:"删除博客失败！"
+            })
+        }
+    })
+    res.json({success:true,message:"删除博客成功！"})
 })
 
 module.exports = router;
