@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基础格式</title>
+    
+</head>
+<body>
+    
+    <div ng-controller="Aaa">
+        <my-hi></my-hi>
+        <!-- ng-是angular系统指令，自定义指令不要用ng- -->
+
+        <div my-hi></div>
+
+        <div class="my-hi"></div>
+    </div>
+   
+
+    <script src="js/angular.min.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[]);
+
+        m1.directive("myHi",function(){
+            return{
+                // restrict:"E",
+                // hi的类型定义E-element标签
+                // 一定要大写E，小写不识别
+
+                // restrict:"A",
+                // hi的类型定义A属性
+                // 可以组合使用restrict:"EA",就是标签和属性都可以支持
+
+                // restrict:"C",
+                // hi的类型定义C-class类名
+
+                // restrict:"M",
+                // M类型定义是注释
+
+                restrict:"EACM",
+                replace:true,
+                // 替换作用，替换外层包裹的标签和替换注释
+                template:"<p>angularJs</p>"
+                // 给hi这个自定义指令添加模板，内容是""
+            }
+        })
+        m1.controller("Aaa",function($scope){
+            $scope.name="zhoupeng";
+
+        })
+    </script>
+</body>
+</html>

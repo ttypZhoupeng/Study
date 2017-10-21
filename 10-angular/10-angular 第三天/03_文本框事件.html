@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基础格式</title>
+    
+</head>
+<body>
+    
+    <div ng-controller="Aaa">
+        <!--{updateOn:'blur'}规则指定事件发生后绑定数据-->
+			<!--{debounce:2000} 延迟2000毫秒改变数据-->
+        <input type="text" ng-model="name" ng-model-options="{debounce:2000}">
+        <p>{{name}}</p>
+    </div>
+   
+
+    <script src="js/angular.min.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[]);
+        m1.controller("Aaa",function($scope){
+            $scope.name="zhoupeng";
+
+        })
+    </script>
+</body>
+</html>

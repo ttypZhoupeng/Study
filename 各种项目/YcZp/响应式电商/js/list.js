@@ -17,12 +17,6 @@ $(function () {
                 var obj = response;
 
                 //添加分页
-<<<<<<< HEAD
-                console.log(response.page);
-                
-=======
-
->>>>>>> 8787ed892e86d3a8a9e9195d616c2c2e0ef23b3d
                 var maxPage =response.page.page_count;
                 // console.log(maxPage);
                 if(!maxPage){

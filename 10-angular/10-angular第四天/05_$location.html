@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>$location</title>
+    
+</head>
+<body>
+    
+    <div ng-controller="Aaa">
+        <p>{{name}}</p>
+    </div>
+   
+
+    <script src="js/angular.min.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[]);
+        m1.controller("Aaa",["$scope","$location",function($scope,$location){
+            // var a = $location.absUrl();
+
+            // $location.absUrl() : 编码后的局对地址
+            // $location.path('aaa/bbb');
+            // var a = $location.path();
+            // 配合路由使用，改变网址路径，有历史记录
+            // console.log(a);
+
+            $location.hash("hi");
+            var a = $location.hash();
+            // $location.hash();可以得到相应的哈希值
+            console.log(a);
+        }])
+    </script>
+</body>
+</html>

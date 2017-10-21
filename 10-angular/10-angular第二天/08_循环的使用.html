@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>循环使用</title>
+    
+</head>
+<body>
+    
+    <div ng-controller="Aaa">
+        <ul>
+            <!-- <li ng-repeat=" data in dataList">{{data}}</li> -->
+            <!-- $index:得到相对应的索引号 -->
+            <li ng-repeat=" data in dataList">{{$index}}</li>            
+            <!-- <li ng-repeat=" data in dataList">{{$first}}</li> -->
+            <!-- <li ng-repeat=" data in dataList">{{$middle}}</li>             -->
+            <li ng-repeat=" data in dataList">{{$last}}</li>            
+            
+        </ul>
+    </div>
+   
+
+    <script src="js/angular.min.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[]);
+        m1.controller("Aaa",function($scope){
+            $scope.name = "zhoupeng";
+
+        })
+    </script>
+</body>
+</html>
