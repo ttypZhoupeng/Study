@@ -35,3 +35,53 @@ cookie与web Storage相似，但是其有内存限制，只能存储4k的数据�
 dns缓存，cdn缓存，浏览器缓存，服务器缓存
 
 
+## 优化图片加载
+* 图片懒加载，在页面不可视区域添加滚动条事件，判断图片位置与浏览器顶端与页面的距离，如果前者小于后者优先，加载
+* 如果图片是css图片，可以通过CSSsprite 或者 SVGsprite等技术
+
+
+## 如何理解HTML结构语义化
+语义化就是，写结构的时候用相对应有一定语义的标签来表示，例如<Strong>等
+
+### 为什么要用语义化
+* 去掉或样式丢失的时候能让页面呈现清晰的结构：
+* 有利于SEO：和搜索引擎建立良好沟通，有助于爬虫抓取更多的有效信息：爬虫依赖于标签来确定上下文和各个关键字的权重；
+* 便于团队开发和维护，语义化更具可读性，遵循W3C标准的团队都遵循这个标准，可以减少差异化。
+
+## css样式定义方式
+* 外部样式表
+* 内部样式表
+* 内联样式
+
+## css有哪些选择器
+* 派生选择器
+* id选择器
+* 类选择器
+
+## css实现，dom不显示在浏览器可视区域
+* display:none
+* visibility:hidden
+* 绝对定位，加上z-index:-1000;
+
+## 什么是Css Hack ie6,7,8 hack分别是什么？
+针对于不同浏览器写不同的css code的过程，就是css hack
+background-color:yellow;    /*ie8*/
++background-color:pink;        /*ie7*/
+_background-color:orange;       /*ie6*/ 
+
+## 块级元素行内元素
+块级元素
+独占一行，padding.margin都可控制，
+行内元素
+与相邻元素同在一行，padding,margin只有left，right可控制
+
+## link和@import的区别
+link是html中的，@import是css中的
+
+link在加载文档结构的时候同时加载，@import需要文档结构加载完后再加载
+
+link不存在浏览器兼容问题，@import低版本IE不兼容
+
+## 有哪些行内元素，块级元素
+行内元素：span,em,img,input,select..
+块级元素：div,p,ul,li,ol,dd,dt,dl,h1,h2,h3,..
