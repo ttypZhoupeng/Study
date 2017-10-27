@@ -1272,3 +1272,85 @@ core:warn] [pid 5352:tid 512] AH00098: pid file H:/phpStudy/Apache/logs/httpd.pi
 [Thu Oct 19 19:53:21.400126 2017] [mpm_winnt:notice] [pid 13736:tid 676] AH00354: Child: Starting 150 worker threads.
 [Thu Oct 19 19:54:59.982335 2017] [:error] [pid 13736:tid 2052] [client ::1:54761] \xe6\x9f\xa5\xe8\xaf\xa2SELECT wp_\xe6\x97\xb6\xef\xbc\x8cWordPress\xe6\x95\xb0\xe6\x8d\xae\xe5\xba\x93\xe5\x8f\x91\xe7\x94\x9fUnknown column 'wp_' in 'field list'\xe9\x94\x99\xe8\xaf\xaf, referer: http://localhost/wp-admin/setup-config.php?step=1&language=zh_CN
 [Thu Oct 19 19:57:09.856521 2017] [mpm_winnt:crit] [pid 13736:tid 676] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Fri Oct 27 19:47:00.912880 2017] [core:warn] [pid 17356:tid 548] AH00098: pid file C:/Users/ucai/Desktop/Study/phpstudy/Apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Oct 27 19:47:01.277980 2017] [mpm_winnt:notice] [pid 17356:tid 548] AH00455: Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.4.45 configured -- resuming normal operations
+[Fri Oct 27 19:47:01.277980 2017] [mpm_winnt:notice] [pid 17356:tid 548] AH00456: Server built: Jul  1 2016 16:42:20
+[Fri Oct 27 19:47:01.278481 2017] [core:notice] [pid 17356:tid 548] AH00094: Command line: 'C:\\Users\\ucai\\Desktop\\Study\\phpstudy\\Apache\\bin\\httpd.exe -d C:/Users/ucai/Desktop/Study/phpstudy/Apache'
+[Fri Oct 27 19:47:01.371042 2017] [mpm_winnt:notice] [pid 17356:tid 548] AH00418: Parent: Created child process 8364
+[Fri Oct 27 19:47:02.966947 2017] [mpm_winnt:notice] [pid 8364:tid 676] AH00354: Child: Starting 150 worker threads.
+[Fri Oct 27 19:47:33.712846 2017] [:error] [pid 8364:tid 2060] [client ::1:55498] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/
+[Fri Oct 27 19:48:01.260177 2017] [:error] [pid 8364:tid 2056] [client ::1:55563] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat
+[Fri Oct 27 19:48:12.932700 2017] [:error] [pid 8364:tid 2044] [client ::1:55585] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat
+[Fri Oct 27 19:50:53.012858 2017] [mpm_winnt:crit] [pid 8364:tid 676] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Fri Oct 27 19:50:56.522150 2017] [core:warn] [pid 7868:tid 732] AH00098: pid file C:/Users/ucai/Desktop/Study/phpstudy/Apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Oct 27 19:50:56.677253 2017] [mpm_winnt:notice] [pid 7868:tid 732] AH00455: Apache/2.4.23 (Win32) OpenSSL/1.0.2j PHP/5.4.45 configured -- resuming normal operations
+[Fri Oct 27 19:50:56.677253 2017] [mpm_winnt:notice] [pid 7868:tid 732] AH00456: Server built: Jul  1 2016 16:42:20
+[Fri Oct 27 19:50:56.677253 2017] [core:notice] [pid 7868:tid 732] AH00094: Command line: 'C:\\Users\\ucai\\Desktop\\Study\\phpstudy\\Apache\\bin\\httpd.exe -d C:/Users/ucai/Desktop/Study/phpstudy/Apache'
+[Fri Oct 27 19:50:56.731289 2017] [mpm_winnt:notice] [pid 7868:tid 732] AH00418: Parent: Created child process 9940
+[Fri Oct 27 19:50:58.317849 2017] [mpm_winnt:notice] [pid 9940:tid 520] AH00354: Child: Starting 150 worker threads.
+[Fri Oct 27 19:51:07.025177 2017] [:error] [pid 9940:tid 2080] [client ::1:55938] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat
+[Fri Oct 27 19:51:16.162501 2017] [:error] [pid 9940:tid 2080] [client ::1:55959] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wp-cron.php?doing_wp_cron=1509105076.1386380195617675781250
+[Fri Oct 27 19:51:16.259065 2017] [:error] [pid 9940:tid 2068] [client ::1:55939] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat
+[Fri Oct 27 19:51:31.214533 2017] [:error] [pid 9940:tid 2064] [client ::1:55986] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat
+[Fri Oct 27 19:52:05.765821 2017] [:error] [pid 9940:tid 2064] [client ::1:56058] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat
+[Fri Oct 27 19:52:12.728323 2017] [:error] [pid 9940:tid 2064] [client ::1:56071] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat
+[Fri Oct 27 19:52:24.267969 2017] [:error] [pid 9940:tid 2068] [client ::1:56095] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wp-cron.php?doing_wp_cron=1509105144.2317581176757812500000
+[Fri Oct 27 19:52:24.367034 2017] [:error] [pid 9940:tid 2064] [client ::1:56089] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat
+[Fri Oct 27 19:53:39.192463 2017] [:error] [pid 9940:tid 2064] [client 127.0.0.1:56240] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat
+[Fri Oct 27 19:53:49.148818 2017] [:error] [pid 9940:tid 2064] [client ::1:56259] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat
+[Fri Oct 27 19:53:57.240411 2017] [:error] [pid 9940:tid 2064] [client ::1:56276] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat
+[Fri Oct 27 19:54:08.320362 2017] [:error] [pid 9940:tid 2080] [client ::1:56303] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wp-cron.php?doing_wp_cron=1509105248.2950549125671386718750
+[Fri Oct 27 19:54:08.397413 2017] [:error] [pid 9940:tid 2064] [client ::1:56292] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat
+[Fri Oct 27 19:55:23.262406 2017] [:error] [pid 9940:tid 2064] [client ::1:56461] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat
+[Fri Oct 27 19:55:35.380802 2017] [:error] [pid 9940:tid 2044] [client ::1:56501] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wp-cron.php?doing_wp_cron=1509105335.3594429492950439453125
+[Fri Oct 27 19:55:35.457853 2017] [:error] [pid 9940:tid 2080] [client ::1:56487] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat
+[Fri Oct 27 19:56:24.474588 2017] [:error] [pid 9940:tid 2064] [client ::1:56602] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat
+[Fri Oct 27 19:56:39.247876 2017] [:error] [pid 9940:tid 2044] [client ::1:56644] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wp-cron.php?doing_wp_cron=1509105399.2130920886993408203125
+[Fri Oct 27 19:56:39.292905 2017] [:error] [pid 9940:tid 2080] [client ::1:56633] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/wp-login.php
+[Fri Oct 27 19:56:45.159877 2017] [:error] [pid 9940:tid 2056] [client ::1:56634] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/wp-login.php
+[Fri Oct 27 19:57:30.585962 2017] [:error] [pid 9940:tid 2068] [client ::1:56744] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:57:30.589965 2017] [:error] [pid 9940:tid 2064] [client ::1:56745] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:57:30.597970 2017] [:error] [pid 9940:tid 2060] [client ::1:56743] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:57:30.607976 2017] [:error] [pid 9940:tid 2060] [client ::1:56743] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:57:30.614481 2017] [:error] [pid 9940:tid 2060] [client ::1:56743] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:57:30.619984 2017] [:error] [pid 9940:tid 2060] [client ::1:56743] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:57:30.626489 2017] [:error] [pid 9940:tid 2060] [client ::1:56743] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:57:30.632493 2017] [:error] [pid 9940:tid 2060] [client ::1:56743] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:57:30.737562 2017] [:error] [pid 9940:tid 2060] [client ::1:56743] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:57:30.850137 2017] [:error] [pid 9940:tid 2060] [client ::1:56743] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:57:30.901671 2017] [:error] [pid 9940:tid 2060] [client ::1:56743] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:57:30.907675 2017] [:error] [pid 9940:tid 2060] [client ::1:56743] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:57:30.913679 2017] [:error] [pid 9940:tid 2060] [client ::1:56743] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:57:30.920184 2017] [:error] [pid 9940:tid 2060] [client ::1:56743] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:58:58.627848 2017] [:error] [pid 9940:tid 2044] [client ::1:56935] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wp-cron.php?doing_wp_cron=1509105538.6045379638671875000000
+[Fri Oct 27 19:58:58.708189 2017] [:error] [pid 9940:tid 2080] [client ::1:56927] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:58:58.709689 2017] [:error] [pid 9940:tid 2068] [client ::1:56929] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:58:58.713192 2017] [:error] [pid 9940:tid 2056] [client ::1:56928] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:58:58.717695 2017] [:error] [pid 9940:tid 2056] [client ::1:56928] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:58:58.723198 2017] [:error] [pid 9940:tid 2056] [client ::1:56928] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:58:58.728702 2017] [:error] [pid 9940:tid 2056] [client ::1:56928] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:58:58.733705 2017] [:error] [pid 9940:tid 2056] [client ::1:56928] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:58:58.738709 2017] [:error] [pid 9940:tid 2056] [client ::1:56928] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:58:58.767228 2017] [:error] [pid 9940:tid 2056] [client ::1:56928] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:58:58.772731 2017] [:error] [pid 9940:tid 2056] [client ::1:56928] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:58:58.860290 2017] [:error] [pid 9940:tid 2056] [client ::1:56928] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:58:58.867794 2017] [:error] [pid 9940:tid 2056] [client ::1:56928] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:58:58.874799 2017] [:error] [pid 9940:tid 2056] [client ::1:56928] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:58:58.880302 2017] [:error] [pid 9940:tid 2056] [client ::1:56928] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:59:03.765574 2017] [:error] [pid 9940:tid 2056] [client ::1:56928] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:59:03.767076 2017] [:error] [pid 9940:tid 2060] [client ::1:56931] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:59:03.771078 2017] [:error] [pid 9940:tid 2064] [client ::1:56930] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:59:03.778583 2017] [:error] [pid 9940:tid 2064] [client ::1:56930] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:59:03.796594 2017] [:error] [pid 9940:tid 2064] [client ::1:56930] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:59:03.802097 2017] [:error] [pid 9940:tid 2060] [client ::1:56931] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:59:03.802097 2017] [:error] [pid 9940:tid 2064] [client ::1:56930] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:59:03.808101 2017] [:error] [pid 9940:tid 2064] [client ::1:56930] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:59:03.812605 2017] [:error] [pid 9940:tid 2064] [client ::1:56930] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:59:03.817108 2017] [:error] [pid 9940:tid 2064] [client ::1:56930] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:59:03.889158 2017] [:error] [pid 9940:tid 2064] [client ::1:56930] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:59:03.895660 2017] [:error] [pid 9940:tid 2064] [client ::1:56930] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:59:03.901164 2017] [:error] [pid 9940:tid 2064] [client ::1:56930] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 19:59:03.907168 2017] [:error] [pid 9940:tid 2064] [client ::1:56930] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat, referer: http://localhost/wordpress/
+[Fri Oct 27 20:13:39.216524 2017] [:error] [pid 9940:tid 2068] [client 127.0.0.1:58912] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat
+[Fri Oct 27 20:33:39.253036 2017] [:error] [pid 9940:tid 2068] [client 127.0.0.1:61046] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat
+[Fri Oct 27 20:53:39.245049 2017] [:error] [pid 9940:tid 2068] [client 127.0.0.1:63138] script 'C:/Users/ucai/Desktop/Study/phpstudy/WWW/index.php' not found or unable to stat
