@@ -182,6 +182,21 @@ dom.innerHTML = "xxxx"
 dom.style.color="#000"
 ```
 
+### 19.DOM,BOM
+javascript由ECMAScript,DOM,BOM三部分组成，
+* ECMAScript也是一种语言，也就是对规定的语法，操作，关键字，语句等的一个描述，javascript实现了ECMAScript
+* DOM是文档对象模型，包括了获取元素，修改样式，操作元素三方面内容，也是我们进行最多的操作，有很多兼容性写法
+* BOM是浏览器对象模型，包括浏览器的一些操作，window.onload,window.open等还有浏览器事件，监听窗口的改变onresize,监听滚动事件onscroll等
+
+### 20.null和undefind的区别
+* null是表示一个空的对象，转为数值为0，undefind表示一个空的原始值，转为数值为NAN
+* undefind指本该有一个值，但却并有定义，null表示没有对象，不应该有值
+
+### 21.call,apply,bind区别
+
+
+
+
 
 
 
