@@ -66,7 +66,7 @@ document.documentElement.clientWidth||document.body.clientWidth
 var target = ev.srcElement||ev.target
 ```
 
-### 9.call apply
+### 9.call apply  bind
 改变this的指向，
 其中call的写法
 ```
@@ -95,6 +95,20 @@ function sub(a,b)
 add.apply(sub,[4,2]);　
 ```
 不同就在于第二个参数，apply写成数组
+
+bind写法
+function add(a,b)  
+{  
+    alert(a+b);  
+}  
+function sub(a,b)  
+{  
+    alert(a-b);  
+}  
+add.bind(sub,[4,2])();　
+
+bind是返回了一个改变上下文的一个函数，可以稍后调用，而apply，call是立即执行函数
+
 
 
 ### 10.b继承a的方法（js面向对象复习）
@@ -192,7 +206,25 @@ javascript由ECMAScript,DOM,BOM三部分组成，
 * null是表示一个空的对象，转为数值为0，undefind表示一个空的原始值，转为数值为NAN
 * undefind指本该有一个值，但却并有定义，null表示没有对象，不应该有值
 
-### 21.call,apply,bind区别
+### 21.XML和JSON的区别
+* JSON相对于XML来讲传递速度更快，因为光看代码量就能看出
+* JSON与js的交互更容易，解析更方便
+
+### 22.实现多个标签之间的通信
+调用localhost,cookies等本地存储进行存储相关信息
+
+### 23.哪些操作会造成内存泄露
+* 内存泄露指任何对象在不再拥有或不再需要它之后依然存在
+* setTimeout第一个参数是字符串而不是函数的时候就会造成内存泄露
+
+
+### 24.js垃圾回收方式
+* 标记清除：这是js最常用的垃圾回收方法，当一个变量进入执行环境时，例如函数中声明一个变量，将其标记为进入环境，当变量离开环境时，（函数执行结束），标记为离开环境
+* 引用计数: 跟踪记录每个值被引用的次数，声明一个变量，并将引用 类型赋值给这个变量，则这个值的引用次数+1，当变量的值变成了另一个，则这个值的引用次数-1，当值的引用次数为0的时候，就回收
+
+### 25.阻止冒泡事件
+cancelBabble，return false,stopPropagation,preventDefault
+
 
 
 
