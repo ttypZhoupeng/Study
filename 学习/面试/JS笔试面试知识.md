@@ -48,25 +48,13 @@
 - [gulp](#gulp)
 - [Bootstrap](#bootstrap)
     - [Bootstrap和Foundation的比较](#bootstrap和foundation的比较)
-- [个推笔试准备](#个推笔试准备)
-    - [面向对象设计语言的三要素](#面向对象设计语言的三要素)
-    - [TCP与UDP的区别](#tcp与udp的区别)
-    - [MVC描述](#mvc描述)
-    - [css的基本语句构成](#css的基本语句构成)
-    - [css导入方式有哪些，link和import的区别](#css导入方式有哪些link和import的区别)
-    - [css选择器](#css选择器)
-    - [可继承的属性](#可继承的属性)
-    - [js typeof返会的数据类型](#js-typeof返会的数据类型)
-    - [split()和join()的区别](#split和join的区别)
-    - [数据库中索引，主键，唯一索引，联合索引的区别，对数据库性能有什么影响](#数据库中索引主键唯一索引联合索引的区别对数据库性能有什么影响)
-    - [进程与线程的联系与区别，什么时候用多线程](#进程与线程的联系与区别什么时候用多线程)
-    - [ASCII、Unicode、GBK和UTF-8字符编码的区别联系](#asciiunicodegbk和utf-8字符编码的区别联系)
 
 <!-- /TOC -->
 # js基础知识
 ## 1. javascript typeof返会的数据类型有哪些
-object,string,undefind,number,function,boolean
-基本数据类型，则出去function，function也是object
+object,string,undefined,number,function,boolean
+>基本数据类型：
+string,number,boolean,undefined,null
 
 ## 2. 列举三种强制类型转换和两种隐式类型转换
 parseInt(),parseFloat(),Number()
@@ -78,6 +66,8 @@ parseInt(),parseFloat(),Number()
 var array = new Array()
 var array = []
 ```
+Array.of(1,2)  //[1,2]
+这是es6新增的一个Array方法，创建一个具有可变数量参数的新数组实例，而不考虑参数的数量或类型。
 
 ## 4. 判断是否为数组的方法
 * console.log(arr instanceof Array)
@@ -439,7 +429,7 @@ ajax请求四步
 * 判断就绪状态为4时执行代码
 ```
 xhr.onreadystatechange = function(){
-    if(xhr.readyChange == 4){
+    if(xhr.readyState == 4){
         console.log(responseText);
     }
 }
@@ -468,10 +458,12 @@ xhr.onreadystatechange = function(){
 
 ## 35.http考点
 ### 常用的HTTP方法有哪些
-GET:
-POST:
-PUT:
-DELETE:
+* GET： 用于请求访问已经被URI（统一资源标识符）识别的资源，可以通过URL传参给服务器。
+* POST：用于传输信息给服务器，主要功能与GET方法类似，但一般推荐使用POST方式。
+* PUT： 传输文件，报文主体中包含文件内容，保存到对应URI位置。
+* HEAD： 获得报文首部，与GET方法类似，只是不返回报文主体，一般用于验证URI是否有效。
+* DELETE：删除文件，与PUT方法相反，删除对应URI位置的文件。
+* OPTIONS：查询相应URI支持的HTTP方法。
 
 ### GET与POST方法的区别
 * get主要是从服务器获取资源，post主要是像服务器发送数据
