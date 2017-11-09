@@ -275,7 +275,32 @@ javascript由ECMAScript,DOM,BOM三部分组成，
 * JSON与js的交互更容易，解析更方便
 
 ## 22. 实现多个标签之间的通信
-调用localhost,cookies等本地存储进行存储相关信息
+调用localhost,sessionStorage,cookies等本地存储进行存储相关信息
+三者的共同点：都保存在浏览器。
+三者的区别：
+>与服务器的交互
+
+* cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递。
+* 而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。
+>存储大小限制也不同，
+
+* cookie数据不能超过4k，同时因为每次http请求都会携带cookie，所以cookie只适合保存很小的数据，如会话标识。
+* sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。
+>数据有效期不同，
+
+* sessionStorage：仅在当前浏览器窗口关闭前有效，自然也就不可能持久保持；
+* localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据；
+* cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭。
+>作用域不同，
+
+* sessionStorage不在不同的浏览器窗口中共享，即使是同一个页面；
+* localStorage 在所有同源窗口中都是共享的；
+* cookie也是在所有同源窗口中都是共享的。
+
+
+**另外Cookie存在安全性问题，如果cookie被人拦截了，就可以取得所有的session信息。**
+
+
 
 ## 23. 哪些操作会造成内存泄露
 > 内存泄露指任何对象在不再拥有或不再需要它之后依然存在

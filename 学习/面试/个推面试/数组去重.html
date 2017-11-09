@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组去重</title>
+</head>
+
+<body>
+
+    <script>
+          
+        var arr = [1,1,2,3,4,2,6,4,5,7];
+
+        // function removeDuplicatedItem(arr) {
+        //     for (var i = 0; i < arr.length - 1; i++) {
+        //         for (var j = i + 1; j < arr.length; j++) {
+        //             if (arr[i] == arr[j]) {
+        //                 arr.splice(j, 1); //console.log(arr[j]);
+        //                 j--;
+        //             }
+        //         }
+        //     }
+        //     return arr;
+        // }
+
+        // arr2 = removeDuplicatedItem(arr);
+        // console.log(arr);
+        // console.log(arr2);
+
+        var nArr = [];
+        function removeItem(arr){
+            for(var i=0;i<arr.length;i++){
+                if(nArr.indexOf(arr[i])==-1){
+                    nArr.push(arr[i]);
+                }
+            }
+            return nArr;
+        }
+        console.log(removeItem(arr));
+    </script>
+</body>
+
+</html>
