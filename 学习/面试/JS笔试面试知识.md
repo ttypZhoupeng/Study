@@ -492,7 +492,7 @@ xhr.onreadystatechange = function(){
 
 ### GET与POST方法的区别
 * get主要是从服务器获取资源，post主要是像服务器发送数据
-* get传输数据通过url请求，利用k=v的形式放在url后面，用?连接，多个用&连接而post是存放在，ajax中的data中的，git传输的过程使用户可见 的，而post是对用户不可见的。
+* get传输数据通过url请求，利用k=v的形式放在url后面，用?连接，多个用&连接而post是存放在，ajax中的data中的，get传输的过程使用户可见 的，而post是对用户不可见的。
 * get传输的数据量小，以为受url的长度限制，但是效率高，post能上传的数据量大
 * post较get更安全一些
 * get方式传递的中文字符可能会乱码，post支持标准字符集，可以正确传递中文字符
